@@ -3,6 +3,7 @@ import './App.css';
 import Home from './Components/HomePage/Home';
 import ContactUs from './Components/Contact/ContactUs';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import BlogPage from './Components/Blogs/BlogPage';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       {/* <Home/> */}
       <Route path='/' element={<Home />} exact></Route>
       <Route path='/contact' element={<ContactUs />} exact></Route>
+      <Route path='/blogs' element={<BlogPage />} exact></Route>
 
 
       {/* <ContactUs/> */}

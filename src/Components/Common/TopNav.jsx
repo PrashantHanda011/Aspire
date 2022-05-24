@@ -21,7 +21,7 @@ function TopNav() {
         <Nav.Link href="#home" style={{color:"white", marginLeft: 5}}>Projects</Nav.Link>
         <Nav.Link href="/contact" style={{color:"white", marginLeft: 5}}>About Us</Nav.Link>
         <Nav.Link href="#home" style={{color:"white", marginLeft: 5}}>Home Loan</Nav.Link>
-        <Nav.Link href="#link" style={{color:"white", marginLeft: 5}}>Blogs</Nav.Link>
+        <Nav.Link href="/blogs" style={{color:"white", marginLeft: 5}}>Blogs</Nav.Link>
         <Nav.Link href="#home" style={{color:"white", marginLeft: 5}}>Careers</Nav.Link>
       </Nav>
     </Navbar.Collapse>
