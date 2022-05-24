@@ -1,0 +1,10 @@
+.separatorDiv{
+    height: 5px;
+    width: 200px;
+    border-radius: 10px;
+    background: linear-gradient(90deg, #13184F 0%, #F47E20 94.96%);
+    margin-top: 70px;
+    margin-bottom: 15px;
+    /* margin-left: 100px; */
+
+}

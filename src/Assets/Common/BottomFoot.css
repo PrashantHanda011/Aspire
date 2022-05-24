@@ -1,0 +1,30 @@
+.footerDiv{
+    background-color: #271A00;
+    margin-top: 100px;
+    width: 99.5%;
+    margin-right: 0 !important;
+}
+
+.dreamReality{
+    color: white; 
+    padding: 20px !important; 
+    padding-left: 50px !important; 
+    font-size: 40px;
+}
+
+.blueFooter{
+    background-color: #13184F;
+    color: white;
+    margin-top: 100px;
+}
+
+.blueFootDiv{
+    width: 70%;
+    margin: auto;
+    text-align: center;
+    padding: 50px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

@@ -1,0 +1,55 @@
+.cardIndividual{
+    text-align: center;
+}
+
+.cardIn{
+    background-color: white;
+    width: 70%;
+    margin: auto;
+    padding: 30px;
+    border: 1px solid #000000
+
+
+}
+
+.contactCard{
+    height: 50vh;
+    background: url("../Images/CardBg.png");
+    width: 100%;
+}
+
+.contactDiv{
+    margin-top: 150px;
+    width: 99%;
+}
+
+.contactCardRow{
+    margin-top: -120px !important;
+}
+
+.emiRow{
+    margin-top: 100px !important;
+    width: 90% !important;
+    border: 1px solid #0000000F;
+    box-shadow: 0px 0px 8.575294494628906px 0px #0000001A;
+    border-radius: 20px;
+    padding: 20px 30px;
+
+}
+
+.emiHead{
+    font-weight: 600;
+    color: #525252;
+}
+
+.emiBtn{
+    border: 1px solid #13184F;
+    color: #13184F;
+    width: 50%;
+    text-align: center;
+    padding: 10px;
+    border-radius: 20px;
+    font-weight: 600;
+    cursor: pointer;
+
+}

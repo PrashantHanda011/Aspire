@@ -1,0 +1,60 @@
+.perfectWriteDiv{
+    width: 70%;
+    margin: auto;
+    text-align: center;
+}
+
+.homeBuyTop{
+    height: 80vh;
+    background-image: url("../Images/HomeTop.png");
+    display: flex;
+    align-items: center;
+    color: white;
+    
+}
+
+.homeBuyingHead{
+    font-weight: 600;
+    font-size: 50px;
+}
+
+.active{
+    background-color: #F47E20;
+    color: white;
+    box-shadow: 0px 7.3333330154418945px 9.777777671813965px 0px #20323940;
+    border-radius: 40px;
+    border: none;
+    padding: 10px 15px;
+    width: fit-content;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.inactive{
+    background: #FFFFFF26;
+    box-shadow: 0px 7.3333330154418945px 9.777777671813965px 0px #20323940;
+    border: 1px solid #FFFFFF;
+    font-weight: 600;
+    padding: 10px 15px;
+    color: white;
+    border-radius: 40px;
+    cursor: pointer;
+}
+
+.homechoiceSection{
+    margin-top: 50px;
+    background: url("../../Assets/Images/HomeChoiceBackground.png");
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    color: #FFFFFF;
+}
+
+.homeChoiceHead{
+    font-weight: 600;
+    font-size: 50px;
+}
+
+.perfectBg{
+    background: url("../../Assets/Images/PerfectHomeBg.png");
+}
