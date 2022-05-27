@@ -4,8 +4,6 @@ import CardBg from "../../Assets/Images/CardBg.png"
 import LowEmi from "../../Assets/Images/lowEmi.png"
 import Blogs from "../../Assets/Images/Blogs.png"
 
-// import "../../Assets/Contact/GetInTouch.css"
-
 function Cards() {
   return (
     <Container>
@@ -27,9 +25,9 @@ function Cards() {
             <Col>
                 <Row className='emiRow'>
                     <Col>
-                    <h4 className='emiHead'>EMI Calculator</h4>
+                    <h4 className='emiHead'>Blogs</h4>
                     <br />
-                    <div className='emiBtn'>View EMI</div>
+                    <div className='emiBtn'>View articles</div>
                     </Col>
                     <Col>
                         <img src={Blogs} alt="" style={{width: "100%"}} />

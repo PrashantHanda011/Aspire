@@ -1,9 +1,24 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Col, Container, Row } from 'react-bootstrap'
 import "../../Assets/HomePage/Help.css"
 import PortfolioImage from "../../Assets/Images/PortfolioImage.png"
+import HomeChoiceImg from "../../Assets/Images/PromiseImg.png"
 
 function Portfolio() {
+
+    const portfolioItems = [
+        {"location": "Lingadheer", "properties": "Pyramid Carnations", "img": PortfolioImage},
+        {"location": "Lingadheer", "properties": "Poorvi Carnations", "img": HomeChoiceImg},
+        {"location": "Lingadheer", "properties": "Pyramid Carnations", "img": PortfolioImage},
+        {"location": "Lingadheer", "properties": "Poorvi Carnations", "img": HomeChoiceImg},
+        {"location": "Lingadheer", "properties": "Pyramid Carnations", "img": PortfolioImage},
+        {"location": "Lingadheer", "properties": "Poorvi Carnations", "img": HomeChoiceImg},
+        {"location": "Lingadheer", "properties": "Pyramid Carnations", "img": PortfolioImage},
+        {"location": "Lingadheer", "properties": "Poorvi Carnations", "img": HomeChoiceImg},
+        {"location": "Lingadheer", "properties": "Pyramid Carnations", "img": PortfolioImage},
+        {"location": "Lingadheer", "properties": "Poorvi Carnations", "img": HomeChoiceImg},
+    ]
+    const [portfolioDetail, setPortfolioDetail] = useState(portfolioItems[0])
   return (
       <div>
               <div className='helpSection'>
@@ -24,90 +39,23 @@ function Portfolio() {
             </Row>
             <Row>
                 <Col lg={6}>
-                    <Row>
-                    <Col xs={4}>
-                        <p>Location</p>
-                    </Col>
-                    <Col xs={8}>
-                        <p>Properties</p>
-                    </Col>
-                    </Row>
-                    <Row>
-                    <Col xs={4}>
-                        <p>Location</p>
-                    </Col>
-                    <Col xs={8}>
-                        <p>Properties</p>
-                    </Col>
-                    </Row>
-                    <Row>
-                    <Col xs={4}>
-                        <p>Location</p>
-                    </Col>
-                    <Col xs={8}>
-                        <p>Properties</p>
-                    </Col>
-                    </Row>
-                    <Row>
-                    <Col xs={4}>
-                        <p>Location</p>
-                    </Col>
-                    <Col xs={8}>
-                        <p>Properties</p>
-                    </Col>
-                    </Row>
-                    <Row>
-                    <Col xs={4}>
-                        <p>Location</p>
-                    </Col>
-                    <Col xs={8}>
-                        <p>Properties</p>
-                    </Col>
-                    </Row>
-                    <Row>
-                    <Col xs={4}>
-                        <p>Location</p>
-                    </Col>
-                    <Col xs={8}>
-                        <p>Properties</p>
-                    </Col>
-                    </Row>
-                    <Row>
-                    <Col xs={4}>
-                        <p>Location</p>
-                    </Col>
-                    <Col xs={8}>
-                        <p>Properties</p>
-                    </Col>
-                    </Row>
-                    <Row>
-                    <Col xs={4}>
-                        <p>Location</p>
-                    </Col>
-                    <Col xs={8}>
-                        <p>Properties</p>
-                    </Col>
-                    </Row>
-                    <Row>
-                    <Col xs={4}>
-                        <p>Location</p>
-                    </Col>
-                    <Col xs={8}>
-                        <p>Properties</p>
-                    </Col>
-                    </Row>
-                    <Row>
-                    <Col xs={4}>
-                        <p>Location</p>
-                    </Col>
-                    <Col xs={8}>
-                        <p>Properties</p>
-                    </Col>
-                    </Row>
+                    {portfolioItems.map((data, index) => (
+                        
+                        <Row key={index} onMouseOver={() => setPortfolioDetail(data)} className="portfolioItem">
+                            <Col xs={4}>
+                                <p>{data.location}</p>
+                            </Col>
+                            <Col xs={8}>
+                                <p>{data.properties}</p>
+                            </Col>
+                        </Row>
+
+                    ))}
+                    
                     
                 </Col>
                 <Col>
-                <img src={PortfolioImage} alt="" style={{width: "100%"}} />
+                <img src={portfolioDetail.img} alt="" style={{width: "100%"}} />
                 </Col>
             </Row>
             </Container>

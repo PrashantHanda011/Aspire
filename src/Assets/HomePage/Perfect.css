@@ -28,6 +28,7 @@
     width: fit-content;
     font-weight: 600;
     cursor: pointer;
+    transition: 0.4s all ease 0s;
 }
 
 .inactive{
@@ -36,9 +37,12 @@
     border: 1px solid #FFFFFF;
     font-weight: 600;
     padding: 10px 15px;
+    width: fit-content;
     color: white;
     border-radius: 40px;
     cursor: pointer;
+    transition: 0.4s all ease;
+
 }
 
 .homechoiceSection{
@@ -48,6 +52,14 @@
     display: flex;
     align-items: center;
     color: #FFFFFF;
+    position: relative;
+}
+
+.homeChoiceImageDiv{
+    position: absolute;
+    top: 0;
+    left: -50px;
+    z-index: 10;
 }
 
 .homeChoiceHead{
@@ -57,4 +69,41 @@
 
 .perfectBg{
     background: url("../../Assets/Images/PerfectHomeBg.png");
+}
+
+.changeGameDiv{
+    background: linear-gradient(to bottom right, rgba(255, 117, 39, 0.75) 0%, rgba(255, 117, 39, 0.75) 50%,  rgba(0, 0, 0, 0.2) 50%,  rgba(0, 0, 0, 0.2) 100%), url("../Images/HomeChoiceBackground.png");;
+    height: 80vh;
+    border-radius: 32px;
+    width: 90%;
+    margin: auto;
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
+}
+
+.changeGameSection{
+    margin-top: 100px;
+}
+
+.active::before{
+    left: unset;
+    right: 0;
+    width: 0;
+}
+
+.active:hover:before{
+    right: unset;
+    left: 0;
+    width: 100%;
+}
+
+.inactive:hover{
+    background-color: #FFFFFF;
+    color: #000000;
+}
+
+.active:hover{
+    background-color: #FFFFFF;
+    color: #F47E20;
 }

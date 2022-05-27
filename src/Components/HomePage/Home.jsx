@@ -23,7 +23,7 @@ function Home() {
       <Perfect/>
       <Promise/>
       <Cards/>
-      {/* <ChangeGame/> */}
+      <ChangeGame/>
       <BlueFooter/>
       </>
     

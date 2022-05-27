@@ -45,11 +45,16 @@
 .emiBtn{
     border: 1px solid #13184F;
     color: #13184F;
-    width: 50%;
+    width: 70%;
     text-align: center;
     padding: 10px;
-    border-radius: 20px;
+    border-radius: 30px;
     font-weight: 600;
     cursor: pointer;
+    transition: 0.4s all ease 0s;
+}
 
+.emiBtn:hover{
+    background-color: #13184F;
+    color: white;
 }

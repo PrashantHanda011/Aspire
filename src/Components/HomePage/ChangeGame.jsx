@@ -1,23 +1,23 @@
 import React from 'react'
 import { Col, Container, Row } from 'react-bootstrap'
+import "../../Assets/HomePage/Perfect.css"
+
 
 function ChangeGame() {
   return (
-    <div className='perfectSection'>
-    <div className='perfectWriteDiv'>
-        
-    <h2>Home Buying Simplified</h2>
-    <br />
-    <Container>
-        <Row>
-            <Col style={{textAlign: "right"}}>
-            <button>Post your requirements</button>
-            </Col>
-            <Col style={{textAlign: "left"}}>
-            <button>Post your requirements</button>
-            </Col>
-        </Row>
-    </Container>
+    <div className='perfectSection changeGameSection'>
+    <div className='changeGameDiv'>
+      <div className="perfectWriteDiv changeGameContent">
+      <p>You are a builder/developer</p>
+        <br />
+      <h2 className='homeChoiceHead'>Change the game wih Aspire</h2>
+        <br/>
+
+        <div className='inactive' style={{margin: "auto"}}>Become a partner</div>
+
+      </div>
+
+
     
 
     </div>

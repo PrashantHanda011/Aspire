@@ -4,6 +4,7 @@ import HelpImage from "../../Assets/Images/HelpImage.png"
 
 function Help() {
   return (
+    <div className="helpDiv">
     <div className='helpSection'>
       <div className="separatorDiv"></div>
         <h4>How can we help?</h4>
@@ -12,6 +13,7 @@ function Help() {
         </div>
         <img src={HelpImage} style={{width:"100%"}} />
         {/* <video src="https://www.youtube.com/watch?v=lMHfzIvRoOU"></video> */}
+    </div>
     </div>
   )
 }
