@@ -22,7 +22,7 @@ function TopNav() {
         <Nav.Link href="/about" style={{color:"white", marginLeft: 5}}>About Us</Nav.Link>
         <Nav.Link href="#home" style={{color:"white", marginLeft: 5}}>Home Loan</Nav.Link>
         <Nav.Link href="/blogs" style={{color:"white", marginLeft: 5}}>Blogs</Nav.Link>
-        <Nav.Link href="#home" style={{color:"white", marginLeft: 5}}>Careers</Nav.Link>
+        <Nav.Link href="/career" style={{color:"white", marginLeft: 5}}>Careers</Nav.Link>
         <Nav.Link href="#home">
           <div style={{backgroundColor: "#F47E20", fontWeight: "600", borderRadius: "20px", padding: 10, color:"white"}}>Partners</div>
         </Nav.Link>
