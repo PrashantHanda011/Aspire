@@ -10,10 +10,10 @@ function HomeBuying() {
         <br />
         <Container>
             <Row>
-                <Col style={{textAlign: "right", display: "flex", justifyContent: "flex-end"}}>
-                <div className='active'>Post your requirements</div>
+                <Col style={{textAlign: "right", display: "flex", justifyContent: "flex-end", marginRight: "20px"}}>
+                <div className='active'>View Projects</div>
                 </Col>
-                <Col style={{textAlign: "left", display: "flex", justifyContent: "flex-start"}}>
+                <Col style={{textAlign: "left", display: "flex", justifyContent: "flex-start", marginLeft: "20px"}}>
                 <div className='inactive'>Easy Home Loan</div>
                 </Col>
             </Row>

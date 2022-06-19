@@ -8,7 +8,7 @@ function HomeChoice() {
   return (
     <div className='perfectSection homechoiceSection'>
       <div className = "homeChoiceImageDiv">
-        <img src={HomeChoiceImg} alt="" />
+        <img src={HomeChoiceImg} alt="" style={{height: 300}} />
       </div>
         <div className='perfectWriteDiv'>
         <h2 className='homeChoiceHead'>Your Home - Your Choice</h2>
@@ -17,10 +17,10 @@ function HomeChoice() {
         <br />
         <Container>
             <Row>
-                <Col style={{textAlign: "right", display: "flex", justifyContent: "flex-end"}}>
+                <Col style={{textAlign: "right", display: "flex", justifyContent: "flex-end", marginRight: "20px"}}>
                 <div className="active">View Projects</div>
                 </Col>
-                <Col style={{textAlign: "left", display: "flex", justifyContent: "flex-start"}}>
+                <Col style={{textAlign: "left", display: "flex", justifyContent: "flex-start", marginLeft: "20px"}}>
                 <div className="inactive">Easy Home Loan</div>
                 </Col>
             </Row>
