@@ -9,8 +9,8 @@ function BlueFooter() {
   return (
     <div className='blueFooter'>
         <div className='blueFootDiv'>
-            <h1 style={{fontSize: 100, display: "inline"}}>Let’s Talk</h1>
-            <ArrowRightAltIcon sx={{fontSize: 100}}/>
+            <h1 style={{fontSize: 120, display: "inline"}}>Let’s Talk</h1>
+            <ArrowRightAltIcon sx={{fontSize: 120}}/>
         </div>
         <hr style={{width: "90%", margin: "auto"}}/>
         <div className="footerContent">

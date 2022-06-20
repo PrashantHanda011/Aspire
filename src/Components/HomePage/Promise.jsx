@@ -11,7 +11,7 @@ function Promise() {
         <Row>
             <Col xs={7}>
             <div className="separatorDiv"></div>
-<h4>Aspire Promise</h4>
+<h4 style={{fontSize: 30}}>Aspire Promise</h4>
 <Row>
     <Col>
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Facilisi ullamcorper elementum vitae 

@@ -10,6 +10,7 @@ import "../../Assets/HomePage/Home.css"
 import TopNav from '../Common/TopNav'
 import Promise from './Promise'
 import BlueFooter from '../Common/BlueFooter'
+import Community from './Community'
 
 function Home() {
   return (
@@ -22,6 +23,7 @@ function Home() {
       <Portfolio/>
       <Perfect/>
       <Promise/>
+      <Community/>
       <Cards/>
       <ChangeGame/>
       <BlueFooter/>
