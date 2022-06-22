@@ -7,6 +7,7 @@ import BlogPage from './Components/Blogs/BlogPage';
 import About from './Components/About/About';
 import Career from './Components/Career/Career';
 import CareerIndividual from './Components/Career/CareerIndividual';
+import Project from './Components/Project/Project';
 
 function App() {
   return (
@@ -20,7 +21,7 @@ function App() {
       <Route path='/individual-career' element={<CareerIndividual />} exact></Route>
       <Route path='/contact' element={<ContactUs />} exact></Route>
       <Route path='/blogs' element={<BlogPage />} exact></Route>
-
+      <Route path='/projects' element={<Project />} exact></Route>
 
 
       {/* <ContactUs/> */}

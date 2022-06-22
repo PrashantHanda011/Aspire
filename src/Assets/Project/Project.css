@@ -1,0 +1,23 @@
+.browseTop{
+    height: 100vh;
+    background: url("../../Assets/Images/ProjectTopImage.png");
+    /* background-repeat: no-repeat; */
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.searchDiv{
+    width: 500px;
+    background-color: white;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.indCardDiv{
+    border: 1.05px solid #52525217;
+    border-radius: 10px;
+    padding: 10px 0
+
+}

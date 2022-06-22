@@ -4,7 +4,7 @@ import "../../Assets/Career/Career.css"
 
 function CareerCard() {
   return (
-    <Row className="careerCardDiv">
+    <Row className="careerCardDiv" style={{cursor: "pointer"}}>
         <Col xs={6}>
             <h4 style={{fontWeight: 600}}>UI/UX Designer</h4>
             <p style={{marginBottom: 5}}>New Delhi</p>

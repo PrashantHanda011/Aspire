@@ -18,7 +18,7 @@ function TopNav() {
     <Navbar.Toggle aria-controls="basic-navbar-nav" />
     <Navbar.Collapse id="basic-navbar-nav" style={{justifyContent: "end"}}>
       <Nav style={{display: "flex", alignItems: "center"}}>
-        <Nav.Link href="/" style={{color:"white", marginLeft: 5}}>Projects</Nav.Link>
+        <Nav.Link href="/projects" style={{color:"white", marginLeft: 5}}>Projects</Nav.Link>
         <Nav.Link href="/about" style={{color:"white", marginLeft: 5}}>About Us</Nav.Link>
         <Nav.Link href="#home" style={{color:"white", marginLeft: 5}}>Home Loan</Nav.Link>
         <Nav.Link href="/blogs" style={{color:"white", marginLeft: 5}}>Blogs</Nav.Link>
