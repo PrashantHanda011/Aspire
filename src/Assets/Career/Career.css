@@ -61,3 +61,25 @@ border-radius: 10px;
     margin-top: -25px;
     margin-bottom: 40px;
 }
+
+.applyButton{
+    background-color: #F47E20;
+    color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    margin-bottom: 50px;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.careerHead{
+    height: 30vh;
+    background-color: #FF7527D1;
+    color: white;
+    display: flex;
+    align-items: center;
+    margin-bottom: 50px;
+}
