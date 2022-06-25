@@ -3,13 +3,13 @@ import { Col, Container, Row } from 'react-bootstrap'
 import CardBg from "../../Assets/Images/CardBg.png"
 import LowEmi from "../../Assets/Images/lowEmi.png"
 import Blogs from "../../Assets/Images/Blogs.png"
-
+import '../../Assets/HomePage/Home.css'
 function Cards() {
   return (
     <Container>
         <Row>
             <Col>
-                <Row className='emiRow'>
+                <Row className='emiRow  pt-5 pb-5'>
                     
                     <Col>
                     <h4 className='emiHead'>EMI Calculator</h4>
@@ -23,7 +23,7 @@ function Cards() {
                 </Row>
             </Col>
             <Col>
-                <Row className='emiRow'>
+                <Row className='emiRow  pt-5 pb-5'>
                     <Col>
                     <h4 className='emiHead'>Blogs</h4>
                     <br />

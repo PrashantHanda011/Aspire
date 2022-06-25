@@ -11,3 +11,7 @@
 .communityCard{
     box-shadow: 0px 0px 14.092073440551758px 0px #0000001A !important;
 }
+
+.emiRow{
+    border: 1px solid black;
+}

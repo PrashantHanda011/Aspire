@@ -24,10 +24,10 @@ function TopNav() {
         <Nav.Link href="/blogs" style={{color:"white", marginLeft: 5}}>Blogs</Nav.Link>
         <Nav.Link href="/career" style={{color:"white", marginLeft: 5}}>Careers</Nav.Link>
         <Nav.Link href="#home">
-          <div style={{backgroundColor: "#F47E20", fontWeight: "600", borderRadius: "20px", padding: 10, color:"white"}}>Partners</div>
+          <div style={{backgroundColor: "#F47E20", fontWeight: "600", borderRadius: "20px", padding: "10px 18px", color:"white"}}>Partners</div>
         </Nav.Link>
         <Nav.Link href="/contact">
-          <div style={{backgroundColor: "#F47E20", fontWeight: "600", borderRadius: "20px", padding: 10, color:"white"}}>Contact Us</div>
+          <div style={{backgroundColor: "#F47E20", fontWeight: "600", borderRadius: "20px", padding: "10px 18px", color:"white"}}>Contact Us</div>
         </Nav.Link>
       </Nav>
     </Navbar.Collapse>

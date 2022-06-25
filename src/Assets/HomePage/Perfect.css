@@ -5,6 +5,9 @@
     padding-left: 20px;
 }
 
+.perfectSection{
+    padding: 5% 0;
+}
 .homeBuyTop{
     height: 100vh;
     background-image: url("../Images/HomeTop.png");
@@ -49,11 +52,12 @@
 .homechoiceSection{
     margin-top: 50px;
     background: url("../../Assets/Images/HomeChoiceBackground.png");
-    height: 60vh;
     display: flex;
     align-items: center;
     color: #FFFFFF;
     position: relative;
+    background-position: center;
+    object-fit: cover;
 }
 
 .homeChoiceImageDiv{
@@ -61,6 +65,10 @@
     top: 0px;
     left: -120px;
     z-index: 10;
+}
+.homeChoiceImageDiv img{
+    object-fit: cover;
+    background-size: cover;
     
 }
 
@@ -75,7 +83,9 @@
 
 .changeGameDiv{
     background: linear-gradient(to bottom right, rgba(255, 117, 39, 0.75) 0%, rgba(255, 117, 39, 0.75) 50%,  rgba(0, 0, 0, 0.2) 50%,  rgba(0, 0, 0, 0.2) 100%), url("../Images/HomeChoiceBackground.png");;
-    height: 100vh;
+    background-position: center;
+    object-fit: cover;
+    height: 80vh;
     border-radius: 32px;
     width: 90%;
     margin: auto;

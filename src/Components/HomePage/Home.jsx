@@ -22,8 +22,8 @@ function Home() {
       <HomeChoice/>
       <Portfolio/>
       <Perfect/>
-      <Promise/>
       <Community/>
+      <Promise/>
       <Cards/>
       <ChangeGame/>
       <BlueFooter/>
