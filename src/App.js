@@ -16,14 +16,14 @@ function App() {
     <div className="App">
     <Routes>
       {/* <Home/> */}
-      <Route path='/' element={<Home />} exact></Route>
-      <Route path='/about' element={<About />} exact></Route>
-      <Route path='/career' element={<Career />} exact></Route>
-      <Route path='/individual-career' element={<CareerIndividual />} exact></Route>
-      <Route path='/contact' element={<ContactUs />} exact></Route>
-      <Route path='/blogs' element={<BlogPage />} exact></Route>
-      <Route path='/blogs/:id' element={<Singleblog/>} exact></Route>
-      <Route path='/projects' element={<Project />} exact></Route>
+      <Route exact path='/' element={<Home />} />
+      <Route exact path='/about' element={<About />} />
+      <Route exact path='/career' element={<Career />} />
+      <Route exact path='/individual-career' element={<CareerIndividual />} />
+      <Route exact path='/contact' element={<ContactUs />} />
+      <Route exact path='/blogs' element={<BlogPage />} />
+      <Route exact path='/blogs/:id' element={<Singleblog/>} />
+      <Route exact path='/projects' element={<Project />} />
 
 
       {/* <ContactUs/> */}
