@@ -7,14 +7,14 @@ import GetInTouch from './GetInTouch'
 import ContactForm from './ContactForm'
 import BottomFoot from '../Common/BottomFoot'
 import Wearehere from './Wearehere'
+import Community from '../HomePage/Community'
 function ContactUs() {
   return (
     <>
     <TopNav/>
     <Wearehere/>
+    <Community/>
     <GetInTouch/>
-    <ContactForm/>
-    <Cards/>
     <BottomFoot/>
     </>
   )

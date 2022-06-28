@@ -8,6 +8,7 @@ import About from './Components/About/About';
 import Career from './Components/Career/Career';
 import CareerIndividual from './Components/Career/CareerIndividual';
 import Project from './Components/Project/Project';
+import Singleblog from './Components/Blogs/Singleblog';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
       <Route path='/individual-career' element={<CareerIndividual />} exact></Route>
       <Route path='/contact' element={<ContactUs />} exact></Route>
       <Route path='/blogs' element={<BlogPage />} exact></Route>
+      <Route path='/blogs/:id' element={<Singleblog/>} exact></Route>
       <Route path='/projects' element={<Project />} exact></Route>
 
 

@@ -1,28 +1,35 @@
 import React from 'react'
 import { Col, Container, Row } from 'react-bootstrap'
 import "../../Assets/Contact/GetInTouch.css"
-
+import img1 from '../../Assets/Images/getintouch.svg'
 function GetInTouch() {
   return (
-        <div className='getInTouch'>
-            <div className='separatorDiv'></div>
-            <div className='contactContent'>
-                {/* <Container> */}
-                    <Row>
-                        <Col xs={3}>
-                            <h4>CONTACT US</h4>
-                            <h2 className='getInTouchSub'>Please get in Touch </h2>
-                        </Col>
-                        <Col>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Facilisi ullamcorper elementum vitae sit magna platea nec maecenas nibh. Aliquam hendrerit libero cursus elementum mi amet morbi lacus aliquet.
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Facilisi ullamcorper elementum vitae sit magna platea nec maecenas nibh. Aliquam hendrerit libero cursus elementum mi amet morbi lacus aliquet.
-                        </p>
-                        </Col>
-                    </Row>
-                {/* </Container> */}
-            </div>
-
-        </div>
+        <>
+        <Container fluid className=" GetInTouch">
+            <Row xs={12}>
+                <Col xs={7} className=" GetInTouch-imgsection ">
+                        <img src={img1} alt="no img" />
+                </Col>
+                <Col xs={5} className="d-flex flex-column justify-content-center">
+                        <Row   className="my-3 GetInTouch-head"><h3>Get in touch</h3></Row>
+                        <Row className=" GetInTouch-subhead"> 
+                            <Col xs={11}>
+                                <h5>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla, provident. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugit, sed!</h5> 
+                            </Col>
+                        </Row>
+                        <Row>
+                            <div className=" GetInTouch-inputs"> 
+                               <span><input type="text" placeholder="Name"/></span> 
+                               <span><input type="text" placeholder="Phone Number" /></span> 
+                            </div>
+                        </Row>
+                        <Row className=" GetInTouch-btn">
+                            <button>Contact</button>
+                        </Row>
+                </Col>
+            </Row>
+        </Container>
+        </>
 
     )
 }

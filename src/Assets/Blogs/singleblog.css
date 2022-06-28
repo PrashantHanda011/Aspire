@@ -1,0 +1,21 @@
+.Singleblog-container{
+    padding: 80px 0;
+    background: linear-gradient(180deg, #FFFFFF 13.02%, #EAEBFF 100%);
+}
+.Singleblog-Head{
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: rgba(28, 27, 77, 1);
+}
+.Singleblog-authorDesc h4{
+    font-size: 1.2rem;
+}
+.Singleblog-authorDesc h5{
+    font-size: 1rem;
+}
+.Singleblog-tags{
+    border: 1px solid black;
+    margin: 5px ;
+    height: 60%;
+    padding: 5px 15px;
+}
