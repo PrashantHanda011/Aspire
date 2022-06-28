@@ -1,22 +1,24 @@
 .blogsDiv{
-    width: 80%;
     margin: auto;
-    background-color: white;
-    border: 1px solid #0000000F;
-    box-shadow: 5px 4px 4px 0px #00000040;
+    background: linear-gradient(180deg, #FFFFFF 13.02%, #EAEBFF 100%);
     border-radius: 20px;
-    padding: 70px 40px;
+    padding: 20px 0;
 }
+.blogMainHeading{
+    margin: 70px 60px 30px 60px;
+    font-size: 1.8rem;
+    font-weight: 700;
 
+}
 .blogWriter{
     display: flex;
     align-items: center;
     color: rgba(88, 88, 88, 0.9);
-    margin-bottom: 80px;
+    margin-bottom: 10px;
 }
 
 .blogCardHeading{
-    margin-top: 30px;
+    margin-top: 10px;
     font-weight: 600;
     color: #303030;
     font-size: 25px;
@@ -33,19 +35,36 @@
 
 .blogCardContent{
     width: 80%;
+    margin-left: 10px;
 }
 
-.blogHeading{
-    text-align: center;
-    font-weight: 600;
-    color: #1C1B4D;
-    margin-top: 60px;
+.SubContentHeading h5{
+    margin-top: 10px;
+    font-size: 1rem;
 }
-
-.blogSubHeading{
-    margin-top: 30px;
-    text-align: center;
-    color: #0000009E;
-    margin-bottom: 100px;
-
+.blogCardContent{
+    width: 23vw;
+}
+.blogCardContent img{
+    width: 100%;
+}
+.blogCardContent h3{
+    font-size: 1rem;
+    font-weight: 700;
+}
+.BlogsRow{
+    height: 60%;
+}
+.ArrowIcon svg{
+    color: gray;
+    font-size: 4rem;
+    padding: 15px;
+    cursor: pointer;
+    border-radius: 50%;
+    background-color:  rgba(232, 232, 232, 0.83);
+}
+.blogsDiv hr{
+    width: 90%;
+    margin-left: 60px;
+    height: 1px;
 }

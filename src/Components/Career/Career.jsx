@@ -10,47 +10,24 @@ import BottomFoot from '../Common/BottomFoot'
 function Career() {
   return (
     <>
+    
     <TopNav/>
-    <CareerTop/>
     <div className='careerPage'>
+
+    <Row className="careerRow w-100 d-flex justify-content-center align-items-center">
+    <Col xs={11}>
       <CareerInput/>
-    <h4>Recent Jobs</h4>
-    <Row className="careerRow">
-      <Col xs={6}>
+    </Col>
+
+      <Col xs={11}>
       <CareerCard/>
       </Col>
-      <Col xs={6}>
-      <CareerCard/>
-      </Col>
-      
-    </Row>
-    <Row className="careerRow">
-      <Col xs={6}>
-      <CareerCard/>
-      </Col>
-      <Col xs={6}>
+      <Col xs={11}>
       <CareerCard/>
       </Col>
       
     </Row>
-    <Row className="careerRow">
-      <Col xs={6}>
-      <CareerCard/>
-      </Col>
-      <Col xs={6}>
-      <CareerCard/>
-      </Col>
-      
-    </Row>
-    <Row className="careerRow">
-      <Col xs={6}>
-      <CareerCard/>
-      </Col>
-      <Col xs={6}>
-      <CareerCard/>
-      </Col>
-      
-    </Row>
+  
     </div>
 <BottomFoot/>
     

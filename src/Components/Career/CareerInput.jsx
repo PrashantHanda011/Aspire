@@ -2,53 +2,89 @@ import { Input } from '@mui/material'
 import React from 'react'
 import { Col, Row } from 'react-bootstrap'
 import SearchIcon from '@mui/icons-material/Search';
-import CancelPresentationIcon from '@mui/icons-material/CancelPresentation';
-import LocationOnIcon from '@mui/icons-material/LocationOn';
-import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
+import InputLabel from '@mui/material/InputLabel';
+import MenuItem from '@mui/material/MenuItem';
+import FormControl from '@mui/material/FormControl';
+import Select from '@mui/material/Select';
+import InputBase from '@mui/material/InputBase';
+import IconButton from '@mui/material/IconButton';
+
 
 function CareerInput() {
-  return (
+    const [Location, setLocation] = React.useState('');
+    const [Department, setDepartment] = React.useState('');
+
+    
+    
+    const handleLocation = (event) => {
+        setLocation(event.target.value);
+      };
+    const handleDepartment = (event) => {
+        setDepartment(event.target.value);
+      };
+  
+  
+    return (
     <div className='careerInputDiv'>
-        <Row>
-            <Col xs={6}>
-                <div className='inputDiv'>
-                    <Row>
-                        <Col xs={1}>
-                        <SearchIcon style={{color: "#0000003D"}}/>
-                        </Col>
-                        <Col xs={10}>
-                        <input placeholder='Hello' className='inputCar'/>
-                        </Col>
-                        <Col xs={1} style={{marginLeft: "-5px"}}>
-                            <CancelPresentationIcon style={{color: "#0000003D"}}/>
-                        </Col>
-                    </Row>
-                    
-                
-                </div>
-                
+       <h3>Open Position</h3>
+       <Row xs={8} className="careerCardDiv CareerInputBox d-flex  bg-white" >
+        <Col xs={5} className=" d-flex " style={{borderRight:"0.5px solid rgba(0,0,0,0.3)"}}>
+       <Col xs={5} className="Search-Location">
+                <FormControl sx={{ m: 1, minWidth: 120 }} size="small">
+                <InputLabel id="demo-select-small">Location</InputLabel>
+
+                <Select
+                    labelId="demo-select-small"
+                    id="demo-select-small"
+                    value={Location}
+                    label={"Location"}
+                    onChange={handleLocation}
+                >
+                    <MenuItem value="">
+                    <em>None</em>
+                    </MenuItem>
+                    <MenuItem value={"Noida"}>Noida</MenuItem>
+                    <MenuItem value={"Banglore"}>Banglore</MenuItem>
+                    <MenuItem value={"Mumbai"}>Mumbai</MenuItem>
+                </Select>
+                </FormControl>
+       </Col>
+       <Col xs={5} className="mx-5 ">
+                <FormControl sx={{ m: 1, minWidth: 140 }} size="small">
+                <InputLabel id="demo-select-small">Department</InputLabel>
+                <Select
+                    labelId="demo-select-small"
+                    id="demo-select-small"
+                    value={Department}
+                    label="Department"
+                    onChange={handleDepartment}
+                >
+                    <MenuItem value="">
+                    <em>None</em>
+                    </MenuItem>
+                    <MenuItem value={1}>IT</MenuItem>
+                    <MenuItem value={2}>Marketing</MenuItem>
+                    <MenuItem value={3}>HR</MenuItem>
+                </Select>
+                </FormControl>
             </Col>
-            <Col xs={3}>
-                <div className='inputDiv'>
-                    <Row>
-                        <Col xs={1}>
-                        <LocationOnIcon style={{color: "#0000003D"}}/>
-                        </Col>
-                        <Col xs={10}>
-                        <input placeholder='Location' className='inputCar'/>
-                        </Col>
-                    </Row>
-                    
-                
-                </div>
-                
-            </Col>
-            <Col xs={2} >
-                <div className='buttonDiv' style={{backgroundColor:" #F47E20", height: "100%", display: "flex", alignItems: "center", justifyContent: "center", color: "white"}}>
-                    <h6>Search</h6>
-                </div>
-                
-            </Col>
+       </Col>
+       <Col xs={3} >
+
+       </Col>
+
+       <Col>
+        <InputBase
+            sx={{ ml: 1, flex: 1 }}
+            placeholder="Search Positions"
+
+            inputProps={{ 'aria-label': 'search google maps' }}
+        />
+        <IconButton type="submit" sx={{ p: '10px' }} aria-label="search">
+            <SearchIcon />
+        </IconButton>
+       </Col>
+
         </Row>
     </div>
   )

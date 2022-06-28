@@ -6,7 +6,7 @@ import PromiseImage from "../../Assets/Images/PromiseImg.png"
 
 function Promise() {
   return (
-    <div  style={{marginTop: 100, overflow: "hidden"}}>
+    <div  style={{marginTop: 70, overflow: "hidden"}}>
     <div className=' promiseSection'>
         <Row>
             <Col xs={7}>

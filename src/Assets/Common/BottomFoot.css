@@ -1,7 +1,6 @@
 .footerDiv{
-    background-color: #271A00;
-    margin-top: 100px;
-    width: 99.5%;
+    background-color: rgba(28, 27, 77, 1);
+    width: 100%;
     margin-right: 0 !important;
 }
 
@@ -34,5 +33,91 @@
     margin: auto;
     padding: 30px 10px 10px 10px;
     font-size: 12px;
+}
+.ShareIcon{
+}
+.ShareIcon svg{
+    color: white;
+    margin: 0 20px;
+    font-size: 2.5rem;
+}
 
+/* callblock */
+
+.CallBlock{
+    width: 32%;
+    height: 60%;
+    margin-top: 20px;
+    color: white;
+    border-radius: 5px;
+    border : 1px solid rgba(255, 117, 39, 0.5);
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.call-content{
+    display: flex;
+}
+.call-content svg{
+    font-size: 2rem;
+    font-weight: 700;
+    margin-right: 15px;
+
+}
+.call-content h4{
+    font-size: 1rem;
+}
+.call-content h5{
+    font-size: 0.8rem;
+    margin: 10px 0;
+    font-weight: 300;
+}
+.CallBlock button{
+    background-color: rgba(255, 117, 39, 0.2);
+    color: rgba(255, 117, 39, 0.8);
+    border: none;
+    border-radius: 10px;
+    padding: 8px;
+    font-size: 0.9rem;
+}
+
+/* mail block */
+.MailBlock{
+    width: 40%;
+    margin-top: 20px;
+    height: 60%;
+    color: white;
+    border-radius: 5px;
+    border : 1px solid rgba(255, 117, 39, 0.5);
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.mail-content{
+    display: flex;
+}
+.mail-content svg{
+    font-size: 2rem;
+    font-weight: 700;
+    margin-right: 15px;
+
+}
+.mail-content h4{
+    font-size: 1rem;
+}
+.mail-content h5{
+    font-size: 0.8rem;
+    margin: 10px 0;
+    font-weight: 300;
+}
+.MailBlock button{
+    color: white;
+    background-color: rgba(255, 117, 39, 0.8);
+    border: none;
+    border-radius: 10px;
+    padding: 8px;
+    font-size: 0.9rem;
 }

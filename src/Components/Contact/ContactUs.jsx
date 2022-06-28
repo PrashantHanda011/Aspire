@@ -6,12 +6,12 @@ import "../../Assets/Contact/ContactUs.css"
 import GetInTouch from './GetInTouch'
 import ContactForm from './ContactForm'
 import BottomFoot from '../Common/BottomFoot'
-
+import Wearehere from './Wearehere'
 function ContactUs() {
   return (
     <>
     <TopNav/>
-    <img src={ContactUsTop} style={{width: "100%", height: "200px"}} />
+    <Wearehere/>
     <GetInTouch/>
     <ContactForm/>
     <Cards/>

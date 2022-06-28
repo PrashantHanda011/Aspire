@@ -2,24 +2,61 @@ import React from 'react'
 import BottomFoot from '../Common/BottomFoot'
 import TopNav from "../Common/TopNav"
 import "../../Assets/Blogs/BlogPage.css"
-import { Row } from 'react-bootstrap'
+import { Row,Col } from 'react-bootstrap'
 import BlogCard from './BlogCard'
-
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 function BlogPage() {
   return (
     <>
         <TopNav/>
-            <h2 className='blogHeading'>Our Blog</h2>
-            <h5 className='blogSubHeading'>A Blog About love that crosses International </h5>
             <div className='blogsDiv'>
-                <Row>
-                    <BlogCard/>
-                    <BlogCard/>
-                    <BlogCard/>
-                    <BlogCard/>
-                    <BlogCard/>
-                    <BlogCard/>
+
+               <h3 className="blogMainHeading">Knowledge Series</h3>         
+                <Row  className="d-flex justify-content-center">
+                    <Col xs={10} className="d-flex  BlogsRow   align-items-center">
+                      <BlogCard/>
+                      <BlogCard/>
+                      <BlogCard/>
+                    </Col>
+                      <Col xs={1} className="ArrowIcon  d-flex align-items-center ">
+                       <span>
+                       <ArrowForwardIcon/>
+                       </span> 
+                      </Col>
                 </Row>
+                <hr />
+
+
+               <h3 className="blogMainHeading">News & Updates</h3>         
+                <Row  className="d-flex justify-content-center">
+                    <Col xs={10} className="d-flex  BlogsRow   align-items-center">
+                      <BlogCard/>
+                      <BlogCard/>
+                      <BlogCard/>
+                    </Col>
+                      <Col xs={1} className="ArrowIcon  d-flex align-items-center ">
+                       <span>
+                       <ArrowForwardIcon/>
+                       </span> 
+                      </Col>
+                </Row>
+                <hr />
+
+               <h3 className="blogMainHeading">Locality Bytes</h3>         
+                <Row  className="d-flex justify-content-center">
+                    <Col xs={10} className="d-flex  BlogsRow   align-items-center">
+                      <BlogCard/>
+                      <BlogCard/>
+                      <BlogCard/>
+                    </Col>
+                      <Col xs={1} className="ArrowIcon  d-flex align-items-center ">
+                       <span>
+                       <ArrowForwardIcon/>
+                       </span> 
+                      </Col>
+                </Row>
+                <hr />
+
 
             </div>
         <BottomFoot/>
