@@ -12,11 +12,12 @@ import Promise from './Promise'
 import BlueFooter from '../Common/BlueFooter'
 import Community from './Community'
 import BottomFoot from '../Common/BottomFoot'
+import NewNav from '../Common/NewNav'
 function Home() {
   return (
       <>
       <div className=''></div>
-      <TopNav/>
+      <NewNav/>
       <HomeBuying/>
       <Help/>
       <HomeChoice/>

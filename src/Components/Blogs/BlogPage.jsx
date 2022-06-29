@@ -6,11 +6,12 @@ import { Row,Col,Container } from 'react-bootstrap'
 import BlogCard from './BlogCard'
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import img2 from '../../Assets/Images/b1.svg'
+import NewNav from '../Common/NewNav'
 
 function BlogPage() {
   return (
     <>
-        <TopNav/>
+    <NewNav/>
           <Container className="Blog-Maincontainer" >
               <Row>
                 <Col xs={8}>

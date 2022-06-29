@@ -8,10 +8,12 @@ import ContactForm from './ContactForm'
 import BottomFoot from '../Common/BottomFoot'
 import Wearehere from './Wearehere'
 import Community from '../HomePage/Community'
+import NewNav from '../Common/NewNav'
 function ContactUs() {
   return (
     <>
-    <TopNav/>
+    {/* <TopNav/> */}
+    <NewNav/>
     <Wearehere/>
     <Community/>
     <GetInTouch/>

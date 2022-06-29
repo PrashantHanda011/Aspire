@@ -4,11 +4,12 @@ import BottomFoot from "../Common/BottomFoot"
 import BrowseTop from './BrowseTop'
 import AspireAdvantage from './AspireAdvantage'
 import SoldProject from './SoldProject'
+import NewNav from '../Common/NewNav'
 
 function Project() {
   return (
     <>
-        <TopNav/>
+    <NewNav/>
             <BrowseTop/>
             <AspireAdvantage/>
             <SoldProject/>

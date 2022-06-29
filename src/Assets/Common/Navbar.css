@@ -1,0 +1,36 @@
+.Navbar{
+    background-color: #13184F;
+    padding: 15px 0;
+}
+.logo img{
+    width: 80px;
+}
+.Links-Container{
+    align-items: center;
+    display: flex;
+}
+.Links{
+    margin: 0 10px;
+    text-align: center;
+}
+.Links a{
+    color: white;
+    text-decoration: none;
+    padding-bottom: 10px;
+}
+.Links a:hover{
+    transition: 1s ;
+    color: white;
+    border-bottom: 2px solid rgba(244, 126, 32, 1) ;
+    padding-bottom: 10px;
+
+}
+.Link-active{
+    border-bottom: 2px solid rgba(244, 126, 32, 1) ;
+}
+.Link-special{
+    background-color: rgba(244, 126, 32, 1);
+    color: white;
+    padding: 10px 5px;
+    border-radius: 25px;
+}

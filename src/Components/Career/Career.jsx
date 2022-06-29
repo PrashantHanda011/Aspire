@@ -6,12 +6,13 @@ import "../../Assets/Career/Career.css"
 import CareerTop from './CareerTop'
 import CareerInput from './CareerInput'
 import BottomFoot from '../Common/BottomFoot'
+import NewNav from '../Common/NewNav'
 
 function Career() {
   return (
     <>
     
-    <TopNav/>
+    <NewNav/>
     <div className='careerPage'>
 
     <Row className="careerRow w-100 d-flex justify-content-center align-items-center">

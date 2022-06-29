@@ -5,11 +5,13 @@ import BottomFoot from "../Common/BottomFoot"
 import Companies from './Companies'
 import OurStory from './OurStory'
 import CardSection from './CardSection'
+import NewNav from '../Common/NewNav'
 
 function About() {
   return (
     <div className='aboutPage'>
-        <TopNav/>
+        {/* <TopNav/> */}
+        <NewNav/>
         <CardSection/>
         <OurStory/>
           <Companies/>
