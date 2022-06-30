@@ -11,3 +11,20 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.row>*{
+  padding: 0;
+  padding-left: 0;
+  padding-right: 0;
+}
+.row{
+  --bs-gutter-x: 0;
+}
+:root {
+  --orangeColor:rgba(244, 126, 32, 1);
+  --blueColor:rgba(28, 27, 77, 1);
+}

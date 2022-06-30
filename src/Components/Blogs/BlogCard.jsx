@@ -7,7 +7,7 @@ function BlogCard() {
   return (
     <>
             <Col xs={4}>
-    <Link to={"/blogs/12234"}>
+    <Link to={"/blogs/12234"} className="text-decoration-none">
                 <div className='blogCardContent'>
                     <img src={BlogImage} alt="" />
                     <h3 className='blogCardHeading mb-0'>Organic Marketing And Modern Marketing, What’s The Relation?</h3>

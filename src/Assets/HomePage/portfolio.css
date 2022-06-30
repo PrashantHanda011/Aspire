@@ -7,6 +7,9 @@
     width: 98%;
     
 }
+.portfolioItem p{
+    padding: 0 15px;
+}
 .countryContainer{
     overflow-y: scroll;
     overflow-x: hidden;

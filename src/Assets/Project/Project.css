@@ -21,3 +21,24 @@
     padding: 10px 0
 
 }
+.property{
+    width: 90%;
+    margin: auto;
+    text-align: left;
+    padding-bottom: 70px;
+    margin-top: 70px;
+}
+
+.property-head{
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 70px;
+}
+.property-sidehead{
+    display: flex;
+    padding-top: 10px;
+    justify-content: space-evenly;
+}
+.property-sidehead h5{
+    font-weight: 600;
+}

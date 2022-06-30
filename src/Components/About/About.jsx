@@ -11,11 +11,9 @@ function About() {
   return (
     <div className='aboutPage'>
         {/* <TopNav/> */}
-        <NewNav/>
         <CardSection/>
         <OurStory/>
           <Companies/>
-        <BottomFoot/>
     </div>
   )
 }

@@ -11,7 +11,7 @@ import NewNav from '../Common/NewNav'
 function BlogPage() {
   return (
     <>
-    <NewNav/>
+
           <Container className="Blog-Maincontainer" >
               <Row>
                 <Col xs={8}>
@@ -72,7 +72,6 @@ function BlogPage() {
 
 
             </div>
-        <BottomFoot/>
     </>
   )
 }

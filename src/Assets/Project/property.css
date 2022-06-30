@@ -1,0 +1,291 @@
+
+.property-Single{
+    background: #EBEBEB;
+    padding: 100px 0;
+}
+.property-first-img img{
+    width: 95%;
+}
+
+/* sideform */
+.property-sideform-head-container{
+    border-radius: 20px;
+    background-color:rgba(128, 128, 128,0.1);
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+}
+.property-sideform{
+    background-color: white;
+    border-radius: 30px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+.property-sideform-avatar{
+    width: 45px;
+    height: 45px;
+    background-color: black;
+    border-radius: 50%;
+}
+.property-sideform-head{
+    margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.property-sideform-head h4{
+    font-size: 1rem;
+}
+.property-sideform-head h5{
+    font-size: 0.8rem;
+    color:var(--orangeColor) ;
+}
+.property-sideform-input{
+    margin: 20px 0;
+    padding: 0;
+}
+
+.property-sideform-input span{
+    padding: 0;
+    margin: 5px 0;
+    width: 100%;
+}
+
+.property-sideform-input span input{
+    padding: 15px 20px;
+    width: 100%;
+    border-radius: 10px;
+    border: 0.5px solid rgba(128, 128, 128,0.3);
+}
+.property-sideform-btn button{
+    padding: 15px ;
+    border: none;
+    background-color: var(--blueColor);
+    color: white;
+    border-radius: 0 20px 0 0;
+}
+
+
+/* navigate */
+
+.property-navigate-container{
+    padding: 40px 0;
+    display: flex;
+}
+.property-navigate-links{
+    border: 1px solid black;
+    margin-right:  4vw;
+    text-decoration: none;
+    color: black;
+}
+.navigate-active{
+    
+}
+
+/* overview */
+.property-overview{
+    margin: 30px 0;
+}
+.property-overview-head h4{
+    font-size: 2.5rem;
+    font-weight: 600;
+}
+.property-overview-head h5{
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: gray;
+}
+.property-overview-btn-container{
+    margin: 10px 0;
+}
+.property-overview-btn{
+    text-align: center;
+    padding: 10px ;
+    width: 85%;
+    margin: 5px 0;
+    background-color: var(--orangeColor);
+    border-radius: 25px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.property-overview-btn svg{
+    font-size: 1.8rem;
+    color: black;
+}
+.property-overview-btn h5{
+    margin-bottom: 0;
+    font-size: 1rem;
+}
+
+
+/* description */
+
+.property-overview-description{
+    margin: 20px 0;
+    background-color: white;
+    border-radius: 20px;
+    padding: 20px 0;
+}
+.property-overview-description h5{
+    padding: 10px 30px ;
+    font-size: 1.5rem;
+}
+.property-overview-description h6{
+    font-size: 1rem;
+    padding: 15px 30px;
+    color: gray;
+    font-weight: 400;
+}
+
+/* amenity */
+
+.property-amenity{
+    margin: 20px 0;
+    background-color: white;
+    border-radius: 20px;
+    padding: 20px 0;
+}
+.property-amenity h5{
+    padding: 10px 30px ;
+    font-size: 1.5rem;
+}
+.property-amenity h6{
+    font-size: 1rem;
+    padding: 15px 15px;
+    color: gray;
+    font-weight: 400;
+}
+.property-amenity-content-container{
+
+    margin: 10px 30px;
+}
+.property-amenity-content{
+    display: flex;
+    align-items: center;
+    width: 95%;
+}
+.property-amenity-content svg{
+    background-color: var(--orangeColor);
+    border-radius: 50%;
+    padding: 2px;
+    color: white;
+}
+
+/* location */
+.property-location{
+    margin: 20px 0;
+    background-color: white;
+    border-radius: 20px;
+    padding: 20px 0;
+}
+.property-location h5{
+    padding: 10px 30px ;
+    font-size: 1.5rem;
+}
+
+/* units */
+.property-units{
+    margin: 20px 0;
+    background-color: white;
+    border-radius: 20px;
+    padding: 20px 0;
+}
+.property-units h5{
+    padding: 10px 30px ;
+    font-size: 1.5rem;
+}
+.property-units-head{
+    display: flex;
+    align-items: center;
+}
+.property-units-head button{
+    padding: 10px;
+    margin: 0 15px;
+    width: 32%;
+    border: none;
+    font-weight: 600;
+    background-color: transparent;
+    color: var(--orangeColor);
+}
+.property-units-head-active{
+    border-radius: 30px;
+    background-color: var(--orangeColor) !important;
+    color: white !important;
+}
+.property-units-SubHead{
+    padding: 10px 20px ;
+    display: flex;
+    justify-content: space-between;
+}
+.property-units-SubHead h5{
+    font-size: 1.2rem;
+    width: 15%;
+    padding: 0;
+    text-align: center;
+}
+
+/* single unit card */
+.Property-singleunit{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+}
+.Property-singleunit-img{
+    width: 15%;
+    background-color: cadetblue;
+    height: 50px;
+}
+.Property-singleunit-desc{
+    width: 15%;
+    text-align: center;
+}
+
+
+/* about dev */
+.property-aboutDeveloper{
+    margin: 40px 0;
+    background-color: white;
+    padding: 20px 90px;
+}
+.property-aboutDeveloper-head{ 
+    margin: 20px 0;
+}
+.property-aboutDeveloper-head h5{
+    font-size: 1.6rem;
+    font-weight: 600;
+}
+.property-aboutDeveloper-head h6{
+    font-size: 1.1rem;
+    font-weight: 400;
+    margin-top: 10px;
+}
+
+.property-aboutDeveloper-work{
+    margin: 40px 0;
+    display: flex;
+    align-items: center;
+}
+.property-aboutDeveloper-img{
+    height: 90px;
+    width: 90px;
+    background-color: black;
+    border-radius: 50%;
+}
+.property-aboutDeveloper-work-side h6{
+  margin-left: 20px;  
+  display: flex;
+}
+.property-aboutDeveloper-work-side h6 p{
+  margin-right: 10px; 
+  background-color: var(--orangeColor);
+  border-radius: 50%;
+  height: 20px;
+  width: 20px; 
+}
+.property-aboutDeveloper-desc h6{
+    font-size: 1rem;
+    font-weight: 400;
+    color: grey;
+}

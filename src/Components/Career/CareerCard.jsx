@@ -7,7 +7,7 @@ import LocationOnIcon from '@mui/icons-material/LocationOn';
 
 function CareerCard() {
   return (
-    <Row className="careerCardDiv my-4 bg-white" style={{cursor: "pointer"}}>
+    <Row className="careerCardDiv  bg-white" style={{cursor: "pointer"}}>
         <Col xs={8}>
             <h4 style={{fontWeight: 600}}>UI/UX Designer</h4>
         </Col>

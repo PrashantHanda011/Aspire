@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import { Col, Container, Row } from 'react-bootstrap'
-import "../../Assets/HomePage/Help.css"
-import "../../Assets/HomePage/portfolio.css"
+import "../../Assets/Project/Project.css"
 import PortfolioImage from "../../Assets/Images/PortfolioImage.png"
 import HomeChoiceImg from "../../Assets/Images/PromiseImg.png"
 import LocationOnIcon from '@mui/icons-material/LocationOn';
@@ -9,8 +8,7 @@ import LocalAtmIcon from '@mui/icons-material/LocalAtm';
 import HomeIcon from '@mui/icons-material/Home';
 import BedroomChildIcon from '@mui/icons-material/BedroomChild';
 import {Link} from 'react-router-dom'
-
-function Portfolio() {
+function ProjectPortfolio() {
     const [indexColor, setindexColor] = useState(0)
     const [active, setactive] = useState(0);
     const portfolioItems = [
@@ -30,11 +28,23 @@ function Portfolio() {
   
     return (
       <div>
-              <div className='helpSection'>
-              <div className="separatorDiv"></div>
-        <h4>Project Portfolio</h4>
+              <div className='property'>
+              <Container>
+              <Row >
+                <Col xs={9}>
+                     <h4 className='property-head ms-0'>Property</h4>
+                </Col>
+                <Col xs={3} className='property-sidehead'>
+                    <h5>
+                        Listing
+                    </h5>
+                    <h5>
+                        Map View
+                    </h5>
+                </Col>
+              </Row>
+              </Container>
         <div className='helpPara'>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Facilisi ullamcorper elementum vitae sit magna platea nec maecenas nibh. Aliquam hendrerit libero cursus elementum mi amet morbi lacus aliquet. Consectetur commodo, pellentesque ac sed at massa elementum. Viverra at et duis neque.</p>
         </div>
         
             <Container className="portfolioContainer">
@@ -51,14 +61,14 @@ function Portfolio() {
                             </div>
                     </div>
 
-                            <Link to={'/property/1223'}>
-                        <button  >
+                        <Link to={'/property/123'}>
+                        <button >
                             View Property
                         </button>
-                            </Link>
+                        </Link>
                 </div>
 
-            <Row className="mb-4 mx-1">
+            <Row className="mb-4 mx-3">
                 <Col xs={2}>
                     <h6>Location</h6>
                 </Col>
@@ -98,4 +108,4 @@ function Portfolio() {
   )
 }
 
-export default Portfolio
+export default ProjectPortfolio

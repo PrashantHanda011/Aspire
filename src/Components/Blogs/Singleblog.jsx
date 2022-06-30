@@ -7,7 +7,6 @@ import avatar from '../../Assets/Images/author.png'
 function Singleblog() {
   return (
     <>
-        <TopNav/>
             <Container fluid className="Singleblog-container" >
                 <Container >
                     <Row>
@@ -34,7 +33,6 @@ function Singleblog() {
                 </Container>
                 
             </Container>
-        <BottomFoot/>
     </>
   )
 }

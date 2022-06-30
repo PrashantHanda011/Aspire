@@ -5,15 +5,15 @@ import BrowseTop from './BrowseTop'
 import AspireAdvantage from './AspireAdvantage'
 import SoldProject from './SoldProject'
 import NewNav from '../Common/NewNav'
+import ProjectPortfolio from './ProjectPortfolio'
 
 function Project() {
   return (
     <>
-    <NewNav/>
-            <BrowseTop/>
+    <ProjectPortfolio/>
+            {/* <BrowseTop/>
             <AspireAdvantage/>
-            <SoldProject/>
-        <BottomFoot/>
+            <SoldProject/> */}
     </>
   )
 }

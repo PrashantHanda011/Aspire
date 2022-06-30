@@ -17,7 +17,6 @@ function Home() {
   return (
       <>
       <div className=''></div>
-      <NewNav/>
       <HomeBuying/>
       <Help/>
       <HomeChoice/>
@@ -27,7 +26,6 @@ function Home() {
       <Promise/>
       <Cards/>
       <ChangeGame/>
-      <BottomFoot/>
       </>
     
   )

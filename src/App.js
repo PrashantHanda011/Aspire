@@ -9,25 +9,28 @@ import Career from './Components/Career/Career';
 import CareerIndividual from './Components/Career/CareerIndividual';
 import Project from './Components/Project/Project';
 import Singleblog from './Components/Blogs/Singleblog';
-
+import Property from './Components/Project/Property';
+import NewNav from './Components/Common/NewNav';
+import BottomFoot from './Components/Common/BottomFoot';
 function App() {
   return (
     <BrowserRouter>
     <div className="App">
-    <Routes>
-      {/* <Home/> */}
-      <Route exact path='/' element={<Home />} />
-      <Route exact path='/about' element={<About />} />
-      <Route exact path='/career' element={<Career />} />
-      <Route exact path='/individual-career' element={<CareerIndividual />} />
-      <Route exact path='/contact' element={<ContactUs />} />
-      <Route exact path='/blogs' element={<BlogPage />} />
-      <Route exact path='/blogs/:id' element={<Singleblog/>} />
-      <Route exact path='/projects' element={<Project />} />
-
-
-      {/* <ContactUs/> */}
-      </Routes>
+    <NewNav/>
+        <Routes>
+          {/* <Home/> */}
+          <Route exact path='/' element={<Home />} />
+          <Route exact path='/about' element={<About />} />
+          <Route exact path='/property/:id' element={<Property />} />
+          <Route exact path='/career' element={<Career />} />
+          <Route exact path='/individual-career' element={<CareerIndividual />} />
+          <Route exact path='/contact' element={<ContactUs />} />
+          <Route exact path='/blogs' element={<BlogPage />} />
+          <Route exact path='/blogs/:id' element={<Singleblog/>} />
+          <Route exact path='/projects' element={<Project />} />
+          {/* <ContactUs/> */}
+          </Routes>
+       <BottomFoot/>   
     </div>
     </BrowserRouter>
   );

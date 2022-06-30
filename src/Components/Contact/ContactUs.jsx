@@ -13,11 +13,9 @@ function ContactUs() {
   return (
     <>
     {/* <TopNav/> */}
-    <NewNav/>
     <Wearehere/>
     <Community/>
     <GetInTouch/>
-    <BottomFoot/>
     </>
   )
 }

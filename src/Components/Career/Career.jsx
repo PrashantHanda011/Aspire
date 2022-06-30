@@ -12,7 +12,6 @@ function Career() {
   return (
     <>
     
-    <NewNav/>
     <div className='careerPage'>
 
     <Row className="careerRow w-100 d-flex justify-content-center align-items-center">
@@ -30,7 +29,6 @@ function Career() {
     </Row>
   
     </div>
-<BottomFoot/>
     
     </>
   )

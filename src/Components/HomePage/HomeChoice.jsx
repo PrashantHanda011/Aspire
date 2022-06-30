@@ -18,10 +18,10 @@ function HomeChoice() {
         <Container>
             <Row>
                 <Col style={{textAlign: "right", display: "flex", justifyContent: "flex-end", marginRight: "20px"}}>
-                <div className="active">View Projects</div>
+                <div className="Link-special-banner">View Projects</div>
                 </Col>
                 <Col style={{textAlign: "left", display: "flex", justifyContent: "flex-start", marginLeft: "20px"}}>
-                <div className="inactive">Easy Home Loan</div>
+                <div className="Link-special-banner-second">Easy Home Loan</div>
                 </Col>
             </Row>
         </Container>
