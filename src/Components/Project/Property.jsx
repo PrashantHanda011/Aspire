@@ -4,7 +4,7 @@ import NewNav from '../Common/NewNav'
 import { Col, Container, Row } from 'react-bootstrap'
 import '../../Assets/Project/property.css'
 import p1 from '../../Assets/Images/p1.svg'
-import {Link} from 'react-router-dom' 
+import {Link,useLocation} from 'react-router-dom' 
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import PaidIcon from '@mui/icons-material/Paid';
 import PushPinIcon from '@mui/icons-material/PushPin';
@@ -13,6 +13,8 @@ import ApartmentIcon from '@mui/icons-material/Apartment';
 import CheckBoxIcon from '@mui/icons-material/CheckBox';
 import CheckIcon from '@mui/icons-material/Check';
 import Singleunit from './Singleunit'
+import CustomizedAccordions from './FAQaccordian'
+import MapContainer from '../Contact/Map'
 
 function Property() {
     const [unit, setunit] = useState(0);
@@ -27,6 +29,9 @@ function Property() {
             setunit(0);
         }
     }
+
+    const location =useLocation();
+    console.log(location)
   return (
     <>
         <Container fluid className="property-Single">
@@ -74,12 +79,12 @@ function Property() {
                     <Container >
                         <Row  >
                         <Col lg={9} className="property-navigate-container">
-                                <Link to={"#overview"} className="property-navigate-links">Overview</Link>
-                                <Link to={"#amenities"} className="property-navigate-links">Amenities</Link>
-                                <Link to={"#location"} className="property-navigate-links">Location</Link>
-                                <Link to={"#units"} className="property-navigate-links">Units</Link>
-                                <Link to={"#about"} className="property-navigate-links">About Developer</Link>
-                                <Link to={"#faq"} className="property-navigate-links">FAQs</Link>
+                                <a href={"#overview"}  className={`${(location?.hash=='#overview') ? ("navigate-active"):("") } property-navigate-links`}>Overview</a>
+                                <a href={"#amenities"} className={`${(location?.hash=='#amenities') ? ("navigate-active"):("") } property-navigate-links`}>Amenities</a>
+                                <a href={"#location"} className={`${(location?.hash=='#location') ? ("navigate-active"):("") } property-navigate-links`}>Location</a>
+                                <a href={"#units"} className={`${(location?.hash=='#units') ? ("navigate-active"):("") } property-navigate-links`}>Units</a>
+                                <a href={"#about"} className={`${(location?.hash=='#about') ? ("navigate-active"):("") } property-navigate-links`}>About Developer</a>
+                                <a href={"#faq"} className={`${(location?.hash=='#faq') ? ("navigate-active"):("") } property-navigate-links`}>FAQs</a>
                         </Col> 
                     </Row>
                     </Container>
@@ -88,7 +93,7 @@ function Property() {
 
                     <Container>
                             <Row>
-                                <Col lg={8} className="property-overview">
+                                <Col lg={8} id="overview" className="property-overview">
                                           <Row className="property-overview-head">
                                             <h4>Poorvi Shreenivasa Grand</h4>
                                             <h5>Lingadheer, South Bangalore</h5>
@@ -121,7 +126,7 @@ function Property() {
 
 {/* amenities */}
 
-                            <Row >
+                            <Row id="amenities">
                                 <Col className="property-amenity" lg={9}>
                                         <h5>Amenities</h5>
                                         <hr />
@@ -167,15 +172,15 @@ function Property() {
                             </Row>
 
 {/* location */}
-                            <Row >
+                            <Row id="location">
                                 <Col className="property-location" lg={9}>
                                         <h5>Location</h5>
-                                        <hr />
+                                <MapContainer height="500px" />
                                 </Col>
                             </Row>
 
 {/* Units */}
-                            <Row >
+                            <Row  id="units">
                                 <Col className="property-units" lg={9}>
                                        <Row className="property-units-head">
                                         <Col lg={8}>
@@ -204,7 +209,7 @@ function Property() {
                     </Container>
 {/* About dev */}
 
-                    <Row>
+                    <Row id="about">
                         <Col  className="property-aboutDeveloper">
                             <Row className="property-aboutDeveloper-head">
                                 <h5>About Developer</h5>
@@ -230,7 +235,23 @@ function Property() {
                             </Row>
                         </Col>
                     </Row>
+                    <Container>
 
+                    {/* faq */}
+                    
+                        <Row id="faq">
+                            <Col lg={9} clasName="property-FAQ">
+                                <Row className="property-FAQ-head">
+                                    <h5>FAQ</h5>  
+                                </Row>
+                                <Row className="propert-FAQ-accordian">
+                                    <CustomizedAccordions/>                 
+                                    <CustomizedAccordions/>                 
+                                    <CustomizedAccordions/>                 
+                                </Row>
+                            </Col>
+                        </Row>
+                    </Container>
         </Container>
     </>
   )

@@ -31,7 +31,7 @@
 }
 .contactinfo{
   display: flex;
-  margin: 20px 0;
+  margin: 10px 0;
 }
 .contactinfo svg{
   margin-right: 20px;
@@ -47,6 +47,7 @@
   border: none;
   font-size: 1rem;
   padding: 10px 15px;
+  margin-bottom: 40px;
 }
 
 
@@ -54,6 +55,7 @@
 /* getintouch */
 .GetInTouch{
   background: #F3E6C4;
+  margin-top: 70px;
 }
 .GetInTouch-imgsection img{
   width: 90%;

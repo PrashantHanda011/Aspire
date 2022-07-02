@@ -3,6 +3,8 @@ import { Col, Row,Container } from 'react-bootstrap'
 import CallIcon from '@mui/icons-material/Call';
 import EmailIcon from '@mui/icons-material/Email';
 import Community from '../HomePage/Community';
+import {Map, InfoWindow, Marker, GoogleApiWrapper} from 'google-maps-react';
+import  MapContainer  from './Map';
 function Wearehere() {
   return (
     <>
@@ -45,8 +47,8 @@ function Wearehere() {
                                 </button>
                             </Row>    
                     </Col>
-                    <Col>
-
+                    <Col  style={{borderRadius:"30px",overflow:"hidden"}}>
+                             <MapContainer height="550px"/>
                     </Col>
                 </Row>
             </Container>
