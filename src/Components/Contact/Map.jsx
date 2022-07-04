@@ -2,8 +2,16 @@ import React from 'react'
 import { GoogleMap, LoadScript } from '@react-google-maps/api';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import { Marker } from '@react-google-maps/api';
-
+import {useJsApiLoader} from '@react-google-maps/api'
+import { Skeleton } from '@mui/material';
 function MapContainer(prop) {
+
+const isLoaded= useJsApiLoader({
+  googleMapsApiKey:process.env.REACT_APP_MAP_API_KEY
+})
+if(!isLoaded){
+  return <Skeleton variant="rectangular" width={210} height={118} />
+}
 
 const containerStyle = {
   width: '100%',
@@ -25,7 +33,7 @@ const onLoad = marker => {
     <>
     
     <LoadScript
-        googleMapsApiKey="AIzaSyB14oZ3M9HW-pYKIsIwCfyYhFKsg3FX6v0"
+        googleMapsApiKey={process.env.REACT_APP_MAP_API_KEY}
       >
       
         <GoogleMap
@@ -33,20 +41,12 @@ const onLoad = marker => {
           center={center}
           zoom={10}
         >
+        <Marker
+          position={position}
+        />
+        
         </GoogleMap>
 
-        <Marker
-      icon={{
-        path:
-          "M8 12l-4.7023 2.4721.898-5.236L.3916 5.5279l5.2574-.764L8 0l2.3511 4.764 5.2574.7639-3.8043 3.7082.898 5.236z",
-        fillColor: "yellow",
-        fillOpacity: 0.9,
-        scale: 8,
-        strokeColor: "gold",
-        strokeWeight: 2,
-      }}
-      position={center}
-    />
       </LoadScript>
     </>
   )
