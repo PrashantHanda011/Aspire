@@ -5,6 +5,7 @@ import EmailIcon from '@mui/icons-material/Email';
 import Community from '../HomePage/Community';
 import {Map, InfoWindow, Marker, GoogleApiWrapper} from 'google-maps-react';
 import  MapContainer  from './Map';
+import Map2 from './Map2';
 function Wearehere() {
   return (
     <>
@@ -48,7 +49,11 @@ function Wearehere() {
                             </Row>    
                     </Col>
                     <Col  style={{borderRadius:"30px",overflow:"hidden"}}>
-                             <MapContainer height="550px"/>
+                             {/* <MapContainer /> */}
+                             <Map2
+                                height="550px"
+                             />
+                             
                     </Col>
                 </Row>
             </Container>

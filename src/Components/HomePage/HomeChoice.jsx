@@ -1,14 +1,14 @@
 import React from 'react'
 import { Col, Container, Row } from 'react-bootstrap'
 import "../../Assets/HomePage/Perfect.css"
-import HomeChoiceImg from "../../Assets/Images/HomeChoiceImg.png"
+import HomeChoiceImg from "../../Assets/Images/HomeChoiceImg.svg"
 
 
 function HomeChoice() {
   return (
     <div className='perfectSection homechoiceSection'>
       <div className = "homeChoiceImageDiv">
-        <img src={HomeChoiceImg} alt="" style={{height: 300}} />
+        <img src={HomeChoiceImg} alt="" style={{width: 200}} />
       </div>
         <div className='perfectWriteDiv'>
         <h2 className='homeChoiceHead'>Your Home - Your Choice</h2>

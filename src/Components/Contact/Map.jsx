@@ -1,17 +1,15 @@
 import React from 'react'
 import { GoogleMap, LoadScript } from '@react-google-maps/api';
-import LocationOnIcon from '@mui/icons-material/LocationOn';
 import { Marker } from '@react-google-maps/api';
 import {useJsApiLoader} from '@react-google-maps/api'
 import { Skeleton } from '@mui/material';
+
 function MapContainer(prop) {
 
-const isLoaded= useJsApiLoader({
-  googleMapsApiKey:process.env.REACT_APP_MAP_API_KEY
+const { isLoaded, loadError } = useJsApiLoader({
+  googleMapsApiKey: process.env.REACT_APP_MAP_API_KEY // ,
+  // ...otherOptions
 })
-if(!isLoaded){
-  return <Skeleton variant="rectangular" width={210} height={118} />
-}
 
 const containerStyle = {
   width: '100%',

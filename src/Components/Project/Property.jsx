@@ -15,6 +15,7 @@ import CheckIcon from '@mui/icons-material/Check';
 import Singleunit from './Singleunit'
 import CustomizedAccordions from './FAQaccordian'
 import MapContainer from '../Contact/Map'
+import Map2 from '../Contact/Map2'
 
 function Property() {
     const [unit, setunit] = useState(0);
@@ -175,7 +176,7 @@ function Property() {
                             <Row id="location">
                                 <Col className="property-location" lg={9}>
                                         <h5>Location</h5>
-                                <MapContainer height="500px" />
+                                <Map2 height="500px"  />
                                 </Col>
                             </Row>
 

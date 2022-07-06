@@ -1,0 +1,158 @@
+.partner-front{
+    padding-top: 60px;
+    padding-bottom: 100px;
+}
+.partner-front h1{
+    font-size: 80px;
+    font-weight: 700;
+
+}
+.partner-front-subhead {
+    border-left: 4px solid black;
+    padding-left: 20px;
+}
+.partner-front-subhead h5{
+    font-size: 16px;
+}
+
+
+.partner-dark-bg{
+    background: #EBEBEB;
+}
+
+/* pick tool  */
+.partner-picktool{
+    background: var(--blueColor);
+    padding: 60px 50px;
+}
+.partner-picktool h4{
+    color: var(--orangeColor);
+    font-size: 32px;
+    padding-left: 0;
+    font-weight: 600;
+}
+.partner-picktool p{
+    color: white;
+    margin: 0;
+    margin: 25px 2px;
+    font-size: 16px;
+}
+
+
+/* leading */
+.partner-leading h2{
+    font-size: 60px;
+    font-weight: 700;
+}
+.partner-leading p{
+    font-size: 16px;
+}
+.partner-leading-star{
+    margin: 15px 0;
+}
+.partner-leading-star p,h5{
+    margin: 0;
+    padding: 0;
+}
+.partner-leading-star span svg{
+    color: var(--orangeColor);
+}
+.partner-leading-star span {
+    margin-right: 20px;
+}
+.partner-leading-star h5{
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-right: 15px;
+}
+.partner-leading-star p{
+    font-size: 1rem;
+}
+
+
+
+/* do it all */
+.partner-doitall h2{
+    font-size: 60px;
+    font-weight: 700;
+    text-align: center;
+}
+.partner-doitall-head p{
+    font-size: 18px;
+    font-weight: 500;
+}
+.partner-doitall-card-1{
+    height: 70px;
+    border-left: 6px solid var(--orangeColor);
+    padding-bottom: 20px;
+    border-radius: 3px;
+}
+.partner-doitall-card{
+    background-color: white;
+    padding: 20px 10px;
+    height: 100%;
+    width: 30%;
+    border-radius: 20px;
+}
+
+
+/* feature project */
+.partner-feature-projects h3{
+    font-size: 50px;
+    font-weight: 600;
+}
+
+
+/* reviews */
+.partner-reviews{
+    padding: 20px 0;
+}
+.partner-reviews h4{
+    color: gray;
+    font-size: 50px;
+    font-weight: 700;
+}
+.partner-reviews-subtitle h3{
+    color: black;
+    font-size: 35px;
+    font-weight: 600;
+}
+.partner-reviews-container{
+    padding: 50px 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.partner-reviews-card{
+    border: 2px solid rgba(209, 207, 207,0.4);
+    color: gray;
+    width: 30%;
+    box-shadow: 3px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.partner-reviews-card h5{
+    font-size: 30px;
+}
+
+
+/* elite */
+.partner-elite{
+    padding: 40px 100px;
+    background-color: #EBEBEB;
+}
+.partner-elite h2{
+    font-size: 50px;
+    font-weight: 600;
+}
+
+/* homeperfect */
+.partner-findhome{
+    background: url("../../Assets/Images/PerfectHomeBg.png");
+background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    color: #FFFFFF;
+    position: relative;
+    background-position: center;
+    object-fit: cover;
+    padding: 80px 0;
+}

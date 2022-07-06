@@ -31,13 +31,13 @@
     position: relative;
     background-position: center;
     object-fit: cover;
-    padding: 90px 0;
+    background-repeat: no-repeat;
+    padding: 150px 0;
 }
 
 .homeChoiceImageDiv{
     position: absolute;
     top: 0px;
-    left: -120px;
     z-index: 10;
 }
 .homeChoiceImageDiv img{
@@ -53,6 +53,7 @@
 
 .perfectBg{
     background: url("../../Assets/Images/PerfectHomeBg.png");
+    background-repeat: no-repeat;
 }
 
 .changeGameDiv{

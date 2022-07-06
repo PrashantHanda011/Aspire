@@ -12,6 +12,7 @@ import Singleblog from './Components/Blogs/Singleblog';
 import Property from './Components/Project/Property';
 import NewNav from './Components/Common/NewNav';
 import BottomFoot from './Components/Common/BottomFoot';
+import Partner from './Components/Partners/Partner';
 function App() {
   return (
     <BrowserRouter>
@@ -25,6 +26,7 @@ function App() {
           <Route exact path='/career' element={<Career />} />
           <Route exact path='/individual-career' element={<CareerIndividual />} />
           <Route exact path='/contact' element={<ContactUs />} />
+          <Route exact path='/partners' element={<Partner />} />
           <Route exact path='/blogs' element={<BlogPage />} />
           <Route exact path='/blogs/:id' element={<Singleblog/>} />
           <Route exact path='/projects' element={<Project />} />
