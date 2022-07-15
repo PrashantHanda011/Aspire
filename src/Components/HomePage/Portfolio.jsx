@@ -10,6 +10,7 @@ import HomeIcon from '@mui/icons-material/Home';
 import BedroomChildIcon from '@mui/icons-material/BedroomChild';
 import {Link} from 'react-router-dom'
 
+import {CSSTransition} from 'react-transition-group'
 function Portfolio() {
     const [indexColor, setindexColor] = useState(0)
     const [active, setactive] = useState(0);
@@ -70,7 +71,7 @@ function Portfolio() {
                 <Col lg={6} className="countryContainer">
                     {portfolioItems.map((data, index) => (
                         
-                        <Row key={index} className={`${(active==index) ? ("activeportfolio"):("")} portfolioItem`} onClick={()=>{
+                        <Row key={index} onMouseOver={()=>setPortfolioDetail(data)} className={`${(active==index) ? ("activeportfolio"):("")} portfolioItem`} onClick={()=>{
                             setactive(index);
                             setPortfolioDetail(data)
                             }}>
@@ -86,8 +87,14 @@ function Portfolio() {
                     
                     
                 </Col>
-                <Col>
-                <img src={portfolioDetail.img} alt="" style={{width: "100%"}} />
+                <Col className="px-4" style={{transition:"1s"}}>
+                <CSSTransition
+                transitionName="example"
+                transitionEnterTimeout={500}
+                transitionLeaveTimeout={300}
+                >
+                <img src={portfolioDetail?.img} className="property-img" alt="" style={{width: "100%"}} />
+                </CSSTransition>
                 </Col>
             </Row>
             </Container>

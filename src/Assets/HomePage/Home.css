@@ -14,14 +14,30 @@
     padding: 10px 20px;
     border-radius: 25px;
     font-weight: 600;
+    cursor: pointer;
+}
+.Link-special-banner:hover{
+    background-color: white;
+    color: var(--orangeColor);
+    transition: 0.5s;
+    
 }
 .Link-special-banner-second{
-    background-color:rgba(245, 250, 255,0.2);
+    background-color: rgba(19, 24, 79, 0.4);
     color: white;
+    cursor: pointer;
     border: 1px solid white;
     padding: 10px 15px;
     border-radius: 20px;
     font-weight: 600;
+}
+.Link-special-banner-second:hover{
+    background: black;
+    transition: 0.5s;
+}
+.changeGameContent p{
+    font-size: 1.3rem;
+    margin-bottom: 0;
 }
 .emiRow{
     border: 1px solid black;

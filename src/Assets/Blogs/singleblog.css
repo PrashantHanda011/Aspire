@@ -23,12 +23,18 @@
 .Singleblog-content{
     position: relative;
 }
-
+.single-blog-sticky{
+    padding: relative;
+}
 .Singleblog-shareicon-container{
     display: flex;
     align-items: center;
     flex-direction: column;
     padding: 80px 0;
+    position: sticky;
+    top: 0;
+    right: 0;
+    left: 1100px;
 }
 .singleblog-blog-date{
     border-top: 5px solid black;
@@ -200,4 +206,12 @@
     margin: 10px 0;
     font-size: 1rem;
     color: gray;
+}
+
+
+
+
+/* progress bar */
+.CircularProgressbar {
+    width: 50%!important;
 }

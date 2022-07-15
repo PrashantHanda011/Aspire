@@ -5,7 +5,7 @@ import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import { Col, Row } from 'react-bootstrap';
 import '../../Assets/HomePage/Perfect.css'
-function Community() {
+function Community(prop) {
     var items = [
         {
             name: "Random Name #1",
@@ -22,7 +22,7 @@ function Community() {
         }
     ]
   return (
-    <div  className='perfectSection '>
+    <div  className='perfectSection ' style={{background:`${prop?.color ? (prop?.color):(null)}`}}>
         <div className='promiseSection '>
         <div className="separatorDiv"></div>
         <h4 style={{fontSize: 30}}>Welcome to the community</h4>

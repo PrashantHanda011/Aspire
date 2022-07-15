@@ -1,4 +1,4 @@
-import React,{useState} from 'react'
+import React,{useState,useEffect} from 'react'
 import BottomFoot from '../Common/BottomFoot'
 import NewNav from '../Common/NewNav'
 import { Col, Container, Row } from 'react-bootstrap'
@@ -14,11 +14,15 @@ import CheckBoxIcon from '@mui/icons-material/CheckBox';
 import CheckIcon from '@mui/icons-material/Check';
 import Singleunit from './Singleunit'
 import CustomizedAccordions from './FAQaccordian'
-import MapContainer from '../Contact/Map'
 import Map2 from '../Contact/Map2'
+import { AnimationOnScroll } from 'react-animation-on-scroll';
+import { Form, Modal } from 'react-bootstrap'
 
 function Property() {
     const [unit, setunit] = useState(0);
+    const [showModal, setshowModal] = useState(true);
+    const [ scrolled, setScrolled ] = useState(false)
+    const location =useLocation();
 
     const handle2BHKunit=()=>{
         if(unit==0){
@@ -31,11 +35,17 @@ function Property() {
         }
     }
 
-    const location =useLocation();
-    console.log(location)
-  return (
+  
+    // modal
+      const handleClose = () => {
+          setshowModal(false);
+    }
+    window.addEventListener('scroll', handleClose)
+
+  
+    return (
     <>
-        <Container fluid className="property-Single">
+        <Container fluid className="property-Single" onScroll={handleClose} onScrollCapture={handleClose}  onKeyDown={handleClose} style={{position:"relative"}} onTouchStart={handleClose}  >
                     <Container>
                     {/* begin part  */}
 
@@ -48,7 +58,80 @@ function Property() {
                     
                     {/* side form */}
 
-                                    <Col xs={4} className="property-sideform p-4">
+                                    
+                                </Row>
+                    </Container>
+
+
+{/* modal */}
+                        {
+                        showModal?(
+                            <div className="container-fluid  property-animation-modal d-flex flex-column justify-content-center align-items-center">
+                                           <Row className="property-overview-head-modal">
+                                            <h4>Poorvi Shreenivasa Grand</h4>
+                                            <h5>Lingadheer, South Bangalore</h5>
+                                           </Row>
+                                            <Row  className="property-overview-btn-container-modal d-flex flex-column">
+                                                <Col className="animationContainer">
+                                                    <Row className="property-overview-btn-modal locationOn">
+                                                        <Col lg={2}>
+                                                            <LocationOnIcon/>
+                                                        </Col>                
+                                                        <Col >
+                                                            <h5 className="text-center">Banglore</h5>
+                                                        </Col>               
+                                                    </Row>    
+
+                                                    <Row className="property-overview-btn-modal money ">
+                                                        
+                                                        <Col lg={2}>
+                                                            <PaidIcon/>
+                                                        </Col>                
+                                                        <Col >
+                                                                <h5 className="text-center">60-80 L</h5>
+                                                        </Col>               
+                                                    </Row>    
+                                                    <Row className="property-overview-btn-modal area">
+                                                        <Col lg={2}>
+                                                            <PushPinIcon/>
+                                                        </Col>                
+                                                        <Col >
+                                                                <h5 className="text-center">Area</h5>
+                                                        </Col>               
+                                                    </Row>    
+                                                    <Row className="property-overview-btn-modal bhk">
+                                                        <Col lg={2}>
+                                                            <MeetingRoomIcon/>
+                                                        </Col>                
+                                                        <Col >
+                                                                <h5 className="text-center">2-4 BHK</h5>
+                                                        </Col>               
+                                                    </Row>    
+                                                    <Row className="property-overview-btn-modal units">
+                                                        <Col lg={2}>
+                                                            <ApartmentIcon/>
+                                                        </Col>                
+                                                        <Col >
+                                                                <h5 className="text-center">21 Units left</h5>
+                                                        </Col>               
+                                                    </Row>    
+                                                    <Row className="property-overview-btn-modal move">
+                                                        <Col lg={2}>
+                                                            <CheckBoxIcon/>
+                                                        </Col>                
+                                                        <Col >
+                                                                <h5 className="text-center">Ready to move</h5>
+                                                        </Col>               
+                                                    </Row>    
+
+                                                </Col>
+                                            </Row>
+                            </div>
+                        ):("")    
+                        }
+                                            
+                        <Col xs={4} className="property-sideform p-4">
+                                <div className="property-side-form-sticky">
                                     <Row  className=' property-sideform-head-container'>
                                                 <Col lg={2} md={3} sm={2}>
                                                 <div className="property-sideform-avatar">
@@ -72,9 +155,8 @@ function Property() {
                                             <Row className="property-sideform-btn">
                                                 <button>Get Best Quote</button>
                                             </Row>                                           
+                                            </div>
                                     </Col>
-                                </Row>
-                    </Container>
 
 {/* navigate */}
                     <Container >
@@ -116,7 +198,7 @@ function Property() {
 
 {/* description */}
                             <Row >
-                                <Col className="property-overview-description" lg={9}>
+                                <Col className="property-overview-description" lg={8}>
                                         <h5>Description</h5>
                                         <hr />
                                         <h6>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus reprehenderit fugit quibusdam ipsa at provident vel nisi autem! Officia, dolore laboriosam vel accusantium eius soluta quasi reiciendis animi excepturi neque?</h6>
@@ -128,7 +210,7 @@ function Property() {
 {/* amenities */}
 
                             <Row id="amenities">
-                                <Col className="property-amenity" lg={9}>
+                                <Col className="property-amenity" lg={8}>
                                         <h5>Amenities</h5>
                                         <hr />
                                         <Row>
@@ -174,7 +256,7 @@ function Property() {
 
 {/* location */}
                             <Row id="location">
-                                <Col className="property-location" lg={9}>
+                                <Col className="property-location" lg={8}>
                                         <h5>Location</h5>
                                 <Map2 height="500px"  />
                                 </Col>
@@ -182,7 +264,7 @@ function Property() {
 
 {/* Units */}
                             <Row  id="units">
-                                <Col className="property-units" lg={9}>
+                                <Col className="property-units" lg={8}>
                                        <Row className="property-units-head">
                                         <Col lg={8}>
                                             <h5>Units</h5>
@@ -228,7 +310,7 @@ function Property() {
                                 </Col>
                             </Row>
                             <Row >
-                                <Col lg={9} className="property-aboutDeveloper-desc">
+                                <Col lg={8} className="property-aboutDeveloper-desc">
                                 <h6>Lorem ipsum dolor sit amet, consectetur adipiscing elit. A fusce lacus non in tortor, libero donec id a. Elit tortor leo, eu tortor sociis a erat potenti. Euismod eget morbi aliquet interdum diam lobortis massa. Tellus a mauris pulvinar consectetur praesent convallis hendrerit a dolor. Ut viverra massa aliquet elit sit proin. Est mauris mattis arcu, a ullamcorper elit amet montes.
                                     Odio quis cursus enim magna. Vitae ipsum curabitur bibendum ut. Amet, duis proin lorem augue arcu pulvinar commodo blandit. Iaculis blandit commodo magna libero platea elit ut. Senectus sociis condimentum tortor ultrices ultrices.
                                     Plat</h6>
@@ -241,7 +323,7 @@ function Property() {
                     {/* faq */}
                     
                         <Row id="faq">
-                            <Col lg={9} clasName="property-FAQ">
+                            <Col lg={8} clasName="property-FAQ">
                                 <Row className="property-FAQ-head">
                                     <h5>FAQ</h5>  
                                 </Row>
@@ -254,6 +336,11 @@ function Property() {
                         </Row>
                     </Container>
         </Container>
+
+
+
+
+
     </>
   )
 }

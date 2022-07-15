@@ -8,9 +8,13 @@ import LocalAtmIcon from '@mui/icons-material/LocalAtm';
 import HomeIcon from '@mui/icons-material/Home';
 import BedroomChildIcon from '@mui/icons-material/BedroomChild';
 import {Link} from 'react-router-dom'
+import MapviewCard from './MapviewCard'
+import Map2 from '../Contact/Map2'
 function ProjectPortfolio() {
     const [indexColor, setindexColor] = useState(0)
     const [active, setactive] = useState(0);
+    const [mapview, setmapview] = useState(0);
+
     const portfolioItems = [
         {"location": "Lingadheer", "properties": "Pyramid Carnations", "img": PortfolioImage},
         {"location": "Lingadheer", "properties": "Poorvi Carnations", "img": HomeChoiceImg},
@@ -35,17 +39,26 @@ function ProjectPortfolio() {
                      <h4 className='property-head ms-0'>Property</h4>
                 </Col>
                 <Col xs={3} className='property-sidehead'>
-                    <h5>
+                    <h5 className={mapview==0 ?('map-head-active'):("")} onClick={()=>{
+                      setmapview(0);  
+                    }}>
                         Listing
                     </h5>
-                    <h5>
+                    <h5 className={mapview==1 ?('map-head-active'):("")} onClick={()=>{
+                      setmapview(1);  
+                    }}>
                         Map View
                     </h5>
                 </Col>
               </Row>
               </Container>
-        <div className='helpPara'>
-        </div>
+        
+        
+        {
+            mapview==0 ? (
+                <>
+                <div className='helpPara'>
+                </div>
         
             <Container className="portfolioContainer">
 
@@ -80,7 +93,7 @@ function ProjectPortfolio() {
                 <Col lg={6} className="countryContainer">
                     {portfolioItems.map((data, index) => (
                         
-                        <Row key={index} className={`${(active==index) ? ("activeportfolio"):("")} portfolioItem`} onClick={()=>{
+                        <Row key={index} className={`${(active==index) ? ("activeportfolio"):("")} portfolioItem`} onMouseOver={()=>setPortfolioDetail(data)}  onClick={()=>{
                             setactive(index);
                             setPortfolioDetail(data)
                             }}>
@@ -96,11 +109,32 @@ function ProjectPortfolio() {
                     
                     
                 </Col>
-                <Col>
+                <Col className='px-4'>
                 <img src={portfolioDetail.img} alt="" style={{width: "100%"}} />
                 </Col>
             </Row>
             </Container>
+            </>
+            ):(<>
+                   <div className="container">
+                    <div className="row">
+                        <div className="col map-view-scroll">
+                            <MapviewCard/>
+                            <MapviewCard/>
+                            <MapviewCard/>
+                            <MapviewCard/>
+                        </div>
+                        <div className="col px-4">
+                            <Map2 height="400px"/>
+                        </div>
+                    </div>
+                   </div> 
+
+
+            </>)
+        }
+        
+
         
     </div>
 

@@ -13,7 +13,12 @@ function ChangeGame() {
       <h2 className='homeChoiceHead'>Change the game wih Aspire</h2>
         <br/>
 
-        <div className='inactive' style={{margin: "auto"}}>Become a partner</div>
+        <div className='inactive' style={{margin: "auto"}}>
+        <button className='Link-special-banner-second'>
+          Become a partner
+
+        </button>
+        </div>
 
       </div>
 

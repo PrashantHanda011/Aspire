@@ -1,6 +1,9 @@
 .Navbar{
     background-color: #13184F;
     padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100000000;
 }
 .logo img{
     width: 80px;

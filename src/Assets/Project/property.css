@@ -15,10 +15,26 @@
     align-items: center;
     padding: 10px 15px;
 }
+.property-side-form-sticky{
+
+    position: sticky;
+    top: 100px;
+}
+
+.property-begin{
+    position: sticky;
+}
 .property-sideform{
     background-color: white;
     border-radius: 30px;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    position: sticky;
+    right: 0;
+    width: 30%;
+    top: 100px;
+    z-index: 10000;
+    bottom: 80px;
+    left: 830px;
 }
 .property-sideform-avatar{
     width: 45px;
@@ -314,4 +330,156 @@
 .propert-FAQ-accordian{
     background-color: #EBEBEB;
     border-radius: 20px;
+}
+
+
+
+/* modal */
+.property-animation-modal{
+    background-color: rgba(0, 0, 0,0.8);
+    height: 100%;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+}
+.property-overview-head-modal h4{
+    font-size: 2rem;
+    font-weight: 600;
+    color: white;
+    text-align: center;
+}
+.property-overview-head-modal h5{
+    font-size: 1.2rem;
+    font-weight: 400;
+    text-align: center;
+
+    color: rgb(169, 167, 167);
+}
+.property-overview-btn-container-modal{
+    margin: 10px 0;
+    position: relative;
+}
+.property-overview-btn-modal{
+    text-align: center;
+    padding: 10px 20px ;
+    width: 100%;
+    margin: 5px 0;
+    background-color: var(--orangeColor);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.property-overview-btn-modal svg{
+    font-size: 1.8rem;
+    color: white;
+}
+.property-overview-btn-modal h5{
+    margin-bottom: 0;
+    font-size: 0.9rem;
+    text-align: start;
+}
+
+
+/* animation */
+
+.locationOn{
+    animation-name: locationOn ;
+    animation-duration: 1s;
+    position: relative;
+    top: 10%;
+    animation-iteration-count: calc(1);
+    animation-direction:normal;
+            
+}
+@keyframes locationOn {
+    0%{
+        left:-740px ;
+    }
+    100%{
+        left: 0;
+    }
+}
+
+.money{
+    animation-name: money ;
+    animation-duration: 1s;
+    position: relative;
+    top: 12%;
+    animation-iteration-count: calc(1);
+            animation-direction:normal;
+}
+@keyframes money {
+    0%{
+        left: 740px;
+    }
+    100%{
+        left: 0;
+    }
+}
+
+.area{
+    animation-name: area;
+    animation-duration: 1s;
+    position: relative;
+    top: 14%;
+    animation-iteration-count: calc(1);
+            animation-direction:normal;
+}
+@keyframes area {
+    0%{
+        left:-740px ;
+    }
+    100%{
+        left: 0;
+    }
+}
+.bhk{
+    animation-name: bhk ;
+    animation-duration: 1s;
+    position: relative;
+    top: 16%;
+    animation-iteration-count: calc(1);
+            animation-direction:normal;
+}
+@keyframes bhk {
+    0%{
+        left: 740px;
+    }
+    100%{
+        left: 0;
+    }
+}
+.units{
+    animation-name: units ;
+    animation-duration: 1s;
+    position: relative;
+    top: 18%;
+    animation-iteration-count: calc(1);
+            animation-direction:normal;
+}
+@keyframes units {
+    0%{
+        left:-740px ;
+    }
+    100%{
+        left: 0;
+    }
+}
+.move{
+    animation-name: move ;
+    animation-duration: 2s;
+    position: relative;
+    top: 20%;
+    animation-iteration-count: calc(1);
+            animation-direction:normal;
+}
+@keyframes move {
+    0%{
+        left: 740px;
+    }
+    50%{
+        left: 0;
+    }
+    
 }

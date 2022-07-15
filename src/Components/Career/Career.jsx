@@ -19,10 +19,9 @@ function Career() {
       <CareerInput/>
     </Col>
 
-      <Col xs={11}>
+      <Col xs={11} >
+      <CareerCard   />
       <CareerCard/>
-      </Col>
-      <Col xs={11}>
       <CareerCard/>
       </Col>
       

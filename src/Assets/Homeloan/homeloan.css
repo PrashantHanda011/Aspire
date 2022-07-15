@@ -1,0 +1,139 @@
+.homeloan-head h3,.homeloan-head  h4{
+    text-align: center;
+
+}
+.homeloan-head h3{
+    font-size: 4rem;
+    color: var(--blueColor);
+    font-weight: 700;
+    margin-top: 20px;
+}
+.homeloan-head h4{
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--blueColor);
+}
+
+.separatorDivhomeloan{
+    height: 4px;
+    width: 100px;
+    border-radius: 10px;
+    background: linear-gradient(90deg, #13184F 0%, #F47E20 94.96%);
+    margin: 10px 0;
+}
+.homeloan-banner-content h4{
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: var(--orangeColor);
+}
+.homeloan-banner-content h3{
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+.homeloan-banner-content p{
+    font-size: 1rem;
+    font-weight:400;
+}
+.homeloan-center-img img{
+}
+.home-left-img{
+    position: absolute;
+    width: 14%;
+    left: 15.5%;
+}
+.home-right-img{
+    position: absolute;
+    width: 15.5%;
+    right: 15.5%;
+}
+
+
+/* calculator */
+
+.homeloan-calculator{
+    background-color: #EBEBEB;
+}
+.homeloan-calculator h3{
+    font-size: 2rem;
+    font-weight: 600;
+}
+.homeloan-calculator-slider-container{
+    background-color: white;
+    padding: 40px;
+    border-radius: 20px;
+    margin: 30px auto;
+}
+.homeloan-calculator-slider-container h5{
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+.homeloan-calculator-slider-container h6{
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+
+
+/* blueheading */
+.homeloan-blueheading-container{
+    background-color: var(--blueColor);
+    color: white;
+    padding: 30px 0;
+}
+.homeloan-blueheading h3{
+    font-size: 2rem;
+    font-weight: 600;
+}
+.homeloan-blueheading button{
+    padding: 10px 40px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    border-radius: 10px;
+}
+
+/* trending */
+.homeload-trending-container{
+    background: #ebebeb;
+}
+.homeload-trending-container h3{
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+
+
+
+/* ourpartner */
+.homeloan-ourpartner-container{
+    background: #EBEBEB;
+}
+.homeloan-ourpartner h3{
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 600;
+}
+.homeloan-ourpartner h5{
+    font-size: 1rem;
+    font-weight: 600;
+    text-align: center;
+}
+.homeloan-ourpartner button{
+    padding: 10px 30px ;
+    background: white;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+.homeloan-ourpartner img{
+    width: 15%;
+    margin: 20px 20px;
+}
+
+
+/* perfect home */
+.homeloan-perfecthome{
+    background-color: #EBEBEB;
+}
