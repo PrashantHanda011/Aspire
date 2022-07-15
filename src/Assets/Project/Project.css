@@ -27,8 +27,24 @@
     text-align: left;
     padding-bottom: 70px;
     margin-top: 70px;
+    z-index: 1000;
+    
 }
-
+.property-img{
+    animation-name: img;
+    animation-duration: 1s;
+    animation-iteration-count: once;
+    z-index: -1;
+    transition: ease;
+    opacity: 1;
+  }
+  @keyframes img {
+    0%{
+        opacity: 0
+    }100%{
+        opacity: 1;
+    }
+  }
 .property-head{
     font-size: 2rem;
     font-weight: 600;

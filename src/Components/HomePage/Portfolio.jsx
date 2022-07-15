@@ -9,34 +9,31 @@ import LocalAtmIcon from '@mui/icons-material/LocalAtm';
 import HomeIcon from '@mui/icons-material/Home';
 import BedroomChildIcon from '@mui/icons-material/BedroomChild';
 import {Link} from 'react-router-dom'
-
-import {CSSTransition} from 'react-transition-group'
+import {
+    CSSTransition,
+    TransitionGroup,
+  } from 'react-transition-group';
 function Portfolio() {
     const [indexColor, setindexColor] = useState(0)
     const [active, setactive] = useState(0);
     const portfolioItems = [
-        {"location": "Lingadheer", "properties": "Pyramid Carnations", "img": PortfolioImage},
-        {"location": "Lingadheer", "properties": "Poorvi Carnations", "img": HomeChoiceImg},
-        {"location": "Lingadheer", "properties": "Pyramid Carnations", "img": PortfolioImage},
-        {"location": "Lingadheer", "properties": "Poorvi Carnations", "img": HomeChoiceImg},
-        {"location": "Lingadheer", "properties": "Pyramid Carnations", "img": PortfolioImage},
-        {"location": "Lingadheer", "properties": "Poorvi Carnations", "img": HomeChoiceImg},
-        {"location": "Lingadheer", "properties": "Pyramid Carnations", "img": PortfolioImage},
-        {"location": "Lingadheer", "properties": "Poorvi Carnations", "img": HomeChoiceImg},
-        {"location": "Lingadheer", "properties": "Pyramid Carnations", "img": PortfolioImage},
-        {"location": "Lingadheer", "properties": "Poorvi Carnations", "img": HomeChoiceImg},
+        {id:1,"location": "Lingadheer", "properties": "Pyramid Carnations", "img": PortfolioImage},
+        {id:2,"location": "Lingadheer", "properties": "Poorvi Carnations", "img": HomeChoiceImg},
+        {id:3,"location": "Lingadheer", "properties": "Pyramid Carnations", "img": PortfolioImage},
+        {id:4,"location": "Lingadheer", "properties": "Poorvi Carnations", "img": HomeChoiceImg},
+        {id:5,"location": "Lingadheer", "properties": "Pyramid Carnations", "img": PortfolioImage},
+        {id:6,"location": "Lingadheer", "properties": "Poorvi Carnations", "img": HomeChoiceImg},
+        {id:7,"location": "Lingadheer", "properties": "Pyramid Carnations", "img": PortfolioImage},
+        {id:8,"location": "Lingadheer", "properties": "Poorvi Carnations", "img": HomeChoiceImg},
+        {id:9,"location": "Lingadheer", "properties": "Pyramid Carnations", "img": PortfolioImage},
+        {id:10,"location": "Lingadheer", "properties": "Poorvi Carnations", "img": HomeChoiceImg},
     ]
     const [portfolioDetail, setPortfolioDetail] = useState(portfolioItems[0])
   
   
     return (
       <div>
-              <div className='helpSection'>
-              <div className="separatorDiv"></div>
-        <h4>Project Portfolio</h4>
-        <div className='helpPara'>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Facilisi ullamcorper elementum vitae sit magna platea nec maecenas nibh. Aliquam hendrerit libero cursus elementum mi amet morbi lacus aliquet. Consectetur commodo, pellentesque ac sed at massa elementum. Viverra at et duis neque.</p>
-        </div>
+              
         
             <Container className="portfolioContainer">
 
@@ -71,7 +68,7 @@ function Portfolio() {
                 <Col lg={6} className="countryContainer">
                     {portfolioItems.map((data, index) => (
                         
-                        <Row key={index} onMouseOver={()=>setPortfolioDetail(data)} className={`${(active==index) ? ("activeportfolio"):("")} portfolioItem`} onClick={()=>{
+                        <Row key={index}  onMouseOver={()=>setPortfolioDetail(data)} className={`${(active==index) ? ("activeportfolio "):("")} newhover portfolioItem  `} onClick={()=>{
                             setactive(index);
                             setPortfolioDetail(data)
                             }}>
@@ -85,21 +82,19 @@ function Portfolio() {
 
                     ))}
                     
-                    
                 </Col>
-                <Col className="px-4" style={{transition:"1s"}}>
                 <CSSTransition
-                transitionName="example"
-                transitionEnterTimeout={500}
-                transitionLeaveTimeout={300}
-                >
-                <img src={portfolioDetail?.img} className="property-img" alt="" style={{width: "100%"}} />
-                </CSSTransition>
+              key={portfolioDetail.id}
+              timeout={500}
+              classNames="item"
+            >
+                <Col className="px-4" >
+                <img src={portfolioDetail?.img} className={` property-img`} alt="" style={{width: "100%", }} />
                 </Col>
+                </CSSTransition>   
             </Row>
             </Container>
         
-    </div>
 
       </div>
   )

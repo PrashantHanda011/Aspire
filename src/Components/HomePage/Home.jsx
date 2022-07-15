@@ -13,6 +13,9 @@ import BlueFooter from '../Common/BlueFooter'
 import Community from './Community'
 import BottomFoot from '../Common/BottomFoot'
 import NewNav from '../Common/NewNav'
+import "../../Assets/HomePage/Help.css"
+import "../../Assets/HomePage/portfolio.css"
+
 function Home() {
   return (
       <>
@@ -20,7 +23,14 @@ function Home() {
       <HomeBuying/>
       <Help/>
       <HomeChoice/>
+      <div className='helpSection'>
+              <div className="separatorDiv"></div>
+        <h4>Project Portfolio</h4>
+        <div className='helpPara'>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Facilisi ullamcorper elementum vitae sit magna platea nec maecenas nibh. Aliquam hendrerit libero cursus elementum mi amet morbi lacus aliquet. Consectetur commodo, pellentesque ac sed at massa elementum. Viverra at et duis neque.</p>
+        </div>
       <Portfolio/>
+      </div>
       <Perfect/>
       <Community/>
       <Promise/>

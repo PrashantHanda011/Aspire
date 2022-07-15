@@ -67,6 +67,7 @@ function Property() {
                         {
                         showModal?(
                             <div className="container-fluid  property-animation-modal d-flex flex-column justify-content-center align-items-center">
+                                           
                                            <Row className="property-overview-head-modal">
                                             <h4>Poorvi Shreenivasa Grand</h4>
                                             <h5>Lingadheer, South Bangalore</h5>
