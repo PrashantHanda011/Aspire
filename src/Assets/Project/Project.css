@@ -38,6 +38,7 @@
     transition: ease;
     opacity: 1;
   }
+  
   @keyframes img {
     0%{
         opacity: 0

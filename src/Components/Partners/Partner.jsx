@@ -7,11 +7,14 @@ import StarIcon from '@mui/icons-material/Star';
 import CarouselComponent from './Carousel';
 import Perfect from '../HomePage/Perfect';
 import Graphcards from './Graphcards';
+import Graphs from './Graphs';
+
 function Partner() {
+  
   return (
     <>
 {/* prepare */}
-    <div className="container  partner-front my-lg-5">
+    <div className="container  partner-front my-lg-5 ">
         <div className="row">
           <div  className='col-lg-6  '>
                 <h1 className="mt-4">Prepare for takeoff</h1>
@@ -75,6 +78,9 @@ function Partner() {
       </div>
     </div>
 
+
+
+
 {/* do it all */}
 
     <div className="container partner-doitall py-lg-5">
@@ -85,7 +91,15 @@ function Partner() {
         <Graphcards/>
     </div>          
 
+
+    <div className="container">
+      <div className="row partner-doit-graph">
+        <div className="col px-4 py-3 me-4 mb-5 bg-white"><Graphs/> </div>
+        <div className="col d-flex partner-doit-graph align-items-center"><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto, et minima saepe natus facere accusantium illo eligendi. Non soluta deserunt fugiat mollitia, labore inventore incidunt et in velit? Cupiditate, commodi.</p></div>
+      </div>
     </div>
+    </div>
+
 
     {/* feature project */}
 

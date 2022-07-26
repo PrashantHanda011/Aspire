@@ -10,7 +10,7 @@ function Loader() {
             <img src={cap} height="50" className="mb-5 cap" alt="" />
          </div>
          <div>
-            <img src={aspire} height="100" alt="" />
+            <img src={aspire} height="90" alt="" />
          </div>
         </div>
     </>

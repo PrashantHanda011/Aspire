@@ -38,6 +38,10 @@ const [showModal, setshowModal] = useState(false)
               <div className="CardFacility"><LocationOnIcon className="me-2" style={{color:"#F47E20"}}/> <span ><h4>Location</h4><h5> Noida</h5> </span>  </div>
         </Col>
 
+        <Col className='d-flex justify-content-end' xs={6}>
+          <a className='align-self-end text-decoration-none' href="#">Read More</a>
+        </Col>
+
 
     </Row>
     {
@@ -63,7 +67,7 @@ const [showModal, setshowModal] = useState(false)
               <div className="CardFacility"><LocationOnIcon className="me-2" style={{color:"#F47E20"}}/> <span ><h4>Location</h4><h5> Noida</h5> </span>  </div>
         </Col>
 
-
+       
     </Row>
 
       </Modal.Body>

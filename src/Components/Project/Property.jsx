@@ -72,8 +72,8 @@ function Property() {
                                             <h4>Poorvi Shreenivasa Grand</h4>
                                             <h5>Lingadheer, South Bangalore</h5>
                                            </Row>
-                                            <Row  className="property-overview-btn-container-modal d-flex flex-column">
-                                                <Col className="animationContainer">
+                                            <Row  className="property-overview-btn-container-modal d-flex flex-column align-items-center">
+                                                <Col className="animationContainer w-100 d-flex flex-column align-items-center">
                                                     <Row className="property-overview-btn-modal locationOn">
                                                         <Col lg={2}>
                                                             <LocationOnIcon/>

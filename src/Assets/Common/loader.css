@@ -1,6 +1,7 @@
 .loader{
     background-color: var(--blueColor);
-    padding: 235px 0;
+    padding: 35.9vh 0;
+    position: relative;
 }
 .cap{
     animation: cap;

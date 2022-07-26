@@ -77,6 +77,11 @@
     font-size: 1rem;
     border: none;
 }
+.propertyDescription a:hover{
+    background-color: white;
+    color: var(--orangeColor);
+    transition: 1s;
+}
 .newhover:hover{
     transition: ease;
     transition: 0.5s;

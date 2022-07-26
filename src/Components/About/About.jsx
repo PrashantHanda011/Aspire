@@ -8,8 +8,9 @@ import aboutbannner2 from "../../Assets/Images/aboutbanner2.svg"
 import HomeChoice from '../HomePage/HomeChoice'
 import Portfolio from '../HomePage/Portfolio'
 import GetInTouch from '../Contact/GetInTouch'
-
-
+import joinus from '../../Assets/Images/partner-joinus.svg'
+import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt';
+import {Link} from 'react-router-dom'
 function About() {
   return (
     <>
@@ -53,14 +54,33 @@ function About() {
     </div>
 
     <div className="container-fluid ">
+    <div className='helpSection '>
+              <div className="separatorDiv"></div>
+        <h4>Project Portfolio</h4>
+        <div className='helpPara mb-5'>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Facilisi ullamcorper elementum vitae sit magna platea nec maecenas nibh. Aliquam hendrerit libero cursus elementum mi amet morbi lacus aliquet. Consectetur commodo, pellentesque ac sed at massa elementum. Viverra at et duis neque.</p>
+        </div>
         <Portfolio/>
+        </div>
     </div>
     <div className="container-fluid px-0 my-5">
       <CardSection/>
     </div>
 
-    <div className="container-fluid mt-5 px-0">
-        <GetInTouch/>
+    <div className="container-fluid about-joinus-container">
+    <div className="container mt-5 mb-4 ">
+        <div className="row py-2 about-joinus">
+          <div className="col d-flex justify-content-center">
+            <img src={joinus} alt="" />
+          </div>
+          <div className="col about-joinus-content ">
+            <h4>Join Us</h4>
+            <Link to="/career">
+            <button>Explore Career <ArrowRightAltIcon style={{fontSize:"1.8rem"}}/> </button>
+            </Link>
+          </div>
+        </div>
+    </div>
     </div>
 </>
 )

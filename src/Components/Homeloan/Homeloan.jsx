@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useState} from 'react'
 import '../../Assets/Homeloan/homeloan.css'
 import homeloanbanner from '../../Assets/Images/homeloan.svg'
 import right from '../../Assets/Images/homeright.svg'
@@ -9,7 +9,62 @@ import Chart from './Chart'
 import Graphcards from '../Partners/Graphcards'
 import Perfect from '../HomePage/Perfect'
 import Community from '../HomePage/Community'
+import BlogCard from '../Blogs/BlogCard'
+import { Row,Col,Container } from 'react-bootstrap'
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+import Modal from 'react-bootstrap/Modal';
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
+import TextField from '@mui/material/TextField';
+import InputAdornment from '@mui/material/InputAdornment';
+import OutlinedInput from '@mui/material/OutlinedInput';
+import InputLabel from '@mui/material/InputLabel';
+import Select, { SelectChangeEvent } from '@mui/material/Select';
+import MenuItem from '@mui/material/MenuItem';
+import FormControl from '@mui/material/FormControl';
+import { Input } from '@mui/material';
+
 function Homeloan() {
+  const [show1, setShow] = useState(false);
+  const [show2, setShow2] = useState(false);
+  const [expertData, setexpertData] = useState({
+    name:"",
+    email:"",
+    phone:"",
+
+  })
+
+  const [homeLoanEligibilty, sethomeLoanEligibilty] = useState({
+    fullname:"",
+    mobile:"",
+    requiredLoan:"",
+    occupation:"",
+    monthlyNetSalary:"",
+    CurrentlyMonthlySalary:"",
+    tenure:"",
+    date:""
+  })
+  const handleChange=(e)=>{
+    const {name} = e.target;
+    setexpertData({...expertData,[name] : e.target.value})
+  }
+  
+  const handleChange1=(e)=>{
+    const {name} = e.target;
+    sethomeLoanEligibilty({...homeLoanEligibilty,[name] : e.target.value})
+  }
+
+
+
+  // modal
+
+  const handleClose1 = () => setShow(false);
+  const handleShow1 = () => setShow(true);
+  const handleClose2 = () => setShow2(false);
+  const handleShow2 = () => setShow2(true);
+
+
+
   return (
     <>
         <div className="container homeloan my-lg-5">
@@ -140,8 +195,8 @@ function Homeloan() {
         <div className="container homeloan-blueheading">
           <div className="row d-flex">
           <div className='d-flex justify-content-between align-items-center'>
-            <h3>Ger your laterst Credit Score, FREE</h3>
-            <button>Check Now</button>
+            <h3>Get Instant Home Loans at BEST Prices</h3>
+            <button onClick={handleShow1}>Talk To Expert</button>
           </div>
           </div>
         </div>
@@ -166,16 +221,9 @@ function Homeloan() {
         <div className="container d-flex flex-column homeloan-ourpartner ">
             <h3>Our Partners</h3>
             <h5 className='pb-lg-5'>Get in-depth knowledge about all things related to loans and your finances</h5>
-            <div className="row ">
-                <div className='d-flex justify-content-between'>
-                  <button>Home Loan</button>
-                  <button>Personal Loan</button>
-                  <button>Loan Against Property</button>
-                  <button>Business Loan</button>
-                </div>
-            </div>
-            <div className="row my-lg-5">
-                <div className='d-flex justify-content-between flex-wrap'>
+          
+            <div className="row my-lg-2">
+                <div className='d-flex justify-content-between homeloan-brandscroll overflowY-hidden'>
                   <img src={partner} alt="" />
                   <img src={partner} alt="" />
                   <img src={partner} alt="" />
@@ -191,6 +239,37 @@ function Homeloan() {
         </div>
       </div>
 
+      {/* blue heading */}
+
+      <div className="container-fluid homeloan-blueheading-container">
+        <div className="container homeloan-blueheading">
+          <div className="row d-flex">
+          <div className='d-flex justify-content-between align-items-center'>
+            <h3>Check your eligibilty for Special EMI Options</h3>
+            <button onClick={handleShow2}>Get Started</button>
+          </div>
+          </div>
+        </div>
+      </div>
+
+
+    <div style={{backgroundColor:"#ebebeb"}}  className="container-fluid py-5 px-0">
+    <h3 className="blogMainHeading m-0 ps-5 py-5">Featured Blogs</h3>         
+                <Row  className="d-flex justify-content-center">
+                    <Col xs={10} className="d-flex  BlogsRow   align-items-center">
+                      <BlogCard />
+                      <BlogCard/>
+                      <BlogCard/>
+                    </Col>
+                      <Col xs={1} className="ArrowIcon  d-flex align-items-center ">
+                       <span>
+                       <ArrowForwardIcon/>
+                       </span> 
+                      </Col>
+                </Row>
+
+    </div>
+      
 {/* perfect home */}
     <div className="container-fluid homeloan-perfecthome px-0 pt-2">
         <Perfect />
@@ -201,6 +280,151 @@ function Homeloan() {
     <div className="container-fluid pb-lg-5 px-0" style={{background:"#ebebeb"}}>
       <Community color="#ebebeb"/>
     </div>
+
+
+    <Modal
+        show={show1}
+        onHide={handleClose1}
+        backdrop="static"
+        keyboard={false}
+
+      aria-labelledby="contained-modal-title-vcenter"
+      centered
+      >
+        <Modal.Header closeButton>
+          <Modal.Title>Talk To Expert</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+        <Form>
+    
+      <Form.Group className="mb-3" controlId="formBasicName">
+        <Form.Label>Name</Form.Label>
+        <Form.Control type="text" name="name" onChange={handleChange} placeholder="Your Name" />
+      </Form.Group>
+    
+      <Form.Group className="mb-3" controlId="formBasicEmail">
+        <Form.Label>Email address</Form.Label>
+        <Form.Control type="email" name="email" onChange={handleChange} placeholder="Enter email" />
+      </Form.Group>
+
+      <Form.Group className="mb-3" controlId="formBasicPassword">
+        <Form.Label>Password</Form.Label>
+        <Form.Control type="password" name="password" onChange={handleChange} placeholder="Password" />
+      </Form.Group>
+     
+        <Button variant="primary" type="submit" style={{backgroundColor:"var(--orangeColor)",border:"none"}}>
+          Submit
+        </Button>
+      </Form>
+    </Modal.Body>
+      </Modal>
+   
+   
+    <Modal
+        show={show2}
+        onHide={handleClose2}
+        backdrop="static"
+        keyboard={false}
+        size="lg"
+      aria-labelledby="contained-modal-title-vcenter"
+      centered
+      >
+        <Modal.Header closeButton>
+          <Modal.Title>Home Eligibility</Modal.Title>
+        </Modal.Header>
+        <Modal.Body >
+          <div className="d-flex  flex-wrap">
+          
+          {/* fullname */}
+            <Form.Group className="mb-3 col-4 px-2" controlId="formBasicName">
+            <TextField id="outlined-password-input" name='fullname' onChange={handleChange1} size="small" label="Full Name" type="text" autoComplete="current-password"/>
+          </Form.Group>
+        
+        {/* mobile */}
+          <Form.Group className="mb-3 col-4 px-2" controlId="formBasicEmail">
+          <TextField id="outlined-password-input" name="mobile" onChange={handleChange1} size="small" label="Mobile No." type="tel" autoComplete="current-password"/>
+          </Form.Group>
+
+        {/* req loan */}
+
+          <Form.Group className="mb-3 col-4 px-2" controlId="formBasicPassword">
+            <TextField id="outlined-start-adornment" 
+            name="requiredLoan"
+            InputProps={{
+              startAdornment: <InputAdornment position="start">₹</InputAdornment>,
+            }}
+            onChange={handleChange1} size="small" label="Required Loan"  type="tel" autoComplete="current-password"/>
+          </Form.Group>
+          
+          {/* select */}
+
+          <Form.Group className="mb-3 col-4 px-2 my-3"   controlId="formBasicPassword">
+          <Form.Select aria-label=" select example " name="occupation" onChange={handleChange1}  style={{outline:"none",width:"94%",padding:"8px 10px "}}>
+              <option>Occupation Type</option>
+              <option value="1">One</option>
+              <option value="2">Two</option>
+              <option value="3">Three</option>
+            </Form.Select>
+          </Form.Group>
+
+          {/* monthly salary */}
+
+          <Form.Group className="mb-3 col-4 px-2 my-3"  controlId="formBasicPassword">
+            <TextField id="outlined-start-adornment" 
+            name="monthlyNetSalary"
+            style={{outline:"none",width:"94%"}}
+              InputProps={{
+                startAdornment: <InputAdornment position="start">₹</InputAdornment>,
+              }}
+              onChange={handleChange1} size="small" label="Monthly Net Salary"  type="tel" autoComplete="current-password"/>
+          </Form.Group>
+
+        {/* monthly emi  */}
+
+          <Form.Group className="mb-3 col-4 px-2 my-3" controlId="formBasicPassword">
+            <TextField id="outlined-start-adornment"
+                name="CurrentlyMonthlySalary" 
+                InputProps={{
+                  startAdornment: <InputAdornment position="start">₹</InputAdornment>,
+                }}
+                onChange={handleChange1} size="small" label="Currently Monthly EMIs"  type="tel" autoComplete="current-password"/>
+          </Form.Group>
+
+          {/* tenure */}
+
+          <Form.Group className="mb-3 col-4 px-2 my-3" controlId="formBasicPassword">
+          <TextField id="outlined-start-adornment"
+          style={{outline:"none",width:"94%"}} 
+                name="tenure"
+                InputProps={{
+                  startAdornment: <InputAdornment position="start">₹</InputAdornment>,
+                }}
+                onChange={handleChange1} size="small" label="Tenure(Years)"  type="tel" autoComplete="current-password"/>
+          </Form.Group>
+        
+          {/* date */}
+          
+          <Form.Group className="mb-3 col-4 px-2 my-3" controlId="formBasicPassword">
+              <Form.Control
+              style={{outline:"none",width:"94%"}}
+                type="date"
+                name="date"
+                id="inputPassword5"
+                onChange={handleChange1}
+              />
+          </Form.Group>
+        
+          </div>
+
+          <Button variant="primary" className="ms-2 my-3 p-2" type="submit" style={{backgroundColor:"var(--orangeColor)",border:"none"}}>
+            Check Eligibility
+          </Button>
+
+        </Modal.Body>
+      </Modal>
+
+
+
 
     </>
   )

@@ -4,6 +4,7 @@ import CardBg from "../../Assets/Images/CardBg.png"
 import LowEmi from "../../Assets/Images/lowEmi.png"
 import Blogs from "../../Assets/Images/Blogs.png"
 import '../../Assets/HomePage/Home.css'
+import { Link } from 'react-router-dom'
 function Cards() {
   return (
     <Container className=" EmiContainer   ">
@@ -27,7 +28,9 @@ function Cards() {
                     <Col >
                     <h4 className='emiHead'>Blogs</h4>
                     <br />
+            <Link className="text-decoration-none" to={'/blogs'}>
                     <div className='emiBtn'>View articles</div>
+            </Link>   
                     </Col>
                     <Col>
                         <img src={Blogs} alt="" style={{width: "100%"}} />

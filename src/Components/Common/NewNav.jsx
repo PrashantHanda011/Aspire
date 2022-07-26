@@ -45,13 +45,13 @@ function NewNav() {
                                         </NavLink>
                                     </Col>
                                     
-                                    <Col className="Links Link-special" >
+                                    <Col className=" Link-special" >
                                         <NavLink  to={'/partners'}>
                                             Partners   
                                         </NavLink>
                                     </Col>
                                     
-                                    <Col className="Links Link-special" >
+                                    <Col className=" Link-special" >
                                         <NavLink to={'/contact'}>
                                             Contact Us                        
                                         </NavLink>

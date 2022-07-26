@@ -1,15 +1,17 @@
 import React from 'react'
 import { Col, Row } from 'react-bootstrap'
 import AboutTopImage from "../../Assets/Images/AboutTopImage.png"
-
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
 function CardSection() {
   return (
       <>
           <div className='cardSectionTop'>
         <div className='cardContent'>
-        <h4>About Us</h4>
+        <h4>Meet Our Team</h4>
         <div className='aboutLine'></div>
+            <div className="d-flex align-items-center justify-content-center">
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Facilisi ullamcorper elementum vitae sit magna platea nec maecenas nibh. Aliquam hendrerit .</p>
+            </div>
         </div>
         
     </div>
@@ -19,8 +21,17 @@ function CardSection() {
                 <div className='teamCardContent'>
                     <img src={AboutTopImage} alt="" className='avatarImage'/>
                     <p>Lorem ipsum dolor sit amet. 33 internos vitae aut error tenetur ea iure aspernatur. Qui quia consectetur sit animi eius ut </p>
-                    <h3>Name</h3>
-                    <h5>Designation</h5>
+                    <div className="row about-card-content">
+                        <div className="col">
+                            <LinkedInIcon/>
+                            <h5>Connect with us</h5>
+                        </div>
+                        <div className="col">
+                            <h3>Name</h3>
+                            <h5>Designation</h5>
+                        </div>
+                    </div>
+
                 </div>
             </Col>
             <Col xs={6} className="teamCardCol">
@@ -29,9 +40,16 @@ function CardSection() {
                     <div>
                     <img src={AboutTopImage} alt="" className='avatarImage'/>
                     <p>Lorem ipsum dolor sit amet. 33 internos vitae aut error tenetur ea iure aspernatur. Qui quia consectetur sit animi eius ut </p>
-                    <h3>Name</h3>
-                    <h5>Designation</h5>
-
+                    <div className="row about-card-content">
+                        <div className="col">
+                            <LinkedInIcon/>
+                            <h5>Connect with us</h5>
+                        </div>
+                        <div className="col">
+                            <h3>Name</h3>
+                            <h5>Designation</h5>
+                        </div>
+                    </div>
                 </div>
 
                 </div>

@@ -89,8 +89,15 @@
     font-size: 1.2rem;
     font-weight: 600;
     border-radius: 10px;
+    background-color: var(--orangeColor);
+    color: white;
+    border: none;
 }
-
+.homeloan-blueheading button:hover{
+    background-color: white;
+    color: #F47E20;
+    transition: 0.5s;
+}   
 /* trending */
 .homeload-trending-container{
     background: #ebebeb;
@@ -137,3 +144,19 @@
 .homeloan-perfecthome{
     background-color: #EBEBEB;
 }
+
+.homeloan-brandscroll{
+    overflow-x: scroll;
+}
+.homeloan-brandscroll::-webkit-scrollbar {
+    height: 6px;
+}
+.homeloan-brandscroll::-webkit-scrollbar-track {
+    background: #b4b3b3; 
+    border-radius: 10px;
+}
+.homeloan-brandscroll::-webkit-scrollbar-thumb {
+    background: gray; 
+    border-radius: 50px;
+  }
+  

@@ -31,12 +31,14 @@
 }
 
 .cardSectionTop{
-    background: url("../Images/AboutTopImage.png") ;
-    height: 80vh;
-    background-size: 100% 100%;
+    background: url("../Images/AboutTopImage.svg") ;
+    background-size: 100% ;
     justify-content: center;
     display: flex;
     align-items: center;
+    padding-top: 100px ;
+    padding-bottom: 150px;
+    background-repeat: no-repeat;
 
 }
 
@@ -57,9 +59,13 @@
     font-size: 40px;
     font-weight: 600;
 }
-
+.cardContent{
+    text-align: center;
+}
 .cardContent p{
     color: white;
+    width: 50%;
+    text-align: center;
 }
 
 .teamCardFlex{
@@ -76,6 +82,7 @@
     box-shadow: 4px 4px 4px 0px #00000040;
     margin-top: -100px;
     text-align: center;
+    border-radius: 20px;
 
 }
 
@@ -110,4 +117,51 @@
     font-size: 20px;
     color: grey;
     margin-top: 20px;
+}
+
+/* joinus */
+.about-joinus-container{
+    background-color: rgba(243, 230, 196, 1);
+}
+.about-joinus img{
+    width: 70%;
+}
+.about-joinus-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.about-joinus-content h4{
+    font-size: 40px;
+    font-weight: 600;
+}
+.about-joinus-content button{
+    background-color: var(--orangeColor);
+    border: none;
+    padding: 10px 20px;
+    color: white;
+    font: 600;
+    font-size: 18px;
+    border-radius: 10px;
+}
+.about-joinus-content button:hover{
+    background-color: white;
+    color:#F47E20;
+    transition: 0.5s;
+}
+.about-card-content{
+    padding-top: 10px ;
+    padding-bottom: 30px;
+}
+.about-card-content h5{
+    font-size: 14px;
+    margin-top: 10px;
+}
+.about-card-content svg{
+    color: blue;
+}
+.about-card-content h3{
+    font-size: 20px;
+    font-weight: 600;
 }
