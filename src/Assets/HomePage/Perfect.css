@@ -15,6 +15,7 @@
     padding: 20% 0;
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),url("../Images/HomeTop.png") ;
     background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .homeBuyingHead{
@@ -33,6 +34,7 @@
     object-fit: cover;
     background-repeat: no-repeat;
     padding: 100px 0;
+    
 }
 
 .homeChoiceImageDiv{

@@ -10,6 +10,45 @@
     font-weight: 700;
 
 }
+/* overlay */
+.Blog-Maincontainer{
+    position: relative;
+}
+.blogTrend-overlay{
+    background-color: var(--blueColor);
+    color: white;
+    width: 30%;
+    position: absolute;
+    bottom: -50px;
+    right: 300px;
+    border-radius: 20px;
+}
+.blogTrend-overlay h5{
+    font-size: 16px;
+    color: var(--orangeColor);
+}
+.blogTrend-overlay h3{
+    font-size: 25px;
+    font-weight: 700;
+}
+.blogTrend-overlay-footer img{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+.blogTrend-overlay-footer h6{
+    font-size: 10px;
+    margin: 0;
+    padding: 0;
+}
+
+.blogTrend-overlay-footer-link{
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+}
+
 .blogWriter{
     display: flex;
     align-items: center;
@@ -78,6 +117,7 @@
     font-size: 3rem;
     font-weight: 800;
     color: rgba(28, 27, 77, 1);
+    word-break: break-all;
 }
 .Blog-SubHeading{
     font-size: 1.7rem;
@@ -86,5 +126,5 @@
     margin-bottom: 70px;
 }
 .Blog-Image{
-    width: 90%;
+    width: 80%;
 }

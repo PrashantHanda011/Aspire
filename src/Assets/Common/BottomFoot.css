@@ -6,8 +6,6 @@
 
 .dreamReality{
     color: white; 
-    padding: 20px !important; 
-    padding-left: 50px !important; 
     font-size: 40px;
 }
 
@@ -120,4 +118,10 @@
     border-radius: 10px;
     padding: 8px;
     font-size: 0.9rem;
+}
+@media (max-width: 568px){
+    .ShareIcon svg{
+        font-size: 2rem;
+        margin: 0 10px;
+    }
 }

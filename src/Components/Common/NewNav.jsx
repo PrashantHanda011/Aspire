@@ -3,6 +3,9 @@ import {Col,Row,Container} from 'react-bootstrap'
 import  {NavLink,useLocation} from 'react-router-dom'
 import '../../Assets/Common/Navbar.css'
 import logo from "../../Assets/Images/logo.png" 
+import ListIcon from '@mui/icons-material/List';
+import { IconButton } from '@mui/material'
+
 function NewNav() {
     const location =useLocation();
   return (
@@ -15,6 +18,7 @@ function NewNav() {
                                 <img src={logo} alt="img" />                
                          </NavLink>
                         </Col>
+                     
                          <Col xs={9} className="Links-Container">
                                     <Col className="Links " >
                                     <NavLink className={location.pathname=='/projects' ? ('Link-active'):("")} to={'/projects'}>
@@ -56,7 +60,12 @@ function NewNav() {
                                             Contact Us                        
                                         </NavLink>
                                     </Col>
-                         </Col>       
+                         </Col>
+                            <Col className="navbar-menu-icon justify-content-end align-items-center">
+                              <IconButton>
+                                <ListIcon />
+                              </IconButton>
+                            </Col>
                     </Row>
             </Container>
         </Container>

@@ -1,6 +1,6 @@
 import React from 'react'
 import { Col, Row } from 'react-bootstrap'
-import logo from "../../Assets/Images/logoBrown.png"
+import logo from "../../Assets/Images/logo.png" 
 import "../../Assets/Common/BottomFoot.css"
 import InstagramIcon from '@mui/icons-material/Instagram';
 import FacebookIcon from '@mui/icons-material/Facebook';
@@ -10,12 +10,14 @@ import EmailIcon from '@mui/icons-material/Email';
 
 function BottomFoot() {
   return (
-    <div className='footerDiv'>
-        <Row style={{width:"100%"}}>
-            <Col xs={9}>
-                <img src={logo} alt="Img"  />
+    <div className='footerDiv container-fluid'>
+      <div className="container">
+
+        <Row className="w-100 py-5">
+            <Col lg={1} xs={3} sm={2} className="d-flex  align-items-start justify-content-start">
+                <img src={logo}  className="w-100" alt="Img"  />
             </Col>
-            <Col xs={3} className=" d-flex align-items-end">
+            <Col xs={9} sm={10} lg={11} className=" my-xs-3 visible-xs d-flex align-items-end justify-content-end">
               <span className='ShareIcon'> <FacebookIcon/> </span>
               <span className='ShareIcon'><TwitterIcon/> </span>
               <span className='ShareIcon'><InstagramIcon/></span>
@@ -24,7 +26,7 @@ function BottomFoot() {
         <Row style={{width:"70%"}}>
             <h4 className='dreamReality'>Make your dreams a <span style={{color: "#F47E20"}}>reality</span></h4>
         </Row>
-        <Row style={{width:"100%",paddingLeft:"3%"}} >
+        <Row style={{width:"100%"}} >
           <Col xs={6} className="d-flex ">
             <div className='CallBlock'>
                 <div className="call-content">
@@ -79,6 +81,7 @@ function BottomFoot() {
 
         </Row>
 
+      </div>
     </div>
   )
 }

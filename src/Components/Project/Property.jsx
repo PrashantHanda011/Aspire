@@ -45,21 +45,50 @@ function Property() {
   
     return (
     <>
-        <Container fluid className="property-Single" onScroll={handleClose} onScrollCapture={handleClose}  onKeyDown={handleClose} style={{position:"relative"}} onTouchStart={handleClose}  >
-                    <Container>
+    <Container fluid className="property-Single "  onScroll={handleClose} onScrollCapture={handleClose}  onKeyDown={handleClose} style={{position:"relative"}} onTouchStart={handleClose}  >
+        <div   className="property-sideform p-4 col-lg-4">
+                                <div className="property-side-form-sticky">
+                                    <Row  className=' property-sideform-head-container'>
+                                                <Col lg={2} md={3} sm={2}>
+                                                <div className="property-sideform-avatar">
+                                                    
+                                                </div>
+                                                </Col>
+                                                <Col lg={10} md={9} sm={10}>
+                                                    <span className="property-sideform-head ">
+                                                        <h4>Aspire Logo</h4>
+                                                        <h5>Get the best Quote!</h5>
+                                                    </span>
+                                                </Col>
+                                            </Row>
+
+                                            <Row xs={12} className="property-sideform-input"> 
+                                                <span ><input type="text" placeholder="Name" /></span>
+                                                <span><input type="text"  placeholder="Phone"/></span>
+                                                <span><input type="text" placeholder="Email"/></span>
+                                            </Row>
+
+                                            <Row className="property-sideform-btn">
+                                                <button>Get Best Quote</button>
+                                            </Row>                                           
+                                            </div>
+                                    </div>
+
+
+
+                    <div className="property-block">
+
+                    <Container className="d-flex mb-3 " >
                     {/* begin part  */}
 
-                                <Row className="property-begin">
                     {/* side image */}
-                    
-                                    <Col xs={8} className="property-first-img">
+                
+                                    <div   className="property-first-img col-lg-8">
                                             <img src={p1} alt="" />
-                                    </Col>
+                                    </div>
                     
                     {/* side form */}
-
                                     
-                                </Row>
                     </Container>
 
 
@@ -131,34 +160,7 @@ function Property() {
                         ):("")    
                         }
                                             
-                        <Col xs={4} className="property-sideform p-4">
-                                <div className="property-side-form-sticky">
-                                    <Row  className=' property-sideform-head-container'>
-                                                <Col lg={2} md={3} sm={2}>
-                                                <div className="property-sideform-avatar">
-                                                    
-                                                </div>
-                                                </Col>
-                                                <Col lg={10} md={9} sm={10}>
-                                                    <span className="property-sideform-head ">
-                                                        <h4>Aspire Logo</h4>
-                                                        <h5>Get the best Quote!</h5>
-                                                    </span>
-                                                </Col>
-                                            </Row>
-
-                                            <Row xs={12} className="property-sideform-input"> 
-                                                <span ><input type="text" placeholder="Name" /></span>
-                                                <span><input type="text"  placeholder="Phone"/></span>
-                                                <span><input type="text" placeholder="Email"/></span>
-                                            </Row>
-
-                                            <Row className="property-sideform-btn">
-                                                <button>Get Best Quote</button>
-                                            </Row>                                           
-                                            </div>
-                                    </Col>
-
+                    
 {/* navigate */}
                     <Container >
                         <Row  >
@@ -336,6 +338,7 @@ function Property() {
                             </Col>
                         </Row>
                     </Container>
+                    </div>
         </Container>
 
 

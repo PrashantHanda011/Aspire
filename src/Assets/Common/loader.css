@@ -2,6 +2,7 @@
     background-color: var(--blueColor);
     padding: 35.9vh 0;
     position: relative;
+    height: 100vh;
 }
 .cap{
     animation: cap;

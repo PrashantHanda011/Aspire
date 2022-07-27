@@ -2,11 +2,15 @@
 .property-Single{
     background: #EBEBEB;
     padding: 100px 0;
+    position: relative;
 }
 .property-first-img img{
     width: 95%;
 }
-
+.property-block{
+    position: relative;
+    top: -400px;
+}
 /* sideform */
 .property-sideform-head-container{
     border-radius: 20px;
@@ -16,26 +20,22 @@
     padding: 10px 15px;
     z-index: 1;
 }
-.property-side-form-sticky{
 
+.stick{
     position: sticky;
-    top: 100px;
-}
-
-.property-begin{
-    position: sticky;
+    top: 200px;
 }
 .property-sideform{
     background-color: white;
     border-radius: 30px;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     position: sticky;
+    display: inline-block;  
     right: 0;
+    left: 830px;
     width: 30%;
     top: 100px;
-    z-index: 10000;
-    bottom: 22%;
-    left: 68%;
+    z-index: 1000;
 }
 .property-sideform-avatar{
     width: 45px;
@@ -338,10 +338,11 @@
 /* modal */
 .property-animation-modal{
     background-color: rgba(0, 0, 0,0.8);
-    padding: 80px 0;
+    padding: 60px 0;
     overflow: hidden;
     position: absolute;
-    top: 0;
+    top: -150px;
+    height: 100vh;
     z-index: 100000;
 }
 .property-overview-head-modal h4{
@@ -369,7 +370,7 @@
     text-align: center;
     padding: 10px 20px ;
     width: 200px;
-    margin: 8px 0;
+    margin: 3px 0;
     background-color: var(--orangeColor);
     color: white;
     display: flex;

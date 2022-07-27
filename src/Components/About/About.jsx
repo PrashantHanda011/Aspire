@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useEffect} from 'react'
 import "../../Assets/About/About.css"
 import CardSection from './CardSection'
 import Help from '../HomePage/Help'
@@ -11,14 +11,22 @@ import GetInTouch from '../Contact/GetInTouch'
 import joinus from '../../Assets/Images/partner-joinus.svg'
 import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt';
 import {Link} from 'react-router-dom'
+import * as scroll from "react-scroll"
 function About() {
+  
+  useEffect(() => {
+    console.log(window.scrollY)
+    }, [window])
+  
+
   return (
     <>
 
     <div className="container-fluid py-5">
-      <div className="row px-4 d-flex">
+      <div className="row px-4 d-flex about-card-img">
     
-        <div className="col-lg-2">
+    
+        <div className="col-lg-2 about-card-img-1">
           <img src={aboutbannner1} alt="No img" />
         </div>
     
@@ -28,7 +36,7 @@ function About() {
           <div className="row"><h6>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem quo, consectetur voluptate ea incidunt mollitia tempora aut similique soluta pariatur iure culpa optio? Et rerum consequatur, placeat ea aliquid incidunt.</h6></div>
         </div>
     
-        <div className="col-lg-2">
+        <div className="col-lg-2 about-card-img-2">
           <img src={aboutbannner2} alt="No img" />
         </div>
       </div>
