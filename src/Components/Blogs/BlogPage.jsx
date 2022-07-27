@@ -42,7 +42,7 @@ console.log()
                 </Col>
                 <div className="blogTrend-overlay p-3 ">
                       <h5 className='mb-1'># Trending</h5>
-                      <h3>{blogData[0].title}</h3>
+                      <h3>{blogData[0]?.title}</h3>
                       <div className='d-flex align-items-center justify-content-between py-1 '>
                         <div className=" blogTrend-overlay-footer  d-flex align-items-center">
                           <img src={blogData[0]?.picture} alt="" />
@@ -63,12 +63,12 @@ console.log()
                 blogData.map((item,index)=>{
                   return  <BlogCard
                       key={index}
-                      id={item._id}
-                      content={item.content}
-                      picture={item.picture}
-                      createdAt={item.createdAt}
-                      timeToRead={item.timeToRead}
-                      title={item.title}
+                      id={item?._id}
+                      content={item?.content}
+                      picture={item?.picture}
+                      createdAt={item?.createdAt}
+                      timeToRead={item?.timeToRead}
+                      title={item?.title}
                    />
                 })
               }
@@ -90,12 +90,12 @@ console.log()
                     blogData.map((item,index)=>{
                       return  <BlogCard
                           key={index}
-                          id={item._id}
-                          content={item.content}
-                          picture={item.picture}
-                          createdAt={item.createdAt}
-                          timeToRead={item.timeToRead}
-                          title={item.title}
+                          id={item?._id}
+                          content={item?.content}
+                          picture={item?.picture}
+                          createdAt={item?.createdAt}
+                          timeToRead={item?.timeToRead}
+                          title={item?.title}
                         />
                     })
                   }
@@ -115,12 +115,12 @@ console.log()
                       blogData.map((item,index)=>{
                         return  <BlogCard
                             key={index}
-                            id={item._id}
-                            content={item.content}
-                            picture={item.picture}
-                            createdAt={item.createdAt}
-                            timeToRead={item.timeToRead}
-                            title={item.title}
+                            id={item?._id}
+                            content={item?.content}
+                            picture={item?.picture}
+                            createdAt={item?.createdAt}
+                            timeToRead={item?.timeToRead}
+                            title={item?.title}
                         />
                       })
                     }
