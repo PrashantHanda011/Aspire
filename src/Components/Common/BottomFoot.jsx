@@ -7,10 +7,11 @@ import FacebookIcon from '@mui/icons-material/Facebook';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import CallIcon from '@mui/icons-material/Call';
 import EmailIcon from '@mui/icons-material/Email';
+import {Link} from 'react-router-dom'
 
 function BottomFoot() {
   return (
-    <div className='footerDiv container-fluid'>
+    <div className='footerDiv container-fluid pb-5'>
       <div className="container">
 
         <Row className="w-100 py-5">
@@ -52,32 +53,32 @@ function BottomFoot() {
             </div>
           </Col>
 
-          <Col>
-              <Row lg={12}>
-                <Col xs={4} style={{color: "white"}}>
+          <Col className="mt-3 mt-lg-0">
+              <Row lg={12} className="pb-3">
+                <Col xs={6} style={{color: "white"}}>
+                  <h5 className="mb-2">Details</h5>
+                  <div className='d-flex flex-column'>
+                  <Link to="/aboutus" className="mt-1 text-decoration-none" style={{color:"white"}}>About Us</Link>
+                  <Link to="/aboutus" className="mt-1 text-decoration-none" style={{color:"white"}}>Home Loan</Link>
+                  <Link to="/aboutus" className="mt-1 text-decoration-none" style={{color:"white"}}>Partners</Link>
+                  <Link to="/aboutus" className="mt-1 text-decoration-none" style={{color:"white"}}>Contact Us</Link>
+                  </div>
+                </Col>
+                <Col xs={6} style={{color: "white"}}>
+                  <h5 className="mb-2 ">Info</h5>
+                  <div className='d-flex flex-column'>
+                  <Link to="/aboutus" className="mt-1 text-decoration-none" style={{color:"white"}}>Blogs</Link>
+                  <Link to="/aboutus" className="mt-1 text-decoration-none" style={{color:"white"}}>Career</Link>
+                  </div>
+                </Col>
+                {/* <Col xs={4} style={{color: "white"}}>
                   <h5>Column Heading</h5>
                   <p>Link goes here</p>
                   <p>Link goes here</p>
                   <p>Link goes here</p>
                   <p>Link goes here</p>
                   <p>Link goes here</p>
-                </Col>
-                <Col xs={4} style={{color: "white"}}>
-                  <h5>Column Heading</h5>
-                  <p>Link goes here</p>
-                  <p>Link goes here</p>
-                  <p>Link goes here</p>
-                  <p>Link goes here</p>
-                  <p>Link goes here</p>
-                </Col>
-                <Col xs={4} style={{color: "white"}}>
-                  <h5>Column Heading</h5>
-                  <p>Link goes here</p>
-                  <p>Link goes here</p>
-                  <p>Link goes here</p>
-                  <p>Link goes here</p>
-                  <p>Link goes here</p>
-                </Col>
+                </Col> */}
               </Row>
           </Col>
 

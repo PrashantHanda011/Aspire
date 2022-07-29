@@ -63,7 +63,7 @@ function Partner() {
     
     <div className="container">
       <div className="row">
-        <div className="col-lg-8 px-lg-5 pt-lg-3 pb-lg-5 partner-leading">
+        <div className="col-lg-8 mt-5 mt-lg-0 px-lg-5 pt-lg-3 pb-lg-5 partner-leading">
           <h2>Leading the way in Real Estate</h2>
           <div className="row">
             <div className="col-lg-8 py-lg-3">
@@ -84,7 +84,7 @@ function Partner() {
 {/* do it all */}
 
     <div className="container partner-doitall py-lg-5">
-      <div className="row d-flex flex-column partner-doitall-head justify-content-center ">
+      <div className="row d-flex mt-5 mt-lg-0 flex-column partner-doitall-head justify-content-center ">
           <h2>Do it all with aspire</h2>
           <p className='text-center my-lg-2 '>Lorem Lorem, ipsum dolor. ipsum dolor sit amet.</p>
       </div>
@@ -94,8 +94,8 @@ function Partner() {
 
     <div className="container">
       <div className="row partner-doit-graph">
-        <div className="col px-4 py-3 me-4 mb-5 bg-white"><Graphs/> </div>
-        <div className="col d-flex partner-doit-graph align-items-center"><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto, et minima saepe natus facere accusantium illo eligendi. Non soluta deserunt fugiat mollitia, labore inventore incidunt et in velit? Cupiditate, commodi.</p></div>
+        <div className="col px-4 py-3 me-0 me-lg-4 mb-5 bg-white"><Graphs/> </div>
+        <div className="col d-flex partner-doit-graph mb-3 align-items-center"><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto, et minima saepe natus facere accusantium illo eligendi. Non soluta deserunt fugiat mollitia, labore inventore incidunt et in velit? Cupiditate, commodi.</p></div>
       </div>
     </div>
     </div>
@@ -105,7 +105,7 @@ function Partner() {
 
     <div className="container partner-feature-projects my-lg-5">
       <div className="row">
-        <div className="col-lg-5"> <h3>View Featured Projects</h3> </div>
+        <div className="col-lg-5 mt-4 mt-lg-0"> <h3>View Featured Projects</h3> </div>
       </div>
       <div className="row h-100 my-lg-5">
       <CarouselComponent/>
@@ -123,19 +123,19 @@ function Partner() {
         <h3>Here’s What Other Dealers and Owners have to Say......</h3>
       </div>
       </div>
-      <div className="row partner-reviews-container">
-        <div className="col-lg-4 partner-reviews-card p-lg-4">
+      <div className="row partner-reviews-container flex-column">
+        <div className="col-lg-4 col-sm-12 my-3 my-lg-0 partner-reviews-card p-lg-4">
               <div className="row pb-lg-2"><h5>Xyz</h5></div>
               <div className="row pb-lg-2"><h6>Owners City</h6></div>
               <div className="row pb-lg-2"><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis, debitis. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eius, amet.</p></div>
         </div>
 
-        <div className="col-lg-4 partner-reviews-card p-lg-4">
+        <div className="col-lg-4 my-3 my-lg-0 partner-reviews-card p-lg-4">
               <div className="row  pb-lg-2"><h5>Xyz</h5></div>
               <div className="row pb-lg-2"><h6>Owners City</h6></div>
               <div className="row pb-lg-2"><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis, debitis. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eius, amet.</p></div>    
         </div>
-        <div className="col-lg-4 partner-reviews-card p-lg-4">
+        <div className="col-lg-4 my-3 my-lg-0 partner-reviews-card p-lg-4">
               <div className="row pb-lg-2"><h5>Xyz</h5></div>
               <div className="row pb-lg-2"><h6>Owners City</h6></div>
               <div className="row pb-lg-2"><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis, debitis. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eius, amet.</p></div>
@@ -154,7 +154,7 @@ function Partner() {
           <br/>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Facilisi ullamcorper elementum vitae sit magna platea nec maecenas nibh. Aliquam hendrerit libero cursus elementum mi amet morbi lacus aliquet. Consectetur commodo, pellentesque ac sed at massa elementum. Viverra at et duis neque.</p>
           <br />
-          <div className='Link-special-banner' style={{margin: "auto",width:"30%", padding: "10px 0px"}}>Post your requirements</div>
+          <div className='Link-special-banner partner-find-home-btn' style={{margin: "auto", padding: "10px 0px"}}>Post your requirements</div>
 
           </div>
 

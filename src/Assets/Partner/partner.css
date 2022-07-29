@@ -160,3 +160,32 @@ background-repeat: no-repeat;
     font-size: 16px;
     font-weight: 500;
 }
+.partner-find-home-btn{
+    width: 30%;
+}
+
+
+@media (max-width: 992px){
+    .partner-front h1{
+        font-size: 50px;
+        font-weight: 700;
+    }
+    .partner-doitall-card{
+        width: 100%;
+    }
+    .partner-doitall h2{
+        font-size: 50px;
+    }
+    .partner-leading h2{
+        font-size: 50px;
+    }
+    .partner-reviews-card{
+        width: 100%;
+    }
+    .partner-elite{
+        padding: 40px 10px;
+    }
+    .partner-findhome{
+        background-size: cover;
+    }
+}
