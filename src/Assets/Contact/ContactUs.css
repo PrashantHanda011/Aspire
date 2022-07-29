@@ -94,3 +94,12 @@
   margin: 20px 15px;
   padding: 10px 15px;
 }
+@media (max-width: 992px){
+  .GetInTouch-btn button{
+    width: 38%;
+    margin: 20px 5px;
+  }
+  .WeAreHeree-btn button{
+    width: 50%;
+  }
+}

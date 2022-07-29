@@ -6,11 +6,11 @@ function GetInTouch() {
   return (
         <>
         <Container fluid className=" GetInTouch">
-            <Row xs={12}>
-                <Col xs={7} className=" GetInTouch-imgsection ">
+            <Row lg={12}>
+                <Col lg={7} className=" GetInTouch-imgsection ">
                         <img src={img1} alt="no img" />
                 </Col>
-                <Col xs={5} className="d-flex flex-column justify-content-center">
+                <Col lg={5} className="d-flex flex-column justify-content-center">
                         <Row   className="my-3 GetInTouch-head"><h3>Get in touch</h3></Row>
                         <Row className=" GetInTouch-subhead"> 
                             <Col xs={11}>

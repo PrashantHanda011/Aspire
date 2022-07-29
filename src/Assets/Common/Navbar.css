@@ -87,7 +87,7 @@
 }
 @media (max-width: 568px){
     .canvas-width{
-        width: 60% !important;
+        width: 70% !important;
     }
     .banner-btn{
         flex-direction: column;

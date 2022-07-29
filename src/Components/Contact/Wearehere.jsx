@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useState} from 'react'
 import { Col, Row,Container } from 'react-bootstrap'
 import CallIcon from '@mui/icons-material/Call';
 import EmailIcon from '@mui/icons-material/Email';
@@ -7,11 +7,17 @@ import {Map, InfoWindow, Marker, GoogleApiWrapper} from 'google-maps-react';
 import  MapContainer  from './Map';
 import Map2 from './Map2';
 function Wearehere() {
+    const [heightmap, setheightmap] = useState("550px")
+
+    const setheight=()=>{
+        setheightmap("300px")
+    }
+    window.matchMedia("(min-width: 768px)").addEventListener('change',setheight)
   return (
     <>
             <Container className="mt-5 p-4 border WeAreHeree">
-                <Row>
-                    <Col className="ms-3">
+                <Row className="d-flex flex-lg-row flex-md-column-reverse flex-column-reverse">
+                    <Col className="ms-lg-3">
                             
                             <Row className="WeAreHeree-head">
                               <h3 className="my-3">We Are Here</h3>
@@ -28,7 +34,7 @@ function Wearehere() {
                             </Col>
                             </Row>
 
-                            <Row className='my-5 d-flex flex-column'>
+                            <Row className='my-lg-5 my-3 d-flex flex-column'>
                             <span className="contactinfo">
                                 <CallIcon/>
                                 <h5>
@@ -51,9 +57,8 @@ function Wearehere() {
                     <Col  style={{borderRadius:"30px",overflow:"hidden"}}>
                              {/* <MapContainer /> */}
                              <Map2
-                                height="550px"
+                                height={heightmap}
                              />
-                             
                     </Col>
                 </Row>
             </Container>
