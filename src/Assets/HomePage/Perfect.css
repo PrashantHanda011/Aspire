@@ -3,6 +3,7 @@
     margin: auto;
     text-align: center;
     padding-left: 20px;
+    z-index: 5;
 }
 
 .perfectSection{
@@ -25,7 +26,7 @@
 
 .homechoiceSection{
     margin-top: 30px;
-    background: url("../../Assets/Images/HomeChoiceBackground.png");
+    background:linear-gradient(to bottom, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0) 10%, rgba(0, 0, 0, 0.65) 100%), url("../../Assets/Images/HomeChoiceBackground.png");
     display: flex;
     align-items: center;
     color: #FFFFFF;
@@ -34,13 +35,15 @@
     object-fit: cover;
     background-repeat: no-repeat;
     padding: 100px 0;
+    background-size: cover;
     
 }
 
 .homeChoiceImageDiv{
     position: absolute;
     top: 0px;
-    z-index: 10;
+    z-index: 1;
+
 }
 .homeChoiceImageDiv img{
     object-fit: cover;
@@ -85,6 +88,18 @@
     font-size: 1rem;
     color: gray;
 }
-.communityCard{
+.homeChoiceImageDiv img{
+    width: 200px;
+}
 
+
+@media (max-width: 992px){
+    .homeChoiceImageDiv img{
+        width: 50%;
+    }
+}
+@media (max-width: 568px){
+    .homeChoiceImageDiv img{
+        width: 40%;
+    }
 }

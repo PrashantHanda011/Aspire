@@ -23,11 +23,12 @@ function BottomFoot() {
               <span className='ShareIcon'><InstagramIcon/></span>
             </Col>
         </Row>
-        <Row style={{width:"70%"}}>
+        <Row className="mb-lg-5">
             <h4 className='dreamReality'>Make your dreams a <span style={{color: "#F47E20"}}>reality</span></h4>
         </Row>
-        <Row style={{width:"100%"}} >
-          <Col xs={6} className="d-flex ">
+        <Row className="d-flex" >
+          
+          <Col xs={12} md={12} lg={6} className="d-flex footer-blocks  align-items-start">
             <div className='CallBlock'>
                 <div className="call-content">
                   <CallIcon/>
@@ -39,7 +40,7 @@ function BottomFoot() {
                 <button>Call Now</button>
             </div>
 
-            <div className='MailBlock mx-5'>
+            <div className='MailBlock '>
             <div className="mail-content">
                   <EmailIcon/>
                   <h4>
@@ -50,6 +51,7 @@ function BottomFoot() {
                 <button>Email Now</button>
             </div>
           </Col>
+
           <Col>
               <Row lg={12}>
                 <Col xs={4} style={{color: "white"}}>

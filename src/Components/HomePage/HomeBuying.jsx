@@ -1,6 +1,7 @@
 import React from 'react'
 import { Col, Container, Row } from 'react-bootstrap'
 import '../../Assets/HomePage/Home.css'
+import { Link } from 'react-router-dom'
 function HomeBuying() {
   return (
     <div className='perfectSection homeBuyTop'>
@@ -9,13 +10,19 @@ function HomeBuying() {
         <h2 className='homeBuyingHead'>Home Buying Simplified</h2>
         <br />
         <Container>
-            <Row>
-                <Col style={{textAlign: "right", display: "flex", justifyContent: "flex-end", marginRight: "20px"}}>
-                <div className='Link-special-banner'>View Projects</div>
-                </Col>
-                <Col style={{textAlign: "left", display: "flex", justifyContent: "flex-start", marginLeft: "20px"}}>
-                <div className='Link-special-banner-second'>Easy Home Loan</div>
-                </Col>
+            <Row className="d-flex justify-content-center">
+                  <Col lg={6} className=" d-flex justify-content-evenly banner-btn">
+                        <Row className=" mx-md-0" style={{ display: "flex"}}>
+                        <Link to="/projects">
+                        <button className='Link-special-banner'>View Projects</button>
+                        </Link>
+                        </Row>
+                        <Row style={{ display: "flex", }}>
+                        <Link to="/homeloan"> 
+                        <button className='Link-special-banner-second'>Easy Home Loan</button>
+                        </Link>
+                        </Row>
+                  </Col>
             </Row>
         </Container>
         

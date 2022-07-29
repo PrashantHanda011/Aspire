@@ -12,9 +12,10 @@
     background-color: rgba(244, 126, 32, 1);
     color: white;
     padding: 10px 20px;
-    border-radius: 25px;
+    border-radius: 20px;
     font-weight: 600;
     cursor: pointer;
+    border: none;
 }
 .Link-special-banner:hover{
     background-color: white;
@@ -46,4 +47,14 @@
 .EmiContainer{
     padding-top: 100px;
     
+}
+
+@media (max-width: 568px){
+    .banner-btn{
+        flex-direction: column;
+    }
+    .Link-special-banner-second{
+        margin-top: 15px;
+     }
+
 }
