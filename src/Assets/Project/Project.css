@@ -102,3 +102,20 @@
     background: #555; 
   }  
   
+@media (max-width: 992px){
+    .map-viewimg img{
+        width: 100%;
+    }
+    .propertyDescription-map-view {
+        position: relative;
+        width: 85%;
+        left: 7%;
+        bottom: 100px;
+    }
+}
+@media (max-width: 768px){
+.map-view-scroll{
+    height: 60vh;
+    overflow: hidden;
+}
+}

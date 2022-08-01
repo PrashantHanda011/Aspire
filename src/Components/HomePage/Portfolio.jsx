@@ -56,16 +56,18 @@ function Portfolio() {
                             </Link>
                 </div>
 
-            <Row className="mb-4 mx-1">
-                <Col xs={2}>
-                    <h6>Location</h6>
-                </Col>
-                <Col xs={4}>
-                <h6>Properties</h6>
-                </Col>
-            </Row>
-            <Row>
-                <Col lg={6} className="countryContainer">
+        <Row className="mt-4">
+            <div className='d-flex flex-lg-row mt-4 flex-md-row flex-column-reverse'>
+                <Col className="w-100 location-container" >    
+                    <Row className="mb-4 mx-1">
+                        <Col xs={4} lg={2}>
+                            <h6>Location</h6>
+                        </Col>
+                        <Col xs={4} lg={4}>
+                        <h6>Properties</h6>
+                        </Col>
+                    </Row>
+                <Col className="countryContainer w-100">
                     {portfolioItems.map((data, index) => (
                         
                         <Row key={index}  onMouseOver={()=>setPortfolioDetail(data)} className={`${(active==index) ? ("activeportfolio "):("")} newhover portfolioItem  `} onClick={()=>{
@@ -81,18 +83,20 @@ function Portfolio() {
                         </Row>
 
                     ))}
-                    
+                    </Col>  
                 </Col>
+
                 <CSSTransition
               key={portfolioDetail.id}
               timeout={500}
               classNames="item"
             >
-                <Col className="px-4" >
+                <Col className="px-lg-4 px-0 px-md-4 mb-5  mb-sm-0" >
                 <img src={portfolioDetail?.img} className={` property-img`} alt="" style={{width: "100%", }} />
                 </Col>
-                </CSSTransition>   
-            </Row>
+                </CSSTransition>
+                </div>    
+        </Row>
             </Container>
         
 

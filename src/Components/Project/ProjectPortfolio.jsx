@@ -36,11 +36,11 @@ function ProjectPortfolio() {
       <div>
               <div className='property'>
               <Container>
-              <Row >
-                <Col xs={9}>
+              <Row className='project-property-height'>
+                <Col xs={6} lg={9}>
                      <h4 className='property-head ms-0'>Property</h4>
                 </Col>
-                <Col xs={3} className='property-sidehead'>
+                <Col xs={6} lg={3} className='property-sidehead'>
                     <h5 className={mapview==0 ?('map-head-active'):("")} onClick={()=>{
                       setmapview(0);  
                     }}>
@@ -64,24 +64,6 @@ function ProjectPortfolio() {
         
             <Container className="portfolioContainer">
 
-                <div className='propertyDescription'>
-                    <div className='description'>
-                            <h3>Poorvi Shheheansa Grand</h3>
-                            <h5>lingadheer, south banglore</h5>
-                            <div className='propertyFeatures'>
-                                <span> <LocationOnIcon/> <h4>Bangaluru</h4> </span>
-                                <span> <LocalAtmIcon/> <h4>2.5-5 L</h4> </span>
-                                <span><HomeIcon/> <h4>Ready To move</h4></span>
-                                <span> <BedroomChildIcon/> <h4>2-3 BHK</h4> </span>
-                            </div>
-                    </div>
-
-                        <Link to={'/property/123'}>
-                        <button >
-                            View Property
-                        </button>
-                        </Link>
-                </div>
             <Row>
                <Portfolio/>
             </Row>
@@ -89,14 +71,14 @@ function ProjectPortfolio() {
             </>
             ):(<>
                    <div className="container">
-                    <div className="row">
+                    <div className="row flex-lg-row flex-column-reverse flex-md-column-reverse">
                         <div className="col map-view-scroll">
                             <MapviewCard/>
                             <MapviewCard/>
                             <MapviewCard/>
                             <MapviewCard/>
                         </div>
-                        <div className="col px-4">
+                        <div className="col px-4 pt-5 pt-md-0 pt-lg-0">
                             <Map2 height="400px"/>
                         </div>
                     </div>

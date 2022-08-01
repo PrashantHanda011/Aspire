@@ -11,7 +11,7 @@ import {Link} from 'react-router-dom'
 function MapviewCard() {
   return (
     <>
-            <div className="col map-viewimg" style={{position:"relative"}}>
+            <div className="col map-viewimg d-flex flex-column" style={{position:"relative"}}>
                 <img src={PortfolioImage} alt="" />
 
       <div className='propertyDescription-map-view'>
