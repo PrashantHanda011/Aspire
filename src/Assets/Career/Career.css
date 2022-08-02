@@ -37,7 +37,9 @@
     background-color: rgba(0, 0, 0,0.05);
     padding: 6% 0;
 }
-
+.career-cardContent{
+    text-align: center;
+}
 .inputDiv{ 
     width: 90%;
     box-shadow: 4px 4px 4px 0px #00000040;
@@ -121,4 +123,18 @@ border-radius: 16px;
 }
 .Search-Location{
     border-right: 0.5px solid rgb(185, 185, 185);
+}
+
+
+@media (max-width: 460px){
+    .CardFacility {
+        margin-right: 30px;
+    }
+    .location-temp-height{
+        margin-top: 20px;
+    }
+    .location-temp-height svg{
+        margin-right: 20px !important;
+    }
+
 }

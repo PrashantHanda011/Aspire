@@ -123,7 +123,7 @@ function Partner() {
         <h3>Here’s What Other Dealers and Owners have to Say......</h3>
       </div>
       </div>
-      <div className="row partner-reviews-container flex-column">
+      <div className="row partner-reviews-container flex-lg-row flex-column">
         <div className="col-lg-4 col-sm-12 my-3 my-lg-0 partner-reviews-card p-lg-4">
               <div className="row pb-lg-2"><h5>Xyz</h5></div>
               <div className="row pb-lg-2"><h6>Owners City</h6></div>

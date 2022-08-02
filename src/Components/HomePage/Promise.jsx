@@ -7,9 +7,8 @@ import PromiseImage from "../../Assets/Images/PromiseImg.png"
 function Promise() {
   return (
     <div  style={{marginTop: 70, overflow: "hidden"}}>
-    <div className=' promiseSection'>
-        <Row>
-            <Col xs={7}>
+  <div className=' promiseSection d-flex flex-lg-row flex-column-reverse flex-md-row'>
+            <Col lg={7} md={7} xs={12}>
             <div className="separatorDiv"></div>
 <h4 style={{fontSize: 30}}>Aspire Promise</h4>
 <Row>
@@ -24,14 +23,10 @@ function Promise() {
 </Row>
 
             </Col>
-            <Col style={{marginRight: "-80px"}}>
+            <Col lg={5} md={5} xs={12} className="ps-0 ps-md-3 ps-lg-5">
 
         <img src={PromiseImage} style={{width: "100%"}} />
             </Col>
-        </Row>
-
-    
-
 </div>
 
 </div>

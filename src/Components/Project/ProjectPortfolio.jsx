@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState,useEffect } from 'react'
 import { Col, Container, Row } from 'react-bootstrap'
 import "../../Assets/Project/Project.css"
 import PortfolioImage from "../../Assets/Images/PortfolioImage.png"
@@ -11,27 +11,30 @@ import {Link} from 'react-router-dom'
 import MapviewCard from './MapviewCard'
 import Map2 from '../Contact/Map2'
 import Portfolio from '../HomePage/Portfolio'
+import { FetchPropertyData } from '../API/Api';
 
 function ProjectPortfolio() {
-    const [indexColor, setindexColor] = useState(0)
-    const [active, setactive] = useState(0);
     const [mapview, setmapview] = useState(0);
+    const [indexColor, setindexColor] = useState(0)
+    const [portfolioItems, setportfolioItems] = useState([])
+    const [PortfolioDetail, setPortfolioDetail] = useState()
+    const fetchPortfolio = async()=>{
+        try {
+            const {data} = await FetchPropertyData();
+            setportfolioItems(data?.data)
+            setPortfolioDetail(data?.data[0])
+  
+            console.log(data);
+        } catch (error) {
+            console.log(error)
+            
+        }
+    
+    }
+    useEffect(() => {
+        fetchPortfolio()
+    }, [])
 
-    const portfolioItems = [
-        {"location": "Lingadheer", "properties": "Pyramid Carnations", "img": PortfolioImage},
-        {"location": "Lingadheer", "properties": "Poorvi Carnations", "img": HomeChoiceImg},
-        {"location": "Lingadheer", "properties": "Pyramid Carnations", "img": PortfolioImage},
-        {"location": "Lingadheer", "properties": "Poorvi Carnations", "img": HomeChoiceImg},
-        {"location": "Lingadheer", "properties": "Pyramid Carnations", "img": PortfolioImage},
-        {"location": "Lingadheer", "properties": "Poorvi Carnations", "img": HomeChoiceImg},
-        {"location": "Lingadheer", "properties": "Pyramid Carnations", "img": PortfolioImage},
-        {"location": "Lingadheer", "properties": "Poorvi Carnations", "img": HomeChoiceImg},
-        {"location": "Lingadheer", "properties": "Pyramid Carnations", "img": PortfolioImage},
-        {"location": "Lingadheer", "properties": "Poorvi Carnations", "img": HomeChoiceImg},
-    ]
-    const [portfolioDetail, setPortfolioDetail] = useState(portfolioItems[0])
-  
-  
     return (
       <div>
               <div className='property'>
@@ -71,12 +74,13 @@ function ProjectPortfolio() {
             </>
             ):(<>
                    <div className="container">
-                    <div className="row flex-lg-row flex-column-reverse flex-md-column-reverse">
-                        <div className="col map-view-scroll">
-                            <MapviewCard/>
-                            <MapviewCard/>
-                            <MapviewCard/>
-                            <MapviewCard/>
+                    <div className="row flex-lg-row flex-column-reverse flex-md-column-reverse ">
+                        <div className="col map-view-scroll" >
+                        {
+                            portfolioItems.map((data,index)=>{
+                                return     <MapviewCard data={data} key={index}/>
+                            })
+                        }
                         </div>
                         <div className="col px-4 pt-5 pt-md-0 pt-lg-0">
                             <Map2 height="400px"/>

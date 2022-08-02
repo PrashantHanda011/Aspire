@@ -27,9 +27,10 @@ function CareerInput() {
     return (
     <div className='careerInputDiv'>
        <h3>Open Position</h3>
-       <Row xs={8} className="careerCardDiv CareerInputBox d-flex  bg-white" >
-        <Col xs={5} className=" d-flex " style={{borderRight:"0.5px solid rgba(0,0,0,0.3)"}}>
-       <Col xs={5} className="Search-Location">
+       <Row xs={12} className="careerCardDiv CareerInputBox d-flex flex-column flex-md-row flex-lg-row  bg-white" >
+    
+    <Col xs={12} lg={6} className=" d-flex justify-content-center " style={{borderRight:"0.5px solid rgba(0,0,0,0.3)"}}>
+       <Col xs={6} className="Search-Location border-sm-none">
                 <FormControl sx={{ m: 1, minWidth: 120 }} size="small">
                 <InputLabel id="demo-select-small">Location</InputLabel>
 
@@ -49,7 +50,7 @@ function CareerInput() {
                 </Select>
                 </FormControl>
        </Col>
-       <Col xs={5} className="mx-5 ">
+       <Col xs={6} className="mx-lg-5 ms-2 ">
                 <FormControl sx={{ m: 1, minWidth: 140 }} size="small">
                 <InputLabel id="demo-select-small">Department</InputLabel>
                 <Select
@@ -69,20 +70,19 @@ function CareerInput() {
                 </FormControl>
             </Col>
        </Col>
-       <Col xs={3} >
+     
 
-       </Col>
-
-       <Col>
+       <Col lg={6} className="d-flex justify-content-lg-end justify-content-center mt-3 mt-lg-0 align-items-center">
+       <Col xs={12}>
         <InputBase
             sx={{ ml: 1, flex: 1 }}
             placeholder="Search Positions"
-
             inputProps={{ 'aria-label': 'search google maps' }}
         />
         <IconButton type="submit" sx={{ p: '10px' }} aria-label="search">
             <SearchIcon />
         </IconButton>
+       </Col>
        </Col>
 
         </Row>

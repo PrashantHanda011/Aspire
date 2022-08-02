@@ -118,10 +118,16 @@
 
 @media (max-width: 768px){
     .propertyDescription{
-        top: 30%;
+        top: 20%;
         width: 90%;
-        bottom: 0;
+        bottom: unset;
         left:5%;
+    }
+    .property-img-height{
+        height:40vh;
+    }
+    .alternate-text-property{
+        height: 40vh;
     }
 
     .location-container{
@@ -137,6 +143,7 @@
     .location-container{
         margin-top: 5%;     
     }
+
     .portfolioItem p {
         padding: 0 15px;
         font-size: 14px;

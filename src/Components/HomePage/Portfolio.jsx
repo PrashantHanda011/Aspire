@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState,useEffect } from 'react'
 import { Col, Container, Row } from 'react-bootstrap'
 import "../../Assets/HomePage/Help.css"
 import "../../Assets/HomePage/portfolio.css"
@@ -13,39 +13,50 @@ import {
     CSSTransition,
     TransitionGroup,
   } from 'react-transition-group';
+import axios from 'axios'
+import { FetchPropertyData } from '../API/Api'
 function Portfolio() {
     const [indexColor, setindexColor] = useState(0)
     const [active, setactive] = useState(0);
-    const portfolioItems = [
-        {id:1,"location": "Lingadheer", "properties": "Pyramid Carnations", "img": PortfolioImage},
-        {id:2,"location": "Lingadheer", "properties": "Poorvi Carnations", "img": HomeChoiceImg},
-        {id:3,"location": "Lingadheer", "properties": "Pyramid Carnations", "img": PortfolioImage},
-        {id:4,"location": "Lingadheer", "properties": "Poorvi Carnations", "img": HomeChoiceImg},
-        {id:5,"location": "Lingadheer", "properties": "Pyramid Carnations", "img": PortfolioImage},
-        {id:6,"location": "Lingadheer", "properties": "Poorvi Carnations", "img": HomeChoiceImg},
-        {id:7,"location": "Lingadheer", "properties": "Pyramid Carnations", "img": PortfolioImage},
-        {id:8,"location": "Lingadheer", "properties": "Poorvi Carnations", "img": HomeChoiceImg},
-        {id:9,"location": "Lingadheer", "properties": "Pyramid Carnations", "img": PortfolioImage},
-        {id:10,"location": "Lingadheer", "properties": "Poorvi Carnations", "img": HomeChoiceImg},
-    ]
-    const [portfolioDetail, setPortfolioDetail] = useState(portfolioItems[0])
   
+    const [portfolioItems, setportfolioItems] = useState([])
+    const [PortfolioDetail, setPortfolioDetail] = useState()
+    const fetchPortfolio = async()=>{
+        try {
+            const {data} = await FetchPropertyData();
+            setportfolioItems(data?.data)
+            setPortfolioDetail(data?.data[0])
+
+            console.log(data);
+        } catch (error) {
+            console.log(error)
+            
+        }
+    
+    }
+    useEffect(() => {
+        fetchPortfolio()
+    }, [])
+    
   
     return (
       <div>
               
         
             <Container className="portfolioContainer">
+                {
+
+                }
 
                 <div className='propertyDescription'>
                     <div className='description'>
-                            <h3>Poorvi Shheheansa Grand</h3>
-                            <h5>lingadheer, south banglore</h5>
+                            <h3>{PortfolioDetail?.name}</h3>
+                            <h5>{PortfolioDetail?.location}</h5>
                             <div className='propertyFeatures'>
-                                <span> <LocationOnIcon/> <h4>Bangaluru</h4> </span>
-                                <span> <LocalAtmIcon/> <h4>2.5-5 L</h4> </span>
-                                <span><HomeIcon/> <h4>Ready To move</h4></span>
-                                <span> <BedroomChildIcon/> <h4>2-3 BHK</h4> </span>
+                                <span> <LocationOnIcon/> <h4>{PortfolioDetail?.location}</h4> </span>
+                                <span> <LocalAtmIcon/> <h4>{PortfolioDetail?.price} </h4> </span>
+                                <span><HomeIcon/> <h4>{PortfolioDetail?.ready ? ("Ready To move") : ("Posession Soon")} </h4></span>
+                                <span> <BedroomChildIcon/> <h4>{PortfolioDetail?.BHK} BHK</h4> </span>
                             </div>
                     </div>
 
@@ -68,33 +79,33 @@ function Portfolio() {
                         </Col>
                     </Row>
                 <Col className="countryContainer w-100">
-                    {portfolioItems.map((data, index) => (
-                        
-                        <Row key={index}  onMouseOver={()=>setPortfolioDetail(data)} className={`${(active==index) ? ("activeportfolio "):("")} newhover portfolioItem  `} onClick={()=>{
+                     {portfolioItems.map((data, index) => (
+                        <Row key={index}  onMouseOver={()=>setPortfolioDetail(data)} className={`${(active===index) ? ("activeportfolio "):("")} newhover portfolioItem  `} onClick={()=>{
                             setactive(index);
                             setPortfolioDetail(data)
                             }}>
                             <Col xs={4}>
-                                <p className="mb-0">{data.location}</p>
+                                <p className="mb-0">{data?.location}</p>
                             </Col>
                             <Col xs={8}>
-                                <p className="mb-0">{data.properties}</p>
+                                <p className="mb-0">{data?.name}</p>
                             </Col>
                         </Row>
 
-                    ))}
+                    ))} 
                     </Col>  
                 </Col>
-
                 <CSSTransition
-              key={portfolioDetail.id}
+              key={PortfolioDetail?._id}
               timeout={500}
-              classNames="item"
-            >
-                <Col className="px-lg-4 px-0 px-md-4 mb-5  mb-sm-0" >
-                <img src={portfolioDetail?.img} className={` property-img`} alt="" style={{width: "100%", }} />
+              classNames="item">
+                <Col className="px-lg-4 px-0 px-md-4 mb-5 border-none mb-sm-0" >
+                {
+                    PortfolioDetail?.pictures[0].length >0 ?(<img src={PortfolioDetail?.pictures} className={` property-img property-img-height border-none`} alt="" style={{width: "100%", }} />) :(<h2 className="border-none alternate-text-property">No Image For Porperty</h2>)
+                }
+                
                 </Col>
-                </CSSTransition>
+                </CSSTransition> 
                 </div>    
         </Row>
             </Container>
