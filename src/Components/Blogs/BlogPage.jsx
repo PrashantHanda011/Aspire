@@ -11,10 +11,11 @@ import axios from 'axios'
 import {Link} from 'react-router-dom'
 import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt';
 import moment from "moment"
+import { FetchCategoryBlog } from '../API/Api'
 
 function BlogPage() {
 const [blogData, setblogData] = useState([])
-
+const [category, setcategory] = useState([])
   const fetchblogData = async()=>{
       try {
         const data = await axios.get('https://aspire0.herokuapp.com/blog/getAllBlog');
@@ -23,10 +24,22 @@ const [blogData, setblogData] = useState([])
         console.log(error)
       }
     } 
-    console.log(blogData)
+  const fetchTechblogData = async()=>{
+      try {
+        let categorydata={
+          category:"Technology"
+        }
+        const data = await FetchCategoryBlog(categorydata);
+        setcategory(data?.data?.data)
+      } catch (error) {
+        console.log(error)
+      }
+    } 
+    console.log(category)
     
 useEffect(() => {
     fetchblogData()
+    fetchTechblogData()
   }, [])
 
 console.log()
@@ -56,11 +69,11 @@ console.log()
 
             <div className='blogsDiv'>
 
-               <h3 className="blogMainHeading">Knowledge Series</h3>         
+               <h3 className="blogMainHeading">Technology</h3>         
                 <Row  className="d-flex justify-content-center">
                     <Col xs={11} className="d-flex  BlogsRow   align-items-center">
               {
-                blogData.map((item,index)=>{
+                category.map((item,index)=>{
                   return  <BlogCard
                       key={index}
                       id={item?._id}

@@ -49,9 +49,9 @@ function Wearehere() {
                             </span>
                             </Row>    
                             <Row className="WeAreHeree-btn mx-1">
-                                <button>
+                                {/* <button>
                                     Get In Touch
-                                </button>
+                                </button> */}
                             </Row>    
                     </Col>
                     <Col  style={{borderRadius:"30px",overflow:"hidden"}}>

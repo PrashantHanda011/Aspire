@@ -30,7 +30,7 @@ function CareerInput() {
        <Row xs={12} className="careerCardDiv CareerInputBox d-flex flex-column flex-md-row flex-lg-row  bg-white" >
     
     <Col xs={12} lg={6} className=" d-flex justify-content-center " style={{borderRight:"0.5px solid rgba(0,0,0,0.3)"}}>
-       <Col xs={6} className="Search-Location border-sm-none">
+       <Col xs={6} lg={4} className="Search-Location border-sm-none">
                 <FormControl sx={{ m: 1, minWidth: 120 }} size="small">
                 <InputLabel id="demo-select-small">Location</InputLabel>
 
@@ -50,7 +50,7 @@ function CareerInput() {
                 </Select>
                 </FormControl>
        </Col>
-       <Col xs={6} className="mx-lg-5 ms-2 ">
+       <Col xs={6} lg={4} className="mx-lg-5 ms-2 ">
                 <FormControl sx={{ m: 1, minWidth: 140 }} size="small">
                 <InputLabel id="demo-select-small">Department</InputLabel>
                 <Select
@@ -73,7 +73,7 @@ function CareerInput() {
      
 
        <Col lg={6} className="d-flex justify-content-lg-end justify-content-center mt-3 mt-lg-0 align-items-center">
-       <Col xs={12}>
+       <Col xs={12} lg={6}>
         <InputBase
             sx={{ ml: 1, flex: 1 }}
             placeholder="Search Positions"

@@ -1,9 +1,34 @@
-import React from 'react'
+import React,{useState} from 'react'
 import { Col, Container, Row } from 'react-bootstrap'
 import "../../Assets/Contact/GetInTouch.css"
 import img1 from '../../Assets/Images/getintouch.svg'
+import { PostGetintouchData } from '../API/Api'
+import { useNavigate } from 'react-router'
 function GetInTouch() {
-  return (
+    const [Getintouch, setGetintouch] = useState({
+        phone:"",
+        name:""
+    })
+    const [disable, setdisable] = useState([])
+    const location = useNavigate()
+
+    const handleChange=(e)=>{
+        let name = e.target.name;
+        setGetintouch({...Getintouch,[name]:e.target.value})
+    }
+
+
+    const handlesubmit = async(e)=>{
+        e.preventDefault();
+        try {
+            const data=await PostGetintouchData(Getintouch)
+            console.log(data)
+            location('/')
+        } catch (error) {
+            console.log(error);   
+        }
+    }
+    return (
         <>
         <Container fluid className=" GetInTouch">
             <Row lg={12}>
@@ -19,12 +44,12 @@ function GetInTouch() {
                         </Row>
                         <Row>
                             <div className=" GetInTouch-inputs"> 
-                               <span><input type="text" placeholder="Name"/></span> 
-                               <span><input type="text" placeholder="Phone Number" /></span> 
+                               <span><input type="text" onChange={handleChange} name="name" placeholder="Name"/></span> 
+                               <span><input type="tel" onChange={handleChange} name="phone" placeholder="Phone Number" /></span> 
                             </div>
                         </Row>
                         <Row className=" GetInTouch-btn">
-                            <button>Contact</button>
+                            <button onClick={handlesubmit}>Contact</button>
                         </Row>
                 </Col>
             </Row>

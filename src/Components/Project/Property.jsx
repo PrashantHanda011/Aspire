@@ -18,14 +18,17 @@ import Map2 from '../Contact/Map2'
 import AddAlertIcon from '@mui/icons-material/AddAlert';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
+import { useParams } from "react-router-dom";
+import { FetchSinglePropertyData } from '../API/Api'
 
 function Property() {
+    const [propertyData, setpropertyData] = useState({})
     const [unit, setunit] = useState(0);
     const [showModal, setshowModal] = useState(true);
     const [showSideform, setshowSideform] = useState(false);
-    const [ scrolled, setScrolled ] = useState(false)
     const location =useLocation();
 
+    const param =useParams();
     const handle2BHKunit=()=>{
         if(unit==0){
             setunit(1);
@@ -42,18 +45,48 @@ function Property() {
       const handleClose = () => {
           setshowModal(false);
     }
-    window.addEventListener('scroll', handleClose)
-
+    
     // sideform
-
     const handleCloseSideform=()=>{
         setshowSideform(false);
     }
     const handleShowsideform = () => setshowSideform(true);
-
+    console.log(param.id)
+    
+    // api call
+    
+    const fetchsingleproperty= async()=>{
+       try {
+        const singleid={
+            id:param.id
+        }
+        const data=await FetchSinglePropertyData(singleid);
+        console.log(data.data.data);
+        setpropertyData(data?.data?.data)
+        
+       } catch (error) {
+            console.log(error);
+       }
+    }
+    
+    
+    useEffect(() => {
+        fetchsingleproperty()
+        if (typeof window !== "undefined") {
+          window.addEventListener("scroll", handleClose);
+    
+          // cleanup function
+          return () => {
+            window.removeEventListener("scroll", handleClose);
+          };
+        
+        }
+      }, []);
+    
+    
     return (
     <>
-    <Container fluid className="property-Single "  onScroll={handleClose} onScrollCapture={handleClose}  onKeyDown={handleClose} style={{position:"relative"}} onTouchStart={handleClose}  >
+    <Container fluid className="property-Single "   style={{position:"relative"}}   >
     
             {/* responsive icon */}
             
@@ -135,7 +168,7 @@ function Property() {
                     {/* side image */}
                 
                                     <div   className="property-first-img col-lg-8">
-                                            <img src={p1} alt="" />
+                                            <img src={propertyData?.pictures} alt="" />
                                     </div>
                     
                     {/* side form */}
@@ -149,8 +182,8 @@ function Property() {
                             <div className="container-fluid  property-animation-modal d-flex flex-column justify-content-center align-items-center">
                                            
                                            <Row className="property-overview-head-modal">
-                                            <h4>Poorvi Shreenivasa Grand</h4>
-                                            <h5>Lingadheer, South Bangalore</h5>
+                                            <h4>{propertyData?.name}</h4>
+                                            <h5>{propertyData?.city}</h5>
                                            </Row>
                                             <Row  className="property-overview-btn-container-modal d-flex flex-column align-items-center">
                                                 <Col className="animationContainer w-100 d-flex flex-column align-items-center">
@@ -159,7 +192,7 @@ function Property() {
                                                             <LocationOnIcon/>
                                                         </Col>                
                                                         <Col xs={9}>
-                                                            <h5 className="text-center">Banglore</h5>
+                                                            <h5 className="text-center">{propertyData?.location}</h5>
                                                         </Col>               
                                                     </Row>    
 
@@ -169,7 +202,7 @@ function Property() {
                                                             <PaidIcon/>
                                                         </Col>                
                                                         <Col lg={10} xs={9}>
-                                                                <h5 className="text-center">60-80 L</h5>
+                                                                <h5 className="text-center">{propertyData?.price}</h5>
                                                         </Col>               
                                                     </Row>    
                                                     <Row className="property-overview-btn-modal area">
@@ -177,7 +210,7 @@ function Property() {
                                                             <PushPinIcon/>
                                                         </Col>                
                                                         <Col lg={10} xs={9}>
-                                                                <h5 className="text-center">Area</h5>
+                                                                <h5 className="text-center">{propertyData?.area}</h5>
                                                         </Col>               
                                                     </Row>    
                                                     <Row className="property-overview-btn-modal bhk">
@@ -185,7 +218,7 @@ function Property() {
                                                             <MeetingRoomIcon/>
                                                         </Col>                
                                                         <Col lg={10} xs={9}>
-                                                                <h5 className="text-center">2-4 BHK</h5>
+                                                                <h5 className="text-center">{propertyData?.BHK} BHK</h5>
                                                         </Col>               
                                                     </Row>    
                                                     <Row className="property-overview-btn-modal units">
@@ -193,7 +226,7 @@ function Property() {
                                                             <ApartmentIcon/>
                                                         </Col>                
                                                         <Col lg={10} xs={9}>
-                                                                <h5 className="text-center">21 Units left</h5>
+                                                                <h5 className="text-center">{propertyData?.unitsLeft} Units Left</h5>
                                                         </Col>               
                                                     </Row>    
                                                     <Row className="property-overview-btn-modal move">
@@ -201,7 +234,7 @@ function Property() {
                                                             <CheckBoxIcon/>
                                                         </Col>                
                                                         <Col xs={9} lg={10}>
-                                                                <h5 className="text-center">Ready to move</h5>
+                                                                <h5 className="text-center">{propertyData?.ready ? ("Ready to Move"):("Posession Soon")}</h5>
                                                         </Col>               
                                                     </Row>    
 
@@ -232,17 +265,17 @@ function Property() {
                             <Row>
                                 <Col lg={8} id="overview" className="property-overview">
                                           <Row className="property-overview-head">
-                                            <h4>Poorvi Shreenivasa Grand</h4>
-                                            <h5>Lingadheer, South Bangalore</h5>
+                                            <h4>{propertyData?.name}</h4>
+                                            <h5>{propertyData?.city}</h5>
                                           </Row>  
                                           <Row>
                                             <Row className="property-overview-btn-container">
-                                                <Col xs={6} lg={4}><div className="property-overview-btn"><LocationOnIcon/><h5>Banglore</h5></div></Col>
-                                                <Col xs={6} lg={4}><div className="property-overview-btn"><PaidIcon/><h5>60-80 L</h5></div></Col>
-                                                <Col xs={6} lg={4}><div className="property-overview-btn"><PushPinIcon/><h5>Area</h5></div></Col>
-                                                <Col xs={6} lg={4}> <div className="property-overview-btn"><MeetingRoomIcon/><h5>2-4 BHK</h5></div></Col>
-                                                <Col xs={6} lg={4}><div className="property-overview-btn"><ApartmentIcon/><h5>21 Units left</h5></div></Col>
-                                                <Col xs={6} lg={4}><div className="property-overview-btn"><CheckBoxIcon/><h5>Ready to move</h5></div></Col>
+                                                <Col xs={6} lg={4}><div className="property-overview-btn"><LocationOnIcon/><h5>{propertyData?.location}</h5></div></Col>
+                                                <Col xs={6} lg={4}><div className="property-overview-btn"><PaidIcon/><h5>{propertyData?.price}</h5></div></Col>
+                                                <Col xs={6} lg={4}><div className="property-overview-btn"><PushPinIcon/><h5>{propertyData?.area}</h5></div></Col>
+                                                <Col xs={6} lg={4}> <div className="property-overview-btn"><MeetingRoomIcon/><h5>{propertyData?.BHK} BHK</h5></div></Col>
+                                                <Col xs={6} lg={4}><div className="property-overview-btn"><ApartmentIcon/><h5>{propertyData?.units} Units left</h5></div></Col>
+                                                <Col xs={6} lg={4}><div className="property-overview-btn"><CheckBoxIcon/><h5>{propertyData?.ready ? ("Ready to move"):("Posession Soon")}</h5></div></Col>
                                             </Row>
                                           </Row>
                                 </Col>
@@ -253,9 +286,7 @@ function Property() {
                                 <Col className="property-overview-description" lg={8}>
                                         <h5>Description</h5>
                                         <hr />
-                                        <h6>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus reprehenderit fugit quibusdam ipsa at provident vel nisi autem! Officia, dolore laboriosam vel accusantium eius soluta quasi reiciendis animi excepturi neque?</h6>
-                                        <h6>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus reprehenderit fugit quibusdam ipsa at provident vel nisi autem! Officia, dolore laboriosam vel accusantium eius soluta quasi reiciendis animi excepturi neque?</h6>
-                                        <h6>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus reprehenderit fugit quibusdam ipsa at provident vel nisi autem! Officia, dolore laboriosam vel accusantium eius soluta quasi reiciendis animi excepturi neque?</h6>
+                                        <h6>{propertyData?.description}</h6>
                                 </Col>
                             </Row>
 
@@ -265,43 +296,26 @@ function Property() {
                                 <Col className="property-amenity" lg={8}>
                                         <h5>Amenities</h5>
                                         <hr />
+
                                         <Row>
-                                            <Col className="property-amenity-content-container">
-                                                <div className="property-amenity-content">
-                                                    <CheckIcon/>
-                                                    <h6>Air Conditioned</h6> 
-                                                </div>
-                                            </Col>
-                                            <Col className="property-amenity-content-container">
-                                            <div className="property-amenity-content">
-                                                    <CheckIcon/>
-                                                    <h6>Air Conditioned</h6> 
-                                                </div>
-                                            </Col>
-                                            <Col className="property-amenity-content-container">
-                                            <div className="property-amenity-content">
-                                                    <CheckIcon/>
-                                                    <h6>Air Conditioned</h6> 
-                                                </div>
-                                            </Col>
-                                            <Col className="property-amenity-content-container">
-                                            <div className="property-amenity-content">
-                                                    <CheckIcon/>
-                                                    <h6>Air Conditioned</h6> 
-                                                </div>
-                                            </Col>
-                                            <Col className="property-amenity-content-container">
-                                            <div className="property-amenity-content">
-                                                    <CheckIcon/>
-                                                    <h6>Air Conditioned</h6> 
-                                                </div>
-                                            </Col>
-                                            <Col className="property-amenity-content-container">
-                                            <div className="property-amenity-content">
-                                                    <CheckIcon/>
-                                                    <h6>Air Conditioned</h6> 
-                                                </div>
-                                            </Col>
+
+                                        {propertyData?.amenities?.map((item,index)=>{
+                                                return (
+                                                    <Col key={index} className="property-amenity-content-container">
+                                                        <div className="property-amenity-content">
+                                                            <CheckIcon/>
+                                                            <h6>{item}</h6> 
+                                                        </div>
+                                                    </Col>
+
+
+
+
+                                                )
+                                        }) 
+                                        
+                                        }
+                                            
                                         </Row>
                                 </Col>
                             </Row>
@@ -322,8 +336,14 @@ function Property() {
                                             <h5>Units</h5>
                                         </Col>
                                         <Col lg={4}>
-                                              <button className={`${unit==1 ? ("property-units-head-active"):("")}`} onClick={handle2BHKunit}>2 BHK</button>  
+                                            {
+                                                propertyData?.BHK === "2" ?(
+                                                <button className={`${unit==1 ? ("property-units-head-active"):("")}`} onClick={handle2BHKunit}>2 BHK</button>  
+
+                                                ):(
                                               <button className={`${unit==0 ? ("property-units-head-active"):("")}`} onClick={handle3BHKunit}>3 BHK</button>  
+                                                )
+                                            } 
                                         </Col>
                                        </Row>
                                         <hr />

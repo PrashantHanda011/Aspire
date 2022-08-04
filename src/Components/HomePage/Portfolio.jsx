@@ -60,7 +60,7 @@ function Portfolio() {
                             </div>
                     </div>
 
-                            <Link  to={'/property/1223'}>
+                            <Link  to={`/property/${PortfolioDetail?._id} ` }>
                         <button  >
                             View Property
                         </button>
