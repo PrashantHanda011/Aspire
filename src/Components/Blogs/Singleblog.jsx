@@ -28,12 +28,12 @@ function Singleblog(props) {
             <Container fluid className="Singleblog-container" >
                 <Container >
                     <Row>
-                        <Col xs={7}>
+                        <Col xs={12} lg={7}>
                             <h2 className="Singleblog-Head">Organic Marketing And Modern Marketing, What’s The Relation?</h2>
                         </Col>
                     </Row>
                     <Row className="mt-5 mb-2">
-                        <Col xs={6}>
+                        <Col xs={12} lg={6}>
                             <div className='d-flex  align-items-center'>
                                 <img src={avatar} className="me-4" alt="img" />
                                 <span className='Singleblog-authorDesc'>
@@ -42,10 +42,9 @@ function Singleblog(props) {
                                 </span>
                             </div>
                         </Col>
-                        <Col ></Col>
-                        <Col xs={4} className="d-flex justify-content-end">
-                            <span className='Singleblog-tags'>Tags</span>
-                            <span className='Singleblog-tags'>Tags</span>
+                        <Col xs={12} lg={6} className="d-flex justify-content-end mt-4 mt-lg-0 ">
+                            <span className='Singleblog-tags'><p>Tags</p></span>
+                            <span className='Singleblog-tags'><p>Tags</p></span>
                         </Col>
                     </Row>
                 </Container>
@@ -54,7 +53,7 @@ function Singleblog(props) {
 
 
             <Container fluid className="d-flex  overflow-visible single-blog-sticky">
-                    <div className="col-lg-11 Singleblog-content p-5 ">
+                    <div className="col-lg-11 Singleblog-content p-lg-5 p-2 ">
                         Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore voluptates rem facere? Soluta rerum necessitatibus molestias pariatur iure dicta, amet facilis libero iste quae? Cupiditate dolore neque, explicabo assumenda officia optio sit voluptate consequuntur laboriosam doloremque vero pariatur esse, sunt ipsum sapiente illum nam? Aperiam quisquam optio, veritatis vitae obcaecati eaque, illum sapiente, recusandae possimus repellendus suscipit tempora sequi. Debitis cumque nemo hic doloribus nobis dolor ratione laboriosam molestiae quam id pariatur porro, odit sapiente. Quae sunt sed atque quibusdam magni facilis eaque impedit, corrupti nemo voluptatum, perferendis dolores accusantium et, fuga consequuntur labore iure totam? Quibusdam in suscipit consequuntur? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias iusto et, eaque aliquam modi soluta fugiat voluptatem impedit nisi a amet veritatis iure voluptatum neque earum repudiandae harum sunt quis adipisci illum laudantium consequatur deserunt dolores. Doloremque voluptates corrupti, numquam expedita iusto perspiciatis? Laborum aliquid sequi porro et ex beatae numquam molestias nulla quidem ducimus consequatur ipsa alias atque rerum ipsum, repellat sunt cum unde deleniti iure tempore. Architecto sed vel vero harum, incidunt ducimus accusamus eos veniam fugiat quaerat velit quam obcaecati inventore praesentium voluptatem maiores similique magni, sit perferendis quia. Praesentium optio repudiandae atque quos, libero tempora impedit temporibus deleniti nemo similique delectus corrupti, repellendus blanditiis esse consequatur a ipsa cupiditate itaque ducimus quo magni adipisci dolores? Tenetur pariatur a error dolores ad quas modi corrupti. Architecto sit laboriosam et beatae inventore aliquam numquam magnam quod sint dicta optio, laborum fuga, nemo cumque illum quasi? Aliquam, non ipsum! adipisicing elit. Ipsum deleniti porro nihil a quasi nostrum qui illo optio consequatur odit adipisci dolores dicta debitis voluptates, aperiam saepe officiis soluta recusandae cumque amet! Autem aspernatur ex, excepturi laborum optio cupiditate expedita impedit reprehenderit deserunt, asperiores labore magni voluptatem esse rerum enim incidunt id! Quasi quo unde illum expedita soluta adipisci officia maiores consectetur facere possimus sit praesentium, ducimus autem ab. Assumenda pariatur saepe commodi quod aliquid ut, quisquam, perferendis veniam esse neque nobis velit. Voluptatibus adipisci, animi provident excepturi libero qui aperiam quam asperiores iure voluptatum est inventore odio tempore ex?
                     </div>
 
@@ -93,14 +92,14 @@ function Singleblog(props) {
                                         <Col className="singleblog-author-desc" lg={9}> <h6>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque amet qui, esse asperiores delectus earum nam mollitia distinctio! Quisquam maxime voluptates possimus amet similique eveniet vel excepturi voluptas saepe. Adipisci?</h6></Col>
                                     </Row>
                                 </Col>
-                                <Col className="singleblog-related-blogs" lg={6}>
-                                    <h5>Related Articles</h5>
+                                <Col className="singleblog-related-blogs " lg={6}>
+                                    <h5 className="my-lg-0 my-4">Related Articles</h5>
 
-                                    <Row>
+                                    <div clasName="d-flex">
                                         <Relatedblog/>
                                         <Relatedblog/>
                                         <Relatedblog/>
-                                    </Row>
+                                    </div>
 
                                 </Col>
                                </Row>     

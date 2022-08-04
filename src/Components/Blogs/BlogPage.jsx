@@ -35,12 +35,12 @@ console.log()
 
           <Container className="Blog-Maincontainer" >
               <Row>
-                <Col xs={8}>
+                <Col xs={12} lg={8}>
                     <h2 className="Blog-heading">ALL BLOGS</h2>
                     <h2 className="Blog-SubHeading">We Believe In Sharing Knowledge</h2>
                     <img src={blogData[0]?.picture} className="Blog-Image" alt="no img" />
                 </Col>
-                <div className="blogTrend-overlay p-3 ">
+                <div className="blogTrend-overlay p-3 col-8 col-lg-4 ">
                       <h5 className='mb-1'># Trending</h5>
                       <h3>{blogData[0]?.title}</h3>
                       <div className='d-flex align-items-center justify-content-between py-1 '>
@@ -58,7 +58,7 @@ console.log()
 
                <h3 className="blogMainHeading">Knowledge Series</h3>         
                 <Row  className="d-flex justify-content-center">
-                    <Col xs={10} className="d-flex  BlogsRow   align-items-center">
+                    <Col xs={11} className="d-flex  BlogsRow   align-items-center">
               {
                 blogData.map((item,index)=>{
                   return  <BlogCard
@@ -74,18 +74,17 @@ console.log()
               }
                       
                     </Col>
-                      <Col xs={1} className="ArrowIcon  d-flex align-items-center ">
+                      {/* <Col xs={1} className="ArrowIcon  d-flex align-items-center ">
                        <span>
                        <ArrowForwardIcon/>
                        </span> 
-                      </Col>
+                      </Col> */}
                 </Row>
-                <hr />
 
 
                <h3 className="blogMainHeading">News & Updates</h3>         
                 <Row  className="d-flex justify-content-center">
-                    <Col xs={10} className="d-flex  BlogsRow   align-items-center">
+                    <Col xs={11} className="d-flex  BlogsRow   align-items-center">
                         {
                     blogData.map((item,index)=>{
                       return  <BlogCard
@@ -100,17 +99,16 @@ console.log()
                     })
                   }
                     </Col>
-                      <Col xs={1} className="ArrowIcon  d-flex align-items-center ">
+                      {/* <Col xs={1} className="ArrowIcon  d-flex align-items-center ">
                        <span>
                        <ArrowForwardIcon/>
                        </span> 
-                      </Col>
+                      </Col> */}
                 </Row>
-                <hr />
 
                <h3 className="blogMainHeading">Locality Bytes</h3>         
                 <Row  className="d-flex justify-content-center">
-                    <Col xs={10} className="d-flex  BlogsRow   align-items-center">
+                    <Col xs={11} className="d-flex  BlogsRow   align-items-center">
                           {
                       blogData.map((item,index)=>{
                         return  <BlogCard
@@ -125,13 +123,12 @@ console.log()
                       })
                     }
                </Col>
-                      <Col xs={1} className="ArrowIcon  d-flex align-items-center ">
+                      {/* <Col xs={1} className="ArrowIcon  d-flex align-items-center ">
                        <span>
                        <ArrowForwardIcon/>
                        </span> 
-                      </Col>
+                      </Col> */}
                 </Row>
-                <hr />
 
 
             </div>

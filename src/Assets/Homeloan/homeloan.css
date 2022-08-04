@@ -2,6 +2,8 @@
     text-align: center;
 
 }
+.homeloan{
+}
 .homeloan-head h3{
     font-size: 4rem;
     color: var(--blueColor);
@@ -38,10 +40,12 @@
 }
 .home-left-img{
     position: absolute;
-    width: 14%;
+    width: 15%;
     left: 15.5%;
+    display: none;
 }
 .home-right-img{
+    display: none;
     position: absolute;
     width: 15.5%;
     right: 15.5%;
@@ -152,11 +156,50 @@
     height: 6px;
 }
 .homeloan-brandscroll::-webkit-scrollbar-track {
-    background: #b4b3b3; 
+    background: #e4e4e4; 
     border-radius: 10px;
 }
 .homeloan-brandscroll::-webkit-scrollbar-thumb {
-    background: gray; 
+    background: rgb(186, 185, 185);  
     border-radius: 50px;
   }
+
+
+  .homeloan-blogcard-scroll{
+    overflow-x: scroll;
+  }
+
+.homeloan-blogcard-scroll::-webkit-scrollbar {
+    height: 10px;
+}
+.homeloan-blogcard-scroll::-webkit-scrollbar-track {
+    background: #e4e4e4; 
+    border-radius: 10px;
+}
+.homeloan-blogcard-scroll::-webkit-scrollbar-thumb {
+    background: rgb(186, 185, 185); 
+    border-radius: 50px;
+}
   
+@media (max-width: 992px){
+     .homeloan-center-img img{
+        width: 100%;
+     }
+     .homeloan-blueheading h3{
+        font-size: 20px;
+     }
+     .homeloan-blueheading button{
+        font-size: 14px;
+     }
+     .ArrowIcon{
+        display: none !important;
+     }
+}
+@media (max-width: 568px){
+    .homeloan-center-img img{
+        display: none;
+    }
+    .homeloan-center-img {
+        display: none !important;
+    }
+}

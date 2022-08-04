@@ -25,6 +25,9 @@
     position: sticky;
     top: 200px;
 }
+.responsive-sideform-btn{
+    display: none;
+}
 .property-sideform{
     background-color: white;
     border-radius: 30px;
@@ -32,7 +35,7 @@
     position: sticky;
     display: inline-block;  
     right: 0;
-    left: 830px;
+    left: 65vw;
     width: 30%;
     top: 100px;
     z-index: 1000;
@@ -510,5 +513,131 @@
         width: 35%;
 
     }
+}
+
+
+@media (max-width: 992px){
+    .property-sideform{
+        display: none;
+    }
+    .locationOn{
+    }
+    .property-block{
+        top: unset;
+    }
+    .property-animation-modal{
+        z-index: 10000000000000;
+        height: 100vh;
+        top: -185px;
+    }
+    .property-overview-btn-modal{
+        flex-direction: row;
+        width: 100%;   
+    }
+    @keyframes locationOn {
+        0%{
+            left:-740px ;
+            width: 200%;
+        }
+        50%{
+            left: 0;
+            width:100%;
+        }
+    }
+    @keyframes money {
+        0%{
+            left: 740px;
+            width: 200%;
+        }
+        50%{
+            left: 0;
+            width: 100%;
+        }
+    }
+    @keyframes area {
+        0%{
+            left:-740px ;
+            width: 200%;
+        }
+        50%{
+            width: 100%;
+            left: 0;
+        }
+    }
+    @keyframes bhk {
+        0%{
+            left: 740px;
+            width: 200%;
+        }
+        50%{
+            width: 100%;
+            left: 0;
+        }
+    }
+    @keyframes units {
+        0%{
+            left:-740px ;
+            width: 200%;
+        }
+        50%{
+            left: 0;
+            width: 100%;
+        }
+    }
     
+    @keyframes move {
+        0%{
+            bottom:-740px;
+            width: 200%;
+        }
+        50%{
+            bottom: 0;
+            width: 100%;
+    
+        }
+    }
+
+
+
+    .responsive-sideform-btn{
+        display: flex;
+        border-radius: 50%;
+        padding: 15px;
+        border:none;
+        background-color: var(--blueColor);
+        position: fixed;
+        right: 10%;
+        bottom: 40px;
+        z-index: 99999999;
+    }
+    .responsive-sideform-btn svg{
+        color: white;
+        font-size: 2rem;
+    }
+    .property-sideform-modal{
+        z-index: 999999999999;
+    }
+}
+
+@media (max-width: 568px){
+
+    .property-aboutDeveloper {
+        margin: 40px 0;
+        background-color: white;
+        padding: 20px 20px;
+    }
+    .property-navigate-container {
+        padding: 20px 0;
+        display: flex;
+    }
+    .property-first-img img{
+        width: 100%;
+    }
+    .property-overview-head h4{
+        font-size: 30px;
+    }
+    .property-overview-head h5{
+        font-size: 16px;
+        margin-bottom: 20px;
+    }
 }

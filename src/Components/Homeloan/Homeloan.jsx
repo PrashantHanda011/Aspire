@@ -23,6 +23,7 @@ import Select, { SelectChangeEvent } from '@mui/material/Select';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import { Input } from '@mui/material';
+import HomeBlogCard from './HomeBlogCard'
 
 function Homeloan() {
   const [show1, setShow] = useState(false);
@@ -67,7 +68,7 @@ function Homeloan() {
 
   return (
     <>
-        <div className="container homeloan my-lg-5">
+        <div className="container homeloan my-5">
           
           <div className="row homeloan-head">
             <h3>How it works</h3>
@@ -76,12 +77,11 @@ function Homeloan() {
 
           <div className="row ">
           <img src={left} className="home-left-img" alt="" />
-            <div className="col d-flex flex-column justify-content-between">
-       
+      <div className="col-12 col-lg-4 d-flex flex-column justify-content-between mt-5 mt-lg-0 ">
        {/* card1 */}
               
               <div className="row">
-                <div className="col homeloan-banner-content "> 
+                <div className="col-12 col-lg-12 homeloan-banner-content "> 
                     <h4>01</h4>
                     <h3>Lorem, ipsum dolor.</h3>
                   <div className='separatorDivhomeloan'></div>
@@ -91,8 +91,8 @@ function Homeloan() {
      
        {/* card2 */}
               
-              <div className="row">
-                <div className="col homeloan-banner-content "> 
+              <div className="row mt-5 mt-lg-0">
+                <div className=" col-11 col-lg-12 homeloan-banner-content "> 
                     <h4>01</h4>
                     <h3>Lorem, ipsum dolor.</h3>
                   <div className='separatorDivhomeloan'></div>
@@ -103,17 +103,17 @@ function Homeloan() {
             </div>
   
 
-            <div className="col d-flex align-self-center homeloan-center-img">
-              <img src={homeloanbanner} alt="" />
+            <div className="col-lg-4 d-flex align-self-center homeloan-center-img">
+              <img src={homeloanbanner} className='w-100' alt="" />
             </div>
             
-            <div className="col d-flex flex-column  justify-content-between">
+            <div className="col-12 col-lg-4 d-flex flex-column  justify-content-between">
   
           <img src={right} className="home-right-img" alt="" />
        {/* card3 */}
         
-            <div className="row mb-lg-5">
-                <div className="col homeloan-banner-content mt-4"> 
+            <div className="row mb-5 mt-5 mt-lg-0">
+                <div className="col-12 col-lg-12 homeloan-banner-content mt-lg-4 mt-0"> 
                     <h4>01</h4>
                     <h3>Lorem, ipsum dolor.</h3>
                   <div className='separatorDivhomeloan'></div>
@@ -124,7 +124,7 @@ function Homeloan() {
        {/* card4 */}
               
               <div className="row mt-lg-3">
-                <div className="col homeloan-banner-content "> 
+                <div className="col-11 col-lg-12 homeloan-banner-content "> 
                     <h4>01</h4>
                     <h3>Lorem, ipsum dolor.</h3>
                   <div className='separatorDivhomeloan'></div>
@@ -139,16 +139,16 @@ function Homeloan() {
 
         {/* homeloan calculator */}
 
-      <div className="container-fluid homeloan-calculator py-lg-5">
+      <div className="container-fluid homeloan-calculator py-5">
         <div className="container">
             <h3>Home Loan Calculator</h3>
         </div>
         <div className="container homeloan-calculator-slider-container">
           <div className="row">
             <div className="col">
-              <div className="row mb-lg-5"><h5>Home Loan</h5></div>
+              <div className="row mb-5"><h5>Home Loan</h5></div>
              
-              <div className="row my-lg-3">
+              <div className="row my-3">
                     <div className="col d-flex flex-column">
                       <div className="row ">
                         <div className='d-flex justify-content-between '><h6>Loan Amount</h6> <h6>RS</h6></div>
@@ -181,7 +181,7 @@ function Homeloan() {
              
              
             </div>
-            <div className="col ps-5">
+            <div className="col ps-0 ps-lg-5 ps-md-5">
               <Chart/>
             </div>
           </div>
@@ -206,9 +206,9 @@ function Homeloan() {
 
       {/* trending offers */}
 
-      <div className="container-fluid homeload-trending-container py-lg-5">
+      <div className="container-fluid homeload-trending-container py-5">
         <div className="container">
-          <div className="row py-lg-4">
+          <div className="row py-4">
             <h3>Trending loans & offers</h3>
           </div>
             <Graphcards/>
@@ -217,12 +217,12 @@ function Homeloan() {
       </div>
 
 {/* our Partner */}
-      <div className="container-fluid homeloan-ourpartner-container py-lg-5">
+      <div className="container-fluid homeloan-ourpartner-container py-5">
         <div className="container d-flex flex-column homeloan-ourpartner ">
             <h3>Our Partners</h3>
-            <h5 className='pb-lg-5'>Get in-depth knowledge about all things related to loans and your finances</h5>
+            <h5 className='pb-5'>Get in-depth knowledge about all things related to loans and your finances</h5>
           
-            <div className="row my-lg-2">
+            <div className="row my-2">
                 <div className='d-flex justify-content-between homeloan-brandscroll overflowY-hidden'>
                   <img src={partner} alt="" />
                   <img src={partner} alt="" />
@@ -254,19 +254,24 @@ function Homeloan() {
 
 
     <div style={{backgroundColor:"#ebebeb"}}  className="container-fluid py-5 px-0">
-    <h3 className="blogMainHeading m-0 ps-5 py-5">Featured Blogs</h3>         
-                <Row  className="d-flex justify-content-center">
-                    <Col xs={10} className="d-flex  BlogsRow   align-items-center">
-                      <BlogCard />
-                      <BlogCard/>
-                      <BlogCard/>
+    <h3 className="blogMainHeading m-0 ps-5 py-5">Featured Blogs</h3>
+              <div className="container">
+
+                <Row  className="d-flex  homeloan-blogcard-scroll">
+                    <Col xs={10} className="d-flex  BlogsRow    align-items-center">
+                      <HomeBlogCard />
+                      <HomeBlogCard/>
+                      <HomeBlogCard/>
+                      <HomeBlogCard/>
+                      <HomeBlogCard/>
                     </Col>
-                      <Col xs={1} className="ArrowIcon  d-flex align-items-center ">
+                      {/* <Col xs={12} className="ArrowIcon  d-flex align-items-center ">
                        <span>
                        <ArrowForwardIcon/>
                        </span> 
-                      </Col>
+                      </Col> */}
                 </Row>
+              </div>         
 
     </div>
       
@@ -280,6 +285,8 @@ function Homeloan() {
     <div className="container-fluid pb-lg-5 px-0" style={{background:"#ebebeb"}}>
       <Community color="#ebebeb"/>
     </div>
+
+    <div className="container">
 
 
     <Modal
@@ -424,6 +431,7 @@ function Homeloan() {
       </Modal>
 
 
+    </div>
 
 
     </>

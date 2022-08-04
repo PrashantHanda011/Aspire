@@ -15,12 +15,14 @@ import CheckIcon from '@mui/icons-material/Check';
 import Singleunit from './Singleunit'
 import CustomizedAccordions from './FAQaccordian'
 import Map2 from '../Contact/Map2'
-import { AnimationOnScroll } from 'react-animation-on-scroll';
-import { Form, Modal } from 'react-bootstrap'
+import AddAlertIcon from '@mui/icons-material/AddAlert';
+import Button from 'react-bootstrap/Button';
+import Modal from 'react-bootstrap/Modal';
 
 function Property() {
     const [unit, setunit] = useState(0);
     const [showModal, setshowModal] = useState(true);
+    const [showSideform, setshowSideform] = useState(false);
     const [ scrolled, setScrolled ] = useState(false)
     const location =useLocation();
 
@@ -42,10 +44,59 @@ function Property() {
     }
     window.addEventListener('scroll', handleClose)
 
-  
+    // sideform
+
+    const handleCloseSideform=()=>{
+        setshowSideform(false);
+    }
+    const handleShowsideform = () => setshowSideform(true);
+
     return (
     <>
     <Container fluid className="property-Single "  onScroll={handleClose} onScrollCapture={handleClose}  onKeyDown={handleClose} style={{position:"relative"}} onTouchStart={handleClose}  >
+    
+            {/* responsive icon */}
+            
+            <button onClick={handleShowsideform} className="responsive-sideform-btn btn">
+                <AddAlertIcon />
+            </button>
+                    
+            <Modal show={showSideform} onHide={handleCloseSideform} className="property-sideform-modal" aria-labelledby="contained-modal-title-vcenter"
+      centered>
+      <Modal.Header  closeButton>
+       
+      </Modal.Header>
+                <Modal.Body>
+                <div className="property-side-form-sticky-resp">
+                                    <Row  className=' property-sideform-head-container'>
+                                                <Col lg={2} md={3} xs={2}>
+                                                <div className="property-sideform-avatar">
+                                                    
+                                                </div>
+                                                </Col>
+                                                <Col lg={10} md={9} xs={10}>
+                                                    <span className="property-sideform-head ">
+                                                        <h4>Aspire Logo</h4>
+                                                        <h5>Get the best Quote!</h5>
+                                                    </span>
+                                                </Col>
+                                            </Row>
+
+                                            <Row xs={12} className="property-sideform-input"> 
+                                                <span ><input type="text" placeholder="Name" /></span>
+                                                <span><input type="text"  placeholder="Phone"/></span>
+                                                <span><input type="text" placeholder="Email"/></span>
+                                            </Row>
+
+                                            <Row className="property-sideform-btn">
+                                                <button>Get Best Quote</button>
+                                            </Row>                                           
+                                            </div>
+                </Modal.Body>
+             
+            </Modal>
+
+
         <div   className="property-sideform p-4 col-lg-4">
                                 <div className="property-side-form-sticky">
                                     <Row  className=' property-sideform-head-container'>
@@ -103,53 +154,53 @@ function Property() {
                                            </Row>
                                             <Row  className="property-overview-btn-container-modal d-flex flex-column align-items-center">
                                                 <Col className="animationContainer w-100 d-flex flex-column align-items-center">
-                                                    <Row className="property-overview-btn-modal locationOn">
-                                                        <Col lg={2}>
+                                                    <Row className="property-overview-btn-modal locationOn d-flex">
+                                                        <Col lg={2} xs={3} >
                                                             <LocationOnIcon/>
                                                         </Col>                
-                                                        <Col >
+                                                        <Col xs={9}>
                                                             <h5 className="text-center">Banglore</h5>
                                                         </Col>               
                                                     </Row>    
 
                                                     <Row className="property-overview-btn-modal money ">
                                                         
-                                                        <Col lg={2}>
+                                                        <Col lg={2} xs={3}>
                                                             <PaidIcon/>
                                                         </Col>                
-                                                        <Col >
+                                                        <Col lg={10} xs={9}>
                                                                 <h5 className="text-center">60-80 L</h5>
                                                         </Col>               
                                                     </Row>    
                                                     <Row className="property-overview-btn-modal area">
-                                                        <Col lg={2}>
+                                                        <Col lg={2} xs={3}>
                                                             <PushPinIcon/>
                                                         </Col>                
-                                                        <Col >
+                                                        <Col lg={10} xs={9}>
                                                                 <h5 className="text-center">Area</h5>
                                                         </Col>               
                                                     </Row>    
                                                     <Row className="property-overview-btn-modal bhk">
-                                                        <Col lg={2}>
+                                                        <Col lg={2} xs={3}>
                                                             <MeetingRoomIcon/>
                                                         </Col>                
-                                                        <Col >
+                                                        <Col lg={10} xs={9}>
                                                                 <h5 className="text-center">2-4 BHK</h5>
                                                         </Col>               
                                                     </Row>    
                                                     <Row className="property-overview-btn-modal units">
-                                                        <Col lg={2}>
+                                                        <Col lg={2} xs={3}>
                                                             <ApartmentIcon/>
                                                         </Col>                
-                                                        <Col >
+                                                        <Col lg={10} xs={9}>
                                                                 <h5 className="text-center">21 Units left</h5>
                                                         </Col>               
                                                     </Row>    
                                                     <Row className="property-overview-btn-modal move">
-                                                        <Col lg={2}>
+                                                        <Col lg={2} xs={3}>
                                                             <CheckBoxIcon/>
                                                         </Col>                
-                                                        <Col >
+                                                        <Col xs={9} lg={10}>
                                                                 <h5 className="text-center">Ready to move</h5>
                                                         </Col>               
                                                     </Row>    
@@ -164,7 +215,7 @@ function Property() {
 {/* navigate */}
                     <Container >
                         <Row  >
-                        <Col lg={9} className="property-navigate-container">
+                        <Col lg={9} className="property-navigate-container flex-wrap">
                                 <a href={"#overview"}  className={`${(location?.hash=='#overview') ? ("navigate-active"):("") } property-navigate-links`}>Overview</a>
                                 <a href={"#amenities"} className={`${(location?.hash=='#amenities') ? ("navigate-active"):("") } property-navigate-links`}>Amenities</a>
                                 <a href={"#location"} className={`${(location?.hash=='#location') ? ("navigate-active"):("") } property-navigate-links`}>Location</a>
@@ -186,14 +237,12 @@ function Property() {
                                           </Row>  
                                           <Row>
                                             <Row className="property-overview-btn-container">
-                                                <Col><div className="property-overview-btn"><LocationOnIcon/><h5>Banglore</h5></div></Col>
-                                                <Col><div className="property-overview-btn"><PaidIcon/><h5>60-80 L</h5></div></Col>
-                                                <Col><div className="property-overview-btn"><PushPinIcon/><h5>Area</h5></div></Col>
-                                            </Row>
-                                            <Row>
-                                                <Col> <div className="property-overview-btn"><MeetingRoomIcon/><h5>2-4 BHK</h5></div></Col>
-                                                <Col><div className="property-overview-btn"><ApartmentIcon/><h5>21 Units left</h5></div></Col>
-                                                <Col><div className="property-overview-btn"><CheckBoxIcon/><h5>Ready to move</h5></div></Col>
+                                                <Col xs={6} lg={4}><div className="property-overview-btn"><LocationOnIcon/><h5>Banglore</h5></div></Col>
+                                                <Col xs={6} lg={4}><div className="property-overview-btn"><PaidIcon/><h5>60-80 L</h5></div></Col>
+                                                <Col xs={6} lg={4}><div className="property-overview-btn"><PushPinIcon/><h5>Area</h5></div></Col>
+                                                <Col xs={6} lg={4}> <div className="property-overview-btn"><MeetingRoomIcon/><h5>2-4 BHK</h5></div></Col>
+                                                <Col xs={6} lg={4}><div className="property-overview-btn"><ApartmentIcon/><h5>21 Units left</h5></div></Col>
+                                                <Col xs={6} lg={4}><div className="property-overview-btn"><CheckBoxIcon/><h5>Ready to move</h5></div></Col>
                                             </Row>
                                           </Row>
                                 </Col>
@@ -301,12 +350,12 @@ function Property() {
                                 <h5>About Developer</h5>
                                 <h6>Lodha Builders and Co.</h6></Row>
                             <Row className="property-aboutDeveloper-work">
-                                <Col lg={1}>
+                                <Col lg={1} >
                                     <div className="property-aboutDeveloper-img">
 
                                     </div>
                                 </Col>
-                                <Col className="property-aboutDeveloper-work-side">
+                                <Col lg={11}  className="property-aboutDeveloper-work-side mt-4 mt-lg-0">
                                     <h6><p></p> 20 + projects developed</h6>
                                     <h6> <p></p>East Bengaluru </h6>
                                     <h6><p></p>73,742 Possessions given</h6>

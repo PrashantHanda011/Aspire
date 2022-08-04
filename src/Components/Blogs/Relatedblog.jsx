@@ -7,12 +7,12 @@ import {Link} from 'react-router-dom'
 function Relatedblog() {
   return (
     <>
-        <Col lg={12 } >
+        <Col lg={12 }  >
     <Link to={"/blogs/12234"} className="text-decoration-none">
                 <Row>
                 <div className='RelatedblogCardContent'>
                   
-                <Col lg={3}>
+                <Col lg={3} xs={3}>
                     <img src={BlogImage} alt="" />
                 </Col>
 
