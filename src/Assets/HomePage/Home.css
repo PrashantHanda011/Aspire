@@ -41,14 +41,22 @@
     margin-bottom: 0;
 }
 .emiRow{
-    border: 1px solid black;
+    border: 2px solid rgb(199, 197, 197);
     margin-top: 0;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-radius: 20px;
 }
 .EmiContainer{
-    padding-top: 100px;
-    
+   padding-top: 100px;
 }
-
+.emiBtn{
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    background-color:#13184F;
+    color: white;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
 @media (max-width: 568px){
     .banner-btn{
         flex-direction: column;

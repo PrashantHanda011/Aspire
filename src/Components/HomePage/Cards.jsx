@@ -9,13 +9,15 @@ function Cards() {
   return (
     <Container className=" EmiContainer   ">
         <Row xs={12} className=" d-flex justify-content-around flex-column flex-lg-row flex-md-row">
-            <Col lg={6} xs={12} className=" d-flex justify-content-center pb-lg-0 pb-5">
+            <Col lg={6} xs={12} md={12} className=" d-flex justify-content-center pb-lg-0 pb-5">
                 <Row className='emiRow  pt-5 pb-5 ps-3'>
                     
                     <Col>
                     <h4 className='emiHead'>EMI Calculator</h4>
                         <br />
-                    <div className='emiBtn'>View EMI</div>
+                        <Link to="/homeloan">
+                    <button className='emiBtn'>View EMI</button>
+                        </Link>
                     </Col>
                     <Col>
                         <img src={LowEmi} alt="" style={{width: "100%"}} />
@@ -23,13 +25,13 @@ function Cards() {
                     
                 </Row>
             </Col>
-            <Col lg={6} xs={12} className="d-flex justify-content-center">
+            <Col lg={6} xs={12} md={12} className="d-flex justify-content-center">
                 <Row className='emiRow   pt-5 pb-5 ps-3'>
                     <Col >
                     <h4 className='emiHead'>Blogs</h4>
                     <br />
             <Link className="text-decoration-none" to={'/blogs'}>
-                    <div className='emiBtn'>View articles</div>
+                    <button className='emiBtn'>View articles</button>
             </Link>   
                     </Col>
                     <Col>

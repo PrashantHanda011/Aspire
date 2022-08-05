@@ -156,7 +156,8 @@
     height: 6px;
 }
 .homeloan-brandscroll::-webkit-scrollbar-track {
-    background: #e4e4e4; 
+    background: #e4e4e4;
+    height: 6px; 
     border-radius: 10px;
 }
 .homeloan-brandscroll::-webkit-scrollbar-thumb {
@@ -166,7 +167,6 @@
 
 
   .homeloan-blogcard-scroll{
-    overflow-x: scroll;
   }
 
 .homeloan-blogcard-scroll::-webkit-scrollbar {

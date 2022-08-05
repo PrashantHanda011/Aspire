@@ -211,7 +211,11 @@ function Homeloan() {
           <div className="row py-4">
             <h3>Trending loans & offers</h3>
           </div>
+          <div className="d-flex flex-lg-row justify-content-between flex-column">
             <Graphcards/>
+            <Graphcards/>
+            <Graphcards/>
+          </div>
           
         </div>
       </div>

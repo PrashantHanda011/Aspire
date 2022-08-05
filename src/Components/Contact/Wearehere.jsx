@@ -7,7 +7,7 @@ import {Map, InfoWindow, Marker, GoogleApiWrapper} from 'google-maps-react';
 import  MapContainer  from './Map';
 import Map2 from './Map2';
 function Wearehere() {
-    const [heightmap, setheightmap] = useState("550px")
+    const [heightmap, setheightmap] = useState("450px")
 
     const setheight=()=>{
         setheightmap("300px")

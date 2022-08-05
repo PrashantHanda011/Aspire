@@ -86,14 +86,18 @@ function Partner() {
     <div className="container partner-doitall py-lg-5">
       <div className="row d-flex mt-5 mt-lg-0 flex-column partner-doitall-head justify-content-center ">
           <h2>Do it all with aspire</h2>
-          <p className='text-center my-lg-2 '>Lorem Lorem, ipsum dolor. ipsum dolor sit amet.</p>
+          <p className='text-center  my-lg-2 '>Lorem Lorem, ipsum dolor. ipsum dolor sit amet.</p>
       </div>
+      <div className='d-flex flex-wrap my-4 justify-content-between'>
         <Graphcards/>
+        <Graphcards/>
+        <Graphcards/>
+      </div>
     </div>          
 
 
     <div className="container">
-      <div className="row partner-doit-graph">
+      <div className="row partner-doit-graph d-flex flex-lg-row flex-column">
         <div className="col px-4 py-3 me-0 me-lg-4 mb-5 bg-white"><Graphs/> </div>
         <div className="col d-flex partner-doit-graph mb-3 align-items-center"><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto, et minima saepe natus facere accusantium illo eligendi. Non soluta deserunt fugiat mollitia, labore inventore incidunt et in velit? Cupiditate, commodi.</p></div>
       </div>
@@ -147,7 +151,7 @@ function Partner() {
       <h2 className='px-2'>Join The Elite Club</h2>
     </div>
     <div  className='container-fluid px-0  mb-lg-5 '>
-      <div className='perfectSection perfectBg mb-5 partner-findhome'>
+      {/* <div className='perfectSection perfectBg mb-5 partner-findhome'>
           <div className='perfectWriteDiv'>
               
           <h2 className='homeChoiceHead'>Find your perfect home</h2>
@@ -158,8 +162,10 @@ function Partner() {
 
           </div>
 
-      </div>
+      </div> */}
+      <Perfect/>
     </div>
+
 
   </>
   )
