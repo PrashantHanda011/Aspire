@@ -28,7 +28,7 @@ p{
   --bs-gutter-x: 0;
 }
 :root {
-  --orangeColor:rgba(244, 126, 32, 1);
+  --orangeColor:#f47e20;
   --blueColor:rgba(28, 27, 77, 1);
 }
 

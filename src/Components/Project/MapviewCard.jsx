@@ -16,7 +16,7 @@ function MapviewCard({data}) {
     <>
             <div className="col map-viewimg d-flex flex-column" style={{position:"relative"}}>
             {
-                    data?.pictures[0].length >0 ?(<img src={data?.pictures} className={` property-img property-img-height border-none`} alt="" style={{width: "95%",height:"40vh" }} />) :(<h2 style={{height:"40vh"}} className="border-none alternate-text-property">No Image For Property</h2>)
+                    data?.pictures[0]?.length >0 ?(<img src={data?.pictures} className={` property-img property-img-height border-none`} alt="" style={{width: "95%",height:"40vh" }} />) :(<h2 style={{height:"40vh"}} className="border-none alternate-text-property">No Image For Property</h2>)
               }
       <div className='propertyDescription-map-view'>
                     <div className='description'>
@@ -30,7 +30,7 @@ function MapviewCard({data}) {
                             </div>
                     </div>
 
-                        <Link to={'/property/123'}>
+                        <Link to={`/property/${data._id}`}>
                         <button >
                             View Property
                         </button>

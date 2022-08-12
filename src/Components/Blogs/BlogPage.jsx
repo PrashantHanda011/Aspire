@@ -16,7 +16,11 @@ import { FetchCategoryBlog } from '../API/Api'
 function BlogPage() {
 const [blogData, setblogData] = useState([])
 const [category, setcategory] = useState([])
-  const fetchblogData = async()=>{
+const [knowledgeBlog, setknowledgeBlog] = useState([])
+const [newsBlog, setnewsBlog] = useState([])
+const [localityBlog, setlocalityBlog] = useState([])
+  
+const fetchblogData = async()=>{
       try {
         const data = await axios.get('https://aspire0.herokuapp.com/blog/getAllBlog');
         setblogData(data?.data?.data)
@@ -24,22 +28,45 @@ const [category, setcategory] = useState([])
         console.log(error)
       }
     } 
-  const fetchTechblogData = async()=>{
+  const fetchknowledgeblogData = async()=>{
       try {
         let categorydata={
-          category:"Technology"
+          category:"knowledgeSeries"
         }
         const data = await FetchCategoryBlog(categorydata);
-        setcategory(data?.data?.data)
+        setknowledgeBlog(data?.data?.data)
       } catch (error) {
         console.log(error)
       }
     } 
-    console.log(category)
+  const fetchNewsAndUpdatedblogData = async()=>{
+      try {
+        let categorydata={
+          category:"news&updates"
+        }
+        const data = await FetchCategoryBlog(categorydata);
+        setnewsBlog(data?.data?.data)
+      } catch (error) {
+        console.log(error)
+      }
+    } 
+  const fetchLocalityblogData = async()=>{
+      try {
+        let categorydata={
+          category:"localityBytes"
+        }
+        const data = await FetchCategoryBlog(categorydata);
+        setlocalityBlog(data?.data?.data)
+      } catch (error) {
+        console.log(error)
+      }
+    } 
     
 useEffect(() => {
     fetchblogData()
-    fetchTechblogData()
+    fetchknowledgeblogData()
+    fetchNewsAndUpdatedblogData()
+    fetchLocalityblogData()
   }, [])
 
 console.log()
@@ -69,11 +96,11 @@ console.log()
 
             <div className='blogsDiv'>
 
-               <h3 className="blogMainHeading">Technology</h3>         
+               <h3 className="blogMainHeading">Knowledge Series</h3>         
                 <Row  className="d-flex justify-content-center">
                     <Col xs={11} className="d-flex  BlogsRow   align-items-center">
               {
-                category.map((item,index)=>{
+                knowledgeBlog.map((item,index)=>{
                   return  <BlogCard
                       key={index}
                       id={item?._id}
@@ -99,7 +126,7 @@ console.log()
                 <Row  className="d-flex justify-content-center">
                     <Col xs={11} className="d-flex  BlogsRow   align-items-center">
                         {
-                    blogData.map((item,index)=>{
+                          newsBlog.map((item,index)=>{
                       return  <BlogCard
                           key={index}
                           id={item?._id}
@@ -123,7 +150,7 @@ console.log()
                 <Row  className="d-flex justify-content-center">
                     <Col xs={11} className="d-flex  BlogsRow   align-items-center">
                           {
-                      blogData.map((item,index)=>{
+                            localityBlog.map((item,index)=>{
                         return  <BlogCard
                             key={index}
                             id={item?._id}

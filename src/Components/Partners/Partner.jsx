@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useState} from 'react'
 import {Container,Row,Col} from 'react-bootstrap'
 import '../../Assets/Partner/partner.css'
 import StarBorderIcon from '@mui/icons-material/StarBorder';
@@ -8,8 +8,35 @@ import CarouselComponent from './Carousel';
 import Perfect from '../HomePage/Perfect';
 import Graphcards from './Graphcards';
 import Graphs from './Graphs';
+import { faker } from '@faker-js/faker';
+
 
 function Partner() {
+  const labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
+  const [graphData, setgraphData] = useState({
+
+  })
+  const data = {
+   labels,
+   datasets: [
+     {
+       label: 'Dataset 1',
+       data: labels.map(() => faker.datatype.number({ min: 0, max: 1000 })),
+       backgroundColor: 'rgb(255, 99, 132)',
+     },
+     {
+       label: 'Dataset 2',
+       data: labels.map(() => faker.datatype.number({ min: 0, max: 1000 })),
+       backgroundColor: 'rgb(75, 192, 192)',
+     },
+     {
+       label: 'Dataset 3',
+       data: labels.map(() => faker.datatype.number({ min: 0, max: 1000 })),
+       backgroundColor: 'rgb(53, 162, 235)',
+     },
+   ],
+ };
+ 
   
   return (
     <>
@@ -89,7 +116,7 @@ function Partner() {
           <p className='text-center  my-lg-2 '>Lorem Lorem, ipsum dolor. ipsum dolor sit amet.</p>
       </div>
       <div className='d-flex flex-wrap my-4 justify-content-between'>
-        <Graphcards/>
+        <Graphcards />
         <Graphcards/>
         <Graphcards/>
       </div>
@@ -98,7 +125,7 @@ function Partner() {
 
     <div className="container">
       <div className="row partner-doit-graph d-flex flex-lg-row flex-column">
-        <div className="col px-4 py-3 me-0 me-lg-4 mb-5 bg-white"><Graphs/> </div>
+        <div className="col px-4 py-3 me-0 me-lg-4 mb-5 bg-white"><Graphs label={labels} data={data}/> </div>
         <div className="col d-flex partner-doit-graph mb-3 align-items-center"><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto, et minima saepe natus facere accusantium illo eligendi. Non soluta deserunt fugiat mollitia, labore inventore incidunt et in velit? Cupiditate, commodi.</p></div>
       </div>
     </div>

@@ -18,6 +18,13 @@ function ProjectPortfolio() {
     const [indexColor, setindexColor] = useState(0)
     const [portfolioItems, setportfolioItems] = useState([])
     const [PortfolioDetail, setPortfolioDetail] = useState()
+    const [heightmap, setheightmap] = useState("450px")
+
+    const setheight=()=>{
+        setheightmap("300px")
+    }
+    window.matchMedia("(min-width: 768px)").addEventListener('change',setheight)
+
     const fetchPortfolio = async()=>{
         try {
             const {data} = await FetchPropertyData();
@@ -73,20 +80,21 @@ function ProjectPortfolio() {
             </Container>
             </>
             ):(<>
-                   <div className="container">
-                    <div className="row flex-lg-row flex-column-reverse flex-md-column-reverse ">
-                        <div className="col map-view-scroll" >
+                   <div className="container" >
+                    <div className="row flex-lg-row flex-column-reverse  flex-md-column-reverse ">
+                    
+                    <div className="col map-view-scroll mt-lg-0 mt-5" >
                         {
                             portfolioItems.map((data,index)=>{
                                 return     <MapviewCard data={data} key={index}/>
                             })
                         }
                         </div>
-                        <div className="col px-4 pt-5 pt-md-0 pt-lg-0">
-                            <Map2 height="400px"/>
+                        <div className="col px-lg-4 pt-5 pt-md-0 pt-lg-0">
+                            <Map2 height={heightmap}/>
                         </div>
                     </div>
-                   </div> 
+                    </div>
 
 
             </>)

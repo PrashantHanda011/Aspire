@@ -213,5 +213,10 @@
 
 /* progress bar */
 .CircularProgressbar {
-    width: 50%!important;
+    width: 6%!important;
+    position: fixed;
+    left:2%;
+    z-index: 10000;
+    border-radius: 50%;
+    bottom: 8%;
 }

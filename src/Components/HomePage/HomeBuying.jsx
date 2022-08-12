@@ -2,6 +2,7 @@ import React from 'react'
 import { Col, Container, Row } from 'react-bootstrap'
 import '../../Assets/HomePage/Home.css'
 import { Link } from 'react-router-dom'
+
 function HomeBuying() {
   return (
     <div className='perfectSection homeBuyTop'>

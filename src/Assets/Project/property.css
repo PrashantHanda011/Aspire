@@ -35,7 +35,7 @@
     position: sticky;
     display: inline-block;  
     right: 0;
-    left: 65vw;
+    left: 67vw;
     width: 30%;
     top: 100px;
     z-index: 1000;
@@ -598,15 +598,16 @@
 
 
 
-    .responsive-sideform-btn{
+    .responsive-sideform-btn {
+        transform: rotate(-90deg);
+        color: white;
         display: flex;
-        border-radius: 50%;
-        padding: 15px;
-        border:none;
+        /* border-radius: 50%; */
+        border: none;
         background-color: var(--blueColor);
         position: fixed;
-        right: 10%;
-        bottom: 40px;
+        right: -24px;
+        top: 296px;
         z-index: 99999999;
     }
     .responsive-sideform-btn svg{

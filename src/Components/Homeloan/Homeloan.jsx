@@ -1,4 +1,4 @@
-import React,{useState} from 'react'
+import React,{useState,useEffect} from 'react'
 import '../../Assets/Homeloan/homeloan.css'
 import homeloanbanner from '../../Assets/Images/homeloan.svg'
 import right from '../../Assets/Images/homeright.svg'
@@ -9,42 +9,38 @@ import Chart from './Chart'
 import Graphcards from '../Partners/Graphcards'
 import Perfect from '../HomePage/Perfect'
 import Community from '../HomePage/Community'
-import BlogCard from '../Blogs/BlogCard'
 import { Row,Col,Container } from 'react-bootstrap'
-import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import TextField from '@mui/material/TextField';
 import InputAdornment from '@mui/material/InputAdornment';
-import OutlinedInput from '@mui/material/OutlinedInput';
-import InputLabel from '@mui/material/InputLabel';
-import Select, { SelectChangeEvent } from '@mui/material/Select';
-import MenuItem from '@mui/material/MenuItem';
-import FormControl from '@mui/material/FormControl';
-import { Input } from '@mui/material';
 import HomeBlogCard from './HomeBlogCard'
+import { FetchTrendingLoans, PostEligilityData, PostTalkToExpertData } from '../API/Api'
 
 function Homeloan() {
   const [show1, setShow] = useState(false);
   const [show2, setShow2] = useState(false);
+  const [TrendingLoan, setTrendingLoan] = useState([])
+  
   const [expertData, setexpertData] = useState({
     name:"",
     email:"",
-    phone:"",
+    number:"",
 
   })
 
   const [homeLoanEligibilty, sethomeLoanEligibilty] = useState({
-    fullname:"",
-    mobile:"",
-    requiredLoan:"",
-    occupation:"",
-    monthlyNetSalary:"",
-    CurrentlyMonthlySalary:"",
-    tenure:"",
-    date:""
+    name: "",
+    number: "",
+    reqLoan: "",
+    occupation: "",
+    monthlySalary: "",
+    EMI: "",
+    tenure: "",
+    date:"" 
   })
+
   const handleChange=(e)=>{
     const {name} = e.target;
     setexpertData({...expertData,[name] : e.target.value})
@@ -57,15 +53,53 @@ function Homeloan() {
 
 
 
-  // modal
+  
+// submit btn 
 
+const handleTalkToExprertSubmit=async()=>{
+  try { 
+    const data = await PostTalkToExpertData(expertData)
+    console.log(data);  
+    handleClose1()
+  } catch (error) {
+    console.log(error)
+  }
+}
+console.log(expertData)
+// console.log(homeLoanEligibilty)
+
+const handleEligibilitySubmit = async()=>{
+  try { 
+        const data = await PostEligilityData(homeLoanEligibilty)
+        console.log(data);
+    handleClose2()
+
+  } catch (error) {
+    console.log(error)    
+  }
+}
+
+const fetchLoan = async()=>{
+      try {
+          const data = await FetchTrendingLoans();
+          console.log(data);
+          setTrendingLoan(data?.data?.data)
+      } catch (error) {
+          console.log(error)
+      }
+  }
+
+  useEffect(() => {
+      fetchLoan()
+  }, [])
+
+  
+  // modal
   const handleClose1 = () => setShow(false);
   const handleShow1 = () => setShow(true);
   const handleClose2 = () => setShow2(false);
   const handleShow2 = () => setShow2(true);
-
-
-
+  
   return (
     <>
         <div className="container homeloan my-5">
@@ -212,9 +246,12 @@ function Homeloan() {
             <h3>Trending loans & offers</h3>
           </div>
           <div className="d-flex flex-lg-row justify-content-between flex-column">
-            <Graphcards/>
-            <Graphcards/>
-            <Graphcards/>
+            {
+              TrendingLoan.map((data,index)=>{
+                return <Graphcards key={index} data={data}/> 
+              })
+            }
+            
           </div>
           
         </div>
@@ -314,16 +351,16 @@ function Homeloan() {
       </Form.Group>
     
       <Form.Group className="mb-3" controlId="formBasicEmail">
-        <Form.Label>Email address</Form.Label>
+        <Form.Label>Email </Form.Label>
         <Form.Control type="email" name="email" onChange={handleChange} placeholder="Enter email" />
       </Form.Group>
 
       <Form.Group className="mb-3" controlId="formBasicPassword">
-        <Form.Label>Password</Form.Label>
-        <Form.Control type="password" name="password" onChange={handleChange} placeholder="Password" />
+        <Form.Label>Phone</Form.Label>
+        <Form.Control type="tel" name="number" onChange={handleChange} placeholder="Phone" />
       </Form.Group>
      
-        <Button variant="primary" type="submit" style={{backgroundColor:"var(--orangeColor)",border:"none"}}>
+        <Button variant="primary" onClick={handleTalkToExprertSubmit}  style={{backgroundColor:"var(--orangeColor)",border:"none"}}>
           Submit
         </Button>
       </Form>
@@ -348,19 +385,19 @@ function Homeloan() {
           
           {/* fullname */}
             <Form.Group className="mb-3 col-4 px-2" controlId="formBasicName">
-            <TextField id="outlined-password-input" name='fullname' onChange={handleChange1} size="small" label="Full Name" type="text" autoComplete="current-password"/>
+            <TextField id="outlined-password-input" name='name' onChange={handleChange1} size="small" label="Full Name" type="text" autoComplete="current-password"/>
           </Form.Group>
         
         {/* mobile */}
           <Form.Group className="mb-3 col-4 px-2" controlId="formBasicEmail">
-          <TextField id="outlined-password-input" name="mobile" onChange={handleChange1} size="small" label="Mobile No." type="tel" autoComplete="current-password"/>
+          <TextField id="outlined-password-input" name="number" onChange={handleChange1} size="small" label="Mobile No." type="tel" autoComplete="current-password"/>
           </Form.Group>
 
         {/* req loan */}
 
           <Form.Group className="mb-3 col-4 px-2" controlId="formBasicPassword">
             <TextField id="outlined-start-adornment" 
-            name="requiredLoan"
+            name="reqLoan"
             InputProps={{
               startAdornment: <InputAdornment position="start">₹</InputAdornment>,
             }}
@@ -382,7 +419,7 @@ function Homeloan() {
 
           <Form.Group className="mb-3 col-4 px-2 my-3"  controlId="formBasicPassword">
             <TextField id="outlined-start-adornment" 
-            name="monthlyNetSalary"
+            name="monthlySalary"
             style={{outline:"none",width:"94%"}}
               InputProps={{
                 startAdornment: <InputAdornment position="start">₹</InputAdornment>,
@@ -394,7 +431,7 @@ function Homeloan() {
 
           <Form.Group className="mb-3 col-4 px-2 my-3" controlId="formBasicPassword">
             <TextField id="outlined-start-adornment"
-                name="CurrentlyMonthlySalary" 
+                name="EMI" 
                 InputProps={{
                   startAdornment: <InputAdornment position="start">₹</InputAdornment>,
                 }}
@@ -427,7 +464,7 @@ function Homeloan() {
         
           </div>
 
-          <Button variant="primary" className="ms-2 my-3 p-2" type="submit" style={{backgroundColor:"var(--orangeColor)",border:"none"}}>
+          <Button variant="primary" className="ms-2 my-3 p-2" onClick={handleEligibilitySubmit} style={{backgroundColor:"var(--orangeColor)",border:"none"}}>
             Check Eligibility
           </Button>
 

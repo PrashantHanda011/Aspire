@@ -19,14 +19,20 @@ import AddAlertIcon from '@mui/icons-material/AddAlert';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import { useParams } from "react-router-dom";
-import { FetchSinglePropertyData } from '../API/Api'
+import { FetchSingleDeveloperData, FetchSinglePropertyData } from '../API/Api'
 
 function Property() {
     const [propertyData, setpropertyData] = useState({})
     const [unit, setunit] = useState(0);
     const [showModal, setshowModal] = useState(true);
     const [showSideform, setshowSideform] = useState(false);
+    const [quote, setquote] = useState({
+        name:"",
+        phone:"",
+        email:""
+    });
     const location =useLocation();
+
 
     const param =useParams();
     const handle2BHKunit=()=>{
@@ -51,7 +57,6 @@ function Property() {
         setshowSideform(false);
     }
     const handleShowsideform = () => setshowSideform(true);
-    console.log(param.id)
     
     // api call
     
@@ -68,10 +73,23 @@ function Property() {
             console.log(error);
        }
     }
+    const fetchDeveloper= async()=>{
+       try {
+        const singleid={
+            id:param.id
+        }
+        const data=await FetchSingleDeveloperData(singleid);
+        console.log(data);
+        
+       } catch (error) {
+            console.log(error);
+       }
+    }
     
     
     useEffect(() => {
         fetchsingleproperty()
+        fetchDeveloper();
         if (typeof window !== "undefined") {
           window.addEventListener("scroll", handleClose);
     
@@ -84,6 +102,13 @@ function Property() {
       }, []);
     
     
+// best quote
+console.log(quote)
+ const handleQuoteChange=(e)=>{
+    let name = e.target.name;
+    setquote({...quote,[name]:e.target.value})
+ }
+
     return (
     <>
     <Container fluid className="property-Single "   style={{position:"relative"}}   >
@@ -91,7 +116,7 @@ function Property() {
             {/* responsive icon */}
             
             <button onClick={handleShowsideform} className="responsive-sideform-btn btn">
-                <AddAlertIcon />
+            Quote
             </button>
                     
             <Modal show={showSideform} onHide={handleCloseSideform} className="property-sideform-modal" aria-labelledby="contained-modal-title-vcenter"
@@ -116,9 +141,9 @@ function Property() {
                                             </Row>
 
                                             <Row xs={12} className="property-sideform-input"> 
-                                                <span ><input type="text" placeholder="Name" /></span>
-                                                <span><input type="text"  placeholder="Phone"/></span>
-                                                <span><input type="text" placeholder="Email"/></span>
+                                                <span ><input type="text" placeholder="Name" onChange={handleQuoteChange} name="name" /></span>
+                                                <span><input type="tel"  placeholder="Phone" onChange={handleQuoteChange} name="phone"/></span>
+                                                <span><input type="email" placeholder="Email" onChange={handleQuoteChange} name="email"/></span>
                                             </Row>
 
                                             <Row className="property-sideform-btn">

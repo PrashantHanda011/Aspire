@@ -16,15 +16,27 @@ import '../../Assets/Blogs/singleblog.css'
 import { useParams } from 'react-router-dom'
 import { FetchSingleBlog } from '../API/Api'
 
-const percentage = 66;
-const app=()=>{
-<Singleblog label="Default">
-      <CircularProgressbar value={percentage} text={`${percentage}%`} />
-    </Singleblog>
-}
+const percentage = 25;
 
 function Singleblog() {
     const [singleblogData, setsingleblogData] = useState({})
+    const [scrollTop, setscrollTop] = useState(0)
+
+    const onscroll =  () =>{
+        const winScroll = document.documentElement.scrollTop
+        const height = document.documentElement.scrollHeight - document.documentElement.clientHeight
+    
+        const scrolled = (winScroll/height)*100
+        setscrollTop(scrolled)
+    }
+    useEffect(() => {
+        window.addEventListener('scroll',onscroll);
+
+        return ()=>window.removeEventListener('scroll',onscroll)
+
+    }, [])
+    
+
     const param = useParams();
 
     const fetchBlog=async()=>{
@@ -90,10 +102,13 @@ function Singleblog() {
                         <Row className="singleblog-shareicon"><TwitterIcon/></Row>
                         <Row className="singleblog-shareicon"><LinkedInIcon/></Row>
                         <Row className="singleblog-shareicon"> <InstagramIcon/></Row>
-                        <Row className="singleblog-shareicon d-flex justify-content-center"> <CircularProgressbar value={percentage} style={{width:"50%"}} text={`${percentage}%`} /></Row>
                 </Col>  
                 
             </Container>
+
+            {/* //progressbar */}
+            {/* text={`${scrollTop}%`} */}
+                        <Row className="singleblog-progressBar "> <CircularProgressbar value={scrollTop} style={{width:"50%"}}  /></Row>
 
 
 

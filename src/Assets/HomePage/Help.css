@@ -33,3 +33,24 @@
 .portfolioItem:hover{
     font-weight: bold;
 }
+.aspirePromise-img{
+    width: 30%;
+    padding: 58px;
+    color: white;
+    border-radius: 20%;
+    background-color: var(--blueColor);
+    position: absolute;
+    right: -5%;
+    bottom: 0%;
+}
+
+@media (max-width: 568px){
+    .aspirePromise-img {
+        width: 100%;
+        padding: 50px;
+        position: static;
+        border-radius: 0;
+        /* top: 0; */
+    }
+
+}

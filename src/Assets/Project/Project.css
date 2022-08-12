@@ -90,6 +90,9 @@
     overflow: hidden;
     overflow-y: scroll;
 }
+.propertyDescription-map-view {
+left: 7%;
+}
 .map-view-scroll::-webkit-scrollbar {
     width: 7px;
   }
@@ -109,8 +112,11 @@
     .propertyDescription-map-view {
         position: relative;
         width: 85%;
-        left: 7%;
+        left: 3%;
         bottom: 100px;
+    }
+    .property-img-height{
+        width: 100% !important;
     }
 }
 @media (max-width: 768px){

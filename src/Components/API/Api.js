@@ -7,8 +7,12 @@ const API = axios.create({
 
 export const FetchPropertyData = () => API.get(`/prop/getAllProperty`);
 export const FetchSinglePropertyData = (id) => API.post(`/prop/getPropertyById`,id);
-export const PostGetintouchData = (data) => API.post(`/cn/addContacts`,data);
-
+export const FetchSingleDeveloperData = (id) => API.post(`/dev/getDeveloperById`,id);
 export const FetchCategoryBlog = (data) => API.post(`/blog/getBlogsByCategory`,data);
 export const FetchSingleBlog = (data) => API.post(`/blog/getBlogById`,data);
+export const FetchTrendingLoans = () => API.get(`/ln/getAllLoan`);
 
+export const PostrequirementData = (data) => API.post(`/prop/addRequirement`,data);
+export const PostEligilityData = (data) => API.post(`/ln/addEligibility`,data);
+export const PostGetintouchData = (data) => API.post(`/cn/addContacts`,data);
+export const PostTalkToExpertData = (data) => API.post(`cn/addExpert`,data);
