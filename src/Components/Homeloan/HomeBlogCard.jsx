@@ -5,17 +5,17 @@ import '../../Assets/Blogs/BlogPage.css'
 import {Link} from 'react-router-dom'
 import moment from "moment"
 
-function HomeBlogCard() {
+function HomeBlogCard(prop) {
   return (
     <>
-                    <Col xs={4}>
-    <Link to={`/blogs/123`} className="text-decoration-none">
+                    <Col xs={12} lg={4} className="px-4">
+    <Link to={`/blogs/${prop?.data?._id}`} className="text-decoration-none">
                 <div className='blogCardContent'>
-                    <img src={BlogImage} alt="" />
-                    <h3 className='blogCardHeading mb-0'>{"Hello world"}</h3>
+                    <img src={prop?.data?.picture} alt="blogimg" />
+                    <h3 className='blogCardHeading mb-0'>{prop?.data?.title}</h3>
                     <Row className='blogWriter'>     
                         <Col className="SubContentHeading">
-                        <h5>11/02/2001 | 6 mins</h5>
+                        <h5>{moment(prop?.data?.createdAt).format('DD-MM-YYYY')}  | {prop?.data?.timeToRead}</h5>
                         </Col>
                     </Row>
                 </div>

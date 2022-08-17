@@ -228,7 +228,7 @@
 .property-units-head button{
     padding: 10px;
     margin: 0 15px;
-    width: 32%;
+    width: 20%;
     border: none;
     font-weight: 600;
     background-color: transparent;
@@ -260,8 +260,6 @@
 }
 .Property-singleunit-img{
     width: 15%;
-    background-color: cadetblue;
-    height: 50px;
 }
 .Property-singleunit-desc{
     width: 15%;
@@ -296,7 +294,6 @@
 .property-aboutDeveloper-img{
     height: 90px;
     width: 90px;
-    background-color: black;
     border-radius: 50%;
 }
 .property-aboutDeveloper-work-side h6{

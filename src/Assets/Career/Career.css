@@ -126,6 +126,31 @@ border-radius: 16px;
 }
 
 
+
+/*  career individual*/
+
+.job-title button{
+    background-color: var(--orangeColor);
+    padding: 10px 30px;
+    color: white;
+    border-radius: 15px;
+    border: #F47E20;
+}
+.job-title button:hover{
+    color: #F47E20;
+    background: white;
+    transition: 0.2s;
+}
+.jobdetails h3{
+    color:#F47E20;
+    font-weight: 600;
+}
+.jobdetails-feature h4{
+    font-size: 20px;
+}
+.jobdetails-feature p{
+    font-size: 20px;
+}
 @media (max-width: 460px){
     .CardFacility {
         margin-right: 30px;

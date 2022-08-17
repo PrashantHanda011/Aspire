@@ -20,12 +20,13 @@ import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import { useParams } from "react-router-dom";
 import { FetchSingleDeveloperData, FetchSinglePropertyData } from '../API/Api'
-
+import MapWithAMarker from '../Contact/Map'
 function Property() {
     const [propertyData, setpropertyData] = useState({})
     const [unit, setunit] = useState(0);
     const [showModal, setshowModal] = useState(true);
     const [showSideform, setshowSideform] = useState(false);
+    const [unitDetails, setunitDetails] = useState()
     const [quote, setquote] = useState({
         name:"",
         phone:"",
@@ -35,16 +36,7 @@ function Property() {
 
 
     const param =useParams();
-    const handle2BHKunit=()=>{
-        if(unit==0){
-            setunit(1);
-        }
-    }
-    const handle3BHKunit=()=>{
-        if(unit==1){
-            setunit(0);
-        }
-    }
+    
 
   
     // modal
@@ -62,27 +54,27 @@ function Property() {
     
     const fetchsingleproperty= async()=>{
        try {
-        const singleid={
+           const singleid={
             id:param.id
         }
         const data=await FetchSinglePropertyData(singleid);
-        console.log(data.data.data);
         setpropertyData(data?.data?.data)
+        setunitDetails(data?.data?.data?.unitDetails[0]?.detail)
         
-       } catch (error) {
-            console.log(error);
-       }
+    } catch (error) {
+        console.log(error);
     }
-    const fetchDeveloper= async()=>{
-       try {
+}
+const fetchDeveloper= async()=>{
+    try {
         const singleid={
             id:param.id
         }
         const data=await FetchSingleDeveloperData(singleid);
         console.log(data);
         
-       } catch (error) {
-            console.log(error);
+    } catch (error) {
+        console.log(error);
        }
     }
     
@@ -103,14 +95,17 @@ function Property() {
     
     
 // best quote
-console.log(quote)
+
  const handleQuoteChange=(e)=>{
     let name = e.target.name;
     setquote({...quote,[name]:e.target.value})
- }
+}
 
+//unit details
+
+    console.log()
     return (
-    <>
+        <>
     <Container fluid className="property-Single "   style={{position:"relative"}}   >
     
             {/* responsive icon */}
@@ -349,7 +344,16 @@ console.log(quote)
                             <Row id="location">
                                 <Col className="property-location" lg={8}>
                                         <h5>Location</h5>
-                                <Map2 height="500px"  />
+                                {/* <Map2 height="500px"  /> */}
+                                <MapWithAMarker
+                                googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyB14oZ3M9HW-pYKIsIwCfyYhFKsg3FX6v0&v=3.exp&libraries=geometry,drawing,places"
+                                loadingElement={<div style={{ height: `100%` }} />}
+                                containerElement={<div style={{ height: `500px` }} />}
+                                mapElement={<div style={{ height: `100%` }} />}
+                                long={77.57973740550517}
+                                lati={12.98807381311353}
+                                />
+
                                 </Col>
                             </Row>
 
@@ -357,18 +361,18 @@ console.log(quote)
                             <Row  id="units">
                                 <Col className="property-units" lg={8}>
                                        <Row className="property-units-head">
-                                        <Col lg={8}>
+                                        <Col lg={3}>
                                             <h5>Units</h5>
                                         </Col>
-                                        <Col lg={4}>
+                                        <Col lg={9} className="d-flex justify-content-end">
                                             {
-                                                propertyData?.BHK === "2" ?(
-                                                <button className={`${unit==1 ? ("property-units-head-active"):("")}`} onClick={handle2BHKunit}>2 BHK</button>  
-
-                                                ):(
-                                              <button className={`${unit==0 ? ("property-units-head-active"):("")}`} onClick={handle3BHKunit}>3 BHK</button>  
-                                                )
+                                                propertyData?.unitDetails?.map((item,index)=>{
+                                                    return    <button key={index}  className={`${unit==index ? ("property-units-head-active "):("")}`} onClick={()=> {
+                                                        setunitDetails(item?.detail)
+                                                        setunit(index)}}> {item.bhk}</button>
+                                                })
                                             } 
+                                            {/* <button className={`${unit==1 ? ("property-units-head-active"):("")}`} onClick={handle2BHKunit}>{item.bhk}</button> */}
                                         </Col>
                                        </Row>
                                         <hr />
@@ -379,8 +383,12 @@ console.log(quote)
                                                 <h5>Price</h5>
                                         </Row>
                                         <Row>
-                                            <Singleunit/>
-                                            <Singleunit/>
+                                            {
+                                                unitDetails?.map((item,index)=>{
+                                                    return <Singleunit key={index} data={item}/>
+                                                })
+                                            }
+                                            
                                         </Row>
                                 </Col>
                             </Row>
@@ -393,24 +401,24 @@ console.log(quote)
                         <Col  className="property-aboutDeveloper">
                             <Row className="property-aboutDeveloper-head">
                                 <h5>About Developer</h5>
-                                <h6>Lodha Builders and Co.</h6></Row>
+                                <h6>{propertyData?.developer?.name}</h6></Row>
                             <Row className="property-aboutDeveloper-work">
                                 <Col lg={1} >
                                     <div className="property-aboutDeveloper-img">
-
+                                            <figure>
+                                                <img src={propertyData?.developer?.picture} alt="img" />
+                                            </figure>
                                     </div>
                                 </Col>
                                 <Col lg={11}  className="property-aboutDeveloper-work-side mt-4 mt-lg-0">
-                                    <h6><p></p> 20 + projects developed</h6>
-                                    <h6> <p></p>East Bengaluru </h6>
-                                    <h6><p></p>73,742 Possessions given</h6>
+                                    <h6><p></p> {propertyData?.developer?.totalProjects} + projects developed</h6>
+                                    <h6> <p></p>{propertyData?.developer?.area}</h6>
+                                    <h6><p></p>{propertyData?.developer?.possessions}</h6>
                                 </Col>
                             </Row>
                             <Row >
                                 <Col lg={8} className="property-aboutDeveloper-desc">
-                                <h6>Lorem ipsum dolor sit amet, consectetur adipiscing elit. A fusce lacus non in tortor, libero donec id a. Elit tortor leo, eu tortor sociis a erat potenti. Euismod eget morbi aliquet interdum diam lobortis massa. Tellus a mauris pulvinar consectetur praesent convallis hendrerit a dolor. Ut viverra massa aliquet elit sit proin. Est mauris mattis arcu, a ullamcorper elit amet montes.
-                                    Odio quis cursus enim magna. Vitae ipsum curabitur bibendum ut. Amet, duis proin lorem augue arcu pulvinar commodo blandit. Iaculis blandit commodo magna libero platea elit ut. Senectus sociis condimentum tortor ultrices ultrices.
-                                    Plat</h6>
+                                <h6>{propertyData?.developer?.description}</h6>
                                 </Col>
                             </Row>
                         </Col>

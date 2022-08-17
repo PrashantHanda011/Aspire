@@ -9,7 +9,8 @@ import Perfect from '../HomePage/Perfect';
 import Graphcards from './Graphcards';
 import Graphs from './Graphs';
 import { faker } from '@faker-js/faker';
-
+import img1 from '../../Assets/Images/partner1.gif'
+import img2 from '../../Assets/Images/partner2.gif'
 
 function Partner() {
   const labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
@@ -52,7 +53,9 @@ function Partner() {
                 </div>
           </div>
           <div className='col-lg-6'>
-                <h4>Animation image</h4>
+            <figure>
+              <img src={img1} alt="" />
+            </figure>
           </div>
         </div>
     </div>
@@ -101,7 +104,13 @@ function Partner() {
           <div className='d-flex align-items-center  partner-leading-star '><span><StarIcon/><StarIcon/><StarIcon/><StarIcon/><StarHalfIcon/></span> <h5>4.5/5 on <a href="/"> Lorem</a>/900+</h5> <p>Reviews</p> </div>
           <div className='d-flex align-items-center  partner-leading-star '><span><StarIcon/><StarIcon/><StarIcon/><StarIcon/><StarHalfIcon/></span> <h5>4.5/5 on <a href="/"> Lorem</a>/900+</h5> <p>Reviews</p> </div>
         </div>
-        <div className="col-lg-4"></div>
+
+        <div className="col-lg-4"> 
+        
+        <figure>
+          <img src={img2} className="w-100" alt="" /> 
+        </figure>
+        </div>
       </div>
     </div>
 
@@ -116,9 +125,9 @@ function Partner() {
           <p className='text-center  my-lg-2 '>Lorem Lorem, ipsum dolor. ipsum dolor sit amet.</p>
       </div>
       <div className='d-flex flex-wrap my-4 justify-content-between'>
-        <Graphcards />
-        <Graphcards/>
-        <Graphcards/>
+        <Graphcards  description={"Lorem ipsum dolor, sit amet consectetur adipisicing elit. Id, pariatur possimus! Porro eos incidunt cupiditate libero! Maiores maxime corrupti natus quia mollitia voluptatem impedit sed? Tempore architecto eveniet facilis itaque deserunt minima explicabo saepe dicta minus! Cumque et praesentium at voluptate in, harum dolore ab voluptatem error officia assumenda deleniti?"}/>
+        <Graphcards description={"Lorem ipsum dolor, sit amet consectetur adipisicing elit. Id, pariatur possimus! Porro eos incidunt cupiditate libero! Maiores maxime corrupti natus quia mollitia voluptatem impedit sed? Tempore architecto eveniet facilis itaque deserunt minima explicabo saepe dicta minus! Cumque et praesentium at voluptate in, harum dolore ab voluptatem error officia assumenda deleniti?"}/>
+        <Graphcards description={"Lorem ipsum dolor, sit amet consectetur adipisicing elit. Id, pariatur possimus! Porro eos incidunt cupiditate libero! Maiores maxime corrupti natus quia mollitia voluptatem impedit sed? Tempore architecto eveniet facilis itaque deserunt minima explicabo saepe dicta minus! Cumque et praesentium at voluptate in, harum dolore ab voluptatem error officia assumenda deleniti?"}/>
       </div>
     </div>          
 

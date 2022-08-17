@@ -3,9 +3,8 @@ import { Col, Row,Container } from 'react-bootstrap'
 import CallIcon from '@mui/icons-material/Call';
 import EmailIcon from '@mui/icons-material/Email';
 import Community from '../HomePage/Community';
-import {Map, InfoWindow, Marker, GoogleApiWrapper} from 'google-maps-react';
-import  MapContainer  from './Map';
 import Map2 from './Map2';
+import MapWithAMarker from './Map'
 function Wearehere() {
     const [heightmap, setheightmap] = useState("450px")
 
@@ -55,10 +54,18 @@ function Wearehere() {
                             </Row>    
                     </Col>
                     <Col  style={{borderRadius:"30px",overflow:"hidden"}}>
-                             {/* <MapContainer /> */}
-                             <Map2
+                             {/* <Map2
                                 height={heightmap}
-                             />
+                             /> */}
+                             <MapWithAMarker
+                                googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyB14oZ3M9HW-pYKIsIwCfyYhFKsg3FX6v0&v=3.exp&libraries=geometry,drawing,places"
+                                loadingElement={<div style={{ height: `100%` }} />}
+                                containerElement={<div style={{ height: `${heightmap}` }} />}
+                                mapElement={<div style={{ height: `100%` }} />}
+                                long={77.57973740550517}
+                                lati={12.98807381311353}
+                                />
+
                     </Col>
                 </Row>
             </Container>

@@ -11,6 +11,7 @@ export const FetchSingleDeveloperData = (id) => API.post(`/dev/getDeveloperById`
 export const FetchCategoryBlog = (data) => API.post(`/blog/getBlogsByCategory`,data);
 export const FetchSingleBlog = (data) => API.post(`/blog/getBlogById`,data);
 export const FetchTrendingLoans = () => API.get(`/ln/getAllLoan`);
+export const FetchProjectImage = () => API.get(`/proj/getAllProject`);
 
 export const PostrequirementData = (data) => API.post(`/prop/addRequirement`,data);
 export const PostEligilityData = (data) => API.post(`/ln/addEligibility`,data);

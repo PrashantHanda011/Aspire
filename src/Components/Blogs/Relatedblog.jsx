@@ -3,25 +3,26 @@ import { Col, Row } from 'react-bootstrap'
 import BlogImage from "../../Assets/Images/BlogImage.png"
 import '../../Assets/Blogs/singleblog.css'
 import {Link} from 'react-router-dom'
+import moment from 'moment'
 
-function Relatedblog() {
+function Relatedblog(prop) {
   return (
     <>
         <Col lg={12 }  >
-    <Link to={"/blogs/12234"} className="text-decoration-none">
+    <Link to={`/blogs/${prop?.data?._id}`} className="text-decoration-none">
                 <Row>
                 <div className='RelatedblogCardContent'>
                   
                 <Col lg={3} xs={3}>
-                    <img src={BlogImage} alt="" />
+                <img src={prop?.data?.picture} alt="blogimg" />
                 </Col>
 
                     <Col   className='RelatedblogWriter  w-100'>     
                       <Row>
-                         <h3 className='RelatedblogCardHeading mb-0'>Organic Marketing And Modern Marketing, What’s The Relation?</h3>
+                         <h3 className='RelatedblogCardHeading mb-0'>{prop?.data?.title}</h3>
                       </Row>
                       <Row>
-                        <h5>2 Days ago |  6 mins read</h5>
+                        <h5>{moment(prop?.data?.createdAt).format('DD-MM-YYYY')}  | {prop?.data?.timeToRead}</h5>
                       </Row>
                     </Col>
                 </div>

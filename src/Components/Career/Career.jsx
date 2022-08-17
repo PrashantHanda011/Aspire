@@ -14,8 +14,8 @@ import IconButton from '@mui/material/IconButton';
 
 function Career() {  
   const [careerData, setcareerData] = useState([])
-  const [Location, setLocation] = React.useState('');
-  const [Department, setDepartment] = React.useState('');
+  const [Location, setLocation] = React.useState(null);
+  const [Department, setDepartment] = React.useState(null);
   const [searchInput, setsearchInput] = useState('');
   const [filterData, setfilterData] = useState([])
   const handleLocation = (event) => {
@@ -28,7 +28,7 @@ function Career() {
 
   const fetchcareerData = async()=>{
       try {
-        const data = await axios.get('https://aspire0.herokuapp.com/cr/getAllCareer');
+        const data = await axios.get(`https://aspire0.herokuapp.com/cr/getAllCareer?department${Department?(`=${Department}`):('')}&location${Location?(`=${Location}`):('')}  `);
         console.log(data)
         setcareerData(data?.data?.data);
       } catch (error) {
@@ -38,7 +38,7 @@ function Career() {
 
 useEffect(() => {
     fetchcareerData()
-  }, [])
+  }, [Location,Department])
 
   const searchItems = (searchValue) => {
     setsearchInput(searchValue)
@@ -102,7 +102,7 @@ useEffect(() => {
                     <em>None</em>
                     </MenuItem>
                     <MenuItem value={"Noida"}>Noida</MenuItem>
-                    <MenuItem value={"Banglore"}>Banglore</MenuItem>
+                    <MenuItem value={"Bangalore"}>Banglore</MenuItem>
                     <MenuItem value={"Mumbai"}>Mumbai</MenuItem>
                 </Select>
                 
@@ -136,7 +136,7 @@ useEffect(() => {
 
       {
         (searchInput.length > 1) ?(
-          careerData?.map((item,index)=>{
+          filterData?.map((item,index)=>{
             return <CareerCard
               key={index}
               department={item.department}
@@ -149,7 +149,7 @@ useEffect(() => {
             />
         })
         ):(
-          filterData?.map((item,index)=>{
+          careerData?.map((item,index)=>{
             return <CareerCard
               key={index}
               department={item.department}

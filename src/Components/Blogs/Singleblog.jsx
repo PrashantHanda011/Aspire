@@ -14,14 +14,14 @@ import 'react-circular-progressbar/dist/styles.css';
 import { CircularProgressbar } from 'react-circular-progressbar';
 import '../../Assets/Blogs/singleblog.css'
 import { useParams } from 'react-router-dom'
-import { FetchSingleBlog } from '../API/Api'
-
+import { FetchCategoryBlog, FetchSingleBlog } from '../API/Api'
+import moment from 'moment'
 const percentage = 25;
 
 function Singleblog() {
     const [singleblogData, setsingleblogData] = useState({})
     const [scrollTop, setscrollTop] = useState(0)
-
+    const [relatedBlogs, setrelatedBlogs] = useState([])
     const onscroll =  () =>{
         const winScroll = document.documentElement.scrollTop
         const height = document.documentElement.scrollHeight - document.documentElement.clientHeight
@@ -45,7 +45,12 @@ function Singleblog() {
                     id:param.id
                 }
                 const data =await FetchSingleBlog(blogid)
+                let categorydata = {
+                    category: data?.data?.data?.category
+                }
+                const data2 = await FetchCategoryBlog(categorydata);
                 setsingleblogData(data?.data?.data)
+                setrelatedBlogs(data2?.data?.data);
             } catch (error) {
                 console.log(error);
             }
@@ -55,6 +60,9 @@ function Singleblog() {
         fetchBlog()
     }, [])
     
+    let day =moment(singleblogData?.createdAt).format('DD')
+    let month =moment(singleblogData?.createdAt).format('MMM')
+    let year =moment(singleblogData?.createdAt).format('YYYY')
     
     return (
     <>
@@ -71,7 +79,7 @@ function Singleblog() {
                                 <img src={avatar} className="me-4" alt="img" />
                                 <span className='Singleblog-authorDesc'>
                                     <h4>{singleblogData?.authorName}</h4>
-                                    <h5>2 hours ago |  {singleblogData?.timeToRead}  read </h5>
+                                    <h5>{moment(singleblogData?.createdAt).format('DD-MM-YYYY')} |  {singleblogData?.timeToRead}  read </h5>
                                 </span>
                             </div>
                         </Col>
@@ -94,8 +102,8 @@ function Singleblog() {
 
                     <Col lg={1} className="Singleblog-shareicon-container  ">
                         <Row className="singleblog-blog-date"> 
-                            <h5>30</h5>
-                            <h6>jUL 2022</h6>
+                            <h5>{day}</h5>
+                            <h6>{month} {year}</h6>
                         </Row>
                         <Row className="singleblog-shareicon"><WhatsAppIcon/></Row>
                         <Row className="singleblog-shareicon" ><FacebookIcon/></Row>
@@ -134,9 +142,12 @@ function Singleblog() {
                                     <h5 className="my-lg-0 my-4">Related Articles</h5>
 
                                     <div clasName="d-flex">
-                                        <Relatedblog/>
-                                        <Relatedblog/>
-                                        <Relatedblog/>
+                                    {
+                                        relatedBlogs?.slice(0,3).map((item,index)=>{
+                                            return <Relatedblog data={item} key={index}/>
+                                        })
+                                    }
+                                        
                                     </div>
 
                                 </Col>

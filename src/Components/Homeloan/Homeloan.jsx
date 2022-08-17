@@ -16,13 +16,13 @@ import Form from 'react-bootstrap/Form';
 import TextField from '@mui/material/TextField';
 import InputAdornment from '@mui/material/InputAdornment';
 import HomeBlogCard from './HomeBlogCard'
-import { FetchTrendingLoans, PostEligilityData, PostTalkToExpertData } from '../API/Api'
+import { FetchCategoryBlog, FetchTrendingLoans, PostEligilityData, PostTalkToExpertData } from '../API/Api'
 
 function Homeloan() {
   const [show1, setShow] = useState(false);
   const [show2, setShow2] = useState(false);
   const [TrendingLoan, setTrendingLoan] = useState([])
-  
+  const [featuredBlog, setfeaturedBlog] = useState([])
   const [expertData, setexpertData] = useState({
     name:"",
     email:"",
@@ -91,8 +91,13 @@ const fetchLoan = async()=>{
 
   useEffect(() => {
       fetchLoan()
+      scroll()
+      fetchknowledgeblogData()
   }, [])
 
+  const scroll=()=>{
+    window.screenY=0;
+  }
   
   // modal
   const handleClose1 = () => setShow(false);
@@ -100,6 +105,21 @@ const fetchLoan = async()=>{
   const handleClose2 = () => setShow2(false);
   const handleShow2 = () => setShow2(true);
   
+  // featured blogs
+
+  const fetchknowledgeblogData = async()=>{
+    try {
+      let categorydata={
+        category:"news&updates"
+      }
+      const data = await FetchCategoryBlog(categorydata);
+      setfeaturedBlog(data?.data?.data)
+      console.log(data.data.data)
+    } catch (error) {
+      console.log(error)
+    }
+  } 
+
   return (
     <>
         <div className="container homeloan my-5">
@@ -248,7 +268,7 @@ const fetchLoan = async()=>{
           <div className="d-flex flex-lg-row justify-content-between flex-column">
             {
               TrendingLoan.map((data,index)=>{
-                return <Graphcards key={index} data={data}/> 
+                return <Graphcards key={index} interest={data?.interest} name={data?.name} description = {data?.description} /> 
               })
             }
             
@@ -295,16 +315,18 @@ const fetchLoan = async()=>{
 
 
     <div style={{backgroundColor:"#ebebeb"}}  className="container-fluid py-5 px-0">
-    <h3 className="blogMainHeading m-0 ps-5 py-5">Featured Blogs</h3>
+    <div className="container">
+    <h3 className="blogMainHeading m-0 py-5">Featured Blogs</h3>
               <div className="container">
 
                 <Row  className="d-flex  homeloan-blogcard-scroll">
-                    <Col xs={10} className="d-flex  BlogsRow    align-items-center">
-                      <HomeBlogCard />
-                      <HomeBlogCard/>
-                      <HomeBlogCard/>
-                      <HomeBlogCard/>
-                      <HomeBlogCard/>
+                    <Col xs={12} className="d-flex  BlogsRow    align-items-center">
+                    {
+                      featuredBlog?.map((item,index)=>{
+                        return <HomeBlogCard key={index} data={item} /> 
+                      })
+                    }
+                      
                     </Col>
                       {/* <Col xs={12} className="ArrowIcon  d-flex align-items-center ">
                        <span>
@@ -313,7 +335,7 @@ const fetchLoan = async()=>{
                       </Col> */}
                 </Row>
               </div>         
-
+                      </div>
     </div>
       
 {/* perfect home */}
