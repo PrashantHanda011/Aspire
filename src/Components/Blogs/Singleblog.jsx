@@ -3,11 +3,11 @@ import BottomFoot from '../Common/BottomFoot'
 import TopNav from '../Common/TopNav'
 import {Row,Col,Container} from 'react-bootstrap'
 import avatar from '../../Assets/Images/author.png'
-import WhatsAppIcon from '@mui/icons-material/WhatsApp';
-import InstagramIcon from '@mui/icons-material/Instagram';
-import FacebookIcon from '@mui/icons-material/Facebook';
-import TwitterIcon from '@mui/icons-material/Twitter';
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
+// import WhatsAppIcon from '@mui/icons-material/WhatsApp';
+// import InstagramIcon from '@mui/icons-material/Instagram';
+// import FacebookIcon from '@mui/icons-material/Facebook';
+// import TwitterIcon from '@mui/icons-material/Twitter';
+// import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import Relatedblog from './Relatedblog'
 import Checkbox from '@mui/material/Checkbox';
 import 'react-circular-progressbar/dist/styles.css';
@@ -16,6 +16,21 @@ import '../../Assets/Blogs/singleblog.css'
 import { useParams } from 'react-router-dom'
 import { FetchCategoryBlog, FetchSingleBlog } from '../API/Api'
 import moment from 'moment'
+
+import { ShareButton, ShareBlock } from "react-custom-share";
+import {
+    TwitterShareButton,
+    TwitterIcon,
+    FacebookIcon,
+    FacebookShareButton,
+    InstapaperIcon,
+    InstapaperShareButton,
+    WhatsappIcon,
+    WhatsappShareButton,
+    LinkedinIcon,
+    LinkedinShareButton
+  } from "react-share";
+
 const percentage = 25;
 
 function Singleblog() {
@@ -64,6 +79,9 @@ function Singleblog() {
     let month =moment(singleblogData?.createdAt).format('MMM')
     let year =moment(singleblogData?.createdAt).format('YYYY')
     
+
+// share buttons
+    const path = window.location.href
     return (
     <>
             <Container fluid className="Singleblog-container" >
@@ -105,11 +123,37 @@ function Singleblog() {
                             <h5>{day}</h5>
                             <h6>{month} {year}</h6>
                         </Row>
-                        <Row className="singleblog-shareicon"><WhatsAppIcon/></Row>
+
+                        <span className="my-2">
+                        <WhatsappShareButton title="Loved This Post" url={ path}>
+                            <WhatsappIcon size={42} round={false} borderRadius={10} />
+                        </WhatsappShareButton>
+                        </span>
+
+                        <span className="my-2">
+                        <TwitterShareButton title="Loved This Post" url={ path}>
+                            <TwitterIcon size={42} round={false} borderRadius={10} />
+                        </TwitterShareButton> 
+                        </span>
+
+                        <span className="my-2">
+                        <LinkedinShareButton title="Loved This Post" url={ path}>
+                            <LinkedinIcon size={42} round={false} borderRadius={10} />
+                        </LinkedinShareButton>
+                        </span>
+
+
+                        <span className="my-2">
+                        <FacebookShareButton title="Loved This Post" url={ path}>
+                            <FacebookIcon size={42} round={false} borderRadius={10} />
+                        </FacebookShareButton>
+                        </span>
+
+                        {/* <Row className="singleblog-shareicon"><WhatsAppIcon/></Row>
                         <Row className="singleblog-shareicon" ><FacebookIcon/></Row>
                         <Row className="singleblog-shareicon"><TwitterIcon/></Row>
                         <Row className="singleblog-shareicon"><LinkedInIcon/></Row>
-                        <Row className="singleblog-shareicon"> <InstagramIcon/></Row>
+                        <Row className="singleblog-shareicon"> <InstagramIcon/></Row> */}
                 </Col>  
                 
             </Container>

@@ -7,6 +7,7 @@ import LocationOnIcon from '@mui/icons-material/LocationOn';
 import {   Container, Form, Modal } from 'react-bootstrap'
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import { Link } from 'react-router-dom';
+
 function CareerCard(prop) {
 const [showModal, setshowModal] = useState(false)
 
@@ -39,7 +40,7 @@ const [showModal, setshowModal] = useState(false)
         </Col>
 
         <Col className='d-flex justify-content-end' xs={12} lg={6}>
-          <Link className='align-self-end text-decoration-none' to={'/career/123'}>Apply Now <ChevronRightIcon/></Link>
+          <Link className='align-self-end text-decoration-none' to={`/career/${prop.id}`}>Apply Now <ChevronRightIcon/></Link>
         </Col>
 
 

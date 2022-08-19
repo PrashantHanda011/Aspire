@@ -12,6 +12,7 @@ import Select from '@mui/material/Select';
 import InputBase from '@mui/material/InputBase';
 import IconButton from '@mui/material/IconButton';
 
+
 function Career() {  
   const [careerData, setcareerData] = useState([])
   const [Location, setLocation] = React.useState(null);
@@ -145,6 +146,7 @@ useEffect(() => {
               location={item.location}
               name={item.name}
               salary={item.salary}
+              id={item._id}
 
             />
         })
@@ -158,7 +160,7 @@ useEffect(() => {
               location={item.location}
               name={item.name}
               salary={item.salary}
-
+              id={item._id}
             />
         })
         )

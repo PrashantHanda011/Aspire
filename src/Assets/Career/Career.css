@@ -136,6 +136,10 @@ border-radius: 16px;
     border-radius: 15px;
     border: #F47E20;
 }
+.job-title h1{
+    font-size: 40px;
+    font-weight: 600;
+}
 .job-title button:hover{
     color: #F47E20;
     background: white;
@@ -143,13 +147,29 @@ border-radius: 16px;
 }
 .jobdetails h3{
     color:#F47E20;
-    font-weight: 600;
+    font-weight: 700;
+}
+.jobdetails-feature{
+    align-items: center;
 }
 .jobdetails-feature h4{
-    font-size: 20px;
+    font-size: 16px;
+    padding-bottom: 0;
+    margin: 0;
+    margin-bottom: 0;
 }
 .jobdetails-feature p{
-    font-size: 20px;
+    font-size: 16px;
+    margin: 0 0;
+    margin-left: 10px;
+    padding: 0;
+    font-weight: 600;
+}
+.jobdetails-share span{
+    margin-right: 15px;
+}
+.jobdetails-share span svg{
+    font-size: 2rem;
 }
 @media (max-width: 460px){
     .CardFacility {
@@ -161,5 +181,8 @@ border-radius: 16px;
     .location-temp-height svg{
         margin-right: 20px !important;
     }
-
+    .job-title h1{
+        font-size: 30px;
+        font-weight: 600;
+    }
 }
