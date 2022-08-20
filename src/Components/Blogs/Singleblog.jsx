@@ -17,7 +17,6 @@ import { useParams } from 'react-router-dom'
 import { FetchCategoryBlog, FetchSingleBlog } from '../API/Api'
 import moment from 'moment'
 
-import { ShareButton, ShareBlock } from "react-custom-share";
 import {
     TwitterShareButton,
     TwitterIcon,
