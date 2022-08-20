@@ -27,10 +27,10 @@ const [showModal, setshowModal] = useState(false)
     <>
     <Row  className="careerCardDiv  bg-white" style={{cursor: "pointer"}}>
         <Col xs={8}>
-            <h4 style={{fontWeight: 600}}>{prop.department}</h4>
+            <h4 style={{fontWeight: 600}}>{prop.name}</h4>
         </Col>
-        <Col xs={11} className="mt-2">
-            <p className="mb-0" style={{fontWeight: 400}}>{prop.description}</p>
+        <Col xs={11} className="mt-2 career-paragraph">
+            <p className="mb-0 " style={{fontWeight: 400}}>{prop.description}</p>
         </Col>
         <Col className='mt-4 d-flex flex-wrap career-cardContent' xs={ 12} lg={6}>
         

@@ -112,8 +112,15 @@ border-radius: 10px;
     color: black;
 }
 
-
-
+.career-paragraph{
+    max-height: 80px;
+    -webkit-line-clamp: 3;
+    display: -webkit-box;
+    color: #000;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+}
 
 /* whole career */
 
