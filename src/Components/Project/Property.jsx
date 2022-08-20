@@ -406,7 +406,7 @@ const fetchDeveloper= async()=>{
                                 <Col lg={1} >
                                     <div className="property-aboutDeveloper-img">
                                             <figure>
-                                                <img src={propertyData?.developer?.picture} alt="img" />
+                                                <img src={propertyData?.developer?.picture} className="w-100" alt="img" />
                                             </figure>
                                     </div>
                                 </Col>
