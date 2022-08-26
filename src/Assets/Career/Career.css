@@ -189,7 +189,12 @@ border-radius: 16px;
         margin-right: 20px !important;
     }
     .job-title h1{
-        font-size: 30px;
+        font-size: 24px;
         font-weight: 600;
     }
+}
+
+.CareeBanner img{
+    border-radius: 10px;
+    width: 100%;
 }

@@ -83,7 +83,7 @@ function Singleblog() {
     const path = window.location.href
     return (
     <>
-            <Container fluid className="Singleblog-container" >
+            <Container fluid className="Singleblog-container"  style={{background:`linear-gradient(to right top, rgba(0, 0, 0, 0.7), rgba(13, 13, 13, 0.6), rgba(11, 11, 11,0.5),rgba(11, 11, 11,0.5) ,rgba(11, 11, 11,0.5)), url(${singleblogData?.picture}) no-repeat center center/cover`}}>
                 <Container >
                     <Row>
                         <Col xs={12} lg={7}>
@@ -93,7 +93,7 @@ function Singleblog() {
                     <Row className="mt-5 mb-2">
                         <Col xs={12} lg={6}>
                             <div className='d-flex  align-items-center'>
-                                <img src={avatar} className="me-4" alt="img" />
+                                <img src={singleblogData?.authorPicture} className="me-4 author-pic" alt="img" />
                                 <span className='Singleblog-authorDesc'>
                                     <h4>{singleblogData?.authorName}</h4>
                                     <h5>{moment(singleblogData?.createdAt).format('DD-MM-YYYY')} |  {singleblogData?.timeToRead}  read </h5>
@@ -113,8 +113,8 @@ function Singleblog() {
 
 
             <Container fluid className="d-flex  overflow-visible single-blog-sticky">
-                    <div className="col-lg-11 Singleblog-content p-lg-5 p-2 ">
-                    {singleblogData?.content}
+                    <div className="col-lg-11 Singleblog-content p-lg-5 p-2 " dangerouslySetInnerHTML={{ __html: singleblogData?.content}}>
+
                     </div>
 
                     <Col lg={1} className="Singleblog-shareicon-container  ">
@@ -159,7 +159,7 @@ function Singleblog() {
 
             {/* //progressbar */}
             {/* text={`${scrollTop}%`} */}
-                        <Row className="singleblog-progressBar "> <CircularProgressbar value={scrollTop} style={{width:"50%"}}  /></Row>
+                        <Row className="singleblog-progressBar "> <CircularProgressbar value={scrollTop} style={{width:"20%"}}  /></Row>
 
 
 
@@ -173,7 +173,8 @@ function Singleblog() {
                                 <Col className="singleblog-author" lg={6}>
                                     <h5>The Author</h5>
                                     <Row className="singleblog-author-profile">
-                                        <Col lg={2} className="singleblog-author-img "></Col>
+                                        <Col lg={2} className="singleblog-author-img "> 
+                                        <img src={singleblogData?.authorPicture} alt="author" className='author-pic' /></Col>
                                         <Col > <h6>{singleblogData?.authorName}</h6></Col>
                                     </Row>
                                     <Row >

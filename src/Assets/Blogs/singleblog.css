@@ -1,12 +1,13 @@
 .Singleblog-container{
     padding-top: 80px ;
-    padding-bottom: 20px;
-    background: linear-gradient(180deg, #FFFFFF 13.02%, #EAEBFF 100%);
+    padding-bottom: 60px;
+    color: white;
+
 }
 .Singleblog-Head{
     font-size: 3.5rem;
     font-weight: 700;
-    color: rgba(28, 27, 77, 1);
+    color: white;
 }
 .Singleblog-authorDesc h4{
     font-size: 1.2rem;
@@ -15,7 +16,7 @@
     font-size: 1rem;
 }
 .Singleblog-tags{
-    border: 1px solid black;
+    border: 1px solid white;
     margin: 5px ;
     height: 60%;
     padding: 5px 15px;
@@ -54,6 +55,12 @@
 }
 
 
+/* author */
+.author-pic{
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+}
 .singleblog-author{
     padding: 10px;
 }
@@ -71,7 +78,6 @@
     height:60px ;
     width:60px;
     border-radius: 50%;
-    background-color: black;   
 }
 .singleblog-author-profile h6{
     font-size: 1.5rem;
@@ -213,7 +219,7 @@
 
 /* progress bar */
 .CircularProgressbar {
-    width: 6%!important;
+    width: 4%!important;
     position: fixed;
     left:2%;
     z-index: 10000;

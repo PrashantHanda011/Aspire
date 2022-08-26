@@ -41,20 +41,29 @@ function CareerIndividual() {
   
   return (
     <>
-      <div className="container-fluid py-5" style={{backgroundColor:"#ebebeb"}} >
-        
+      <div className="container-fluid " style={{backgroundColor:"#ebebeb"}} >
             {/* title */}
-        <div className="container d-flex justify-content-between job-title pb-5 pt-3 ps-3">
+            <div className="container d-flex py-5 flex-lg-row flex-column flex-md-row">
+            
+    <div className="container  d-flex   flex-column  pt-3">
+        <div className=" d-flex flex-column justify-content-between job-title pb-5  ">
+            
+            <figure className='CareeBanner '>
+              <img src={SingleCareer?.bannerUrl} alt="" />
+            </figure>
+
+            <div className='d-flex justify-content-between align-items-center mt-4'>
             <h1>{SingleCareer?.name}</h1>
             <button>Apply Now</button>
+            </div>
         </div>
 
-        <div className="container d-flex flex-column flex-lg-row pt-3">
-            <div className="col-12 col-lg-8 px-3">
-                <p>{SingleCareer?.description}</p>
+            <div className="px-3">
+                <p style={{wordBreak:"break-word"}}>{SingleCareer?.description}</p>
             </div>
+      </div>
          
-            <div className="col-12 col-lg-4 mt-5 mt-lg-0 px-4 jobdetails">
+            <div className=" mt-5 mt-lg-0 px-4 col-lg-4 col-md-4 col-12 jobdetails pt-3">
                 <h3>Job Details</h3>
                 <hr />
                 
@@ -108,8 +117,8 @@ function CareerIndividual() {
                 <br />
 
             </div>
-        </div>
 
+</div>
       </div>
     </>
   )

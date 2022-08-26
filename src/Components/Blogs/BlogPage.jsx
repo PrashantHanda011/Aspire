@@ -24,6 +24,7 @@ const fetchblogData = async()=>{
       try {
         const data = await axios.get('https://aspire0.herokuapp.com/blog/getAllBlog');
         setblogData(data?.data?.data)
+        console.log(data?.data?.data)
       } catch (error) {
         console.log(error)
       }
@@ -31,7 +32,7 @@ const fetchblogData = async()=>{
   const fetchknowledgeblogData = async()=>{
       try {
         let categorydata={
-          category:"knowledgeSeries"
+          category:"Knowledge Seriess"
         }
         const data = await FetchCategoryBlog(categorydata);
         setknowledgeBlog(data?.data?.data)
@@ -42,7 +43,7 @@ const fetchblogData = async()=>{
   const fetchNewsAndUpdatedblogData = async()=>{
       try {
         let categorydata={
-          category:"news&updates"
+          category:"News & Updates"
         }
         const data = await FetchCategoryBlog(categorydata);
         setnewsBlog(data?.data?.data)
@@ -53,7 +54,7 @@ const fetchblogData = async()=>{
   const fetchLocalityblogData = async()=>{
       try {
         let categorydata={
-          category:"localityBytes"
+          category:"Locality Bytes"
         }
         const data = await FetchCategoryBlog(categorydata);
         setlocalityBlog(data?.data?.data)
