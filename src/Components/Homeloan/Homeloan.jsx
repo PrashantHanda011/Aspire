@@ -265,7 +265,7 @@ const fetchLoan = async()=>{
           <div className="row py-4">
             <h3>Trending loans & offers</h3>
           </div>
-          <div className="d-flex flex-lg-row justify-content-between flex-column">
+          <div className="d-flex flex-lg-row justify-content-between flex-column trendin-scroll " style={{overflowX:"scroll",overflowY:"hidden"}}>
             {
               TrendingLoan.map((data,index)=>{
                 return <Graphcards key={index} interest={data?.interest} name={data?.name} description = {data?.description} /> 

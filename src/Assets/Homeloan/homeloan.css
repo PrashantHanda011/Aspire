@@ -165,7 +165,6 @@
     border-radius: 50px;
   }
 
-
   .homeloan-blogcard-scroll{
   }
 
@@ -177,6 +176,20 @@
     border-radius: 10px;
 }
 .homeloan-blogcard-scroll::-webkit-scrollbar-thumb {
+    background: rgb(186, 185, 185); 
+    border-radius: 50px;
+}
+.trendin-scroll{
+    padding-bottom: 30px;
+}  
+.trendin-scroll::-webkit-scrollbar {
+    height: 5px;
+}
+.trendin-scroll::-webkit-scrollbar-track {
+    background: #e4e4e4; 
+    border-radius: 10px;
+}
+.trendin-scroll::-webkit-scrollbar-thumb {
     background: rgb(186, 185, 185); 
     border-radius: 50px;
 }

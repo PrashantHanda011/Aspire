@@ -5,6 +5,7 @@ import EmailIcon from '@mui/icons-material/Email';
 import Community from '../HomePage/Community';
 import Map2 from './Map2';
 import MapWithAMarker from './Map'
+import Map from './Map';
 function Wearehere() {
     const [heightmap, setheightmap] = useState("450px")
 
@@ -57,14 +58,19 @@ function Wearehere() {
                              {/* <Map2
                                 height={heightmap}
                              /> */}
-                             <MapWithAMarker
+                             {/* <MapWithAMarker
                                 googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyB14oZ3M9HW-pYKIsIwCfyYhFKsg3FX6v0&v=3.exp&libraries=geometry,drawing,places"
                                 loadingElement={<div style={{ height: `100%` }} />}
                                 containerElement={<div style={{ height: `${heightmap}` }} />}
                                 mapElement={<div style={{ height: `100%` }} />}
                                 long={77.57973740550517}
                                 lati={12.98807381311353}
-                                />
+                                /> */}
+                                  <Map
+                                    height={`${heightmap}`}
+                                    lng={77.57973740550517}
+                                    lat={12.98807381311353}
+                                  />  
 
                     </Col>
                 </Row>

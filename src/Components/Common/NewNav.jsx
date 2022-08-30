@@ -1,12 +1,15 @@
 import React from 'react'
-import {Col,Row,Container, CloseButton} from 'react-bootstrap'
+import {Col,Row,Container, CloseButton, NavItem} from 'react-bootstrap'
 import  {NavLink,useLocation} from 'react-router-dom'
 import '../../Assets/Common/Navbar.css'
 import logo from "../../Assets/Images/logo.png" 
 import ListIcon from '@mui/icons-material/List';
 import { IconButton } from '@mui/material'
 import CloseIcon from '@mui/icons-material/Close';
-
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+import NavDropdown from 'react-bootstrap/NavDropdown';
+import { HashLink } from 'react-router-hash-link';
 function NewNav() {
     const location =useLocation();
   return (
@@ -40,7 +43,28 @@ function NewNav() {
                                     
                                     <Col className="Links" >
                                         <NavLink className={location.pathname=='/blogs' ? ('Link-active'):("")} to={'/blogs'} >
-                                            Blogs
+                                            <NavDropdown
+                                                id="nav-dropdown-dark-example"
+                                                title="Resources"
+                                                menuVariant="dark"
+                                                style={{color:"white"}}
+                                                >
+                                                     <NavDropdown.Item style={{borderBottom:"none",hover:"none",backgroundColor:"transparent"}}>
+                                                <HashLink style={{padding:"8px 15px",display:"flex"}} to="/blogs">All Blogs</HashLink>
+                                                <HashLink style={{padding:"8px  15px",display:"flex"}} to="/blogs#knowledgeSeries">Knowledge Series</HashLink>
+                                                <HashLink style={{padding:"8px 15px",display:"flex"}} to="/blogs#localityBytes">Locality Bytes</HashLink>
+                                                <HashLink style={{padding:"8px 15px",display:"flex"}} to="/blogs#newsUpdates">News and Updates</HashLink>
+                                                <HashLink style={{padding:"8px 15px",display:"flex"}} to="/blogs#others">Other Blogs</HashLink>
+                                        </NavDropdown.Item>
+                                                </NavDropdown>
+                                                {/* <div class="dropdown-menu">
+                                                    <a class="dropdown-item" href="/blogs">All Blogs</a>
+                                                    <a class="dropdown-item" href="#">Knowledge Series</a>
+                                                    <a class="dropdown-item" href="#">Locality Bytes</a>
+                                                    <a class="dropdown-item" href="#">News and Updates</a>
+                                                    <a class="dropdown-item" href="#"> Other Blogs</a>
+                                                </div> */}
+
                                         </NavLink>
                                     </Col>
 
@@ -120,6 +144,8 @@ function NewNav() {
                          </Col>
   </div>
 </div>
+
+
     </>
   )
 }

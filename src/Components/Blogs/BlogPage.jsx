@@ -19,6 +19,7 @@ const [category, setcategory] = useState([])
 const [knowledgeBlog, setknowledgeBlog] = useState([])
 const [newsBlog, setnewsBlog] = useState([])
 const [localityBlog, setlocalityBlog] = useState([])
+const [othersBlog, setothersBlog] = useState([])
   
 const fetchblogData = async()=>{
       try {
@@ -62,12 +63,24 @@ const fetchblogData = async()=>{
         console.log(error)
       }
     } 
+  const fetchOthersblogData = async()=>{
+      try {
+        let categorydata={
+          category:"Locality Bytes"
+        }
+        const data = await FetchCategoryBlog(categorydata);
+        setothersBlog(data?.data?.data)
+      } catch (error) {
+        console.log(error)
+      }
+    } 
     
 useEffect(() => {
     fetchblogData()
     fetchknowledgeblogData()
     fetchNewsAndUpdatedblogData()
     fetchLocalityblogData()
+    fetchOthersblogData()
   }, [])
 
 console.log()
@@ -95,7 +108,7 @@ console.log()
               </Row>
           </Container>
 
-            <div className='blogsDiv'>
+            <div id="knowledgeSeries" className='blogsDiv'>
 
                <h3 className="blogMainHeading">Knowledge Series</h3>         
                 <Row  className="d-flex justify-content-center">
@@ -123,7 +136,7 @@ console.log()
                 </Row>
 
 
-               <h3 className="blogMainHeading">News & Updates</h3>         
+               <h3 id="newsUpdates" className="blogMainHeading">News & Updates</h3>         
                 <Row  className="d-flex justify-content-center">
                     <Col xs={11} className="d-flex  BlogsRow   align-items-center">
                         {
@@ -147,7 +160,7 @@ console.log()
                       </Col> */}
                 </Row>
 
-               <h3 className="blogMainHeading">Locality Bytes</h3>         
+               <h3 id="localityBytes" className="blogMainHeading">Locality Bytes</h3>         
                 <Row  className="d-flex justify-content-center">
                     <Col xs={11} className="d-flex  BlogsRow   align-items-center">
                           {
@@ -164,12 +177,31 @@ console.log()
                       })
                     }
                </Col>
+                </Row>
+
+               <h3 id="others" className="blogMainHeading">Others</h3>         
+                <Row  className="d-flex justify-content-center">
+                    <Col xs={11} className="d-flex  BlogsRow   align-items-center">
+                          {
+                            othersBlog.map((item,index)=>{
+                        return  <BlogCard
+                            key={index}
+                            id={item?._id}
+                            content={item?.content}
+                            picture={item?.picture}
+                            createdAt={item?.createdAt}
+                            timeToRead={item?.timeToRead}
+                            title={item?.title}
+                        />
+                      })
+                    }
+               </Col>
+               </Row>
                       {/* <Col xs={1} className="ArrowIcon  d-flex align-items-center ">
                        <span>
                        <ArrowForwardIcon/>
                        </span> 
                       </Col> */}
-                </Row>
 
 
             </div>

@@ -21,33 +21,35 @@ import Modal from 'react-bootstrap/Modal';
 import { useParams } from "react-router-dom";
 import { FetchSingleDeveloperData, FetchSinglePropertyData } from '../API/Api'
 import MapWithAMarker from '../Contact/Map'
+import ScrollTrigger from 'react-scroll-trigger'
+import Backdrop from '@mui/material/Backdrop';
+import Box from '@mui/material/Box';
+import Fade from '@mui/material/Fade';
+import CloseIcon from '@mui/icons-material/Close';
+import Map from '../Contact/Map'
+import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
+import ArrowDropUpIcon from '@mui/icons-material/ArrowDropUp';
 function Property() {
     const [propertyData, setpropertyData] = useState({})
     const [unit, setunit] = useState(0);
     const [showModal, setshowModal] = useState(true);
     const [showSideform, setshowSideform] = useState(false);
     const [unitDetails, setunitDetails] = useState()
+    const [showAmenity, setshowAmenity] = useState(true)
+
     const [quote, setquote] = useState({
         name:"",
         phone:"",
         email:""
     });
     const location =useLocation();
-
-
     const param =useParams();
-    
-
-  
-    // modal
-      const handleClose = () => {
-          setshowModal(false);
-    }
-    
+      console.log(propertyData)
     // sideform
     const handleCloseSideform=()=>{
         setshowSideform(false);
     }
+
     const handleShowsideform = () => setshowSideform(true);
     
     // api call
@@ -82,15 +84,8 @@ const fetchDeveloper= async()=>{
     useEffect(() => {
         fetchsingleproperty()
         fetchDeveloper();
-        if (typeof window !== "undefined") {
-          window.addEventListener("scroll", handleClose);
-    
-          // cleanup function
-          return () => {
-            window.removeEventListener("scroll", handleClose);
-          };
-        
-        }
+        handleToggle(true)
+     
       }, []);
     
     
@@ -101,12 +96,25 @@ const fetchDeveloper= async()=>{
     setquote({...quote,[name]:e.target.value})
 }
 
-//unit details
+//Modal property
+const [open, setOpen] = React.useState(false);
+const handleClose = () => {
+  setOpen(false);
+};
+const handleToggle = () => {
+  setOpen(!open);
+};
 
-    console.log()
-    return (
+const handleAmenities=()=>{
+    if(!showAmenity){
+        setshowAmenity(true)
+    }else{
+        setshowAmenity(false)
+    }
+}
+return (
         <>
-    <Container fluid className="property-Single "   style={{position:"relative"}}   >
+    <Container   fluid className="property-Single "   style={{position:"relative"}}   >
     
             {/* responsive icon */}
             
@@ -193,77 +201,7 @@ const fetchDeveloper= async()=>{
                     
                     {/* side form */}
                                     
-                    </Container>
-
-
-{/* modal */}
-                        {
-                        showModal?(
-                            <div className="container-fluid  property-animation-modal d-flex flex-column justify-content-center align-items-center">
-                                           
-                                           <Row className="property-overview-head-modal">
-                                            <h4>{propertyData?.name}</h4>
-                                            <h5>{propertyData?.city}</h5>
-                                           </Row>
-                                            <Row  className="property-overview-btn-container-modal d-flex flex-column align-items-center">
-                                                <Col className="animationContainer w-100 d-flex flex-column align-items-center">
-                                                    <Row className="property-overview-btn-modal locationOn d-flex">
-                                                        <Col lg={2} xs={3} >
-                                                            <LocationOnIcon/>
-                                                        </Col>                
-                                                        <Col xs={9}>
-                                                            <h5 className="text-center">{propertyData?.location}</h5>
-                                                        </Col>               
-                                                    </Row>    
-
-                                                    <Row className="property-overview-btn-modal money ">
-                                                        
-                                                        <Col lg={2} xs={3}>
-                                                            <PaidIcon/>
-                                                        </Col>                
-                                                        <Col lg={10} xs={9}>
-                                                                <h5 className="text-center">{propertyData?.price}</h5>
-                                                        </Col>               
-                                                    </Row>    
-                                                    <Row className="property-overview-btn-modal area">
-                                                        <Col lg={2} xs={3}>
-                                                            <PushPinIcon/>
-                                                        </Col>                
-                                                        <Col lg={10} xs={9}>
-                                                                <h5 className="text-center">{propertyData?.area}</h5>
-                                                        </Col>               
-                                                    </Row>    
-                                                    <Row className="property-overview-btn-modal bhk">
-                                                        <Col lg={2} xs={3}>
-                                                            <MeetingRoomIcon/>
-                                                        </Col>                
-                                                        <Col lg={10} xs={9}>
-                                                                <h5 className="text-center">{propertyData?.BHK} BHK</h5>
-                                                        </Col>               
-                                                    </Row>    
-                                                    <Row className="property-overview-btn-modal units">
-                                                        <Col lg={2} xs={3}>
-                                                            <ApartmentIcon/>
-                                                        </Col>                
-                                                        <Col lg={10} xs={9}>
-                                                                <h5 className="text-center">{propertyData?.unitsLeft} Units Left</h5>
-                                                        </Col>               
-                                                    </Row>    
-                                                    <Row className="property-overview-btn-modal move">
-                                                        <Col lg={2} xs={3}>
-                                                            <CheckBoxIcon/>
-                                                        </Col>                
-                                                        <Col xs={9} lg={10}>
-                                                                <h5 className="text-center">{propertyData?.ready ? ("Ready to Move"):("Posession Soon")}</h5>
-                                                        </Col>               
-                                                    </Row>    
-
-                                                </Col>
-                                            </Row>
-                            </div>
-                        ):("")    
-                        }
-                                            
+                    </Container>                            
                     
 {/* navigate */}
                     <Container >
@@ -292,9 +230,9 @@ const fetchDeveloper= async()=>{
                                             <Row className="property-overview-btn-container">
                                                 <Col xs={6} lg={4}><div className="property-overview-btn"><LocationOnIcon/><h5>{propertyData?.location}</h5></div></Col>
                                                 <Col xs={6} lg={4}><div className="property-overview-btn"><PaidIcon/><h5>{propertyData?.price}</h5></div></Col>
-                                                <Col xs={6} lg={4}><div className="property-overview-btn"><PushPinIcon/><h5>{propertyData?.area}</h5></div></Col>
-                                                <Col xs={6} lg={4}> <div className="property-overview-btn"><MeetingRoomIcon/><h5>{propertyData?.BHK} BHK</h5></div></Col>
-                                                <Col xs={6} lg={4}><div className="property-overview-btn"><ApartmentIcon/><h5>{propertyData?.units} Units left</h5></div></Col>
+                                                <Col xs={6} lg={4}><div className="property-overview-btn"><PushPinIcon/><h5>{propertyData?.area} </h5></div></Col>
+                                                <Col xs={6} lg={4}> <div className="property-overview-btn"><MeetingRoomIcon/><h5>{propertyData?.unitDetails?.splice(0,1).map((item,index)=>{return <span>{item?.bhk}</span>})} BHK</h5></div></Col>
+                                                <Col xs={6} lg={4}><div className="property-overview-btn"><ApartmentIcon/><h5>{propertyData?.unitsLeft} Units left</h5></div></Col>
                                                 <Col xs={6} lg={4}><div className="property-overview-btn"><CheckBoxIcon/><h5>{propertyData?.ready ? ("Ready to move"):("Posession Soon")}</h5></div></Col>
                                             </Row>
                                           </Row>
@@ -319,22 +257,32 @@ const fetchDeveloper= async()=>{
 
                                         <Row>
 
-                                        {propertyData?.amenities?.map((item,index)=>{
+                            <Col  className="property-amenity-content-container" >
+                                <div className="property-amenity-container" style={{height:`${showAmenity ? (`${100 }`):(`${18}`)}%`}}>
+
+                                       {
+                                        propertyData?.amenities?.map((item,index)=>{
                                                 return (
-                                                    <Col key={index} className="property-amenity-content-container">
-                                                        <div className="property-amenity-content">
+                                                        <div key={index} className="property-amenity-content">
+                                                            
+
                                                             <CheckIcon/>
                                                             <h6>{item}</h6> 
                                                         </div>
-                                                    </Col>
 
 
 
 
                                                 )
                                         }) 
+                                       }
+                                         
+                                </div>
+                                       <div className='d-flex justify-content-end w-100 py-3'>
+                                            <button onClick={handleAmenities} className="float-right load-more-btn">{showAmenity ? (<span>Hide <ArrowDropUpIcon/></span>):(<span>Load More <ArrowDropDownIcon/></span>) }  </button>
+                                       </div>
+                                                    </Col>
                                         
-                                        }
                                             
                                         </Row>
                                 </Col>
@@ -345,15 +293,20 @@ const fetchDeveloper= async()=>{
                                 <Col className="property-location" lg={8}>
                                         <h5>Location</h5>
                                 {/* <Map2 height="500px"  /> */}
-                                <MapWithAMarker
-                                googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyB14oZ3M9HW-pYKIsIwCfyYhFKsg3FX6v0&v=3.exp&libraries=geometry,drawing,places"
+                                {/* <MapWithAMarker
+                                googleMapURL="https://maps.googleapis.com/maps/api/js?key=&v=3.exp&libraries=geometry,drawing,places"
                                 loadingElement={<div style={{ height: `100%` }} />}
                                 containerElement={<div style={{ height: `500px` }} />}
                                 mapElement={<div style={{ height: `100%` }} />}
-                                long={77.57973740550517}
-                                lati={12.98807381311353}
+                                long={lng &&(lat)}
+                                lati={lat &&(lng)}
+                                /> */}
+                                <Map
+                                    lat={ propertyData?.lat && (parseFloat(propertyData?.lat))}
+                                    lng={propertyData?.lng && (parseFloat(propertyData?.lng))}
+                                    location={propertyData?.location}
+                                    height="500px"
                                 />
-
                                 </Col>
                             </Row>
 
@@ -443,9 +396,75 @@ const fetchDeveloper= async()=>{
                     </div>
         </Container>
 
-
-
-
+        <Backdrop
+            sx={{ color: '#fff', zIndex: (theme) => theme.zIndex.drawer + 1,zIndex:"10000000000000000000000000000000" }}
+            open={open}
+            onClick={handleClose}
+            >
+        <div className="container-fluid  property-animation-modal d-flex flex-column justify-content-center align-items-center">
+        <button onClick={handleClose} className="Modal-Closer"><CloseIcon/></button>
+                                                
+                                                <Row className="property-overview-head-modal">
+                                                    <h4>{propertyData?.name}</h4>
+                                                    <h5>{propertyData?.city}</h5>
+                                                </Row>
+                                                    <Row  className="property-overview-btn-container-modal d-flex flex-column align-items-center">
+                                                        <Col className="animationContainer w-100 d-flex flex-column align-items-center">
+                                                            <Row className="property-overview-btn-modal locationOn d-flex">
+                                                                <Col lg={2} xs={3} >
+                                                                    <LocationOnIcon/>
+                                                                </Col>                
+                                                                <Col xs={9}>
+                                                                    <h5 className="text-center">{propertyData?.location}</h5>
+                                                                </Col>               
+                                                            </Row>    
+                                                
+                                                            <Row className="property-overview-btn-modal money ">
+                                                                
+                                                                <Col lg={2} xs={3}>
+                                                                    <PaidIcon/>
+                                                                </Col>                
+                                                                <Col lg={10} xs={9}>
+                                                                        <h5 className="text-center">{propertyData?.price}</h5>
+                                                                </Col>               
+                                                            </Row>    
+                                                            <Row className="property-overview-btn-modal area">
+                                                                <Col lg={2} xs={3}>
+                                                                    <PushPinIcon/>
+                                                                </Col>                
+                                                                <Col lg={10} xs={9}>
+                                                                        <h5 className="text-center">{propertyData?.area}</h5>
+                                                                </Col>               
+                                                            </Row>    
+                                                            <Row className="property-overview-btn-modal bhk">
+                                                                <Col lg={2} xs={3}>
+                                                                    <MeetingRoomIcon/>
+                                                                </Col>                
+                                                                <Col lg={10} xs={9}>
+                                                                        <h5 className="text-center">{propertyData?.BHK} BHK</h5>
+                                                                </Col>               
+                                                            </Row>    
+                                                            <Row className="property-overview-btn-modal units">
+                                                                <Col lg={2} xs={3}>
+                                                                    <ApartmentIcon/>
+                                                                </Col>                
+                                                                <Col lg={10} xs={9}>
+                                                                        <h5 className="text-center">{propertyData?.unitsLeft} Units Left</h5>
+                                                                </Col>               
+                                                            </Row>    
+                                                            <Row className="property-overview-btn-modal move">
+                                                                <Col lg={2} xs={3}>
+                                                                    <CheckBoxIcon/>
+                                                                </Col>                
+                                                                <Col xs={9} lg={10}>
+                                                                        <h5 className="text-center">{propertyData?.ready ? ("Ready to Move"):("Posession Soon")}</h5>
+                                                                </Col>               
+                                                            </Row>    
+                                                
+                                                        </Col>
+                                                    </Row>
+                                                </div>
+                            </Backdrop>
 
     </>
   )
