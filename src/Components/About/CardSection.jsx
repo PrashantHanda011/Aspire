@@ -2,100 +2,60 @@ import React from 'react'
 import { Col, Row } from 'react-bootstrap'
 import AboutTopImage from "../../Assets/Images/AboutTopImage.png"
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import "../../Assets/About/About.css"
+import aboutUsBottomBakground from "../../Assets/Images/aboutUsBottomBackground.png"
+
 function CardSection() {
-  return (
-      <>
-        <div className='cardContent'>
-        <h4>Meet Our Team</h4>
-        <div className='aboutLine'></div>
-            <div className="d-flex align-items-center justify-content-center">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Facilisi ullamcorper elementum vitae sit magna platea nec maecenas nibh. Aliquam hendrerit .</p>
-            </div>
-        </div>
-    <div className=' d-flex flex-column'>
+    return (
+        <>
+            <section className='Meetteam row'>
+                <article className="Meetteam__head col d-flex justify-content-center align-items-center flex-column">
+                    <h3>
+                        Meet Our Team
+                    </h3>
+                    <span ></span>
+                    <img src="" alt="" />
+                    <p> fugit consequatur enim cum quo vero, dicta quae mollitia eveniet voluptatibus numquam quisquam unde aperiam perspiciatis harum nobis eaque iste sed.</p>
+                </article>
+                <main className='d-flex Meetteam__cards'>
+                    <div className='Meetteam__cards__content'>
+                        <img src={aboutUsBottomBakground} alt="" />
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quod facilis maiores laboriosam nostrum consectetur quidem error, non tempore? </p>
 
-        <div className="col d-flex justify-content-around">
-        <div className='teamCardContent col-8'>
-                    <img src={AboutTopImage} alt="" className='avatarImage'/>
-                    <p>Lorem ipsum dolor sit amet. 33 internos vitae aut error tenetur ea iure aspernatur. Qui quia consectetur sit animi eius ut </p>
-                    <div className="row about-card-content">
-                        <div className="col">
-                            <LinkedInIcon/>
-                            <h5>Connect with us</h5>
+                        <div className="row mt-4  Meetteam__cards__content__Social w-100 ">
+
+                            <div className="col Meetteam__cards__content__Social__left d-flex flex-column align-items-center">
+                                <LinkedInIcon />
+                                <p className="row">Connect with Us</p>
+                            </div>
+                            <div className="col Meetteam__cards__content__Social__right d-flex flex-column align-items-center">
+                                <h5 className="row">Name</h5>
+                                <p className="row">Designation</p>
+                            </div>
                         </div>
-                        <div className="col">
-                            <h3>Name</h3>
-                            <h5>Designation</h5>
-                        </div>
+
                     </div>
 
-                </div>
-        </div>
-        
-        <div className="col d-flex justify-content-around ">
-        <div className='teamCardContent col-8'>
-                    <img src={AboutTopImage} alt="" className='avatarImage'/>
-                    <p>Lorem ipsum dolor sit amet. 33 internos vitae aut error tenetur ea iure aspernatur. Qui quia consectetur sit animi eius ut </p>
-                    <div className="row about-card-content">
-                        <div className="col">
-                            <LinkedInIcon/>
-                            <h5>Connect with us</h5>
-                        </div>
-                        <div className="col">
-                            <h3>Name</h3>
-                            <h5>Designation</h5>
+                    <div className='Meetteam__cards__content'>
+                        <img src={aboutUsBottomBakground} alt="" />
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quod facilis maiores laboriosam nostrum consectetur quidem error, non tempore? </p>
+                        <div className="row mt-4 Meetteam__cards__content__Social w-100">
+                            
+                        <div className="col Meetteam__cards__content__Social__left d-flex flex-column align-items-center">
+                                <LinkedInIcon />
+                                <p className="row">Connect with Us</p>
+                            </div>
+                            <div className="col Meetteam__cards__content__Social__right d-flex flex-column align-items-center">
+                                <h5 className="row">Name</h5>
+                                <p className="row">Designation</p>
+                            </div>
                         </div>
                     </div>
+                </main>
+            </section>
+        </>
 
-                </div>
-        </div>
-
-
-        <Row>
-            {/* <Col xs={12} className="teamCardCol">
-                <div className='teamCardContent'>
-                    <img src={AboutTopImage} alt="" className='avatarImage'/>
-                    <p>Lorem ipsum dolor sit amet. 33 internos vitae aut error tenetur ea iure aspernatur. Qui quia consectetur sit animi eius ut </p>
-                    <div className="row about-card-content">
-                        <div className="col">
-                            <LinkedInIcon/>
-                            <h5>Connect with us</h5>
-                        </div>
-                        <div className="col">
-                            <h3>Name</h3>
-                            <h5>Designation</h5>
-                        </div>
-                    </div>
-
-                </div>
-            </Col>
-            <Col xs={12} className="teamCardCol">
-                
-                <div className='teamCardContent'>
-                    <div>
-                    <img src={AboutTopImage} alt="" className='avatarImage'/>
-                    <p>Lorem ipsum dolor sit amet. 33 internos vitae aut error tenetur ea iure aspernatur. Qui quia consectetur sit animi eius ut </p>
-                    <div className="row about-card-content">
-                        <div className="col">
-                            <LinkedInIcon/>
-                            <h5>Connect with us</h5>
-                        </div>
-                        <div className="col">
-                            <h3>Name</h3>
-                            <h5>Designation</h5>
-                        </div>
-                    </div>
-                </div>
-
-                </div>
-
-            </Col> */}
-        </Row>
-
-    </div>
-      </>
-
-  )
+    )
 }
 
 export default CardSection

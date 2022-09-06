@@ -15,11 +15,7 @@ function Promise() {
                     <h4 style={{fontSize: 30}}>Aspire Promise</h4>
                     <Row>
                         <Col>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Facilisi ullamcorper elementum vitae 
-                        sit magna platea nec maecenas nibh. Aliquam hendrerit libero cursus elementum mi amet morbi lacus aliquet. 
-                        Consectetur commodo, pellentesque ac sed at massa elementum. Viverra at et duis neque.
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Facilisi ullamcorper elementum vitae 
-                        sit magna platea nec maecenas nibh. Aliqsuam hendrerit libero cursus elementum mi amet.
+                        Whether you are looking for your first dream home or want to invest in a trusted project to get good returns, our team is there to help you at every step. To give you the finest property for your hard-earned money, we bring to you projects that will have the following:
                         </Col>
 
                     </Row>

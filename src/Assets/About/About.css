@@ -1,85 +1,72 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700&display=swap');
+    @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700&display=swap");
 
-.about-card-img{
+    .about-card-img {
     -webkit-perspective: 300px;
     perspective: 300px;
-}
+    }
 
-.about-helpDiv{
+    .about-helpDiv {
     background: url("../Images/HelpBg.png");
     background-repeat: no-repeat;
     background-size: cover;
-}
-.companiesCol{
+    }
+    .companiesCol {
     display: flex;
     justify-content: center;
-}
+    }
 
-.ourStoryHead{
+    .ourStoryHead {
     text-align: center;
-    font-family: 'Poppins', sans-serif;
+    font-family: "Poppins", sans-serif;
     font-weight: 600;
-    color: #F47E20;
+    color: #f47e20;
     font-size: 35px;
     margin-top: 100px;
     margin-bottom: 50px;
-}
+    }
 
-.videoDiv{
+    .videoDiv {
     width: 50%;
     margin: auto;
     border-radius: 20px;
     margin-top: 50px;
     position: relative;
     /* border: 10px solid white; */
-}
+    }
 
-.cardSectionTop{
-    background: url("../Images/AboutTopImage.svg") ;
-    background-size: contain;
-    justify-content: center;
-    display: flex;
-    align-items: center;
-    border: none;
-    padding-top: 100px ;
-    padding-bottom: 150px;
-    background-repeat: no-repeat;
-
-}
-
-.aboutLine{
+    .aboutLine {
     width: 100px;
     height: 10px;
-    background: linear-gradient(89.68deg, #5662AB -52.03%, #F47E20 94.18%);
+    background: linear-gradient(89.68deg, #5662ab -52.03%, #f47e20 94.18%);
     margin: auto;
     margin-bottom: 40px;
-}
+    }
 
-.cardContent{
+    .cardContent {
     text-align: center;
     margin-bottom: 20%;
-}
+    }
 
-.cardContent h4{
+    .cardContent h4 {
     color: white;
     font-size: 40px;
     font-weight: 600;
-}
-.cardContent{
+    }
+    .cardContent {
     text-align: center;
-}
-.cardContent p{
+    }
+    .cardContent p {
     color: white;
     width: 50%;
     text-align: center;
-}
+    }
 
-.teamCardFlex{
+    .teamCardFlex {
     display: flex;
     justify-content: center;
     align-items: center;
-}
-.teamCardContent{
+    }
+    .teamCardContent {
     background-color: white;
     padding: 20px;
     border: 1px solid #00000087;
@@ -87,59 +74,57 @@
     margin-top: -100px;
     text-align: center;
     border-radius: 20px;
-}
+    }
 
-.avatarImage{
+    .avatarImage {
     border-radius: 100%;
     height: 100px;
     width: 100px;
     margin: auto;
     display: block;
     margin-bottom: 20px;
-  
-}
-    
+    }
 
-/* css */
+    /* css */
 
-.about-banner-content h2{
+    .about-banner-content h2 {
     font-size: 75px;
-     color:  rgba(28, 27, 77, 1);
+    color: rgba(28, 27, 77, 1);
     font-weight: 700;
-}
+    }
 
-.about-banner-content h3{
+    .about-banner-content h3 {
     font-size: 60px;
     margin-top: 10px;
-    color:  rgba(28, 27, 77, 1);
-    font-weight:900;
-}
+    color: rgba(28, 27, 77, 1);
+    font-weight: 900;
+    }
 
-.about-banner-content h6{
+    .about-banner-content h6 {
     text-align: center;
     font-size: 20px;
     color: grey;
     margin-top: 20px;
-}
+    }
 
-/* joinus */
-.about-joinus-container{
+    /* joinus */
+    .about-joinus-container {
     background-color: rgba(243, 230, 196, 1);
-}
-.about-joinus img{
+    }
+    .about-joinus img {
     width: 70%;
-}
-.about-joinus-content {
+    }
+    .about-joinus-content {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-}
-.about-joinus-content h4{
+    }
+    .about-joinus-content h4 {
     font-size: 40px;
     font-weight: 600;
-}
-.about-joinus-content button{
+    }
+    .about-joinus-content button {
     background-color: var(--orangeColor);
     border: none;
     padding: 10px 20px;
@@ -147,60 +132,127 @@
     font: 600;
     font-size: 18px;
     border-radius: 10px;
-}
-.about-joinus-content button:hover{
+    }
+    .about-joinus-content button:hover {
     background-color: white;
-    color:#F47E20;
+    color: #f47e20;
     transition: 0.5s;
-}
-.about-card-content{
-    padding-top: 10px ;
+    }
+    .about-card-content {
+    padding-top: 10px;
     padding-bottom: 30px;
-}
-.about-card-content h5{
+    }
+    .about-card-content h5 {
     font-size: 14px;
     margin-top: 10px;
-}
-.about-card-content svg{
+    }
+    .about-card-content svg {
     color: blue;
-}
-.about-card-content h3{
+    }
+    .about-card-content h3 {
     font-size: 20px;
     font-weight: 600;
-}
+    }
 
-@media (max-width: 992px){
-
-    .about-card-img-1 img{
+    /* meet TeaM */
+    .Meetteam {
+    background: url("../Images/AboutTopImage.svg");
+    background-size: center/cover;
+        background-position: center;
+    height: 100%;
+    width: 100%;
+    background-repeat: no-repeat;
+    }
+    .Meetteam__head {
+        margin-top: 100px;
+        margin-bottom: 100px;
+    }
+    .Meetteam__head h3 {
+    font-size: 2rem;
+    color: white;
+    font-weight: 600;
+    }
+    .Meetteam__head p {
+    font-size: 17px;
+    color: white;
+    text-align: center;
+    margin: 20px 0;
+    width: 70%;
+    }
+    .Meetteam__head span {
+    background: linear-gradient(89.68deg, #5662ab -52.03%, #f47e20 94.18%);
+    border-radius: 2px;
+    width: 80px;
+    height: 7px;
+    margin: 20px 0;
+    }
+    .Meetteam__cards__content{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border: 1px solid black;
+        width: 28%;
+        padding: 40px 50px ;
+        background: white;
+        border-radius: 25px;
+    }
+    .Meetteam__cards__content img{
+        height: 70px;
+        width: 70px;
+        margin: 10px 0;
+        border-radius: 50%;
+    }
+    .Meetteam__cards__content p{
+        margin: 10px 0;
+    }
+    .Meetteam__cards{
+        display: flex;
+        justify-content: space-evenly   ;
+    }
+    .Meetteam__cards__content__Social{
+        margin: 10px 0;
+    }
+    .Meetteam__cards__content__Social__left p {
+            font-size: 16px;
+    }
+    .Meetteam__cards__content__Social__left svg {
+        background-color: rgb(57, 57, 234);
+        border-radius: 50%;
+        padding: 5px;
+        font-size: 1.8rem;
+        color: white;
+    }
+    @media (max-width: 992px) {
+    .about-card-img-1 img {
         width: 100%;
     }
-    .about-card-img-2 img{
-        
+    .about-card-img-2 img {
         width: 70%;
     }
-    .about-helpsection{
+    .about-helpsection {
         margin-top: 50px;
     }
-    .about-banner-content h2{
-    font-size: 60px;
-    text-align: center;
+    .about-banner-content h2 {
+        font-size: 60px;
+        text-align: center;
     }
-    .about-banner-content h3{
-    font-size: 40px;
-    text-align: center;
+    .about-banner-content h3 {
+        font-size: 40px;
+        text-align: center;
     }
-    .teamCardContent{
+    .teamCardContent {
         width: 70%;
     }
-}
-@media (max-width: 768px){
-    .about-card-img-1 img{
+    }
+
+    @media (max-width: 768px) {
+    .about-card-img-1 img {
         position: absolute;
         z-index: -100;
         opacity: 0.4;
-        left: 0;            
+        left: 0;
     }
-    .about-card-img-2 img{
+    .about-card-img-2 img {
         display: none;
         width: 70%;
     }
@@ -213,4 +265,4 @@
         font-size: 14px;
         border-radius: 10px;
     }
-}
+    }

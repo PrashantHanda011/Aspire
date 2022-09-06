@@ -137,9 +137,9 @@ const fetchLoan = async()=>{
               <div className="row">
                 <div className="col-12 col-lg-12 homeloan-banner-content "> 
                     <h4>01</h4>
-                    <h3>Lorem, ipsum dolor.</h3>
+                    <h3>Make a list of what you need.</h3>
                   <div className='separatorDivhomeloan'></div>
-                  <p >Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam beatae quos est reprehenderit reiciendis repellat </p>
+                  <p >This includes how much you can afford to spend on your home loan and what features are important to you.</p>
                 </div>
               </div>
      
@@ -147,10 +147,10 @@ const fetchLoan = async()=>{
               
               <div className="row mt-5 mt-lg-0">
                 <div className=" col-11 col-lg-12 homeloan-banner-content "> 
-                    <h4>01</h4>
-                    <h3>Lorem, ipsum dolor.</h3>
+                    <h4>02</h4>
+                    <h3>Compare interest rates.</h3>
                   <div className='separatorDivhomeloan'></div>
-                  <p >Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam beatae quos est reprehenderit reiciendis repellat </p>
+                  <p > Interest rates vary based on your credit score, income, employment history, and other factors. You might also compare rates between different lenders or banks before making a decision.</p>
                 </div>
               </div>
 
@@ -168,10 +168,10 @@ const fetchLoan = async()=>{
         
             <div className="row mb-5 mt-5 mt-lg-0">
                 <div className="col-12 col-lg-12 homeloan-banner-content mt-lg-4 mt-0"> 
-                    <h4>01</h4>
-                    <h3>Lorem, ipsum dolor.</h3>
+                    <h4>03</h4>
+                    <h3>Apply for your home loan</h3>
                   <div className='separatorDivhomeloan'></div>
-                  <p >Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam beatae quos est reprehenderit reiciendis repellat </p>
+                  <p >After comparing interest rates, apply for the loan with the lowest rate so that you can get started with the process of getting approved for a loan as soon as possible! </p>
                 </div>
               </div>
        
@@ -180,9 +180,9 @@ const fetchLoan = async()=>{
               <div className="row mt-lg-3">
                 <div className="col-11 col-lg-12 homeloan-banner-content "> 
                     <h4>01</h4>
-                    <h3>Lorem, ipsum dolor.</h3>
+                    <h3>Get pre-approved for your mortgage</h3>
                   <div className='separatorDivhomeloan'></div>
-                  <p >Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam beatae quos est reprehenderit reiciendis repellat </p>
+                  <p >Pre-approval means that your lender/Bank has reviewed all of your financial information and determined that you have enough income to qualify for the amount of money you want to borrow.</p>
                 </div>
               </div>
 

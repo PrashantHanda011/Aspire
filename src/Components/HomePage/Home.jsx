@@ -27,7 +27,7 @@ function Home() {
               <div className="separatorDiv"></div>
         <h4>Project Portfolio</h4>
         <div className='helpPara'>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Facilisi ullamcorper elementum vitae sit magna platea nec maecenas nibh. Aliquam hendrerit libero cursus elementum mi amet morbi lacus aliquet. Consectetur commodo, pellentesque ac sed at massa elementum. Viverra at et duis neque.</p>
+        <p>Our projects are located in prime locations throughout the city. They offer the choicest of features that your whole family will love. You'll like our projects so much, that you will find it difficult to say ‘no’.</p>
         </div>
       <Portfolio/>
       </div>

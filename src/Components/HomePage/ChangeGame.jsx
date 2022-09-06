@@ -10,7 +10,7 @@ function ChangeGame() {
       <div className="perfectWriteDiv changeGameContent">
       <p>You are a builder/developer</p>
         <br />
-      <h2 className='homeChoiceHead'>Change the game wih Aspire</h2>
+      <h2 className='homeChoiceHead'>Change the game with Aspire</h2>
         <br/>
 
         <div className='inactive' style={{margin: "auto"}}>

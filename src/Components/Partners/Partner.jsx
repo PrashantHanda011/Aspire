@@ -48,7 +48,7 @@ function Partner() {
                 <h1 className="mt-4">Prepare for takeoff</h1>
                 <div className="row my-4 partner-front-subhead ">                  
                   <h5>
-                  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusamus illum eligendi fugiat error nulla aliquam enim dolores adipisci sed quidem consequatur quod, iste, pariatur eius ratione. Quidem, quasi? Dignissimos, libero!
+                  Inspired by a vision to empower agents and developers to make the most of their data and close more deals, we've built a smarter way for real estate companies to connect with their customers. Aspire brings together technology, expertise, and resources to deliver all your sales and marketing needs.
                   </h5>
                 </div>
           </div>

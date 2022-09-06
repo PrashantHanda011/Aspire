@@ -13,7 +13,7 @@ function HomeChoice() {
         <div className='perfectWriteDiv'>
         <h2 className='homeChoiceHead'>Your Home - Your Choice</h2>
         <br/>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Facilisi ullamcorper elementum vitae sit magna platea nec maecenas nibh. Aliquam hendrerit libero cursus elementum mi amet morbi lacus aliquet. Consectetur commodo, pellentesque ac sed at massa elementum. Viverra at et duis neque.</p>
+        <p className="homechoice-p">We bring to you the most desirable projects in the city, so you can choose your new home with 100% confidence.</p>
         <br />
         <Container>
         <Row className="d-flex justify-content-center">

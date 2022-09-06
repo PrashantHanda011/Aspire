@@ -78,7 +78,7 @@ const handleSubmit =async()=>{
             
         <h2 className='homeChoiceHead'>Find your perfect home</h2>
         <br/>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Facilisi ullamcorper elementum vitae sit magna platea nec maecenas nibh. Aliquam hendrerit libero cursus elementum mi amet morbi lacus aliquet. Consectetur commodo, pellentesque ac sed at massa elementum. Viverra at et duis neque.</p>
+        <p className="perfectPara">How much can you afford? Which is the best location to buy a home? What do you need to get your loan approved? Are these thoughts running through your mind right now? Relax.  Let us take the hassle out of finding your dream home. Just tell us what you're looking for and we'll handle the rest.</p>
         <br />
         <div className='Link-special-banner link-width' onClick={handleShow} style={{margin: "auto", padding: "10px 0px"}}>Post your requirements</div>
 

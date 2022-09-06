@@ -63,7 +63,7 @@ function About() {
                 <div className="separatorDiv"></div>
                   <h4>How can we help?</h4>
                   <div className='helpPara'>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Facilisi ullamcorper elementum vitae sit magna platea nec maecenas nibh. Aliquam hendrerit libero cursus elementum mi amet morbi lacus aliquet. Consectetur commodo, pellentesque ac sed at massa elementum. Viverra at et duis neque.</p>
+                  <p>Aspire is a one-stop solution designed to make your home buying experience as pleasurable as possible. If you are looking for your perfect abode in the most sought-after locations, let’s go get it! 👇</p>
                   </div>
                   <img src={HelpImage} style={{width:"100%"}} />
                   {/* <video src="https://www.youtube.com/watch?v=lMHfzIvRoOU"></video> */}
@@ -80,14 +80,14 @@ function About() {
               <div className="separatorDiv"></div>
         <h4>Project Portfolio</h4>
         <div className='helpPara mb-5'>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Facilisi ullamcorper elementum vitae sit magna platea nec maecenas nibh. Aliquam hendrerit libero cursus elementum mi amet morbi lacus aliquet. Consectetur commodo, pellentesque ac sed at massa elementum. Viverra at et duis neque.</p>
+        <p>Our projects are located in prime locations throughout the city. They offer the choicest of features that your whole family will love. You'll like our projects so much, that you will find it difficult to say ‘no’.</p>
         </div>
         <Portfolio/>
         </div>
     </div>
-    {/* <div className="container-fluid px-0 my-5 card px-0 cardSectionTop">
+    <div className="container-fluid px-0 my-5  px-0 ">
       <CardSection/>
-    </div> */}
+    </div>
 
     <div className="container-fluid about-joinus-container">
     <div className="container mt-5 mb-4 ">
