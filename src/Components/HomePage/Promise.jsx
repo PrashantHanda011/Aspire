@@ -1,7 +1,7 @@
 import React from 'react'
 import { Col, Row } from 'react-bootstrap'
 import "../../Assets/HomePage/Help.css"
-import PromiseImage from "../../Assets/Images/promise.svg"
+import PromiseImage from "../../Assets/Images/promise.png"
 import AOS from 'aos'
 
 function Promise() {

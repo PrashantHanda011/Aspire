@@ -1,6 +1,6 @@
 import React from 'react'
 import { Col, Row } from 'react-bootstrap'
-import logo from "../../Assets/Images/logo.png" 
+import logo from "../../Assets/Images/logo1.svg" 
 import "../../Assets/Common/BottomFoot.css"
 import InstagramIcon from '@mui/icons-material/Instagram';
 import FacebookIcon from '@mui/icons-material/Facebook';

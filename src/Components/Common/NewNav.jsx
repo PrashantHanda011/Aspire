@@ -2,7 +2,7 @@ import React from 'react'
 import {Col,Row,Container, CloseButton, NavItem} from 'react-bootstrap'
 import  {NavLink,useLocation} from 'react-router-dom'
 import '../../Assets/Common/Navbar.css'
-import logo from "../../Assets/Images/logo.png" 
+import logo from "../../Assets/Images/logo1.svg" 
 import ListIcon from '@mui/icons-material/List';
 import { IconButton } from '@mui/material'
 import CloseIcon from '@mui/icons-material/Close';

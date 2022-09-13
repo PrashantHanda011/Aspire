@@ -42,7 +42,7 @@ const AccordionDetails = styled(MuiAccordionDetails)(({ theme }) => ({
   borderTop: '1px solid rgba(200, 200, 200, 200)',
 }));
 
-export default function CustomizedAccordions() {
+export default function CustomizedAccordions({question,answer}) {
   const [expanded, setExpanded] = React.useState('panel1');
 
   const handleChange = (panel) => (event, newExpanded) => {
@@ -53,14 +53,11 @@ export default function CustomizedAccordions() {
     <div style={{borderRadius:"60px",backgroundColor:"#EBEBEB"}} >
       <Accordion style={{borderRadius:"10px",backgroundColor:"white"}} className="my-1 mx-4 bg-white" onChange={handleChange('panel1')}>
         <AccordionSummary  aria-controls="panel1d-content" id="panel1d-header">
-          <Typography>When Will I Have Access To My Course</Typography>
+          <Typography>{question}</Typography>
         </AccordionSummary>
         <AccordionDetails>
           <Typography>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-            malesuada lacus ex, sit amet blandit leo lobortis eget. Lorem ipsum dolor
-            sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex,
-            sit amet blandit leo lobortis eget.
+          {answer}
           </Typography>
         </AccordionDetails>
       </Accordion>

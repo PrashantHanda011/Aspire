@@ -8,17 +8,17 @@ import '../../Assets/HomePage/Perfect.css'
 function Community(prop) {
     var items = [
         {
-            name: "Random Name #1",
-            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Facilisi ullamcorper elementum vitae sit magna platea nec maecenas nibh. Aliquam hendrerit libero cursus elementum mi amet morbi lacus aliquet. Consectetur commodo, pellentesque ac sed at massa elementum. Viverra at et duis neque."
+            name: "Janakiraman",
+            description: "Good service by Aspire, bought a unit from them. They have been very helpful throughout the process. The entire home buying journey was made as easy and simplified as possible. A smooth and hassle free experience! "
         },
         {
-            name: "Random Name #2",
-            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Facilisi ullamcorper elementum vitae sit magna platea nec maecenas nibh. Aliquam hendrerit libero cursus elementum mi amet morbi lacus aliquet. Consectetur commodo, pellentesque ac sed at massa elementum. Viverra at et duis neque."
+            name: "Priyanka",
+            description: "Professional and transparent services. Had a great experience. Completed the journey of being a proud a home owner with their help. The team has great knowledge of the real estate sector in Bangalore. Would highly recommend them!"
         }
         ,
         {
-            name: "Random Name #2",
-            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Facilisi ullamcorper elementum vitae sit magna platea nec maecenas nibh. Aliquam hendrerit libero cursus elementum mi amet morbi lacus aliquet. Consectetur commodo, pellentesque ac sed at massa elementum. Viverra at et duis neque."
+            name: "Dhruva",
+            description: "Aspire has it bang on with their Right Location, Right Product, Right Legal and  Right Price approach. Found a great home through them and they were with us throughout the process at every step.  "
         }
     ]
   return (

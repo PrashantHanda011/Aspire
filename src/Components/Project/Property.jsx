@@ -257,8 +257,10 @@ return (
 
                                         <Row>
 
-                            <Col  className="property-amenity-content-container" >
-                                <div className="property-amenity-container" style={{height:`${showAmenity ? (`${100 }`):(`${18}`)}%`}}>
+                            <Col  className="property-amenity-content-container h-100" >
+                                <div className="property-amenity-container" style={{height:`${showAmenity ? (`${100 }%`):(`${16}vh`)}`}}>
+
+                                    
 
                                        {
                                         propertyData?.amenities?.map((item,index)=>{
@@ -386,9 +388,25 @@ return (
                                     <h5>FAQ</h5>  
                                 </Row>
                                 <Row className="propert-FAQ-accordian">
-                                    <CustomizedAccordions/>                 
-                                    <CustomizedAccordions/>                 
-                                    <CustomizedAccordions/>                 
+                                    <CustomizedAccordions
+                                        question={"Q1. Why should I choose Aspire?"}
+                                        answer={"Founded in 2017, has helped more than 10,000 people find their dream homes through the efforts of more than 20 of our dedicated employees and their commitment towards assisting people in their home buying process."}
+                                    />                 
+                                    <CustomizedAccordions
+                                        question={"Q2. How can I book a property through Aspire Proptech.com?"}
+                                        answer={`To buy a property through Aspire , you need to follow just few simple steps:<br>1. Check out our website<br>2. Select the property that meets your criteria and drop an enquiry for the same.<br>3. Go on a site visit of the selected property with our property experts.<br>4. Close the deal- We handle all legal paperwork, arrange home loans (if needed) and manage all documentation work with the builder and the bank.`.split("<br>").join('\n')}
+                                    />                 
+                                    <CustomizedAccordions
+                                        question={"Q3. Will Aspire proptech charge me a brokerage fee?"}
+                                        answer={"You would receive a call back from us within 10-15 minutes of placing your enquiry with us, provided you have posted your requirements between 9 am and 6 pm. Otherwise, we would be reaching you the next day."}
+                                    /> 
+                                    <CustomizedAccordions
+                                        question={"Q4. Do you offer home loan services?"}
+                                        answer={"Yes. We have tie-ups with some of the leading banks in the country such as the HDFC Bank, the ICICI Bank, the Axis Bank, LIC India and PNB."}
+                                    />   <CustomizedAccordions
+                                        question={"Q5. What are the areas of Bangalore where you have projects?"}
+                                        answer={"Our projects are located in North, South, and East Bangalore."}
+                                    />                 
                                 </Row>
                             </Col>
                         </Row>
