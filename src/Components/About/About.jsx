@@ -12,6 +12,7 @@ import joinus from "../../Assets/Images/about-joinus.svg";
 import ArrowRightAltIcon from "@mui/icons-material/ArrowRightAlt";
 import { Link } from "react-router-dom";
 import AOS from "aos";
+import TimeLine from "./TimeLine";
 
 function About() {
   AOS.init();
@@ -42,36 +43,18 @@ function About() {
               <h2>WHY US</h2>
             </div>
             <div className="row">
-              <h3>Simpler, Faster , Better</h3>
+              <h3>Simpler, Faster, Better</h3>
             </div>
             <div className="row">
-              <ul>
-                <li className="WhyUsli ">
-                  Verified Projects- Discover verified and handpicked projects
-                  that are the most-desirable ones in town
-                </li>
-                <li className="WhyUsli ">
-                  Assisted Site Visits- Personalized home buying assistance from
-                  our team of experts
-                </li>
-                <li className="WhyUsli">
-                  Legal & Documentation- We take care of the sale agreement,
-                  sale deed, and other documentation to ensure a hassle-free
-                  home buying experience
-                </li>
-                <li className="WhyUsli ">
-                  Home Loans- For your preferred home, we help you get
-                  attractive loans from leading banks and financial institutions
-                </li>
-                <li className="WhyUsli">
-                  Property Registration- With our experts to help you, you can
-                  register your property with assurance
-                </li>
-                <li className="WhyUsli ">
-                  Moving In- Our goal is to ensure that your moving in
-                  experience is smooth and hassle-free
-                </li>
-              </ul>
+              <h5>
+                We select only what's the best for you according to your
+                requirements and provide a personalized home buying experience
+                with all guidance needed for home loans and legal documentation
+                to registration making your moving in day memorable.
+              </h5>
+            </div>
+            <div className="mt-5">
+              <TimeLine />
             </div>
           </div>
 
@@ -106,11 +89,11 @@ function About() {
         </div>
       </div>
 
-      <div className="container-fluid my-lg-5 p-0">
+      {/* <div className="container-fluid my-lg-5 p-0">
         <HomeChoice />
-      </div>
+      </div> */}
 
-      <div className="container-fluid ">
+      {/* <div className="container-fluid ">
         <div className="helpSection ">
           <div className="separatorDiv"></div>
           <h4>Project Portfolio</h4>
@@ -124,7 +107,7 @@ function About() {
           </div>
           <Portfolio />
         </div>
-      </div>
+      </div> */}
       <div className="container-fluid px-0 my-5  px-0 ">
         <CardSection />
       </div>

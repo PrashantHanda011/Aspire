@@ -1,99 +1,66 @@
 import React from "react";
 import { Col, Row } from "react-bootstrap";
-import AboutTopImage from "../../Assets/Images/AboutTopImage.png";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import "../../Assets/About/About.css";
-import aboutUsBottomBakground from "../../Assets/Images/aboutUsBottomBackground.png";
 
 function CardSection() {
   return (
     <>
       <section className="Meetteam row">
         <article className="Meetteam__head col d-flex justify-content-center align-items-center flex-column">
-          <h3>Meet Our Team</h3>
+          <h3> Our Team</h3>
           <span></span>
           <img src="" alt="" />
           <p>
             {" "}
-            fugit consequatur enim cum quo vero, dicta quae mollitia eveniet
-            voluptatibus numquam quisquam unde aperiam perspiciatis harum nobis
-            eaque iste sed.
+            At Aspire Proptech, we believe that buying a home is one of the most
+            important decisions you'll make in your life. We know how stressful
+            it can be to find the right property, so we've done our best to make
+            it easier for you.
+          </p>
+          <p>
+            Aspire Proptech was founded in 2017 with the mission of making home
+            buying simpler. We aspire to help you, the homebuyer, get a good
+            home at the right price. Our team of dedicated real estate experts
+            provides the right blend of experience and new age thinking. So when
+            you work with us, you're getting advice and assistance from experts
+            who know what they're talking about.
+          </p>
+          <p>
+            When you choose Aspire Proptech as your real estate partner, we'll
+            walk you through every step of the home buying journey—from finding
+            your ideal home and finally, moving in to your dream home. You can
+            rest easy knowing that we'll be there every step of the way!
           </p>
         </article>
         <div className="row d-flex justify-content-center">
-          <div className="col-10 col-lg-8">
-            {/* <main className="d-flex Meetteam__cards flex-column flex-lg-row">
-              <div className="Meetteam__cards__content me-lg-5 mb-lg-0 mb-4">
-                <img src={aboutUsBottomBakground} alt="" />
-                <p>
-                  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quod
-                  facilis maiores laboriosam nostrum consectetur quidem error,
-                  non tempore?{" "}
-                </p>
-
-                <div className="row mt-4  Meetteam__cards__content__Social w-100 ">
-                  <div className="col Meetteam__cards__content__Social__left d-flex flex-column align-items-center">
-                    <LinkedInIcon />
-                    <p className="row">Connect with Us</p>
-                  </div>
-                  <div className="col Meetteam__cards__content__Social__right d-flex flex-column align-items-center">
-                    <h5 className="row">Name</h5>
-                    <p className="row">Designation</p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="Meetteam__cards__content ms-lg-5">
-                <img src={aboutUsBottomBakground} alt="" />
-                <p>
-                  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quod
-                  facilis maiores laboriosam nostrum consectetur quidem error,
-                  non tempore?{" "}
-                </p>
-                <div className="row mt-4 Meetteam__cards__content__Social w-100">
-                  <div className="col Meetteam__cards__content__Social__left d-flex flex-column align-items-center">
-                    <LinkedInIcon />
-                    <p className="row">Connect with Us</p>
-                  </div>
-                  <div className="col Meetteam__cards__content__Social__right d-flex flex-column align-items-center">
-                    <h5 className="row">Name</h5>
-                    <p className="row">Designation</p>
-                  </div>
-                </div>
-              </div>
-            </main> */}
-          </div>
+          <div className="col-10 col-lg-8"></div>
         </div>
       </section>
-      <main className="d-flex Meetteam__cards flex-column flex-lg-row mt-4">
-        {/* <div className="Meetteam__cards__content me-lg-5 mb-lg-0 mb-4">
-                <img src={aboutUsBottomBakground} alt="" />
-                <p>
-                  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quod
-                  facilis maiores laboriosam nostrum consectetur quidem error,
-                  non tempore?{" "}
-                </p>
-
-                <div className="row mt-4  Meetteam__cards__content__Social w-100 ">
-                  <div className="col Meetteam__cards__content__Social__left d-flex flex-column align-items-center">
-                    <LinkedInIcon />
-                    <p className="row">Connect with Us</p>
-                  </div>
-                  <div className="col Meetteam__cards__content__Social__right d-flex flex-column align-items-center">
-                    <h5 className="row">Name</h5>
-                    <p className="row">Designation</p>
-                  </div>
-                </div>
-              </div> */}
-        <div className="Meetteam__cards__content me-lg-5 mb-lg-0 mb-4  ">
-          <h5 className="row">2017 - Founded In</h5>
-        </div>
-
-        <div className="Meetteam__cards__content ms-lg-5 mb-lg-0 mb-4">
-          <h5 className="row">1000+ - Smiles Delivered</h5>
-        </div>
-        <div className="Meetteam__cards__content ms-lg-5 mb-lg-0 mb-4 ">
-          <h5 className="row">6 Lakhs+ sqft - Under Management</h5>
+      <main className="d-flex Meetteam__cards  flex-column flex-lg-row mt-4">
+        <div className="d-flex justify-content-between">
+          <Row>
+            <Col lg={4} xs={6}>
+              <div className="Meetteam__cards__content ms-lg-5 mb-lg-0 mb-4  ">
+                <h3 className=" info-card1">2017</h3>
+                <p className="">founded in</p>
+              </div>
+            </Col>
+            <Col lg={4} xs={6}>
+              <div className="Meetteam__cards__content ms-lg-5 mb-lg-0 mb-4">
+                <h3 className="info-card2">1000+</h3>
+                <p>Smiles Delivered</p>
+              </div>
+            </Col>
+            <Col lg={4} xs={6}>
+              <div className="Meetteam__cards__content ms-lg-5 mb-lg-0 mb-4 ">
+                <h3 className="info-card1" style={{ whiteSpace: "nowrap" }}>
+                  6 Lakhs+ sqft
+                </h3>
+                <p style={{ whiteSpace: "nowrap" }}> Under Management</p>
+              </div>
+            </Col>
+          </Row>
         </div>
       </main>
     </>

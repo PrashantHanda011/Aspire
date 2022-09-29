@@ -305,6 +305,7 @@ function Homeloan() {
                   key={index}
                   interest={data?.interest}
                   name={data?.name}
+                  logo={data?.logo}
                   description={data?.description}
                 />
               );
@@ -381,12 +382,12 @@ function Homeloan() {
       </div>
 
       {/* community */}
-      <div
+      {/* <div
         className="container-fluid pb-lg-5 px-0"
         style={{ background: "#ebebeb" }}
       >
         <Community color="#ebebeb" />
-      </div>
+      </div> */}
 
       <div className="container">
         <Modal

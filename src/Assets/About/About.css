@@ -155,11 +155,20 @@
     }
 
     /* meet TeaM */
+
+    .info-card1{
+        color: #F47E20 ;
+        font-weight: bold
+    }
+    .info-card2{
+        color: #13184F ;
+        font-weight: bold
+    }
     .Meetteam {
-    background: url("../Images/AboutTopImage.svg");
+    background: url("../Images/AboutTopImage1.png");
     background-size: cover;
         background-position: center;
-    height:100vh;
+    height:auto;
     width: 100%;
     background-repeat: no-repeat;
     }
@@ -186,14 +195,18 @@
     height: 7px;
     margin: 20px 0;
     }
+
+  
     .Meetteam__cards__content{
         display: flex;
         flex-direction: column;
         align-items: center;
         border: 1px solid black;
-        padding: 40px 50px ;
+        padding: 40px 66px ;
         background: white;
         border-radius: 25px;
+        height: 9rem;
+    
     }
     .Meetteam__cards__content img{
         height: 70px;

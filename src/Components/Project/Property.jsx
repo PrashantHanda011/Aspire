@@ -349,7 +349,9 @@ function Property() {
               <Col className="property-overview-description" lg={8}>
                 <h5>Description</h5>
                 <hr />
-                <h6>{propertyData?.description}</h6>
+                <h6 style={{ wordWrap: "breakWord" }}>
+                  {propertyData?.description}
+                </h6>
               </Col>
             </Row>
 
