@@ -15,7 +15,7 @@ function Promise() {
       <div className=" promiseSection d-flex flex-lg-column flex-wrap flex-column-reverse flex-md-row align-items-center pb-5">
         <Col lg={12} xs={12}>
           <div className="separatorDiv"></div>
-          <h4 style={{ fontSize: 30 }}>Aspire Promise</h4>
+          <h4 style={{ fontSize: 30 }}>Aspire Advantage</h4>
           <Row>
             <Col>
               Whether you are looking for your first dream home or want to

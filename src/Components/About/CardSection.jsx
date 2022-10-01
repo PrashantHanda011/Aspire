@@ -1,5 +1,6 @@
 import React from "react";
 import { Col, Row } from "react-bootstrap";
+import InfoCard from "./InfoCard";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import "../../Assets/About/About.css";
 
@@ -37,9 +38,12 @@ function CardSection() {
           <div className="col-10 col-lg-8"></div>
         </div>
       </section>
-      <main className="d-flex Meetteam__cards  flex-column flex-lg-row mt-4">
-        <div className="d-flex justify-content-between">
-          <Row>
+
+      <div className="mt-4">
+        <InfoCard />
+      </div>
+
+      {/* <Row>
             <Col lg={4} xs={6}>
               <div className="Meetteam__cards__content ms-lg-5 mb-lg-0 mb-4  ">
                 <h3 className=" info-card1">2017</h3>
@@ -60,9 +64,7 @@ function CardSection() {
                 <p style={{ whiteSpace: "nowrap" }}> Under Management</p>
               </div>
             </Col>
-          </Row>
-        </div>
-      </main>
+          </Row> */}
     </>
   );
 }

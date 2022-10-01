@@ -32,7 +32,10 @@ function Portfolio() {
   useEffect(() => {
     fetchPortfolio();
   }, []);
-
+  const abc = PortfolioDetail?.unitDetails.map((item) =>
+    console.log(item?.bhk)
+  );
+  console.log(PortfolioDetail?.unitDetails);
   return (
     <div>
       <Container className="portfolioContainer">
@@ -56,10 +59,16 @@ function Portfolio() {
                 <h4>
                   {PortfolioDetail?.ready ? "Ready To move" : "Posession Soon"}{" "}
                 </h4>
-              </span>
+              </span>{" "}
               <span>
-                {" "}
-                <BedroomChildIcon /> <h4>{PortfolioDetail?.BHK} BHK</h4>{" "}
+                <BedroomChildIcon />
+                {PortfolioDetail?.unitDetails.map((item) => (
+                  <>
+                    <span>
+                      <h4>{item?.bhk} BHK</h4>
+                    </span>
+                  </>
+                ))}
               </span>
             </div>
           </div>

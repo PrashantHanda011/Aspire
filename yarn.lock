@@ -4681,6 +4681,11 @@
     "path-type" "^4.0.0"
     "yaml" "^1.10.0"
 
+"countup.js@^2.2.0":
+  "integrity" "sha512-dQ7F/CmKGjaO6cDfhtEXwsKVlXIpJ89dFs8PvkaZH9jBVJ2Z8GU4iwG/qP7MgY8qwr+1skbwR6qecWWQLUzB8Q=="
+  "resolved" "https://registry.npmjs.org/countup.js/-/countup.js-2.3.2.tgz"
+  "version" "2.3.2"
+
 "cross-spawn@^6.0.0":
   "integrity" "sha512-eTVLrBSt7fjbDygz805pMnstIs2VTBNkRm0qxZd+M7A5XDdxVRWO5MxGBXZhjY4cqLYLdtrGqRf8mBPmzwSpWQ=="
   "resolved" "https://registry.npmjs.org/cross-spawn/-/cross-spawn-6.0.5.tgz"
@@ -10585,6 +10590,13 @@
   "resolved" "https://registry.npmjs.org/react-circular-progressbar/-/react-circular-progressbar-2.1.0.tgz"
   "version" "2.1.0"
 
+"react-countup@^6.3.1":
+  "integrity" "sha512-+Bf1caAZHtmVQ5Jmhe2MZuN1cw1CEP5OdeMph9CBwM5K8DEDGmg00AzcN6fO9XolUhqUfiR0pOEiSyngSrHwig=="
+  "resolved" "https://registry.npmjs.org/react-countup/-/react-countup-6.3.1.tgz"
+  "version" "6.3.1"
+  dependencies:
+    "countup.js" "^2.2.0"
+
 "react-dev-utils@^12.0.1":
   "integrity" "sha512-84Ivxmr17KjUupyqzFode6xKhjwuEJDROWKJy/BthkL7Wn6NJ8h4WE6k/exAv6ImS+0oZLRRW5j/aINMHyeGeQ=="
   "resolved" "https://registry.npmjs.org/react-dev-utils/-/react-dev-utils-12.0.1.tgz"
@@ -10997,7 +11009,7 @@
     "resize-observer-polyfill" "^1.5.1"
     "scheduler" "0.13.3"
 
-"react@*", "react@^0.14.0 || ^15.0.0 || ^16 || ^17 || ^18", "react@^0.14.0 || ^15.0.0 || ^16.0.0", "react@^0.14.0 || ^15.0.0 || ^16.0.0 || ^17.0.0 || ^18.0.0", "react@^15.0.0 || ^16.0.0", "react@^15.5.4", "react@^15.5.4 || ^16.0.0 || ^17.0.0 || ^18.0.0", "react@^16.0.0", "react@^16.0.0 || ^17.0.0", "react@^16.3.0 || ^17", "react@^16.8 || ^17 || ^18", "react@^16.8.0  || >=17.0.0 || >=18.0.0", "react@^16.8.0 || ^17.0.0 || ^18.0.0", "react@^16.8.0 || ^17.0.0-rc.1 || ^18.0.0", "react@^16.8.3 || ^17 || ^18", "react@^17.0.0 || ^18.0.0", "react@^17.0.1 || ^18.0.0", "react@^17.0.2", "react@^18.0.0", "react@^18.1.0", "react@>= 15.4.1", "react@>= 16", "react@>=0.14.0", "react@>=15", "react@>=15.0.0", "react@>=16.14.0", "react@>=16.6.0", "react@>=16.8", "react@>=16.8 || ^17.0.0", "react@>=16.8.0", "react@~0.14.8 || ^15.0.0 || ^16.0.0":
+"react@*", "react@^0.14.0 || ^15.0.0 || ^16 || ^17 || ^18", "react@^0.14.0 || ^15.0.0 || ^16.0.0", "react@^0.14.0 || ^15.0.0 || ^16.0.0 || ^17.0.0 || ^18.0.0", "react@^15.0.0 || ^16.0.0", "react@^15.5.4", "react@^15.5.4 || ^16.0.0 || ^17.0.0 || ^18.0.0", "react@^16.0.0", "react@^16.0.0 || ^17.0.0", "react@^16.3.0 || ^17", "react@^16.8 || ^17 || ^18", "react@^16.8.0  || >=17.0.0 || >=18.0.0", "react@^16.8.0 || ^17.0.0 || ^18.0.0", "react@^16.8.0 || ^17.0.0-rc.1 || ^18.0.0", "react@^16.8.3 || ^17 || ^18", "react@^17.0.0 || ^18.0.0", "react@^17.0.1 || ^18.0.0", "react@^17.0.2", "react@^18.0.0", "react@^18.1.0", "react@>= 15.4.1", "react@>= 16", "react@>= 16.3.0", "react@>=0.14.0", "react@>=15", "react@>=15.0.0", "react@>=16.14.0", "react@>=16.6.0", "react@>=16.8", "react@>=16.8 || ^17.0.0", "react@>=16.8.0", "react@~0.14.8 || ^15.0.0 || ^16.0.0":
   "integrity" "sha512-4oL8ivCz5ZEPyclFQXaNksK3adutVS8l2xzZU0cqEFrE9Sb7fC0EFK5uEk74wIreL1DERyjvsU915j1pcT2uEQ=="
   "resolved" "https://registry.npmjs.org/react/-/react-18.1.0.tgz"
   "version" "18.1.0"

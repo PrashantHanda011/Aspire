@@ -107,6 +107,7 @@ function Property() {
       setshowAmenity(false);
     }
   };
+  console.log(propertyData);
   return (
     <>
       <Container
@@ -313,14 +314,11 @@ function Property() {
                       {" "}
                       <div className="property-overview-btn">
                         <MeetingRoomIcon />
-                        <h5>
-                          {propertyData?.unitDetails
-                            ?.splice(0, 1)
-                            .map((item, index) => {
-                              return <span>{item?.bhk}</span>;
-                            })}{" "}
-                          BHK
-                        </h5>
+                        {propertyData?.unitDetails?.map((item, index) => (
+                          <>
+                            <h5>{item?.bhk}BHK</h5>
+                          </>
+                        ))}{" "}
                       </div>
                     </Col>
                     <Col xs={6} lg={4}>
@@ -588,7 +586,9 @@ function Property() {
                   <LocationOnIcon />
                 </Col>
                 <Col xs={9}>
-                  <h5 className="text-center">{propertyData?.location}</h5>
+                  <h5 className="text-center" style={{ marginRight: "2%" }}>
+                    {propertyData?.location}
+                  </h5>
                 </Col>
               </Row>
 
@@ -605,15 +605,22 @@ function Property() {
                   <PushPinIcon />
                 </Col>
                 <Col lg={10} xs={9}>
-                  <h5 className="text-center">{propertyData?.area}</h5>
+                  <h5 className="text-center">{propertyData?.area} </h5>
                 </Col>
               </Row>
               <Row className="property-overview-btn-modal bhk">
                 <Col lg={2} xs={3}>
                   <MeetingRoomIcon />
                 </Col>
-                <Col lg={10} xs={9}>
-                  <h5 className="text-center">{propertyData?.BHK} BHK</h5>
+                <Col lg={10} xs={9} className="d-flex justify-content-center">
+                  {propertyData?.unitDetails?.map((item) => (
+                    <div className="" style={{ marginLeft: "3%" }}>
+                      <h5 className="text-center">
+                        {" "}
+                        {`${item?.bhk + "BHK"} `}{" "}
+                      </h5>
+                    </div>
+                  ))}
                 </Col>
               </Row>
               <Row className="property-overview-btn-modal units">
@@ -622,7 +629,7 @@ function Property() {
                 </Col>
                 <Col lg={10} xs={9}>
                   <h5 className="text-center">
-                    {propertyData?.unitsLeft} Units Left
+                    {propertyData?.unitsLeft} Total Units
                   </h5>
                 </Col>
               </Row>

@@ -30,7 +30,7 @@ function About() {
             data-aos-easing="linear"
             data-aos-duration="1500"
           >
-            <img src={aboutbannner1} alt="No img" />
+            <img style={{ width: "100%" }} src={aboutbannner1} alt="No img" />
           </div>
 
           <div
@@ -45,7 +45,7 @@ function About() {
             <div className="row">
               <h3>Simpler, Faster, Better</h3>
             </div>
-            <div className="row">
+            <div className="row" style={{ marginTop: "3%" }}>
               <h5>
                 We select only what's the best for you according to your
                 requirements and provide a personalized home buying experience
@@ -53,7 +53,7 @@ function About() {
                 to registration making your moving in day memorable.
               </h5>
             </div>
-            <div className="mt-5">
+            <div style={{ marginTop: "15%" }}>
               <TimeLine />
             </div>
           </div>
@@ -65,7 +65,7 @@ function About() {
             data-aos-once="true"
             className="col-lg-2 col-2 col-md-3 about-card-img-2 "
           >
-            <img src={aboutbannner2} alt="No img" />
+            <img style={{ width: "100%" }} src={aboutbannner2} alt="No img" />
           </div>
         </div>
       </div>

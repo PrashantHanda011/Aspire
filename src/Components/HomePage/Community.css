@@ -2,11 +2,11 @@
     .image-resize {
         width: 80% !important;
        height: 200px !important;
-        object-fit: fill;
+        object-fit: contain;
     }}
 
     .image-resize {
         width: 80%;
         height: 100%;
-        object-fit: fill;
+        object-fit: contain;
     }

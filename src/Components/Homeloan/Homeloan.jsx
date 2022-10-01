@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "../../Assets/Homeloan/homeloan.css";
-import homeloanbanner from "../../Assets/Images/homeloan.svg";
+import homeloanbanner from "../../Assets/Images/homeLoan1.jpg";
 import right from "../../Assets/Images/homeright.svg";
 import left from "../../Assets/Images/homeleft.svg";
 import partner from "../../Assets/Images/Company1.png";
