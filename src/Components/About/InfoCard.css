@@ -39,19 +39,19 @@
     top: -13px;
 }
 .counter h3{
-    font-size: 16px;
+    font-size: 20px;
     font-weight: 400;
     text-transform: capitalize;
     margin: 0 0 8px;
 }
 .counter .counter-value{
-    font-size: 30px;
+    font-size: 40px;
     font-weight: 500;
 }
-.counter.red .counter-icon{ color: #E44C4B; }
+.counter.red .counter-icon{ color: #F47E20; }
 .counter.red .counter-content,
 .counter.red .counter-content:before{
-    background-color: rgba(228,76,75,0.9);
+    background-color:#F47E20;
 }
 .counter.blue .counter-icon{ color: #13184F; }
 .counter.blue .counter-content,
