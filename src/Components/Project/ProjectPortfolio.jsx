@@ -133,7 +133,7 @@ function ProjectPortfolio() {
                               <span>
                                 {" "}
                                 <BedroomChildIcon /> <h4>
-                                  {data?.BHK} BHK
+                                  {data?.BHK},BHK
                                 </h4>{" "}
                               </span>
                             </div>

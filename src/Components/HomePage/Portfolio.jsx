@@ -44,7 +44,7 @@ function Portfolio() {
         <div className="propertyDescription">
           <div className="description">
             <h3>{PortfolioDetail?.name}</h3>
-            <h5>{PortfolioDetail?.location}</h5>
+            <h5>{PortfolioDetail?.city}</h5>
             <div className="propertyFeatures">
               <span>
                 {" "}
@@ -62,13 +62,19 @@ function Portfolio() {
               </span>{" "}
               <span>
                 <BedroomChildIcon />
-                {PortfolioDetail?.unitDetails.map((item) => (
-                  <>
-                    <span>
-                      <h4>{item?.bhk} BHK</h4>
-                    </span>
-                  </>
+                {PortfolioDetail?.unitDetails.map((item, index) => (
+                  <p
+                    className="mx-1"
+                    style={{ width: "0% !important" }}
+                    key={index}
+                  >
+                    {item?.bhk}
+                    {index === PortfolioDetail?.unitDetails.length - 1
+                      ? null
+                      : ","}
+                  </p>
                 ))}
+                <p>BHK</p>
               </span>
             </div>
           </div>

@@ -312,13 +312,20 @@ function Property() {
                     </Col>
                     <Col xs={6} lg={4}>
                       {" "}
-                      <div className="property-overview-btn">
+                      <div className="property-overview-btn ">
                         <MeetingRoomIcon />
                         {propertyData?.unitDetails?.map((item, index) => (
                           <>
-                            <h5>{item?.bhk}BHK</h5>
+                            <p className="w-0" key={index}>
+                              {" "}
+                              {item?.bhk}
+                              {propertyData?.unitDetails.length - 1 === index
+                                ? null
+                                : ","}
+                            </p>
                           </>
-                        ))}{" "}
+                        ))}
+                        BHK
                       </div>
                     </Col>
                     <Col xs={6} lg={4}>
@@ -612,15 +619,23 @@ function Property() {
                 <Col lg={2} xs={3}>
                   <MeetingRoomIcon />
                 </Col>
-                <Col lg={10} xs={9} className="d-flex justify-content-center">
-                  {propertyData?.unitDetails?.map((item) => (
+                <Col
+                  lg={10}
+                  xs={9}
+                  className="d-flex justify-content-center align-items-center"
+                >
+                  {propertyData?.unitDetails?.map((item, index) => (
                     <div className="" style={{ marginLeft: "3%" }}>
-                      <h5 className="text-center">
+                      <h5 className="text-center mx-1">
                         {" "}
-                        {`${item?.bhk + "BHK"} `}{" "}
+                        {item?.bhk}{" "}
+                        {propertyData?.unitDetails.length - 1 === index
+                          ? null
+                          : ","}
                       </h5>
                     </div>
-                  ))}
+                  ))}{" "}
+                  <div className="d-flex align-center">BHK</div>
                 </Col>
               </Row>
               <Row className="property-overview-btn-modal units">
