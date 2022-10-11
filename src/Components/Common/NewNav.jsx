@@ -183,6 +183,14 @@ function NewNav() {
           <Col className="Links-Container-resp">
             <Col className="Links ">
               <NavLink
+                className={location.pathname == "/" ? "Link-active" : ""}
+                to={"/"}
+              >
+                Home
+              </NavLink>
+            </Col>
+            <Col className="Links ">
+              <NavLink
                 className={
                   location.pathname == "/projects" ? "Link-active" : ""
                 }
@@ -211,22 +219,68 @@ function NewNav() {
               </NavLink>
             </Col>
 
-            <Col className="Links">
+            {/* <Col className="Links">
               <NavLink
                 className={location.pathname == "/blogs" ? "Link-active" : ""}
                 to={"/blogs"}
               >
                 Blogs
               </NavLink>
-            </Col>
+            </Col> */}
 
             <Col className="Links">
-              <NavLink
-                className={location.pathname == "/career" ? "Link-active" : ""}
-                to={"/career"}
+              <NavDropdown
+                id="nav-dropdown-dark-example"
+                title="Resources"
+                menuVariant="dark"
+                style={{ color: "white" }}
               >
-                Careers
-              </NavLink>
+                <NavDropdown.Item
+                  style={{
+                    borderBottom: "none",
+                    hover: "none",
+                    backgroundColor: "transparent",
+                  }}
+                >
+                  <HashLink
+                    style={{ padding: "8px 15px", display: "flex" }}
+                    to="/blogs"
+                  >
+                    All Blogs
+                  </HashLink>
+                  <HashLink
+                    style={{ padding: "8px 15px", display: "flex" }}
+                    to="/career"
+                  >
+                    Career
+                  </HashLink>
+
+                  <HashLink
+                    style={{ padding: "8px  15px", display: "flex" }}
+                    to="/blogs#knowledgeSeries"
+                  >
+                    Knowledge Series
+                  </HashLink>
+                  <HashLink
+                    style={{ padding: "8px 15px", display: "flex" }}
+                    to="/blogs#localityBytes"
+                  >
+                    Locality Bytes
+                  </HashLink>
+                  <HashLink
+                    style={{ padding: "8px 15px", display: "flex" }}
+                    to="/blogs#newsUpdates"
+                  >
+                    News and Updates
+                  </HashLink>
+                  <HashLink
+                    style={{ padding: "8px 15px", display: "flex" }}
+                    to="/blogs#others"
+                  >
+                    Other Blogs
+                  </HashLink>
+                </NavDropdown.Item>
+              </NavDropdown>
             </Col>
 
             <Col className=" Link-special">
