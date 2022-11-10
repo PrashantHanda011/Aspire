@@ -41,9 +41,8 @@
     z-index: 1000;
 }
 .property-sideform-avatar{
-    width: 45px;
+    width: 70px;
     height: 45px;
-    background-color: black;
     border-radius: 50%;
 }
 .property-sideform-head{
@@ -56,7 +55,7 @@
     font-size: 1rem;
 }
 .property-sideform-head h5{
-    font-size: 0.8rem;
+    font-size: 1rem;
     color:var(--orangeColor) ;
 }
 .property-sideform-input{

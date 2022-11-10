@@ -82,7 +82,7 @@ useEffect(() => {
                     <MenuItem value="">
                     <em>None</em>
                     </MenuItem>
-                    <MenuItem value={1}>IT</MenuItem>
+                    <MenuItem value={1}>Sales</MenuItem>
                     <MenuItem value={2}>Marketing</MenuItem>
                     <MenuItem value={3}>HR</MenuItem>
                 </Select>

@@ -4,10 +4,12 @@ import logo from "../../Assets/Images/logo1.svg";
 import "../../Assets/Common/BottomFoot.css";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import FacebookIcon from "@mui/icons-material/Facebook";
-import TwitterIcon from "@mui/icons-material/Twitter";
 import CallIcon from "@mui/icons-material/Call";
+import YouTubeIcon from '@mui/icons-material/YouTube';
 import EmailIcon from "@mui/icons-material/Email";
 import { Link } from "react-router-dom";
+import { YoutubeSearchedForOutlined } from "@mui/icons-material";
+import LinkedInIcon from '@mui/icons-material/LinkedIn';  
 
 function BottomFoot() {
   return (
@@ -33,10 +35,13 @@ function BottomFoot() {
               <FacebookIcon />{" "}
             </span>
             <span className="ShareIcon">
-              <TwitterIcon />{" "}
+              <InstagramIcon />
             </span>
             <span className="ShareIcon">
-              <InstagramIcon />
+              <YouTubeIcon />
+            </span>
+            <span className="ShareIcon">
+              <LinkedInIcon />
             </span>
           </Col>
         </Row>
@@ -57,7 +62,7 @@ function BottomFoot() {
                 <CallIcon />
                 <h4>
                   Call
-                  <h5> +6281232936733</h5>
+                  <h5>+91 9886660229</h5>
                 </h4>
               </div>
               <button>Call Now</button>
@@ -68,7 +73,7 @@ function BottomFoot() {
                 <EmailIcon />
                 <h4>
                   Email
-                  <h5> omahindev@gmail.com</h5>
+                  <h5> hello@aspireprop.com</h5>
                 </h4>
               </div>
               <button>Email Now</button>
@@ -143,10 +148,9 @@ function BottomFoot() {
           <Col xs={6} style={{ color: "white" }}>
             <h6 className="mb-2 mt-4">Address</h6>
 
-            <p>Visit us at:</p>
-            <p> Example.com</p>
-            <p>Box 564, Disneyland</p>
-            <p>India</p>
+            <p>No. 45/11, First Floor, </p>
+            <p>North Park Road, Kumara Park East,</p>
+            <p>Bengaluru 560001</p>
           </Col>
         </Row>
       </div>

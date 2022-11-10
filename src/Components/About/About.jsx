@@ -69,7 +69,7 @@ function About() {
           </div>
         </div>
       </div>
-
+{/* 
       <div className="continer-fluid">
         <div className="about-helpDiv ">
           <div className=" about-helpsection helpSection ">
@@ -84,11 +84,10 @@ function About() {
               </p>
             </div>
             <img src={HelpImage} style={{ width: "100%" }} />
-            {/* <video src="https://www.youtube.com/watch?v=lMHfzIvRoOU"></video> */}
           </div>
         </div>
       </div>
-
+ */}
       {/* <div className="container-fluid my-lg-5 p-0">
         <HomeChoice />
       </div> */}

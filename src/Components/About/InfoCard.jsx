@@ -1,17 +1,43 @@
-import React from "react";
+import React,{useEffect,useState} from "react";
 import "./InfoCard.css";
 import CountUp from "react-countup";
 import { BsFlagFill } from "react-icons/bs";
 import { BsFillEmojiSmileFill } from "react-icons/bs";
 import { RiBuildingLine } from "react-icons/ri";
-import { useState } from "react";
-import { useEffect } from "react";
 import { useRef } from "react";
+import { useCountUp } from 'react-countup';
+
 
 function InfoCard() {
   const [counterOn, setCounterOn] = useState(false);
   const content = useRef(null);
+  
+  const onscroll = ()=>{
+    const winScroll = document.documentElement.scrollTop;
+    console.log(winScroll)
+  
+    if(winScroll>2500){
+      start();
+    }
+  }
+  
+  useEffect(() => {
+    window.addEventListener("scroll", onscroll);
 
+    return () => window.removeEventListener("scroll", onscroll);
+
+    
+  }, []);
+
+  const countUpRef = React.useRef(null);
+  const { start, pauseResume, reset, update } = useCountUp({
+    ref: countUpRef,
+    start: 0,
+    end: 1250,
+    duration: 2,
+  });
+
+  console.log(countUpRef)
   return (
     <>
       <div ref={content} class="row d-flex justify-content-between">
@@ -42,11 +68,8 @@ function InfoCard() {
             >
               <span class="counter-value">
                 {" "}
-                {
-                  <>
-                    <CountUp start={0} end={1250} delay={0} duration={1.75} />+
-                  </>
-                }
+                <p ref={countUpRef}></p>
+
               </span>
               <h3>Smiles Delivered</h3>
             </div>
@@ -62,8 +85,7 @@ function InfoCard() {
               style={{ height: "12rem" }}
             >
               <span class="counter-value">
-                <CountUp start={0} end={6} delay={0} duration={1.75} />
-                Lakhs+ sqft
+               6    {" "} Lakhs+ sqft
               </span>
               <h3>Under Management</h3>
             </div>

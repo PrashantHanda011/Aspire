@@ -71,12 +71,12 @@ function CareerIndividual() {
                   <h4>Experience - </h4>
                   <p>{SingleCareer?.experience}</p>
                 </div>
-                <br />
+                {/* <br /> */}
 
-                <div  className='d-flex jobdetails-feature'>
+                {/* <div  className='d-flex jobdetails-feature'>
                   <h4>Salary - </h4>
                   <p>{SingleCareer?.salary}</p>
-                </div>
+                </div> */}
                 <br />
                 
                 <div  className='d-flex jobdetails-feature'>

@@ -93,7 +93,7 @@ function Singleblog() {
                     <Row className="mt-5 mb-2">
                         <Col xs={12} lg={6}>
                             <div className='d-flex  align-items-center'>
-                                <img src={singleblogData?.authorPicture} className="me-4 author-pic" alt="img" />
+                                {/* <img src={singleblogData?.authorPicture} className="me-4 author-pic" alt="img" /> */}
                                 <span className='Singleblog-authorDesc'>
                                     <h4>{singleblogData?.authorName}</h4>
                                     <h5>{moment(singleblogData?.createdAt).format('DD-MM-YYYY')} |  {singleblogData?.timeToRead}  read </h5>
@@ -173,12 +173,12 @@ function Singleblog() {
                                 <Col className="singleblog-author" lg={6}>
                                     <h5>The Author</h5>
                                     <Row className="singleblog-author-profile">
-                                        <Col lg={2} className="singleblog-author-img "> 
-                                        <img src={singleblogData?.authorPicture} alt="author" className='author-pic' /></Col>
+                                        {/* <Col lg={2} className="singleblog-author-img "> 
+                                        <img src={singleblogData?.authorPicture} alt="author" className='author-pic' />
+                                        </Col> */}
                                         <Col > <h6>{singleblogData?.authorName}</h6></Col>
                                     </Row>
                                     <Row >
-                                        <Col  lg={1} ></Col>
                                         <Col className="singleblog-author-desc" lg={9}> <h6>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque amet qui, esse asperiores delectus earum nam mollitia distinctio! Quisquam maxime voluptates possimus amet similique eveniet vel excepturi voluptas saepe. Adipisci?</h6></Col>
                                     </Row>
                                 </Col>

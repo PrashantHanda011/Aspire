@@ -8,7 +8,7 @@ function Graphcards(prop) {
     <>
       <div
         className="col-lg-4 col-12 my-4 my-lg-0 me-lg-4  partner-doitall-card"
-        style={{ height: "60vh" }}
+        style={{ height: "50vh" }}
       >
         <div className="d-flex  flex-row justify-content-between">
           <div className="partner-doitall-card-1 d-flex flex-column justify-content-center px-3 mt-2">
@@ -22,16 +22,7 @@ function Graphcards(prop) {
 
         <div className="row mt-lg-4 px-lg-3">
           <p style={{ wordBreak: "break-word" }}>
-            {!readMore ? prop?.description.slice(0, 200) : prop?.description}
-            <span> </span>
-            <span
-              style={{ color: "#F47E20" }}
-              onClick={() => {
-                setReadMore(!readMore);
-              }}
-            >
-              {readMore ? "Read Less" : "Read More"}
-            </span>{" "}
+            {!readMore ? prop?.description : prop?.description}
           </p>
         </div>
       </div>

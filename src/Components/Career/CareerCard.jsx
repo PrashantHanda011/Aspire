@@ -35,7 +35,7 @@ const [showModal, setshowModal] = useState(false)
         <Col className='mt-4 d-flex flex-wrap career-cardContent' xs={ 12} lg={6}>
         
               <div className="CardFacility "><WorkIcon className="me-3" style={{color:"#F47E20"}}/>   <span> <h4>Experince</h4><h5> {prop.experience}</h5> </span> </div>
-              <div className="CardFacility"><PaidIcon className="me-2" style={{color:"#F47E20"}}/> <span ><h4>Salary</h4><h5>{prop.salary} </h5> </span>  </div>
+              {/* <div className="CardFacility"><PaidIcon className="me-2" style={{color:"#F47E20"}}/> <span ><h4>Salary</h4><h5>{prop.salary} </h5> </span>  </div> */}
               <div className="CardFacility location-temp-height"><LocationOnIcon className="me-2" style={{color:"#F47E20"}}/> <span ><h4>Location</h4><h5> {prop.location}</h5> </span>  </div>
         </Col>
 
@@ -62,7 +62,7 @@ const [showModal, setshowModal] = useState(false)
         <Col className='mt-4 d-flex flex-wrap career-cardContent' xs={ 12} lg={6}>
         
               <div className="CardFacility "><WorkIcon className="me-3" style={{color:"#F47E20"}}/>   <span> <h4>Experince</h4><h5> {prop.experience}</h5> </span> </div>
-              <div className="CardFacility"><PaidIcon className="me-2" style={{color:"#F47E20"}}/> <span ><h4>Salary</h4><h5>{prop.salary} </h5> </span>  </div>
+              {/* <div className="CardFacility"><PaidIcon className="me-2" style={{color:"#F47E20"}}/> <span ><h4>Salary</h4><h5>{prop.salary} </h5> </span>  </div> */}
               <div className="CardFacility location-temp-height"><LocationOnIcon className="me-2" style={{color:"#F47E20"}}/> <span ><h4>Location</h4><h5> {prop.location}</h5> </span>  </div>
         </Col>
 
