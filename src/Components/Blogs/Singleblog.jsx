@@ -9,6 +9,7 @@ import avatar from '../../Assets/Images/author.png'
 // import TwitterIcon from '@mui/icons-material/Twitter';
 // import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import Relatedblog from './Relatedblog'
+import singleBG from '../../Assets/Images/singleBlogBg.jpg'
 import Checkbox from '@mui/material/Checkbox';
 import 'react-circular-progressbar/dist/styles.css';
 import { CircularProgressbar } from 'react-circular-progressbar';
@@ -83,7 +84,7 @@ function Singleblog() {
     const path = window.location.href
     return (
     <>
-            <Container fluid className="Singleblog-container"  style={{background:`linear-gradient(to right top, rgba(0, 0, 0, 0.7), rgba(13, 13, 13, 0.6), rgba(11, 11, 11,0.5),rgba(11, 11, 11,0.5) ,rgba(11, 11, 11,0.5)), url(${singleblogData?.picture}) no-repeat center center/cover`}}>
+            <Container fluid className="Singleblog-container"  style={{background:`linear-gradient(to right top, rgba(28, 27, 77, 0.7), rgba(28, 27, 77, 0.6), rgba(28, 27, 77, 0.5),rgba(28, 27, 77, 0.5) ,rgba(11, 11, 11,0.5)), url(${singleBG}) no-repeat center center/cover`}}>
                 <Container >
                     <Row>
                         <Col xs={12} lg={7}>
