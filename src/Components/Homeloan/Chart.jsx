@@ -1,26 +1,8 @@
 import React from 'react'
-import {
-    Chart as ChartJS,
-    CategoryScale,
-    LinearScale,
-    PointElement,
-    LineElement,
-    Title,
-    Tooltip,
-    Filler,
-    Legend,
-  } from 'chart.js';
-import { Line } from 'react-chartjs-2';
-ChartJS.register(
-    CategoryScale,
-    LinearScale,
-    PointElement,
-    LineElement,
-    Title,
-    Tooltip,
-    Filler,
-    Legend
-  );
+import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
+import { Pie } from 'react-chartjs-2';
+
+ChartJS.register(ArcElement, Tooltip, Legend);
 
   export const data = 
     {
@@ -58,7 +40,7 @@ function Chart() {
     
   return (
     <>
-        <Line options={options} data={data} />
+        <Pie data={data} />
     </>
   )
 }

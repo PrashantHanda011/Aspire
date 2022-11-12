@@ -121,6 +121,38 @@ function Homeloan() {
     }
   };
 
+
+
+// home loan
+
+const [LoanData, setLoanData] = useState({
+  loan:10000,
+  year:3,
+  rate:6
+})
+
+const handleSlider = (e,name)=>{
+  if(name=="loan"){
+    setLoanData({...LoanData,loan:e.target.value})
+  }else if(name=="year"){
+    setLoanData({...LoanData,year:e.target.value})
+  }else{
+    setLoanData({...LoanData,rate:e.target.value})
+  }
+}
+
+const [EMI, setEMI] = useState(0)
+var r = LoanData.rate
+var y = LoanData.year
+var l = LoanData.loan
+useEffect(() => {
+  var emi
+  r = r / (12 * 100); // one month interest
+  y = y * 12; // one month period
+  emi = (l * r * Math.pow(1 + r, y)) / (Math.pow(1 + r, y) - 1);
+  setEMI(emi)
+}, [l,y,r])
+
   return (
     <>
       <div className="container homeloan my-5">
@@ -221,12 +253,35 @@ function Homeloan() {
                 <div className="col d-flex flex-column">
                   <div className="row ">
                     <div className="d-flex justify-content-between ">
-                      <h6>Loan Amount</h6> <h6>RS</h6>
+                      <h6>Loan Amount</h6> <h6> {LoanData.loan} {" "}RS</h6>
                     </div>
                   </div>
                   <div className="row">
                     <Slider
-                      defaultValue={50}
+                      aria-label="Default"
+                      min={0}
+                      defaultValue={LoanData.loan}
+                      onChange={(e)=>handleSlider(e,"loan")}
+                      max={20000000}
+                      style={{ color: "var(--orangeColor)" }}
+                      valueLabelDisplay="auto"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div className="row my-lg-3">
+                <div className="col d-flex flex-column">
+                  <div className="row ">
+                    <div className="d-flex justify-content-between ">
+                      <h6>Loan Tenure</h6> <h6>{LoanData.year} {" "} Year</h6>
+                    </div>
+                  </div>
+                  <div className="row">
+                    <Slider
+                      min={1}
+                      max={5}
+                      defaultValue={LoanData.year}
+                      onChange={(e)=>handleSlider(e,"year")}
                       aria-label="Default"
                       style={{ color: "var(--orangeColor)" }}
                       valueLabelDisplay="auto"
@@ -238,29 +293,15 @@ function Homeloan() {
                 <div className="col d-flex flex-column">
                   <div className="row ">
                     <div className="d-flex justify-content-between ">
-                      <h6>Loan Tenure</h6> <h6>Year</h6>
+                      <h6>Rate of Interest</h6> <h6>{LoanData.rate} {" "} %</h6>
                     </div>
                   </div>
                   <div className="row">
                     <Slider
-                      defaultValue={50}
-                      aria-label="Default"
-                      style={{ color: "var(--orangeColor)" }}
-                      valueLabelDisplay="auto"
-                    />
-                  </div>
-                </div>
-              </div>
-              <div className="row my-lg-3">
-                <div className="col d-flex flex-column">
-                  <div className="row ">
-                    <div className="d-flex justify-content-between ">
-                      <h6>Rate of Interest</h6> <h6>%</h6>
-                    </div>
-                  </div>
-                  <div className="row">
-                    <Slider
-                      defaultValue={50}
+                      min={0}
+                      max={15}
+                      defaultValue={LoanData.rate}
+                      onChange={(e)=>handleSlider(e,"rate")}
                       aria-label="Default"
                       style={{ color: "var(--orangeColor)" }}
                       valueLabelDisplay="auto"
@@ -271,6 +312,10 @@ function Homeloan() {
             </div>
             <div className="col ps-0 ps-lg-5 ps-md-5">
               <Chart />
+              <div className="d-flex justify-content-center my-3 align-items-center">
+                <h6 className="m-0 p-0">Monthly Emi - </h6>
+                <p>{" "} {EMI}</p>
+              </div>
             </div>
           </div>
         </div>

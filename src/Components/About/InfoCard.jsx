@@ -16,7 +16,7 @@ function InfoCard() {
     const winScroll = document.documentElement.scrollTop;
     console.log(winScroll)
   
-    if(winScroll>2500){
+    if(winScroll>2200){
       start();
     }
   }

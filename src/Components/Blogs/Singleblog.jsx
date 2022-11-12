@@ -227,7 +227,7 @@ function Singleblog() {
                                     </Row>                        
                             </Col>
                             
-                            <Col className="singleblog-signmeup">
+                            {/* <Col className="singleblog-signmeup">
                                 <Row><h3>Lorem ipsum dolor sit  adipisicing elit. Dolorum, optio.</h3></Row>
                                 <Row className="singleblog-signmeup-inputs">
                                         <Col>
@@ -238,7 +238,7 @@ function Singleblog() {
                                         </Col>
                                 </Row>
                                 <Row><h6>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse tempora, ea quis praesentium incidunt illo perspiciatis. Enim aspernatur animi consequatur minima tempore ad sapiente ullam! Eos dolor veritatis deleniti blanditiis.</h6></Row>
-                            </Col>
+                            </Col> */}
                         </Row>
                     </Container>
     </>

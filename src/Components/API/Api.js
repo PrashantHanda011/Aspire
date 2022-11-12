@@ -6,6 +6,7 @@ const API = axios.create({
 
 
 export const FetchPropertyData = () => API.get(`/prop/getAllProperty`);
+export const PostApplicationForm = (data) => API.post(`/cr/apply`,data);
 export const FetchSinglePropertyData = (id) => API.post(`/prop/getPropertyById`,id);
 export const FetchSingleDeveloperData = (id) => API.post(`/dev/getDeveloperById`,id);
 export const FetchCategoryBlog = (data) => API.post(`/blog/getBlogsByCategory`,data);

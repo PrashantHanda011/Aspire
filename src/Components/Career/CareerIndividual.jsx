@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 
-import { FetchSingleCareer } from '../API/Api';
+import { FetchSingleCareer, PostApplicationForm } from '../API/Api';
 import { useParams } from 'react-router-dom';
 import {
   TwitterShareButton,
@@ -37,6 +37,7 @@ const style = {
 function CareerIndividual() {
   const [SingleCareer, setSingleCareer] = useState()
   const param = useParams();
+  
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
@@ -59,7 +60,33 @@ function CareerIndividual() {
 
   const path = window.location.href
 
+// appplication form
 
+const [ApplicationData, setApplicationData] = useState({
+  name:"",
+  number:"",
+  email:"",
+  cv:"",
+  experience:"",
+  previousIndustry:""
+})
+
+const handleChange = (e)=>{
+  const {name,value}=e.target;
+  setApplicationData({...ApplicationData,[name]:value});
+}
+
+const PostData = async()=>{
+    try {
+        const data=await PostApplicationForm(ApplicationData);
+        console.log(data)
+        handleClose()
+    }catch (error) {
+      console.log(error)
+    }
+}
+
+console.log(ApplicationData)
   return (
     <>
       <div className="container-fluid " style={{ backgroundColor: "#ebebeb" }} >
@@ -162,34 +189,34 @@ function CareerIndividual() {
           <form className='d-flex flex-wrap col-12 justify-content-between'>
                       <div class="form-group col-5 mb-4">
                         <label for="exampleInputEmail1"> Name </label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"/>
+                        <input type="email" value={ApplicationData.name} class="form-control" name="name" onChange={handleChange} id="exampleInputEmail1" aria-describedby="emailHelp"/>
                       </div>                    
                       <div class="form-group col-5">
                         <label for="exampleInputEmail1">Phone Number</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"    />
+                        <input type="email" value={ApplicationData.email} class="form-control" id="exampleInputEmail1" onChange={handleChange} name="number" aria-describedby="emailHelp"    />
                       </div> 
                       
                       <div class="form-group col-5">
                         <label for="exampleInputEmail1">Email</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"    />
+                        <input type="email" value={ApplicationData.email} class="form-control" onChange={handleChange} id="exampleInputEmail1" aria-describedby="emailHelp"  name="email"  />
                       </div>  
 
                       <div class="form-group col-5 mb-4">
-                        <label for="exampleInputEmail1">Upload CV </label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"    />
+                        <label for="exampleInputEmail1">Upload CV (Drive Link)</label>
+                        <input type="text" value={ApplicationData.cv} class="form-control" id="exampleInputEmail1" name="cv" onChange={handleChange} aria-describedby="emailHelp"    />
                       </div>
 
                       <div class="form-group col-5 mb-4">
                         <label for="exampleInputEmail1">Total Years of experience  </label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"    />
+                        <input type="email" value={ApplicationData.experience} class="form-control" name="experience" id="exampleInputEmail1" onChange={handleChange} aria-describedby="emailHelp"    />
                       </div>
                     
                       <div class="form-group col-5 mb-4">
                         <label for="exampleInputEmail1">Previous Industry</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"    />
+                        <input type="email"  value={ApplicationData.previousIndustry} class="form-control" name="previousIndustry" id="exampleInputEmail1" onChange={handleChange} aria-describedby="emailHelp"    />
                       </div>
                   </form>
-                  <button className='career-single-btn' >
+                  <button onClick={PostData} className='career-single-btn' >
                     Submit
                   </button>
         </div>
