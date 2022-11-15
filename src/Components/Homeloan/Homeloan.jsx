@@ -5,6 +5,7 @@ import right from "../../Assets/Images/homeright.svg";
 import left from "../../Assets/Images/homeleft.svg";
 import partner from "../../Assets/Images/Company1.png";
 import Slider from "@mui/material/Slider";
+import CurrencyInput from 'react-currency-input-field';
 import Chart from "./Chart";
 import Graphcards from "../Partners/Graphcards";
 import Perfect from "../HomePage/Perfect";
@@ -124,7 +125,7 @@ function Homeloan() {
 
 
 // home loan
-
+const [interest, setinterest] = useState()
 const [LoanData, setLoanData] = useState({
   loan:10000,
   year:3,
@@ -133,6 +134,7 @@ const [LoanData, setLoanData] = useState({
 
 const handleSlider = (e,name)=>{
   if(name=="loan"){
+    console.log(e.target.value)
     setLoanData({...LoanData,loan:e.target.value})
   }else if(name=="year"){
     setLoanData({...LoanData,year:e.target.value})
@@ -151,6 +153,8 @@ useEffect(() => {
   y = y * 12; // one month period
   emi = (l * r * Math.pow(1 + r, y)) / (Math.pow(1 + r, y) - 1);
   setEMI(emi)
+
+  setinterest(emi*12*LoanData.year - LoanData.loan);
 }, [l,y,r])
 
   return (
@@ -253,7 +257,12 @@ useEffect(() => {
                 <div className="col d-flex flex-column">
                   <div className="row ">
                     <div className="d-flex justify-content-between ">
-                      <h6>Loan Amount</h6> <h6> {LoanData.loan} {" "}RS</h6>
+                      <h6>Loan Amount</h6> 
+                      <div>
+                        <CurrencyInput value={LoanData.loan} 
+                      onChange={(e)=>handleSlider(e,"loan")}
+                         intlConfig={{ locale: 'en-IN', currency: 'INR' }} />
+                      </div>
                     </div>
                   </div>
                   <div className="row">
@@ -273,13 +282,13 @@ useEffect(() => {
                 <div className="col d-flex flex-column">
                   <div className="row ">
                     <div className="d-flex justify-content-between ">
-                      <h6>Loan Tenure</h6> <h6>{LoanData.year} {" "} Year</h6>
+                      <h6>Loan Tenure</h6> <h6>{LoanData.year}  {" "} Year</h6>
                     </div>
                   </div>
                   <div className="row">
                     <Slider
                       min={1}
-                      max={5}
+                      max={30}
                       defaultValue={LoanData.year}
                       onChange={(e)=>handleSlider(e,"year")}
                       aria-label="Default"
@@ -310,12 +319,17 @@ useEffect(() => {
                 </div>
               </div>
             </div>
-            <div className="col ps-0 ps-lg-5 ps-md-5">
-              <Chart />
+            <div className="w-100 col ps-0 d-flex flex-column align-items-center ps-lg-5 ps-md-5">
+            <div className="w-75 d-flex flex-column justify-content-center">
+              <Chart 
+                interest={interest}
+                loan={LoanData.loan}
+              />
               <div className="d-flex justify-content-center my-3 align-items-center">
-                <h6 className="m-0 p-0">Monthly Emi - </h6>
-                <p>{" "} {EMI}</p>
+                <h6 className="m-0 p-0">Monthly Emi -  </h6>
+                <p className="mx-2">₹ {(EMI).toFixed(2)} </p>
               </div>
+            </div>
             </div>
           </div>
         </div>

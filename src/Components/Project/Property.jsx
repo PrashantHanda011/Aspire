@@ -32,13 +32,15 @@ import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import ArrowDropUpIcon from "@mui/icons-material/ArrowDropUp";
 import HomeBlogCard from "../Homeloan/HomeBlogCard";
 import CarouselComponent from "../Partners/Carousel";
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import { Carousel } from 'react-responsive-carousel';
 function Property() {
     const [propertyData, setpropertyData] = useState({});
     const [unit, setunit] = useState(0);
     const [showModal, setshowModal] = useState(true);
     const [showSideform, setshowSideform] = useState(false);
     const [unitDetails, setunitDetails] = useState();
-    const [showAmenity, setshowAmenity] = useState(true);
+    const [showAmenity, setshowAmenity] = useState(false);
 
     const [quote, setquote] = useState({
         name: "",
@@ -117,16 +119,16 @@ function Property() {
 
     const fetchknowledgeblogData = async () => {
         try {
-          let categorydata = {
-            category: "news&updates",
-          };
-          const data = await FetchCategoryBlog(categorydata);
-          setfeaturedBlog(data?.data?.data);
-          console.log(data.data.data);
+            let categorydata = {
+                category: "news&updates",
+            };
+            const data = await FetchCategoryBlog(categorydata);
+            setfeaturedBlog(data?.data?.data);
+            console.log(data.data.data);
         } catch (error) {
-          console.log(error);
+            console.log(error);
         }
-      };
+    };
     return (
         <>
             <Container
@@ -238,10 +240,30 @@ function Property() {
                         {/* side image */}
 
                         <div className="property-first-img col-lg-8">
-                            <img src={propertyData?.pictures} alt="" />
+                            <div id="carouselExampleControls" className="carousel slide" data-ride="carousel">
+                                <div className="carousel-inner">
+                                    {/* {
+                                        propertyData?.pictures?.map((item, index) => {
+                                            return (
+                                         
+                                        })
+                                    } */}
+                                    <Carousel>
+                                    {
+                                        propertyData?.pictures?.map((item,index)=>{
+                                            return (
+                                            <div>
+                                                <img src={`${item}`} alt="noe" />
+                                            </div>
+                                            )
+                                        })
+                                    }
+                                            
+                                        </Carousel>                                
+                                </div>
+                            </div>
                         </div>
 
-                        {/* side form */}
                     </Container>
 
                     {/* navigate */}
@@ -344,7 +366,7 @@ function Property() {
                                         <Col xs={6} lg={4}>
                                             <div className="property-overview-btn">
                                                 <ApartmentIcon />
-                                                <h5>{propertyData?.unitsLeft} Units left</h5>
+                                                <h5>{propertyData?.unitsLeft} Total Units</h5>
                                             </div>
                                         </Col>
                                         <Col xs={6} lg={4}>
@@ -367,9 +389,9 @@ function Property() {
                             <Col className="property-overview-description" lg={8}>
                                 <h5>Project Overview</h5>
                                 <hr />
-                                <h6 style={{ wordWrap: "breakWord" }}>
-                                    {propertyData?.description}
-                                </h6>
+                                <div dangerouslySetInnerHTML={{ __html: propertyData?.description }} className="px-4" style={{ wordWrap: "breakWord" }}>
+                                    
+                                </div>
                             </Col>
                         </Row>
 
@@ -470,7 +492,7 @@ function Property() {
                                 <hr />
                                 <Row className="property-units-SubHead">
                                     <h5>Floor Plan</h5>
-                                    <h5>Range</h5>
+                                    <h5>BHK</h5>
                                     <h5>Size</h5>
                                     <h5>Price</h5>
                                 </Row>
@@ -523,7 +545,7 @@ function Property() {
                             </Row>
                             <Row>
                                 <Col lg={8} className="property-aboutDeveloper-desc">
-                                    <h6>{propertyData?.developer?.description}</h6>
+                                    <h6 dangerouslySetInnerHTML={{ __html: propertyData?.developer?.description }}></h6>
                                 </Col>
                             </Row>
                         </Col>
@@ -582,43 +604,43 @@ function Property() {
             </Container>
 
 
-                {/* feature project */}
+            {/* feature project */}
 
-                <div className="container partner-feature-projects my-lg-5">
-                    <div className="row">
+            <div className="container partner-feature-projects my-lg-5">
+                <div className="row">
                     <div className="col-lg-5 mt-4 mt-lg-0">
                         {" "}
                         <h3>View Featured Projects</h3>{" "}
                     </div>
-                    </div>
-                    <div className="row h-100 my-lg-5">
-                    <CarouselComponent />
-                    </div>
                 </div>
+                <div className="row h-100 my-lg-5">
+                    <CarouselComponent />
+                </div>
+            </div>
 
             {/* featured blogs */}
-                        <div
-                            style={{ backgroundColor: "#ebebeb" }}
-                            className="container-fluid py-5 px-0"
-                        >
-                            <div className="container">
-                                <h3 className="blogMainHeading m-0 py-5">Featured Blogs</h3>
-                                <div className="container">
-                                    <Row className="d-flex  homeloan-blogcard-scroll">
-                                        <Col xs={12} className="d-flex  BlogsRow    align-items-center">
-                                            {featuredBlog?.map((item, index) => {
-                                                return <HomeBlogCard key={index} data={item} />;
-                                            })}
-                                        </Col>
-                                        {/* <Col xs={12} className="ArrowIcon  d-flex align-items-center ">
+            <div
+                style={{ backgroundColor: "#ebebeb" }}
+                className="container-fluid py-5 px-0"
+            >
+                <div className="container">
+                    <h3 className="blogMainHeading m-0 py-5">Featured Blogs</h3>
+                    <div className="container">
+                        <Row className="d-flex  homeloan-blogcard-scroll">
+                            <Col xs={12} className="d-flex  BlogsRow    align-items-center">
+                                {featuredBlog?.map((item, index) => {
+                                    return <HomeBlogCard key={index} data={item} />;
+                                })}
+                            </Col>
+                            {/* <Col xs={12} className="ArrowIcon  d-flex align-items-center ">
                        <span>
                        <ArrowForwardIcon/>
                        </span> 
                       </Col> */}
-                                    </Row>
-                                </div>
-                            </div>
-                        </div>
+                        </Row>
+                    </div>
+                </div>
+            </div>
 
             <Backdrop
                 sx={{

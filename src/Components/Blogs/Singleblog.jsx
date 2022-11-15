@@ -102,10 +102,7 @@ function Singleblog() {
                             </div>
                         </Col>
                         <Col xs={12} lg={6} className="d-flex justify-content-end mt-4 mt-lg-0 ">
-                        {singleblogData?.tags?.map((item,index)=>{
-                            return <span key={index} className='Singleblog-tags'><p>{item}</p></span>
-                        })}
-                            
+                         
                         </Col>
                     </Row>
                 </Container>

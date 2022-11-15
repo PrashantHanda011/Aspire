@@ -4,12 +4,13 @@ import { Pie } from 'react-chartjs-2';
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
-  export const data = 
-    {
-        labels: ['total', 'Male', 'Female'],
+function Chart({loan,interest}) {
+   const data = 
+    {   labels: ['Principal Amount','Interate Amount'],
         datasets: [{
-            label: 'Total Students',
-            data: [400, 200, 100,0],
+            label: 'Amount',
+
+            data: [loan, interest],
             backgroundColor: [
                 'rgba(244, 104, 65,0.7)',
                 'rgba(110, 107, 250,0.7)',
@@ -36,7 +37,6 @@ ChartJS.register(ArcElement, Tooltip, Legend);
 
   
 
-function Chart() {
     
   return (
     <>
