@@ -307,8 +307,8 @@ useEffect(() => {
                   </div>
                   <div className="row">
                     <Slider
-                      min={0}
-                      max={15}
+                      min={0.00}
+                      max={15.00}
                       defaultValue={LoanData.rate}
                       onChange={(e)=>handleSlider(e,"rate")}
                       aria-label="Default"
@@ -327,7 +327,7 @@ useEffect(() => {
               />
               <div className="d-flex justify-content-center my-3 align-items-center">
                 <h6 className="m-0 p-0">Monthly Emi -  </h6>
-                <p className="mx-2">₹ {(EMI).toFixed(2)} </p>
+                <p className="mx-2">₹ {(EMI).toLocaleString(navigator.language, { minimumFractionDigits: 2 })} </p>
               </div>
             </div>
             </div>
