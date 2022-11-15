@@ -129,7 +129,7 @@ const [interest, setinterest] = useState()
 const [LoanData, setLoanData] = useState({
   loan:10000,
   year:3,
-  rate:6
+  rate:5.5
 })
 
 const handleSlider = (e,name)=>{
@@ -307,8 +307,9 @@ useEffect(() => {
                   </div>
                   <div className="row">
                     <Slider
-                      min={0.00}
-                      max={15.00}
+                      min={0.1}
+                      max={15.000000}
+                      step={0.1}
                       defaultValue={LoanData.rate}
                       onChange={(e)=>handleSlider(e,"rate")}
                       aria-label="Default"

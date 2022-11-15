@@ -10,7 +10,7 @@ import PaidIcon from "@mui/icons-material/Paid";
 import PushPinIcon from "@mui/icons-material/PushPin";
 import MeetingRoomIcon from "@mui/icons-material/MeetingRoom";
 import ApartmentIcon from "@mui/icons-material/Apartment";
-import logo from '../../Assets/Images/logo.png'
+import logo from '../../Assets/Images/blueLogo.png'
 import CheckBoxIcon from "@mui/icons-material/CheckBox";
 import CheckIcon from "@mui/icons-material/Check";
 import Singleunit from "./Singleunit";
@@ -156,8 +156,8 @@ function Property() {
                     <Modal.Body>
                         <div className="property-side-form-sticky-resp">
                             <Row className=" property-sideform-head-container">
-                                <Col lg={2} md={3} xs={2}>
-                                    <img src={logo} alt="logo" />
+                                <Col lg={2} md={3} xs={2} >
+                                    <img src={logo} alt="logo"  />
                                 </Col>
                                 <Col lg={10} md={9} xs={10}>
                                     <span className="property-sideform-head ">
@@ -205,7 +205,7 @@ function Property() {
                         <Row className=" property-sideform-head-container">
                             <Col lg={4} md={3} sm={2}>
                                 <div className="property-sideform-avatar">
-                                    <img src={logo} alt="logo" className="w-100" />
+                                    <img style={{marginTop:"-10px"}} src={logo} alt="logo" className="w-100" />
                                 </div>
                             </Col>
                             <Col lg={8} md={9} sm={10}>
