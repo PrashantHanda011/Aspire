@@ -54,6 +54,13 @@
 .property-sideform-head h4{
     font-size: 1rem;
 }
+.broucher-btn{
+    padding:  10px;
+    background-color: var(--blueColor);
+    color: white;
+    border-radius: 8px;
+    text-decoration: none;
+}
 .property-sideform-head h5{
     font-size: 1rem;
     color:var(--orangeColor) ;

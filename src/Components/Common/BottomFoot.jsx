@@ -31,17 +31,16 @@ function BottomFoot() {
             className=" my-xs-3 visible-xs d-flex align-items-end justify-content-end"
           >
             <span className="ShareIcon">
-              {" "}
-              <FacebookIcon />{" "}
+              <a href="https://www.facebook.com/AspireProptech "><FacebookIcon /> </a>
             </span>
             <span className="ShareIcon">
-              <InstagramIcon />
+              <a href="https://www.instagram.com/prop_aspire/ "><InstagramIcon /></a>
             </span>
             <span className="ShareIcon">
-              <YouTubeIcon />
+              <a href="https://www.youtube.com/channel/UCjKyaI9f6Vvl5s9LJpn4RPw "><YouTubeIcon /></a>
             </span>
             <span className="ShareIcon">
-              <LinkedInIcon />
+              <a href="https://www.linkedin.com/company/13609537/"> <LinkedInIcon /></a>
             </span>
           </Col>
         </Row>

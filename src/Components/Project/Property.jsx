@@ -66,6 +66,7 @@ function Property() {
             };
             const data = await FetchSinglePropertyData(singleid);
             setpropertyData(data?.data?.data);
+            console.log(data?.data?.data)
             setunitDetails(data?.data?.data?.unitDetails[0]?.detail);
         } catch (error) {
             console.log(error);
@@ -157,7 +158,7 @@ function Property() {
                         <div className="property-side-form-sticky-resp">
                             <Row className=" property-sideform-head-container">
                                 <Col lg={2} md={3} xs={2} >
-                                    <img src={logo} alt="logo"  />
+                                    <img src={logo} alt="logo" />
                                 </Col>
                                 <Col lg={10} md={9} xs={10}>
                                     <span className="property-sideform-head ">
@@ -205,7 +206,7 @@ function Property() {
                         <Row className=" property-sideform-head-container">
                             <Col lg={4} md={3} sm={2}>
                                 <div className="property-sideform-avatar">
-                                    <img style={{marginTop:"-10px"}} src={logo} alt="logo" className="w-100" />
+                                    <img style={{ marginTop: "-10px" }} src={logo} alt="logo" className="w-100" />
                                 </div>
                             </Col>
                             <Col lg={8} md={9} sm={10}>
@@ -249,17 +250,17 @@ function Property() {
                                         })
                                     } */}
                                     <Carousel>
-                                    {
-                                        propertyData?.pictures?.map((item,index)=>{
-                                            return (
-                                            <div>
-                                                <img src={`${item}`} alt="noe" />
-                                            </div>
-                                            )
-                                        })
-                                    }
-                                            
-                                        </Carousel>                                
+                                        {
+                                            propertyData?.pictures?.map((item, index) => {
+                                                return (
+                                                    <div>
+                                                        <img src={`${item}`} alt="noe" />
+                                                    </div>
+                                                )
+                                            })
+                                        }
+
+                                    </Carousel>
                                 </div>
                             </div>
                         </div>
@@ -390,8 +391,14 @@ function Property() {
                                 <h5>Project Overview</h5>
                                 <hr />
                                 <div dangerouslySetInnerHTML={{ __html: propertyData?.description }} className="px-4" style={{ wordWrap: "breakWord" }}>
-                                    
+
                                 </div>
+
+                                <a
+                                    href={propertyData?.broucher}
+                                    target="_blank"
+                                    className="broucher-btn mx-3 "
+                                    download>Download Brocher</a>
                             </Col>
                         </Row>
 

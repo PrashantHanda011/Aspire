@@ -96,7 +96,7 @@ function Singleblog() {
                             <div className='d-flex  align-items-center'>
                                 {/* <img src={singleblogData?.authorPicture} className="me-4 author-pic" alt="img" /> */}
                                 <span className='Singleblog-authorDesc'>
-                                    <h4>{singleblogData?.authorName}</h4>
+                                    <h4> <span style={{fontSize:"0.9rem"}}>The Author</span>  | {singleblogData?.authorName}</h4>
                                     <h5>{moment(singleblogData?.createdAt).format('DD-MM-YYYY')} |  {singleblogData?.timeToRead}  read </h5>
                                 </span>
                             </div>
@@ -157,7 +157,7 @@ function Singleblog() {
 
             {/* //progressbar */}
             {/* text={`${scrollTop}%`} */}
-                        <Row className="singleblog-progressBar "> <CircularProgressbar value={scrollTop} style={{width:"20%"}}  /></Row>
+                        {/* <Row className="singleblog-progressBar "> <CircularProgressbar value={scrollTop} style={{width:"20%"}}  /></Row> */}
 
 
 
@@ -168,42 +168,7 @@ function Singleblog() {
 
                     <Container className="my-4">
                                <Row>
-                                <Col className="singleblog-author" lg={6}>
-                                    <h5>The Author</h5>
-                                    <Row className="singleblog-author-profile">
-                                        {/* <Col lg={2} className="singleblog-author-img "> 
-                                        <img src={singleblogData?.authorPicture} alt="author" className='author-pic' />
-                                        </Col> */}
-                                        <Col > <h6>{singleblogData?.authorName}</h6></Col>
-                                    </Row>
-                                    <Row >
-                                        <Col className="singleblog-author-desc" lg={9}> <h6>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque amet qui, esse asperiores delectus earum nam mollitia distinctio! Quisquam maxime voluptates possimus amet similique eveniet vel excepturi voluptas saepe. Adipisci?</h6></Col>
-                                    </Row>
-                                </Col>
-                                <Col className="singleblog-related-blogs " lg={6}>
-                                    <h5 className="my-lg-0 my-4">Related Articles</h5>
-
-                                    <div clasName="d-flex">
-                                    {
-                                        relatedBlogs?.slice(0,3).map((item,index)=>{
-                                            return <Relatedblog data={item} key={index}/>
-                                        })
-                                    }
-                                        
-                                    </div>
-
-                                </Col>
-                               </Row>     
-                    </Container>
-
-                    <Container>
-                    <hr className="hr-divider" />
-                    </Container>
-
-
-                    <Container className="my-5">
-                        <Row>
-                            <Col lg={5} className="singleblog-anyComments">
+                               <Col lg={6} className="singleblog-anyComments">
                                     <Row> <h5>Any Comments?</h5></Row>                        
                                     <Row className="singleblog-anyComments-checkbox">
                                     <span>
@@ -223,6 +188,28 @@ function Singleblog() {
                                         </Col>
                                     </Row>                        
                             </Col>
+
+
+                                <Col className="singleblog-related-blogs " lg={6}>
+                                    <h5 className="my-lg-0 my-4">Related Articles</h5>
+
+                                    <div clasName="d-flex">
+                                    {
+                                        relatedBlogs?.slice(0,3).map((item,index)=>{
+                                            return <Relatedblog data={item} key={index}/>
+                                        })
+                                    }
+                                        
+                                    </div>
+
+                                </Col>
+                               </Row>     
+                    </Container>
+
+          
+
+                    <Container className="my-5">
+                        <Row>
                             
                             {/* <Col className="singleblog-signmeup">
                                 <Row><h3>Lorem ipsum dolor sit  adipisicing elit. Dolorum, optio.</h3></Row>

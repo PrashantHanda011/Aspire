@@ -12,14 +12,13 @@ function Chart({loan,interest}) {
 
             data: [loan, interest],
             backgroundColor: [
-                'rgba(244, 104, 65,0.7)',
-                'rgba(110, 107, 250,0.7)',
-                'rgba(253, 187, 56,0.7)'
+                'rgba(28, 27, 77, 1)',
+                '#f47e20'
                 
             ],
             borderColor: [
-                'rgba(255, 99, 132, 1)',
-                'rgba(54, 162, 235, 1)',
+                'rgba(28, 27, 77, 1)',
+                '#f47e20',
                 'rgba(255, 206, 86, 1)'
             ],
             borderWidth: 1
