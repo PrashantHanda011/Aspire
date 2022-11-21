@@ -11,8 +11,9 @@ export const FetchSinglePropertyData = (id) => API.post(`/prop/getPropertyById`,
 export const FetchSingleDeveloperData = (id) => API.post(`/dev/getDeveloperById`,id);
 export const FetchCategoryBlog = (data) => API.post(`/blog/getBlogsByCategory`,data);
 export const FetchSingleBlog = (data) => API.post(`/blog/getBlogById`,data);
+export const FetchFeatureBlog = () => API.get(`/blog/getFeaturedBlog`);
 export const FetchTrendingLoans = () => API.get(`/ln/getAllLoan`);
-export const FetchProjectImage = () => API.get(`/proj/getAllProject`);
+export const FetchProject= () => API.get(`/prop/getFeaturedProperty`);
 export const FetchSingleCareer = (data) => API.post(`/cr/getCareerById`,data);
 
 export const PostrequirementData = (data) => API.post(`/prop/addRequirement`,data);

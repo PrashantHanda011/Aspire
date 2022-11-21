@@ -20,7 +20,7 @@ import AddAlertIcon from "@mui/icons-material/AddAlert";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import { useParams } from "react-router-dom";
-import { FetchCategoryBlog, FetchSingleDeveloperData, FetchSinglePropertyData } from "../API/Api";
+import { FetchCategoryBlog, FetchFeatureBlog, FetchSingleDeveloperData, FetchSinglePropertyData } from "../API/Api";
 import MapWithAMarker from "../Contact/Map";
 import ScrollTrigger from "react-scroll-trigger";
 import Backdrop from "@mui/material/Backdrop";
@@ -49,7 +49,7 @@ function Property() {
     });
     const location = useLocation();
     const param = useParams();
-    console.log(propertyData);
+    // console.log(propertyData);
     // sideform
     const handleCloseSideform = () => {
         setshowSideform(false);
@@ -78,7 +78,6 @@ function Property() {
                 id: param.id,
             };
             const data = await FetchSingleDeveloperData(singleid);
-            console.log(data);
         } catch (error) {
             console.log(error);
         }
@@ -120,10 +119,7 @@ function Property() {
 
     const fetchknowledgeblogData = async () => {
         try {
-            let categorydata = {
-                category: "news&updates",
-            };
-            const data = await FetchCategoryBlog(categorydata);
+            const data = await FetchFeatureBlog();
             setfeaturedBlog(data?.data?.data);
             console.log(data.data.data);
         } catch (error) {
@@ -390,7 +386,7 @@ function Property() {
                             <Col className="property-overview-description" lg={8}>
                                 <h5>Project Overview</h5>
                                 <hr />
-                                <div dangerouslySetInnerHTML={{ __html: propertyData?.description }} className="px-4" style={{ wordWrap: "breakWord" }}>
+                                <div dangerouslySetInnerHTML={{ __html: propertyData?.description }} className="px-4 mb-4" style={{ wordWrap: "breakWord" }}>
 
                                 </div>
 
@@ -398,7 +394,7 @@ function Property() {
                                     href={propertyData?.broucher}
                                     target="_blank"
                                     className="broucher-btn mx-3 "
-                                    download>Download Brocher</a>
+                                    download>Download Broucher</a>
                             </Col>
                         </Row>
 

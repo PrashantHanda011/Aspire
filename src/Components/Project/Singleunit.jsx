@@ -10,7 +10,7 @@ function Singleunit(props) {
             <img src={props?.data?.floorPlan} className='w-100' alt="" />
           </figure>
         </div>
-        <div className='Property-singleunit-desc'> {props?.data?.facing}</div>
+        <div className='Property-singleunit-desc'> {props?.data?.range}</div>
         <div className='Property-singleunit-desc'>{props?.data?.size}</div>
         <div className='Property-singleunit-desc'>{props?.data?.price}</div>
     </div>

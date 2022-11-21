@@ -2,13 +2,13 @@ import React from "react";
 import { Col, Row } from "react-bootstrap";
 import logo from "../../Assets/Images/logo1.svg";
 import "../../Assets/Common/BottomFoot.css";
-import InstagramIcon from "@mui/icons-material/Instagram";
-import FacebookIcon from "@mui/icons-material/Facebook";
 import CallIcon from "@mui/icons-material/Call";
-import YouTubeIcon from '@mui/icons-material/YouTube';
 import EmailIcon from "@mui/icons-material/Email";
 import { Link } from "react-router-dom";
 import { YoutubeSearchedForOutlined } from "@mui/icons-material";
+import YouTubeIcon from '@mui/icons-material/YouTube';
+import InstagramIcon from "@mui/icons-material/Instagram";
+import FacebookIcon from "@mui/icons-material/Facebook";
 import LinkedInIcon from '@mui/icons-material/LinkedIn';  
 
 function BottomFoot() {

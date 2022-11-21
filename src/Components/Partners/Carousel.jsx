@@ -5,7 +5,8 @@ import { Col, Row } from 'react-bootstrap';
 import { Button, Card, Paper } from '@mui/material'
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
-import { FetchProjectImage } from '../API/Api';
+import { FetchProject } from '../API/Api';
+import axios from 'axios';
 
 function CarouselComponent() {
 
@@ -13,7 +14,8 @@ function CarouselComponent() {
 
     const FetchImages = async() =>{
         try {
-            const data = await FetchProjectImage(); 
+            const data = await axios.get("https://aspire0.herokuapp.com/prop/getFeaturedProperty"); 
+            console.log(data)
                 setImages(data?.data?.data)
         } catch (error) {
                 console.log(error)

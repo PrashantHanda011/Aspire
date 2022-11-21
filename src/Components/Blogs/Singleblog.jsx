@@ -10,6 +10,10 @@ import avatar from '../../Assets/Images/author.png'
 // import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import Relatedblog from './Relatedblog'
 import singleBG from '../../Assets/Images/singleBlogBg.jpg'
+import YouTubeIcon from '@mui/icons-material/YouTube';
+import InstagramIcon from "@mui/icons-material/Instagram";
+import FacebookIcon from "@mui/icons-material/Facebook";
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import Checkbox from '@mui/material/Checkbox';
 import 'react-circular-progressbar/dist/styles.css';
 import { CircularProgressbar } from 'react-circular-progressbar';
@@ -20,14 +24,11 @@ import moment from 'moment'
 
 import {
     TwitterShareButton,
-    TwitterIcon,
-    FacebookIcon,
     FacebookShareButton,
     InstapaperIcon,
+    YoutubeShareButton,
     InstapaperShareButton,
-    WhatsappIcon,
     WhatsappShareButton,
-    LinkedinIcon,
     LinkedinShareButton
   } from "react-share";
 
@@ -123,26 +124,26 @@ function Singleblog() {
 
                         <span className="my-2">
                         <WhatsappShareButton title="Loved This Post" url={ path}>
-                            <WhatsappIcon size={42} round={false} borderRadius={10} />
+                            <InstagramIcon style={{fontSize:"2.5rem"}} round={false} borderRadius={10} />
                         </WhatsappShareButton>
                         </span>
 
                         <span className="my-2">
                         <TwitterShareButton title="Loved This Post" url={ path}>
-                            <TwitterIcon size={42} round={false} borderRadius={10} />
+                            <YouTubeIcon style={{fontSize:"2.5rem"}} round={false} borderRadius={10} />
                         </TwitterShareButton> 
                         </span>
 
                         <span className="my-2">
                         <LinkedinShareButton title="Loved This Post" url={ path}>
-                            <LinkedinIcon size={42} round={false} borderRadius={10} />
+                            <LinkedInIcon style={{fontSize:"2.5rem"}} size={42} round={false} borderRadius={10} />
                         </LinkedinShareButton>
                         </span>
 
 
                         <span className="my-2">
                         <FacebookShareButton title="Loved This Post" url={ path}>
-                            <FacebookIcon size={42} round={false} borderRadius={10} />
+                            <FacebookIcon size={42} style={{fontSize:"2.5rem"}} round={false} borderRadius={10} />
                         </FacebookShareButton>
                         </span>
 

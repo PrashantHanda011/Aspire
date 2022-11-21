@@ -21,7 +21,7 @@ function Home() {
       <>
       <div className=''></div>
       <HomeBuying/>
-      <Help/>
+      {/* <Help/> */}
       <HomeChoice/>
       <div className='helpSection'>
               <div className="separatorDiv"></div>
