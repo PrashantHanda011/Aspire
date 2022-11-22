@@ -88,7 +88,7 @@ function Property() {
         fetchDeveloper();
         fetchknowledgeblogData()
         handleToggle(true);
-    }, []);
+    }, [param.id]);
 
     // best quote
 

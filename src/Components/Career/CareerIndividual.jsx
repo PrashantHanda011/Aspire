@@ -64,12 +64,18 @@ function CareerIndividual() {
 
 const [ApplicationData, setApplicationData] = useState({
   name:"",
+  position:"",
   number:"",
   email:"",
   cv:"",
   experience:"",
   previousIndustry:""
+  
 })
+
+useEffect(() => {
+  setApplicationData({...ApplicationData,position:SingleCareer?.name})
+}, [SingleCareer])
 
 const handleChange = (e)=>{
   const {name,value}=e.target;
@@ -189,11 +195,11 @@ console.log(ApplicationData)
           <form className='d-flex flex-wrap col-12 justify-content-between'>
                       <div class="form-group col-5 mb-4">
                         <label for="exampleInputEmail1"> Name </label>
-                        <input type="email" value={ApplicationData.name} class="form-control" name="name" onChange={handleChange} id="exampleInputEmail1" aria-describedby="emailHelp"/>
+                        <input type="text" value={ApplicationData.name} class="form-control" name="name" onChange={handleChange} id="exampleInputEmail1" aria-describedby="emailHelp"/>
                       </div>                    
                       <div class="form-group col-5">
                         <label for="exampleInputEmail1">Phone Number</label>
-                        <input type="email" value={ApplicationData.email} class="form-control" id="exampleInputEmail1" onChange={handleChange} name="number" aria-describedby="emailHelp"    />
+                        <input type="number" value={ApplicationData.number} class="form-control" id="exampleInputEmail1" onChange={handleChange} name="number" aria-describedby="emailHelp"    />
                       </div> 
                       
                       <div class="form-group col-5">
@@ -208,12 +214,12 @@ console.log(ApplicationData)
 
                       <div class="form-group col-5 mb-4">
                         <label for="exampleInputEmail1">Total Years of experience  </label>
-                        <input type="email" value={ApplicationData.experience} class="form-control" name="experience" id="exampleInputEmail1" onChange={handleChange} aria-describedby="emailHelp"    />
+                        <input type="text" value={ApplicationData.experience} class="form-control" name="experience" id="exampleInputEmail1" onChange={handleChange} aria-describedby="emailHelp"    />
                       </div>
                     
                       <div class="form-group col-5 mb-4">
                         <label for="exampleInputEmail1">Previous Industry</label>
-                        <input type="email"  value={ApplicationData.previousIndustry} class="form-control" name="previousIndustry" id="exampleInputEmail1" onChange={handleChange} aria-describedby="emailHelp"    />
+                        <input type="text"  value={ApplicationData.previousIndustry} class="form-control" name="previousIndustry" id="exampleInputEmail1" onChange={handleChange} aria-describedby="emailHelp"    />
                       </div>
                   </form>
                   <button onClick={PostData} className='career-single-btn' >

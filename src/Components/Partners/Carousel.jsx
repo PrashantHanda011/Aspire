@@ -6,16 +6,18 @@ import { Button, Card, Paper } from '@mui/material'
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import { FetchProject } from '../API/Api';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
+import { useNavigate, useNavigationType } from 'react-router-dom';
 
 function CarouselComponent() {
-
+     const navigate = useNavigate()
     const [Images, setImages] = useState([])
 
     const FetchImages = async() =>{
         try {
-            const data = await axios.get("https://aspire0.herokuapp.com/prop/getFeaturedProperty"); 
-            console.log(data)
+            const data = await FetchProject(); 
+            console.log(data.data.data[0].pictures)
                 setImages(data?.data?.data)
         } catch (error) {
                 console.log(error)
@@ -46,7 +48,7 @@ return (
         }} 
         >
             { 
-                Images?.map( (item, i) => <Item key={i} item={item?.image} /> )
+                Images?.map( (item, i) => <Item key={i} item={item?.pictures} id={item._id} name={item.name}/> )
             }
         </Carousel>
     </>
@@ -55,11 +57,16 @@ return (
 
 function Item(prop)
 {
+    
+    const navigate = useNavigate();
     return (
-        <Card className="communityCard" style={{width: "60%", margin: "auto",borderRadius:"20px",overFlow:"visible",    boxShadow: " 0px 0px 14px rgba(0, 0, 0, 0.1)"}}>
+        <Link to={`/property/${prop.id}`} style={{textDecoration:"none"}}>
+        <Card  className="communityCard" style={{width: "60%",height:"60vh",objectFit:"cover", margin: "auto",borderRadius:"20px",overFlow:"visible",    boxShadow: " 0px 0px 14px rgba(0, 0, 0, 0.1)"}}>
+                   <h5 className='px-3 py-1' style={{background:"transparent",textDecoration:"none"}}>{prop.name}</h5>
                     <img src={prop?.item} className='w-100' alt="" />
 
         </Card>
+        </Link>
     )
 }
 
