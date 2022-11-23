@@ -3,7 +3,7 @@
     padding: 15px 0;
     position: sticky;
     top: 0;
-    z-index: 100000000;
+    z-index: 1000000;
 }
 .logo img{
     width: 80px;

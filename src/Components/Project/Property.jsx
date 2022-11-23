@@ -20,7 +20,7 @@ import AddAlertIcon from "@mui/icons-material/AddAlert";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import { useParams } from "react-router-dom";
-import { FetchCategoryBlog, FetchFeatureBlog, FetchSingleDeveloperData, FetchSinglePropertyData } from "../API/Api";
+import { FetchCategoryBlog, FetchFeatureBlog, FetchSingleDeveloperData, FetchSinglePropertyData, FetchUSP } from "../API/Api";
 import MapWithAMarker from "../Contact/Map";
 import ScrollTrigger from "react-scroll-trigger";
 import Backdrop from "@mui/material/Backdrop";
@@ -88,6 +88,7 @@ function Property() {
         fetchDeveloper();
         fetchknowledgeblogData()
         handleToggle(true);
+        getUspData()
     }, [param.id]);
 
     // best quote
@@ -126,6 +127,20 @@ function Property() {
             console.log(error);
         }
     };
+
+    const [USPData, setUSPData] = useState([]);
+    const getUspData = async()=>{
+        try {
+            const payload = {
+                id:param.id
+            }
+            const data = await FetchUSP(payload)
+            setUSPData(data?.data?.data?.usp)
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
     return (
         <>
             <Container
@@ -443,6 +458,34 @@ function Property() {
                             </Col>
                         </Row>
 
+
+                        <Row id="amenities">
+                            <Col className="property-amenity" lg={8}>
+                                <h5>Project USP</h5>
+                                <hr />
+
+                                <Row>
+                                    <Col className="property-amenity-content-container h-100">
+                                        <div
+                                            className="property-amenity-container"
+                                            style={{
+                                                height: `${showAmenity ? `${100}%` : `${16}vh`}`,
+                                            }}
+                                        >
+                                            {USPData?.map((item, index) => {
+                                                return (
+                                                    <div key={index} className="property-USP-content">
+                                                        <img src={item.icon} alt="nono"/>
+                                                        <h6>{item.detail}</h6>
+                                                    </div>
+                                                );
+                                            })}
+                                        </div>
+                                    
+                                    </Col>
+                                </Row>
+                            </Col>
+                        </Row>
                         {/* location */}
                         <Row id="location">
                             <Col className="property-location" lg={8}>
@@ -500,6 +543,8 @@ function Property() {
                                     <h5>Price</h5>
                                 </Row>
                                 <Row>
+                               
+
                                     {unitDetails?.map((item, index) => {
                                         return <Singleunit key={index} data={item} />;
                                     })}

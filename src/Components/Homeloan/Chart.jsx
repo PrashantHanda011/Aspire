@@ -6,7 +6,7 @@ ChartJS.register(ArcElement, Tooltip, Legend);
 
 function Chart({loan,interest}) {
    const data = 
-    {   labels: ['Principal Amount','Interate Amount'],
+    {   labels: ['Principal Amount','Interest Amount'],
         datasets: [{
             label: 'Amount',
 

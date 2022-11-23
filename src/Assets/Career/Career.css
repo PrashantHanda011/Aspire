@@ -190,6 +190,7 @@ border-radius: 16px;
 .career-modal-single{
     position: absolute;
     top: 50%;
+    z-index: 10000000000000000000000;
     left: 50%;
     transform: translate(-50%,-50%);
     width: 700px;

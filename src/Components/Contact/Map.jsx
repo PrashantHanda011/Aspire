@@ -2,7 +2,6 @@ import React from 'react'
 import GoogleMapReact from 'google-map-react'
 import LocationOn from '@mui/icons-material/LocationOn'
 function Map(props) {
- console.log(props)
   const location = {
     address:props?.location,
     lat: props?.lat,

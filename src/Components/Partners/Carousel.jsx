@@ -17,7 +17,6 @@ function CarouselComponent() {
     const FetchImages = async() =>{
         try {
             const data = await FetchProject(); 
-            console.log(data.data.data[0].pictures)
                 setImages(data?.data?.data)
         } catch (error) {
                 console.log(error)

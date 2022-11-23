@@ -353,6 +353,28 @@
 }
 
 
+/* //usp */
+.property-USP-content{
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    margin-right: 15px;
+    align-items: center;
+}
+.property-USP-content h6{
+        padding: 0;
+        padding-left: 10px;
+        margin: 0;
+        
+
+}
+.property-USP-content img{
+    height: 30px ;
+    width: 30px;
+    border-radius: 50%;
+}
+
+
 
 /* modal */
 .property-animation-modal{
@@ -674,6 +696,13 @@
     .property-amenity-content{
         width: 100%;
     }
+}
+.getprice-btn{
+    background-color: var(--blueColor);
+    padding: 10px;
+    color: white;
+    border: none;
+    border-radius: 10px;
 }
 
 .Modal-Closer{
