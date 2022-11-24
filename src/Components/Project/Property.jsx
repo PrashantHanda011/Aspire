@@ -409,7 +409,7 @@ function Property() {
                                     href={propertyData?.broucher}
                                     target="_blank"
                                     className="broucher-btn mx-3 "
-                                    download>Download Broucher</a>
+                                    download>Download Brochure</a>
                             </Col>
                         </Row>
 

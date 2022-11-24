@@ -328,7 +328,7 @@ useEffect(() => {
               />
               <div className="d-flex justify-content-center my-3 align-items-center">
                 <h6 className="m-0 p-0">Monthly Emi -  </h6>
-                <p className="mx-2">₹ {(EMI).toLocaleString(navigator.language, { minimumFractionDigits: 2 })} </p>
+                <p className="mx-2">₹ {( Math.trunc(EMI) ).toLocaleString(navigator.language, { minimumFractionDigits: 0 })} </p>
               </div>
             </div>
             </div>
