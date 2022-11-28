@@ -469,7 +469,6 @@ function Property() {
                                         <div
                                             className="property-amenity-container"
                                             style={{
-                                                height: `${showAmenity ? `${100}%` : `${16}vh`}`,
                                             }}
                                         >
                                             {USPData?.map((item, index) => {
