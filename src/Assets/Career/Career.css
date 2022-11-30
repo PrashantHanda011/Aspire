@@ -206,9 +206,16 @@ border-radius: 16px;
     font-weight: 600;
     color: var(--blueColor);
 }
+
+@media screen and (min-width: 300px) and (max-width:460px) {
+    .career-modal-single{
+        width: 400px;
+    }
+}
+
 @media (max-width: 460px){
     .career-modal-single{
-        width: 90%;
+        width: 400px;
     }
     .CardFacility {
         margin-right: 30px;
