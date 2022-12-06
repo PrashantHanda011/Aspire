@@ -82,13 +82,18 @@ function Singleblog() {
 
   // share buttons
   const path = window.location.href;
+  console.log(singleblogData);
   return (
     <>
       <Container
         fluid
         className="Singleblog-container"
         style={{
-          background: `linear-gradient(to right top, rgba(28, 27, 77, 0.7), rgba(28, 27, 77, 0.6), rgba(28, 27, 77, 0.5),rgba(28, 27, 77, 0.5) ,rgba(11, 11, 11,0.5)), url(${singleBG}) no-repeat center center/cover`,
+          background: `linear-gradient(to right top, rgba(28, 27, 77, 0.7), rgba(28, 27, 77, 0.6), rgba(28, 27, 77, 0.5),rgba(28, 27, 77, 0.5) ,rgba(11, 11, 11,0.5)), url(${
+            singleblogData?.picture || singleblogData?.picture?.length > 0
+              ? singleblogData?.picture
+              : singleBG
+          }) no-repeat center center/cover`,
         }}
       >
         <Container>
