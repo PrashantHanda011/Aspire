@@ -63,7 +63,7 @@ function Partner() {
       <div className="container  partner-front my-lg-5 ">
         <div className="row">
           <div className="col-lg-6  ">
-            <h1 className="mt-4">Prepare for takeoff</h1>
+            <h1 className="mt-4">Under Construction</h1>
             <div className="row my-4 partner-front-subhead ">
               <h5>
                 Inspired by a vision to empower agents and developers to make
@@ -84,7 +84,7 @@ function Partner() {
 
       {/* pick tools */}
 
-      <div className="container-fluid partner-dark-bg">
+      {/* <div className="container-fluid partner-dark-bg">
         <div className="container my-lg-5 partner-picktool">
           <div className="row d-flex justify-content-around">
             <div className="col-lg-3 ">
@@ -112,7 +112,7 @@ function Partner() {
           </div>
         </div>
 
-        {/* leading the way */}
+       
 
         <div className="container">
           <div className="row">
@@ -176,7 +176,7 @@ function Partner() {
           </div>
         </div>
 
-        {/* do it all */}
+      
 
         <div className="container partner-doitall py-lg-5">
           <div className="row d-flex mt-5 mt-lg-0 flex-column partner-doitall-head justify-content-center ">
@@ -219,9 +219,9 @@ function Partner() {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
       {/* our parteners */}
-      <div className="container-fluid homeloan-ourpartner-container py-5">
+      {/* <div className="container-fluid homeloan-ourpartner-container py-5">
         <div className="container d-flex flex-column homeloan-ourpartner ">
           <h3>Our Partners</h3>
           <h5 className="pb-5">
@@ -244,10 +244,10 @@ function Partner() {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
       {/* feature project */}
 
-      <div className="container partner-feature-projects my-lg-5">
+      {/* <div className="container partner-feature-projects my-lg-5">
         <div className="row">
           <div className="col-lg-5 mt-4 mt-lg-0">
             {" "}
@@ -257,11 +257,11 @@ function Partner() {
         <div className="row h-100 my-lg-5">
           <CarouselComponent />
         </div>
-      </div>
+      </div> */}
 
       {/* reviews */}
 
-      <div className="container my-lg-5">
+      {/* <div className="container my-lg-5">
         <div className="row partner-reviews">
           <h4>Reviews</h4>
         </div>
@@ -318,26 +318,14 @@ function Partner() {
             </div>
           </div>
         </div>
-      </div>
-
-      <div className="container-fluid partner-elite">
-        <h2 className="px-2">Join The Elite Club</h2>
-      </div>
-      <div className="container-fluid px-0  mb-lg-5 ">
-        {/* <div className='perfectSection perfectBg mb-5 partner-findhome'>
-          <div className='perfectWriteDiv'>
-              
-          <h2 className='homeChoiceHead'>Find your perfect home</h2>
-          <br/>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Facilisi ullamcorper elementum vitae sit magna platea nec maecenas nibh. Aliquam hendrerit libero cursus elementum mi amet morbi lacus aliquet. Consectetur commodo, pellentesque ac sed at massa elementum. Viverra at et duis neque.</p>
-          <br />
-          <div className='Link-special-banner partner-find-home-btn' style={{margin: "auto", padding: "10px 0px"}}>Post your requirements</div>
-
-          </div>
-
       </div> */}
+
+      {/* <div className="container-fluid partner-elite">
+        <h2 className="px-2">Join The Elite Club</h2>
+      </div> */}
+      {/* <div className="container-fluid px-0  mb-lg-5 ">
         <Perfect />
-      </div>
+      </div> */}
     </>
   );
 }

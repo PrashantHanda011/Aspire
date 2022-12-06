@@ -268,7 +268,10 @@ function Property() {
 
             {/* side image */}
 
-            <div className="property-first-img col-lg-8">
+            <div
+              style={{ width: "100%" }}
+              className="property-first-img col-lg-8"
+            >
               <div
                 id="carouselExampleControls"
                 className="carousel slide"

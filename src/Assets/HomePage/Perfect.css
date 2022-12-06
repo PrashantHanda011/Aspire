@@ -25,7 +25,7 @@
 }
 
 .homechoiceSection{
-    margin-top: 30px;
+    /* margin-top: 30px; */
     background: linear-gradient(to right top, rgba(0, 0, 0, 0.7), rgba(13, 13, 13, 0.6), rgba(11, 11, 11,0.5),rgba(11, 11, 11,0.5) ,rgba(11, 11, 11,0.5)), url("https://img.freepik.com/premium-photo/real-estate-business-building-technology_123766-48.jpg");
     display: flex;
     align-items: center;

@@ -7,7 +7,14 @@
     margin-bottom: 15px;
 
 }
+.horrizontal{
+    height: 5px;
+    width: 100%;
+    margin: 5px 0;
+    border-radius: 10px;
+    background: linear-gradient(90deg, #13184F 0%, #F47E20 94.96%);
 
+}
 .Link-special-banner{
     background-color: rgba(244, 126, 32, 1);
     color: white;
