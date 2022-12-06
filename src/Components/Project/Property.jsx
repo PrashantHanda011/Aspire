@@ -269,7 +269,7 @@ function Property() {
             {/* side image */}
 
             <div
-              style={{ width: "100%" }}
+              // style={{ width: "100%" }}
               className="property-first-img col-lg-8"
             >
               <div
@@ -491,7 +491,7 @@ function Property() {
               </Col>
             </Row>
 
-            <Row id="amenities">
+            {/* <Row id="amenities">
               <Col className="property-amenity" lg={8}>
                 <h5>Project USP</h5>
                 <hr />
@@ -511,7 +511,7 @@ function Property() {
                   </Col>
                 </Row>
               </Col>
-            </Row>
+            </Row> */}
             {/* location */}
             <Row id="location">
               <Col className="property-location" lg={8}>
