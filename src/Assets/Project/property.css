@@ -686,6 +686,9 @@
     .property-first-img img{
         width: 100%;
     }
+    .property-first-img{
+        width: 100% !important;
+    }
     .property-overview-head h4{
         font-size: 30px;
     }

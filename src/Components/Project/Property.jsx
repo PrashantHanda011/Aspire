@@ -269,7 +269,7 @@ function Property() {
             {/* side image */}
 
             <div
-              style={{ width: "100%" }}
+              // style={{ width: "100%" }}
               className="property-first-img col-lg-8"
             >
               <div
